@@ -1,0 +1,297 @@
+/* 
+========================================
+  BDEA CARROSSERIE — CUSTOM STYLES
+========================================
+
+📌 BRAND COLORS (Defined in Tailwind Config - index.html)
+  • Brand Blue:     #212677 (Primary)
+  • Brand Purple:   #73529F (Secondary accent)
+  • Brand Ink:      #151537 (Dark background)
+  • Brand Mist:     #6B6B86 (Secondary text)
+  • Brand Line:     #ECECF3 (Borders/dividers)
+  • Brand Paper:    #FAFAFD (Light background)
+  • Brand Body:     #3A3A4D (Body text)
+
+🎬 MEDIA LOCATIONS
+  • Hero Video:     assets/videos/hero.mp4 (Black FINAL VIDEO)
+  • Service Images: assets/images/service-1.jpg through service-4.jpg
+  • Project Images: assets/images/project-1.jpg through project-6.jpg
+
+📱 RESPONSIVE BREAKPOINTS (Tailwind)
+  • sm: 640px   • md: 768px   • lg: 1024px
+
+✨ KEY ANIMATIONS
+  • fade-up:      Fade in + slide up on scroll (bottom → top)
+  • fade-in:      Simple fade animation
+  • ken-burns:    Subtle zoom effect (hero video)
+  • marquee:      Horizontal scroll loop
+  • scroll-cue:   Pulsing scroll indicator
+  • process-step: Left → right reveal for "Notre savoir-faire" timeline
+
+========================================
+*/
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-on-scroll,
+  .process-step { opacity: 1 !important; transform: none !important; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FAFAFD; }
+::-webkit-scrollbar-thumb { background: #212677; border-radius: 4px; }
+
+/* ===== Animations ===== */
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes ken-burns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+@keyframes draw-line {
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes count-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-cue {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50%      { opacity: 0.4; transform: translateY(8px); }
+}
+
+@keyframes float {
+  0%, 100% { opacity: 0.4; transform: translateY(0px); }
+  50%      { opacity: 0.8; transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(33, 38, 119, 0.2); }
+  50%      { box-shadow: 0 0 40px rgba(115, 82, 159, 0.4); }
+}
+
+/* ===== Utility classes ===== */
+
+/* Generic reveal: bottom → top. Used everywhere via .animate-on-scroll,
+   including on mobile — same class, no media-query override, so behavior
+   is identical across breakpoints. */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Process timeline steps ("Notre savoir-faire"): slow left → right reveal.
+   Starts shifted left and slides into place, slower than the generic
+   reveal so each step feels deliberate as it travels across the row. */
+.process-step {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.process-step.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-step { transition: none; }
+}
+
+.hero-video {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.scroll-cue {
+  animation: scroll-cue 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Nav transition */
+.nav-solid {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 1px 12px rgba(21, 21, 55, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.nav-solid .nav-link { color: #3A3A4D !important; }
+.nav-solid .nav-link:hover { color: #212677 !important; }
+.nav-solid .logo-white { display: none !important; }
+.nav-solid .logo-color { display: block !important; }
+
+/* Mobile menu — Slide in from right */
+.mobile-menu.open {
+  transform: translateX(0) !important;
+}
+
+/* Hamburger icon animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Card image hover zoom */
+.card-image-wrap { overflow: hidden; }
+.card-image-wrap img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-image-wrap:hover img {
+  transform: scale(1.06);
+}
+
+/* Gallery overlay */
+.gallery-item .gallery-overlay {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Process timeline line draw */
+.timeline-line-fill {
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.timeline-line-fill.is-visible {
+  width: 100%;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #212677, #73529F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Brand gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60px; height: 3px;
+  background: linear-gradient(135deg, #212677, #73529F);
+  border-radius: 2px;
+}
+
+/* Hamburger animation */
+.hamburger span {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Counter number */
+.counter-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(21, 21, 55, 0.08);
+}
+
+/* Back to top button */
+.back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Logo marquee item */
+.marquee-logo {
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.4s ease;
+}
+.marquee-logo:hover {
+  filter: grayscale(0%) opacity(1);
+}
