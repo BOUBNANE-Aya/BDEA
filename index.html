@@ -152,30 +152,18 @@
       </p>
     </div>
 
-    <!-- 3D Viewer (lazy-loaded) -->
-    <div data-reveal data-delay="2" id="viewer-3d" class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-line bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 flex items-center justify-center">
-      <!-- Static fallback shown until JS loads the 3D embed -->
-      <!-- swap: client 3D scene or image -->
-      <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=800&q=80"
-           alt="Modélisation 3D — intérieur de van aménagé" class="w-full h-full object-cover rounded-2xl" loading="lazy" width="800" height="600">
-      <div class="absolute inset-0 bg-brand-ink/30 flex flex-col items-center justify-center gap-3 text-white">
-        <svg class="w-14 h-14 opacity-70" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M32 4L58 18V46L32 60L6 46V18L32 4Z"/><path d="M32 4V32L58 18" opacity=".5"/><path d="M32 32L6 18" opacity=".5"/><path d="M32 32V60" opacity=".5"/></svg>
-        <span class="text-sm font-medium opacity-80">Modèle 3D interactif</span>
+    <!-- 3D Image Wheel — 6 images arranged in a rotating ring -->
+    <div data-reveal data-delay="2" class="image-wheel" aria-label="Photos de nos réalisations">
+      <div class="wheel-ring" id="wheel-ring">
+        <!-- swap: client images -->
+        <div class="wheel-card"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Véhicule aménagé" loading="lazy" width="400" height="400"></div>
+        <div class="wheel-card"><img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=400&q=80" alt="Atelier — soudure" loading="lazy" width="400" height="400"></div>
+        <div class="wheel-card"><img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=400&q=80" alt="Autobus aménagé" loading="lazy" width="400" height="400"></div>
+        <div class="wheel-card"><img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=400&q=80" alt="Van transformé" loading="lazy" width="400" height="400"></div>
+        <div class="wheel-card"><img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=400&q=80" alt="Équipement automobile" loading="lazy" width="400" height="400"></div>
+        <div class="wheel-card"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=80" alt="Véhicule Mercedes" loading="lazy" width="400" height="400"></div>
       </div>
     </div>
-
-    <!-- Template: replace the placeholder above when scrolled into view -->
-    <!-- swap: Spline scene URL or .glb model path -->
-    <template id="viewer-3d-template">
-      <!--
-        Option A — Spline embed:
-        <iframe src="https://my.spline.design/YOUR_SCENE/" style="width:100%;height:100%;border:0;" loading="lazy" title="Modèle 3D"></iframe>
-
-        Option B — Google model-viewer:
-        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"><\/script>
-        <model-viewer src="model.glb" alt="Van 3D" auto-rotate camera-controls style="width:100%;height:100%;"></model-viewer>
-      -->
-    </template>
   </div>
 </section>
 

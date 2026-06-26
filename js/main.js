@@ -93,6 +93,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '200px' }).observe(viewer3d);
   }
 
+  /* ── 3D Image wheel ── */
+  const ring = document.getElementById('wheel-ring');
+  if (ring) {
+    const cards = ring.querySelectorAll('.wheel-card');
+    const n = cards.length;
+    const angle = 360 / n;
+    const radius = Math.round(ring.offsetWidth * 1.4) || 280;
+
+    cards.forEach((card, i) => {
+      const deg = angle * i;
+      card.style.transform = 'rotateY(' + deg + 'deg) translateZ(' + radius + 'px)';
+      card.dataset.angle = deg;
+    });
+
+    let current = 0;
+    ring.style.transform = 'rotateY(0deg)';
+
+    const updateFade = () => {
+      const ringAngle = ((current % 360) + 360) % 360;
+      cards.forEach(card => {
+        const cardAngle = parseFloat(card.dataset.angle);
+        let diff = ((cardAngle + ringAngle) % 360 + 360) % 360;
+        if (diff > 180) diff = 360 - diff;
+        const isBehind = diff > 90;
+        card.style.opacity = isBehind ? '0.35' : '1';
+        card.style.filter = isBehind ? 'brightness(0.7)' : 'none';
+      });
+    };
+    updateFade();
+
+    if (!reducedMotion) {
+      setInterval(() => {
+        current -= angle;
+        ring.style.transform = 'rotateY(' + current + 'deg)';
+        setTimeout(updateFade, 600);
+      }, 2500);
+    }
+  }
+
   /* ── Before/After slider ── */
   document.querySelectorAll('.ba-slider').forEach(slider => {
     const afterWrap = slider.querySelector('.ba-after');
