@@ -1,194 +1,192 @@
-/* ===== BDEA Carrosserie — Main JavaScript ===== */
+/* ===== BDEA Carrosserie — Lightweight JS ===== */
+/* No libraries. One IntersectionObserver + vanilla event listeners. */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ───── Navbar: transparent → solid on scroll ─────
-  const nav = document.getElementById('navbar');
-  const heroSection = document.getElementById('hero');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function handleNavScroll() {
-    if (!nav) return;
-    if (window.scrollY > 80) {
-      nav.classList.add('nav-solid');
-    } else {
-      nav.classList.remove('nav-solid');
-    }
+  /* ── Navbar: transparent → solid ── */
+  const navbar = document.getElementById('navbar');
+  const hero   = document.getElementById('hero');
+  if (navbar && hero) {
+    new IntersectionObserver(([entry]) => {
+      navbar.classList.toggle('scrolled', !entry.isIntersecting);
+    }, { rootMargin: '-80px 0px 0px 0px' }).observe(hero);
   }
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-  handleNavScroll();
 
-  // ───── Mobile menu ─────
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  /* ── Mobile menu ── */
+  const toggle = document.getElementById('menu-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('open');
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
   }
 
-  // ───── Scroll reveal animations (bottom → top, works on mobile) ─────
-  // Smaller negative rootMargin + lower threshold so short/mobile viewports
-  // and elements taller than the viewport still trigger reliably.
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -10% 0px'
-  };
-
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const delay = el.dataset.delay || 0;
-        setTimeout(() => {
-          el.classList.add('is-visible');
-        }, parseInt(delay));
-        scrollObserver.unobserve(el);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    scrollObserver.observe(el);
-  });
-
-  // ───── Process timeline steps: left → right reveal, slow & sequential ─────
-  const processSteps = document.querySelectorAll('.process-step');
-  if (processSteps.length) {
-    const stepObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const delay = el.dataset.delay || 0;
-          setTimeout(() => {
-            el.classList.add('is-visible');
-          }, parseInt(delay));
-          stepObserver.unobserve(el);
+  /* ── Reveal on scroll ── */
+  if (!reducedMotion) {
+    const els = document.querySelectorAll('[data-reveal]');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
-
-    processSteps.forEach(el => stepObserver.observe(el));
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
   }
 
-  // ───── Timeline line draw ─────
-  const timelineLine = document.querySelector('.timeline-line-fill');
-  if (timelineLine) {
-    const timelineObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          timelineLine.classList.add('is-visible');
-          timelineObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
-    timelineObserver.observe(timelineLine.parentElement);
+  /* ── Marquee: clone until always full, set shift to one-set width ── */
+  const track = document.querySelector('.marquee-track');
+  if (track) {
+    const original = track.innerHTML;
+    const oneSetWidth = track.scrollWidth;
+    const copies = Math.ceil((window.innerWidth * 2) / oneSetWidth) + 1;
+    for (let i = 0; i < copies; i++) track.innerHTML += original;
+    const totalSets = copies + 1;
+    const pct = (100 / totalSets).toFixed(4);
+    track.style.setProperty('--marquee-shift', '-' + pct + '%');
   }
 
-  // ───── Animated counters ─────
-  const counters = document.querySelectorAll('[data-target]');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const counter = entry.target;
-        const target = parseInt(counter.dataset.target);
-        const suffix = counter.dataset.suffix || '';
-        const prefix = counter.dataset.prefix || '';
-        const duration = 1800;
-        const start = performance.now();
-
-        function easeOutExpo(t) {
-          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-        }
-
-        function updateCounter(currentTime) {
-          const elapsed = currentTime - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeOutExpo(progress);
-          const current = Math.floor(easedProgress * target);
-
-          counter.textContent = prefix + current.toLocaleString('fr-FR') + suffix;
-
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = prefix + target.toLocaleString('fr-FR') + suffix;
-          }
-        }
-
-        requestAnimationFrame(updateCounter);
-        counterObserver.unobserve(counter);
-      }
-    });
-  }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
-
-  counters.forEach(c => counterObserver.observe(c));
-
-  // ───── Smooth scroll for anchor links ─────
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        e.preventDefault();
-        const navHeight = nav ? nav.offsetHeight : 0;
-        const targetPosition = targetEl.getBoundingClientRect().top + window.scrollY - navHeight;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-      }
+  /* ── Smooth anchor scrolling (native, no library) ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
-  // ───── Back to top button ─────
-  const backToTopBtn = document.getElementById('back-to-top');
-  if (backToTopBtn) {
-    function handleBackToTopVisibility() {
-      if (window.scrollY > 400) {
-        backToTopBtn.classList.add('is-visible');
-      } else {
-        backToTopBtn.classList.remove('is-visible');
-      }
-    }
-    window.addEventListener('scroll', handleBackToTopVisibility, { passive: true });
-    handleBackToTopVisibility();
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  /* ── Lazy-load hero video ── */
+  const video = document.querySelector('#hero video');
+  if (video) {
+    video.play().catch(() => {});
   }
 
-  // ───── Active nav link highlighting ─────
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  /* ── Lazy-load 3D viewer (only when section scrolls into view) ── */
+  const viewer3d = document.getElementById('viewer-3d');
+  if (viewer3d) {
+    new IntersectionObserver(([entry], self) => {
+      if (entry.isIntersecting) {
+        const tpl = document.getElementById('viewer-3d-template');
+        if (tpl) {
+          viewer3d.innerHTML = '';
+          viewer3d.appendChild(tpl.content.cloneNode(true));
+        }
+        self.unobserve(viewer3d);
+      }
+    }, { rootMargin: '200px' }).observe(viewer3d);
+  }
 
-  function highlightNav() {
-    const scrollPos = window.scrollY + 120;
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
+  /* ── Before/After slider ── */
+  document.querySelectorAll('.ba-slider').forEach(slider => {
+    const afterWrap = slider.querySelector('.ba-after');
+    const handle = slider.querySelector('.ba-handle');
+    if (!afterWrap || !handle) return;
+    const move = (x) => {
+      const rect = slider.getBoundingClientRect();
+      let pct = ((x - rect.left) / rect.width) * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      afterWrap.style.width = pct + '%';
+      handle.style.left = pct + '%';
+    };
+    const onPointer = (e) => { e.preventDefault(); move(e.clientX || e.touches[0].clientX); };
+    slider.addEventListener('pointerdown', (e) => {
+      onPointer(e);
+      const up = () => { document.removeEventListener('pointermove', onPointer); document.removeEventListener('pointerup', up); };
+      document.addEventListener('pointermove', onPointer);
+      document.addEventListener('pointerup', up);
+    });
+  });
 
-      if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(link => {
-          link.classList.remove('font-semibold');
-          if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('font-semibold');
-          }
+  /* ── Count-up stats ── */
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count, 10);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    if (reducedMotion) { el.textContent = prefix + target + suffix; return; }
+    new IntersectionObserver(([entry], self) => {
+      if (!entry.isIntersecting) return;
+      self.unobserve(el);
+      let start = 0;
+      const duration = 1800;
+      const t0 = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - t0) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(ease * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.3 }).observe(el);
+  });
+
+  /* ── Orb parallax (lightweight scroll-driven) ── */
+  if (!reducedMotion) {
+    const orbs = document.querySelectorAll('.partner-orb');
+    if (orbs.length) {
+      const onScroll = () => {
+        const sy = window.scrollY;
+        orbs.forEach(orb => {
+          const speed = parseFloat(orb.dataset.speed || '0.04');
+          const section = orb.closest('section');
+          if (!section) return;
+          const offset = section.offsetTop;
+          orb.style.transform = 'translateY(' + ((sy - offset) * speed) + 'px)';
         });
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+  }
+
+  /* ── Web3Forms contact form ── */
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('contact-submit');
+      const status = document.getElementById('form-status');
+      btn.disabled = true;
+      btn.textContent = 'Envoi…';
+      status.classList.add('hidden');
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        if (data.success) {
+          status.textContent = '✓ Message envoyé ! On vous recontacte bientôt.';
+          status.classList.remove('hidden');
+          status.classList.add('text-green-300');
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Erreur');
+        }
+      } catch (err) {
+        status.textContent = 'Erreur lors de l\'envoi. Réessayez ou appelez-nous.';
+        status.classList.remove('hidden');
+        status.classList.add('text-red-300');
       }
+      btn.disabled = false;
+      btn.innerHTML = 'Envoyer <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>';
     });
   }
-  window.addEventListener('scroll', highlightNav, { passive: true });
 
 });
