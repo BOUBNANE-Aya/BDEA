@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — BDEA Carrosserie | Mohammedia</title>
+  <meta name="description" content="Découvrez l'histoire, la mission et les valeurs de BDEA Carrosserie — savoir-faire artisanal en transformation et aménagement de véhicules à Mohammedia.">
+
+  <meta property="og:title" content="À propos — BDEA Carrosserie">
+  <meta property="og:description" content="Façonner des véhicules d'exception — notre histoire, nos valeurs, notre équipe.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { blue:'#212677', ink:'#050062', purple:'#7660A8', lilac:'#9D8EBF', paper:'#FFFAFA', mist:'#6B6B86', line:'#ECEAF2' }
+        },
+        fontFamily: {
+          display: ['"Clash Display"','sans-serif'],
+          sans: ['Inter','sans-serif'],
+          mono: ['"Space Mono"','monospace'],
+        }
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* === About-page-specific styles === */
+
+    /* Animated intro orbs */
+    .about-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+      animation: orb-drift 12s ease-in-out infinite alternate;
+    }
+    .about-orb-1 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(33,38,119,0.6), rgba(118,96,168,0.2));
+      top: -10%; right: -8%;
+      animation-duration: 10s;
+    }
+    .about-orb-2 {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(118,96,168,0.5), rgba(157,142,191,0.15));
+      bottom: -15%; left: -5%;
+      animation-duration: 14s;
+      animation-delay: -4s;
+    }
+    .about-orb-3 {
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(157,142,191,0.4), rgba(33,38,119,0.1));
+      top: 30%; left: 40%;
+      animation-duration: 16s;
+      animation-delay: -8s;
+    }
+    @keyframes orb-drift {
+      0%   { transform: translate(0, 0) scale(1); }
+      33%  { transform: translate(30px, -20px) scale(1.08); }
+      66%  { transform: translate(-20px, 15px) scale(0.95); }
+      100% { transform: translate(15px, -10px) scale(1.03); }
+    }
+
+    /* Serpentine line */
+    .line-track { stroke: #ECEAF2; }
+    .line-glow {
+      stroke: url(#line-grad);
+      filter: drop-shadow(0 0 6px rgba(118,96,168,0.55));
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+    .milestone-dot {
+      fill: #ECEAF2;
+      transition: fill 0.4s, filter 0.4s;
+    }
+    .milestone-dot.lit {
+      fill: url(#line-grad);
+      filter: drop-shadow(0 0 8px rgba(118,96,168,0.6));
+    }
+
+    /* Value fill effect */
+    .value-word {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
+      transition: all 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .value-word.filled {
+      -webkit-text-stroke: 0px transparent;
+      background: linear-gradient(135deg, #9D8EBF, #7660A8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Team card */
+    .team-card {
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(5,0,98,0.10);
+    }
+    .team-img {
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 90% 100%, 0 100%);
+      filter: grayscale(0.35);
+      transition: filter 0.5s, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .team-card:hover .team-img {
+      filter: grayscale(0);
+      transform: scale(1.04);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .about-orb { animation: none !important; }
+      .line-glow { stroke-dashoffset: 0 !important; }
+      .milestone-dot { fill: url(#line-grad) !important; }
+      .value-word {
+        -webkit-text-stroke: 0px transparent !important;
+        background: linear-gradient(135deg, #9D8EBF, #7660A8) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+      }
+      .team-card:hover { transform: none !important; }
+      .team-img { filter: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-brand-paper text-[#2C2C3A] font-sans antialiased">
+
+<!-- ===== Navbar ===== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+    <a href="/" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
+      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
+      </svg>
+      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/>
+      </svg>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
+      <a href="/" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
+      <a href="/about.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors border-b border-brand-purple pb-0.5">À propos</a>
+      <a href="/#services" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Services</a>
+      <a href="/#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
+      <a href="/#contact" class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
+    </nav>
+    <button id="menu-toggle" class="hamburger lg:hidden relative z-[51] flex flex-col justify-center gap-[5px] w-8 h-8" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bg-white"></span><span class="bg-white"></span><span class="bg-white"></span>
+    </button>
+  </div>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
+  <a href="/" class="text-2xl font-display font-semibold text-white">Accueil</a>
+  <a href="/about.html" class="text-2xl font-display font-semibold text-white">À propos</a>
+  <a href="/#services" class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="/#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
+  <a href="/#contact" class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+</div>
+
+<main>
+
+<!-- ===== 1 · Intro (blue bg with animated orbs) ===== -->
+<section id="hero" class="pt-32 md:pt-40 pb-20 md:pb-28 relative overflow-hidden bg-brand-ink">
+  <!-- Animated gradient orbs -->
+  <div class="about-orb about-orb-1" aria-hidden="true"></div>
+  <div class="about-orb about-orb-2" aria-hidden="true"></div>
+  <div class="about-orb about-orb-3" aria-hidden="true"></div>
+
+  <div class="max-w-4xl mx-auto px-5 relative z-10">
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">À propos</p>
+    <h1 data-reveal data-delay="1" class="font-display font-bold text-white text-[clamp(2.2rem,4.5vw+0.5rem,4rem)] leading-[1.08] tracking-tight">
+      Façonner des véhicules d'exception.
+    </h1>
+    <p data-reveal data-delay="2" class="mt-5 text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed">
+      Depuis nos débuts à Mohammedia, BDEA Carrosserie transforme et aménage des véhicules avec un savoir-faire artisanal reconnu par les plus grandes marques.
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2 · Histoire & Mission — Serpentine glowing scroll-line ===== -->
+<section id="histoire" class="relative pb-24 md:pb-32">
+  <div class="max-w-5xl mx-auto px-5 relative">
+
+    <!-- SVG serpentine line (behind content) -->
+    <svg class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none hidden md:block" viewBox="0 0 800 1200" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="line-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#212677"/>
+          <stop offset="50%" stop-color="#7660A8"/>
+          <stop offset="100%" stop-color="#9D8EBF"/>
+        </linearGradient>
+      </defs>
+      <!-- Base track -->
+      <path class="line-track" d="M400,0 C400,100 150,150 150,300 C150,450 650,450 650,600 C650,750 150,750 150,900 C150,1050 400,1100 400,1200" stroke-width="2.5" stroke-linecap="round" pathLength="1"/>
+      <!-- Glowing overlay (fills with scroll) -->
+      <path id="glow-line" class="line-glow" d="M400,0 C400,100 150,150 150,300 C150,450 650,450 650,600 C650,750 150,750 150,900 C150,1050 400,1100 400,1200" stroke-width="3" stroke-linecap="round" pathLength="1"/>
+      <!-- Milestone dots -->
+      <circle class="milestone-dot" cx="150" cy="300" r="8" data-at="0.25"/>
+      <circle class="milestone-dot" cx="650" cy="600" r="8" data-at="0.5"/>
+      <circle class="milestone-dot" cx="150" cy="900" r="8" data-at="0.75"/>
+      <circle class="milestone-dot" cx="400" cy="1200" r="10" data-at="1.0"/>
+    </svg>
+
+    <!-- Mobile vertical line -->
+    <div class="absolute left-7 md:hidden top-0 bottom-0 w-0.5 bg-brand-line" aria-hidden="true"></div>
+    <div class="absolute left-7 md:hidden top-0 bottom-0 w-0.5 origin-top" id="mobile-glow-line" style="background:linear-gradient(to bottom,#212677,#7660A8);transform:scaleY(0);" aria-hidden="true"></div>
+
+    <!-- Milestones -->
+    <div class="space-y-24 md:space-y-40 relative z-10">
+
+      <!-- Milestone 1 — Les débuts (left on desktop) -->
+      <div class="md:grid md:grid-cols-2 md:gap-16 items-start">
+        <div class="md:text-right pl-14 md:pl-0">
+          <div class="relative md:static mb-1">
+            <div class="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full border-2 border-brand-purple bg-brand-paper md:hidden"></div>
+            <span data-reveal class="font-mono text-xs tracking-widest uppercase text-brand-purple">Les débuts</span>
+          </div>
+          <h3 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-xl md:text-2xl mt-1">Une passion pour la carrosserie</h3>
+          <p data-reveal data-delay="2" class="mt-3 text-brand-mist leading-relaxed text-sm md:text-base">
+            BDEA Carrosserie naît à Mohammedia avec une vision simple : allier artisanat et rigueur industrielle pour transformer des véhicules ordinaires en outils de travail d'exception.
+          </p>
+        </div>
+        <div class="hidden md:block"></div>
+      </div>
+
+      <!-- Milestone 2 — Premiers grands chantiers (right on desktop) -->
+      <div class="md:grid md:grid-cols-2 md:gap-16 items-start">
+        <div class="hidden md:block"></div>
+        <div class="pl-14 md:pl-0">
+          <div class="relative md:static mb-1">
+            <div class="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full border-2 border-brand-purple bg-brand-paper md:hidden"></div>
+            <span data-reveal class="font-mono text-xs tracking-widest uppercase text-brand-purple">Premiers grands chantiers</span>
+          </div>
+          <h3 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-xl md:text-2xl mt-1">Monter en puissance</h3>
+          <p data-reveal data-delay="2" class="mt-3 text-brand-mist leading-relaxed text-sm md:text-base">
+            Les premières commandes d'envergure confirment notre savoir-faire : aménagement complet d'autobus touristiques, transformation de flottes scolaires, et fabrication de carrosseries sur mesure.
+          </p>
+        </div>
+      </div>
+
+      <!-- Milestone 3 — Partenariat Auto Nejma (left on desktop) -->
+      <div class="md:grid md:grid-cols-2 md:gap-16 items-start">
+        <div class="md:text-right pl-14 md:pl-0">
+          <div class="relative md:static mb-1">
+            <div class="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full border-2 border-brand-purple bg-brand-paper md:hidden"></div>
+            <span data-reveal class="font-mono text-xs tracking-widest uppercase text-brand-purple">Le partenariat Auto Nejma</span>
+          </div>
+          <h3 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-xl md:text-2xl mt-1">La reconnaissance des grands noms</h3>
+          <p data-reveal data-delay="2" class="mt-3 text-brand-mist leading-relaxed text-sm md:text-base">
+            Auto Nejma, importateur officiel de Mercedes-Benz au Maroc, nous choisit comme partenaire pour la transformation de ses véhicules — une marque de confiance décisive.
+          </p>
+        </div>
+        <div class="hidden md:block"></div>
+      </div>
+
+      <!-- Milestone 4 — Aujourd'hui / Mission (centered, larger) -->
+      <div class="md:max-w-2xl md:mx-auto md:text-center pl-14 md:pl-0">
+        <div class="relative md:static mb-1">
+          <div class="absolute -left-[2.15rem] top-1 w-5 h-5 rounded-full bg-gradient-to-br from-brand-blue to-brand-purple md:hidden"></div>
+          <span data-reveal class="font-mono text-xs tracking-widest uppercase text-brand-purple">Aujourd'hui</span>
+        </div>
+        <h3 data-reveal data-delay="1" class="font-display font-bold text-brand-ink text-2xl md:text-3xl mt-1">Notre mission</h3>
+        <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed md:text-lg">
+          Transformer chaque véhicule avec précision et passion, du châssis au moindre détail — pour les professionnels du transport et les particuliers exigeants.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 · Nos valeurs — bold full-width dark section ===== -->
+<section class="relative bg-brand-ink py-24 md:py-32 overflow-hidden">
+  <!-- Orbs -->
+  <div class="absolute w-80 h-80 rounded-full bg-gradient-to-br from-brand-blue/20 to-brand-lilac/10 blur-[80px] -top-20 -left-20 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute w-64 h-64 rounded-full bg-gradient-to-br from-brand-purple/15 to-brand-lilac/10 blur-[60px] -bottom-16 -right-16 pointer-events-none" aria-hidden="true"></div>
+  <!-- Stars -->
+  <svg class="absolute right-12 top-20 opacity-[0.12] hidden md:block" width="44" height="44" aria-hidden="true"><polygon points="22,1 26,16 42,16 29,25 33,40 22,31 11,40 15,25 1,16 18,16" fill="#9D8EBF"/></svg>
+  <svg class="absolute left-16 bottom-24 opacity-[0.1] hidden md:block" width="32" height="32" aria-hidden="true"><polygon points="16,1 19,12 31,12 22,19 25,30 16,23 7,30 10,19 1,12 13,12" fill="#7660A8"/></svg>
+
+  <div class="max-w-6xl mx-auto px-5 relative z-10">
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-6">Nos valeurs</p>
+
+    <div class="grid sm:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-20">
+      <div data-reveal class="value-block">
+        <span class="font-mono text-xs text-brand-lilac/50 tracking-widest">01</span>
+        <h3 class="value-word font-display font-bold text-[clamp(2.2rem,5vw,4.5rem)] leading-none mt-1" data-value>Précision</h3>
+        <p class="mt-3 text-white/50 text-sm md:text-base leading-relaxed">Chaque coupe, chaque soudure, chaque finition — rien n'est laissé au hasard.</p>
+      </div>
+
+      <div data-reveal data-delay="1" class="value-block">
+        <span class="font-mono text-xs text-brand-lilac/50 tracking-widest">02</span>
+        <h3 class="value-word font-display font-bold text-[clamp(2.2rem,5vw,4.5rem)] leading-none mt-1" data-value>Savoir-faire</h3>
+        <p class="mt-3 text-white/50 text-sm md:text-base leading-relaxed">Un artisanat transmis et perfectionné, au service de l'industrie du transport.</p>
+      </div>
+
+      <div data-reveal data-delay="2" class="value-block">
+        <span class="font-mono text-xs text-brand-lilac/50 tracking-widest">03</span>
+        <h3 class="value-word font-display font-bold text-[clamp(2.2rem,5vw,4.5rem)] leading-none mt-1" data-value>Innovation</h3>
+        <p class="mt-3 text-white/50 text-sm md:text-base leading-relaxed">Conception 3D, nouveaux matériaux et processus optimisés pour chaque projet.</p>
+      </div>
+
+      <div data-reveal data-delay="3" class="value-block">
+        <span class="font-mono text-xs text-brand-lilac/50 tracking-widest">04</span>
+        <h3 class="value-word font-display font-bold text-[clamp(2.2rem,5vw,4.5rem)] leading-none mt-1" data-value>Engagement</h3>
+        <p class="mt-3 text-white/50 text-sm md:text-base leading-relaxed">Délais tenus, qualité constante, un interlocuteur dédié du début à la fin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 · L'équipe ===== -->
+<section class="py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-5">
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-purple mb-4">Notre équipe</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl">
+      Les artisans derrière chaque&nbsp;projet.
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <!-- Card 1 -->
+      <article data-reveal class="team-card rounded-2xl overflow-hidden border border-brand-line bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — team member photo -->
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+               alt="Portrait — Fondateur" class="team-img w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Ahmed Benallouch</h3>
+          <p class="font-mono text-xs text-brand-purple tracking-wider mt-0.5">Fondateur & Directeur</p>
+          <p class="mt-2 text-brand-mist text-sm leading-relaxed">Visionnaire et passionné, il dirige BDEA avec l'ambition de repousser les standards de la carrosserie au Maroc.</p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article data-reveal data-delay="1" class="team-card rounded-2xl overflow-hidden border border-brand-line bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — team member photo -->
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80"
+               alt="Portrait — Responsable Atelier" class="team-img w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Karim Idrissi</h3>
+          <p class="font-mono text-xs text-brand-purple tracking-wider mt-0.5">Responsable Atelier</p>
+          <p class="mt-2 text-brand-mist text-sm leading-relaxed">20 ans d'expérience en métallurgie et assemblage — il coordonne chaque projet de la découpe à la livraison.</p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article data-reveal data-delay="2" class="team-card rounded-2xl overflow-hidden border border-brand-line bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — team member photo -->
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
+               alt="Portrait — Responsable Conception" class="team-img w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Youssef Tazi</h3>
+          <p class="font-mono text-xs text-brand-purple tracking-wider mt-0.5">Responsable Conception</p>
+          <p class="mt-2 text-brand-mist text-sm leading-relaxed">Architecte d'intérieur de formation, il modélise chaque aménagement en 3D avant la réalisation.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 · Closing CTA ===== -->
+<section class="relative overflow-hidden">
+  <div class="bg-gradient-to-br from-brand-blue to-brand-purple py-14 md:py-16">
+    <div class="max-w-3xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <h2 data-reveal class="font-display font-semibold text-white text-xl md:text-2xl leading-tight text-center sm:text-left">
+        Un projet en tête&nbsp;? Parlons-en.
+      </h2>
+      <a data-reveal data-delay="1" href="/#contact" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-brand-blue font-semibold shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-0.5 transition-all whitespace-nowrap">
+        Contactez-nous
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div class="lg:col-span-1">
+        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
+          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+        <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="/" class="hover:text-white transition-colors">Accueil</a>
+          <a href="/about.html" class="hover:text-white transition-colors">À propos</a>
+          <a href="/#services" class="hover:text-white transition-colors">Services</a>
+          <a href="/#partenaires" class="hover:text-white transition-colors">Partenaires</a>
+          <a href="/#contact" class="hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Contact</h4>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Sidi Moussa El Majdoub, Sidi Azzouz, Mohammedia</span>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+212719907777" class="hover:text-white transition-colors">+212 71 99 07 07</a>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+            <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-5">
+          <a href="https://wa.me/212719907777" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Localisation</h4>
+        <div class="rounded-xl overflow-hidden border border-white/10 aspect-[4/3]">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53168!2d-7.42!3d33.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62d60c3bcb8c9%3A0x6281653ac90e3!2sMohammedia!5e0!3m2!1sfr!2sma!4v1"
+            class="w-full h-full border-0 grayscale brightness-[0.85]" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="BDEA Carrosserie — Mohammedia, Maroc"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+      <span>&copy; 2026 BDEA Carrosserie. Tous droits réservés.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white/70 transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/212719907777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- ===== Page JS ===== -->
+<script src="js/main.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Serpentine scroll-line ── */
+  const section = document.getElementById('histoire');
+  const glowLine = document.getElementById('glow-line');
+  const mobileGlow = document.getElementById('mobile-glow-line');
+  const dots = document.querySelectorAll('.milestone-dot');
+  const values = document.querySelectorAll('[data-value]');
+
+  if (reduced) {
+    if (glowLine) glowLine.style.strokeDashoffset = '0';
+    if (mobileGlow) mobileGlow.style.transform = 'scaleY(1)';
+    dots.forEach(d => d.classList.add('lit'));
+    values.forEach(v => v.classList.add('filled'));
+    return;
+  }
+
+  const sectionTop = section ? section.offsetTop : 0;
+  const onScroll = () => {
+    if (section && glowLine) {
+      const vh = window.innerHeight;
+      const earlyStart = sectionTop - vh;
+      const scrolled = window.scrollY - earlyStart;
+      const travel = section.offsetHeight;
+      const progress = Math.max(0, Math.min(1, scrolled / travel));
+      glowLine.style.strokeDashoffset = String(1 - progress);
+      if (mobileGlow) mobileGlow.style.transform = 'scaleY(' + progress + ')';
+      dots.forEach(d => {
+        const at = parseFloat(d.getAttribute('data-at') || '1');
+        d.classList.toggle('lit', progress >= at - 0.02);
+      });
+    }
+
+    values.forEach(v => {
+      const r = v.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.82) v.classList.add('filled');
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+});
+</script>
+
+</body>
+</html>

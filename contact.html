@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — BDEA Carrosserie | Démarrons votre projet</title>
+  <meta name="description" content="Contactez BDEA Carrosserie pour votre projet de transformation ou d'aménagement de véhicule — autobus, van ou carrosserie sur mesure à Mohammedia.">
+  <meta property="og:title" content="Contact — BDEA Carrosserie">
+  <meta property="og:description" content="Démarrons votre projet — parlez-nous de votre véhicule et de vos besoins.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config={theme:{extend:{colors:{brand:{blue:'#212677',ink:'#050062',purple:'#7660A8',lilac:'#9D8EBF',paper:'#FFFAFA',mist:'#6B6B86',line:'#ECEAF2'}},fontFamily:{display:['"Clash Display"','sans-serif'],sans:['Inter','sans-serif'],mono:['"Space Mono"','monospace']}}}}
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* === Contact-page styles === */
+
+    /* Floating-label input */
+    .fl-group { position: relative; }
+    .fl-group input, .fl-group textarea {
+      width: 100%; padding: 1.25rem 0 0.5rem 0;
+      border: none; border-bottom: 2px solid #ECEAF2;
+      background: transparent; font: inherit; color: #2C2C3A;
+      outline: none; transition: border-color 0.3s;
+    }
+    .fl-group textarea { resize: vertical; min-height: 100px; }
+    .fl-group label {
+      position: absolute; left: 0; top: 1.1rem;
+      font-size: 0.9375rem; color: #6B6B86;
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+    }
+    .fl-group input:focus, .fl-group textarea:focus {
+      border-image: linear-gradient(135deg,#212677,#7660A8) 1;
+    }
+    .fl-group input:focus + label,
+    .fl-group input:not(:placeholder-shown) + label,
+    .fl-group textarea:focus + label,
+    .fl-group textarea:not(:placeholder-shown) + label {
+      top: -0.1rem; font-size: 0.7rem; color: #7660A8;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .fl-group .fl-error {
+      font-size: 0.75rem; color: #d32f2f; margin-top: 0.25rem; display: none;
+    }
+    .fl-group.has-error input, .fl-group.has-error textarea { border-bottom-color: #d32f2f; }
+    .fl-group.has-error .fl-error { display: block; }
+
+    /* Vehicle selector card */
+    .v-card {
+      position: relative; cursor: pointer;
+      border: 2px solid #ECEAF2; border-radius: 14px;
+      padding: 1.5rem 1rem; text-align: center;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      background: #fff;
+    }
+    .v-card:hover { border-color: #9D8EBF; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(5,0,98,0.06); }
+    .v-card input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .v-card.selected {
+      border-color: transparent;
+      background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg,#212677,#7660A8) border-box;
+      box-shadow: 0 4px 20px rgba(33,38,119,0.12);
+    }
+    .v-card .v-check {
+      position: absolute; top: 0.6rem; right: 0.6rem;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg,#212677,#7660A8);
+      display: none; align-items: center; justify-content: center;
+    }
+    .v-card.selected .v-check { display: flex; }
+
+    /* Step transitions */
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+    .js .step-panel.active { animation: step-in 0.35s cubic-bezier(0.16,1,0.3,1); }
+    @keyframes step-in {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Chip selector */
+    .chip {
+      display: inline-flex; padding: 0.4rem 0.9rem; border-radius: 100px;
+      border: 1.5px solid #ECEAF2; font-size: 0.8125rem; color: #6B6B86;
+      cursor: pointer; transition: all 0.25s; user-select: none; background: #fff;
+    }
+    .chip:hover { border-color: #9D8EBF; color: #212677; }
+    .chip.active { border-color: #212677; background: linear-gradient(135deg,#212677,#7660A8); color: #fff; }
+    .chip input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+    /* Success check animation */
+    .success-check { stroke-dasharray: 60; stroke-dashoffset: 60; }
+    .success-check.drawn { stroke-dashoffset: 0; transition: stroke-dashoffset 0.6s cubic-bezier(0.22,1,0.36,1) 0.2s; }
+    .success-circle { stroke-dasharray: 190; stroke-dashoffset: 190; }
+    .success-circle.drawn { stroke-dashoffset: 0; transition: stroke-dashoffset 0.5s cubic-bezier(0.22,1,0.36,1); }
+
+    /* Progress bar */
+    .progress-fill {
+      transition: width 0.4s cubic-bezier(0.16,1,0.3,1);
+      background: linear-gradient(135deg,#212677,#7660A8);
+    }
+
+    /* Orbs */
+    .contact-orb {
+      position: absolute; border-radius: 50%; pointer-events: none;
+      filter: blur(70px);
+    }
+
+    /* Map overlay tint */
+    .map-tint {
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(255,250,250,0.08), transparent 30%, transparent 70%, rgba(255,250,250,0.08));
+    }
+
+    /* No-JS fallback: show all steps */
+    .step-panel { display: block; }
+    .js .step-panel { display: none; }
+    .js .step-panel.active { display: block; }
+    .js .nojs-hide { display: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .step-panel.active { animation: none; }
+      .contact-orb { display: none; }
+      .success-check, .success-circle { transition: none !important; stroke-dashoffset: 0 !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-brand-paper text-[#2C2C3A] font-sans antialiased">
+
+<!-- ===== Navbar ===== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4 scrolled" role="banner">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+    <a href="/" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
+      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true"><text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text><circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/></svg>
+      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true"><text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text><circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/></svg>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
+      <a href="/" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
+      <a href="/about.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
+      <a href="/#services" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Services</a>
+      <a href="/#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
+      <a href="/contact.html" class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors border-b border-brand-purple">Contactez-nous</a>
+    </nav>
+    <button id="menu-toggle" class="hamburger lg:hidden relative z-[51] flex flex-col justify-center gap-[5px] w-8 h-8" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bg-white"></span><span class="bg-white"></span><span class="bg-white"></span>
+    </button>
+  </div>
+</header>
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
+  <a href="/" class="text-2xl font-display font-semibold text-white">Accueil</a>
+  <a href="/about.html" class="text-2xl font-display font-semibold text-white">À propos</a>
+  <a href="/#services" class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="/#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
+  <a href="/contact.html" class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+</div>
+
+<main class="pt-20">
+
+<!-- ===== Split layout ===== -->
+<section class="min-h-[calc(100vh-5rem)] grid lg:grid-cols-[1fr_1.15fr]">
+
+  <!-- LEFT — branded panel -->
+  <div class="relative bg-brand-ink px-6 md:px-10 lg:px-14 py-16 lg:py-24 flex flex-col justify-center overflow-hidden">
+    <div class="contact-orb w-72 h-72 bg-gradient-to-br from-brand-blue/30 to-brand-lilac/15 -top-16 -right-16" aria-hidden="true"></div>
+    <div class="contact-orb w-56 h-56 bg-gradient-to-br from-brand-purple/20 to-brand-lilac/10 -bottom-12 -left-12" aria-hidden="true"></div>
+    <svg class="absolute right-8 top-16 opacity-[0.1] hidden lg:block" width="40" height="40" aria-hidden="true"><polygon points="20,1 24,15 39,15 27,23 31,37 20,29 9,37 13,23 1,15 16,15" fill="#9D8EBF"/></svg>
+    <svg class="absolute left-10 bottom-20 opacity-[0.08] hidden lg:block" width="28" height="28" aria-hidden="true"><polygon points="14,1 17,10 27,10 19,16 22,25 14,19 6,25 9,16 1,10 11,10" fill="#7660A8"/></svg>
+
+    <div class="relative z-10">
+      <p class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">Contact</p>
+      <h1 class="font-display font-bold text-white text-[clamp(2rem,3.5vw+0.5rem,3.25rem)] leading-[1.1]">Démarrons votre&nbsp;projet.</h1>
+      <p class="mt-4 text-white/55 leading-relaxed max-w-md">Parlez-nous de votre véhicule et de vos besoins — nous vous répondons sous 24 à 48&nbsp;heures.</p>
+
+      <div class="mt-10 space-y-5 text-sm text-white/70">
+        <div class="flex gap-3 items-start">
+          <svg class="w-[18px] h-[18px] mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Sidi Moussa El Majdoub, Sidi Azzouz,<br>Mohammedia, Maroc</span>
+        </div>
+        <div class="flex gap-3 items-center">
+          <svg class="w-[18px] h-[18px] text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+212719907777" class="hover:text-white transition-colors">+212 71 99 07 07</a>
+        </div>
+        <div class="flex gap-3 items-center">
+          <svg class="w-[18px] h-[18px] text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+          <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://wa.me/212719907777" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] text-white text-sm font-medium hover:brightness-110 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+          <svg class="w-4 h-4 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+          <svg class="w-4 h-4 text-white/70" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT — guided form -->
+  <div class="px-6 md:px-10 lg:px-16 py-12 lg:py-24 flex flex-col justify-center">
+
+    <!-- Progress bar -->
+    <div class="mb-10" id="progress-wrap">
+      <div class="flex justify-between text-[0.7rem] font-mono uppercase tracking-widest text-brand-mist mb-2">
+        <span data-step-label="1" class="text-brand-blue font-semibold">Véhicule</span>
+        <span data-step-label="2">Coordonnées</span>
+        <span data-step-label="3">Projet</span>
+      </div>
+      <div class="h-1 bg-brand-line rounded-full overflow-hidden">
+        <div class="progress-fill h-full rounded-full" id="progress-bar" style="width:33.33%"></div>
+      </div>
+    </div>
+
+    <!-- The form (all steps inside one <form>) -->
+    <!-- TODO: Replace action with your Formspree/EmailJS endpoint -->
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="Nouvelle demande — BDEA Carrosserie">
+      <input type="hidden" name="from_name" value="BDEA Contact">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+      <!-- STEP 1 — Vehicle type -->
+      <fieldset class="step-panel active" data-step="1" id="step-1">
+        <legend class="font-display font-semibold text-brand-ink text-xl md:text-2xl mb-1">Quel type de véhicule ?</legend>
+        <p class="text-brand-mist text-sm mb-6">Sélectionnez pour continuer.</p>
+
+        <div class="grid grid-cols-3 gap-4">
+          <label class="v-card" tabindex="0">
+            <input type="radio" name="vehicule" value="Autobus" required>
+            <span class="v-check"><svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.5"><path d="M3 8l3.5 3.5L13 5"/></svg></span>
+            <svg class="w-10 h-10 mx-auto mb-2 text-brand-mist" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="40" height="22" rx="4"/><circle cx="14" cy="38" r="3"/><circle cx="34" cy="38" r="3"/><line x1="4" y1="24" x2="44" y2="24"/><line x1="16" y1="8" x2="32" y2="8"/><line x1="16" y1="8" x2="16" y2="14"/><line x1="32" y1="8" x2="32" y2="14"/></svg>
+            <span class="block font-display font-semibold text-brand-ink text-sm">Autobus</span>
+          </label>
+
+          <label class="v-card" tabindex="0">
+            <input type="radio" name="vehicule" value="Van">
+            <span class="v-check"><svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.5"><path d="M3 8l3.5 3.5L13 5"/></svg></span>
+            <svg class="w-10 h-10 mx-auto mb-2 text-brand-mist" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4,32 L4,16 Q4,12 8,12 L28,12 L36,20 L44,20 L44,32"/><circle cx="14" cy="34" r="4"/><circle cx="36" cy="34" r="4"/><line x1="18" y1="34" x2="32" y2="34"/></svg>
+            <span class="block font-display font-semibold text-brand-ink text-sm">Van</span>
+          </label>
+
+          <label class="v-card" tabindex="0">
+            <input type="radio" name="vehicule" value="Autre">
+            <span class="v-check"><svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.5"><path d="M3 8l3.5 3.5L13 5"/></svg></span>
+            <svg class="w-10 h-10 mx-auto mb-2 text-brand-mist" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8"/><path d="M24,4 L24,12 M24,36 L24,44 M4,24 L12,24 M36,24 L44,24"/></svg>
+            <span class="block font-display font-semibold text-brand-ink text-sm">Autre</span>
+          </label>
+        </div>
+        <p class="fl-error mt-3 text-xs text-red-600 hidden" id="v-error" role="alert">Veuillez sélectionner un type de véhicule.</p>
+        <!-- No-JS fallback: show a next-step hint -->
+        <p class="nojs-hide text-brand-mist text-xs mt-4 italic">Sélectionnez un type puis remplissez les champs ci-dessous.</p>
+      </fieldset>
+
+      <!-- STEP 2 — Coordonnées -->
+      <fieldset class="step-panel" data-step="2" id="step-2">
+        <legend class="font-display font-semibold text-brand-ink text-xl md:text-2xl mb-1">Vos coordonnées</legend>
+        <p class="text-brand-mist text-sm mb-8">Pour que nous puissions vous recontacter.</p>
+
+        <div class="space-y-7">
+          <div class="fl-group">
+            <input type="text" id="c-nom" name="nom" placeholder=" " required autocomplete="name">
+            <label for="c-nom">Nom complet</label>
+            <p class="fl-error" role="alert">Veuillez saisir votre nom.</p>
+          </div>
+          <div class="fl-group">
+            <input type="tel" id="c-tel" name="telephone" placeholder=" " required autocomplete="tel">
+            <label for="c-tel">Téléphone</label>
+            <p class="fl-error" role="alert">Veuillez saisir votre numéro.</p>
+          </div>
+          <div class="fl-group">
+            <input type="email" id="c-email" name="email" placeholder=" " required autocomplete="email">
+            <label for="c-email">Email</label>
+            <p class="fl-error" role="alert">Veuillez saisir un email valide.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-8">
+          <button type="button" data-prev class="px-5 py-2.5 rounded-full border border-brand-line text-brand-mist text-sm font-medium hover:border-brand-blue hover:text-brand-blue transition-colors">Retour</button>
+          <button type="button" data-next class="flex-1 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white text-sm font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">Continuer</button>
+        </div>
+      </fieldset>
+
+      <!-- STEP 3 — Projet -->
+      <fieldset class="step-panel" data-step="3" id="step-3">
+        <legend class="font-display font-semibold text-brand-ink text-xl md:text-2xl mb-1">Votre projet</legend>
+        <p class="text-brand-mist text-sm mb-6">Quelques détails pour mieux vous accompagner.</p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <label class="chip"><input type="checkbox" name="tags[]" value="Tourisme">Aménagement touristique</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Scolaire">Scolaire</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Transport privé">Transport privé</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Carrosserie">Carrosserie</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Autre">Autre</label>
+        </div>
+
+        <div class="fl-group">
+          <textarea id="c-besoins" name="besoins" placeholder=" " rows="4"></textarea>
+          <label for="c-besoins">Décrivez votre projet (optionnel)</label>
+        </div>
+
+        <div class="flex gap-3 mt-8">
+          <button type="button" data-prev class="px-5 py-2.5 rounded-full border border-brand-line text-brand-mist text-sm font-medium hover:border-brand-blue hover:text-brand-blue transition-colors">Retour</button>
+          <button type="submit" id="submit-btn" class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white text-sm font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            Envoyer la demande
+            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Success state -->
+    <div id="form-success" class="hidden text-center py-16">
+      <svg class="w-20 h-20 mx-auto mb-6" viewBox="0 0 64 64" fill="none">
+        <circle class="success-circle" cx="32" cy="32" r="30" stroke="#7660A8" stroke-width="2.5"/>
+        <path class="success-check" d="M20 33l8 8 16-18" stroke="#212677" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3 class="font-display font-semibold text-brand-ink text-2xl">Demande envoyée.</h3>
+      <p class="mt-2 text-brand-mist">Nous vous recontactons très vite.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Map strip ===== -->
+<section class="relative">
+  <div class="h-[350px] md:h-[400px] rounded-t-2xl overflow-hidden border-t border-x border-brand-line mx-4 md:mx-8 relative" id="map-wrap">
+    <div class="map-tint absolute inset-0 z-10 rounded-t-2xl"></div>
+    <iframe id="contact-map" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53168!2d-7.42!3d33.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62d60c3bcb8c9%3A0x6281653ac90e3!2sMohammedia!5e0!3m2!1sfr!2sma!4v1"
+      class="w-full h-full border-0" allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" title="BDEA Carrosserie — Mohammedia"></iframe>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 py-4 flex justify-end">
+    <a href="https://maps.google.com/?q=Mohammedia,Morocco" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-brand-blue font-medium hover:text-brand-purple transition-colors">
+      Itinéraire
+      <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+      <div>
+        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie"><text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text><circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/></svg>
+        <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="/" class="hover:text-white transition-colors">Accueil</a>
+          <a href="/about.html" class="hover:text-white transition-colors">À propos</a>
+          <a href="/#services" class="hover:text-white transition-colors">Services</a>
+          <a href="/contact.html" class="hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Contact</h4>
+        <div class="space-y-2 text-sm">
+          <a href="tel:+212719907777" class="block hover:text-white transition-colors">+212 71 99 07 07</a>
+          <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="block hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+      <span>&copy; 2026 BDEA Carrosserie. Tous droits réservés.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white/70 transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/212719907777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+</a>
+
+<!-- ===== Page JS ===== -->
+<script src="js/main.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  let step = 1;
+  const panels = form.querySelectorAll('.step-panel');
+  const bar = document.getElementById('progress-bar');
+  const labels = document.querySelectorAll('[data-step-label]');
+
+  const showStep = (n) => {
+    step = n;
+    panels.forEach(p => {
+      const s = parseInt(p.dataset.step);
+      p.classList.toggle('active', s === n);
+      p.setAttribute('aria-current', s === n ? 'step' : 'false');
+    });
+    bar.style.width = (n / 3 * 100) + '%';
+    labels.forEach(l => {
+      const s = parseInt(l.dataset.stepLabel);
+      l.classList.toggle('text-brand-blue', s <= n);
+      l.classList.toggle('font-semibold', s <= n);
+    });
+  };
+
+  /* Vehicle selector — auto-advance */
+  const vCards = form.querySelectorAll('.v-card');
+  vCards.forEach(card => {
+    const radio = card.querySelector('input[type=radio]');
+    const handler = () => {
+      vCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+      document.getElementById('v-error').classList.add('hidden');
+      setTimeout(() => showStep(2), 350);
+    };
+    radio.addEventListener('change', handler);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); radio.checked = true; radio.dispatchEvent(new Event('change')); }});
+  });
+
+  /* Chip toggles */
+  form.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const cb = chip.querySelector('input[type=checkbox]');
+      chip.classList.toggle('active', cb.checked);
+    });
+  });
+
+  /* Next / Prev buttons */
+  form.querySelectorAll('[data-next]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (step === 2 && !validateStep2()) return;
+      showStep(step + 1);
+    });
+  });
+  form.querySelectorAll('[data-prev]').forEach(btn => {
+    btn.addEventListener('click', () => showStep(step - 1));
+  });
+
+  /* Step 2 validation */
+  const validateStep2 = () => {
+    let ok = true;
+    const nom = form.querySelector('#c-nom');
+    const tel = form.querySelector('#c-tel');
+    const email = form.querySelector('#c-email');
+    [nom, tel, email].forEach(f => f.closest('.fl-group').classList.remove('has-error'));
+
+    if (!nom.value.trim()) { nom.closest('.fl-group').classList.add('has-error'); nom.setAttribute('aria-invalid','true'); ok = false; }
+    else nom.removeAttribute('aria-invalid');
+
+    if (!tel.value.trim()) { tel.closest('.fl-group').classList.add('has-error'); tel.setAttribute('aria-invalid','true'); ok = false; }
+    else tel.removeAttribute('aria-invalid');
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.closest('.fl-group').classList.add('has-error'); email.setAttribute('aria-invalid','true'); ok = false; }
+    else email.removeAttribute('aria-invalid');
+
+    return ok;
+  };
+
+  /* Clear errors on input */
+  form.querySelectorAll('.fl-group input, .fl-group textarea').forEach(f => {
+    f.addEventListener('input', () => { f.closest('.fl-group').classList.remove('has-error'); f.removeAttribute('aria-invalid'); });
+  });
+
+  /* Submit */
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.querySelector('input[name=vehicule]:checked')) {
+      showStep(1);
+      document.getElementById('v-error').classList.remove('hidden');
+      return;
+    }
+    if (!validateStep2()) { showStep(2); return; }
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true; btn.textContent = 'Envoi…';
+    try {
+      const res = await fetch(form.action, { method:'POST', body: new FormData(form) });
+      const data = await res.json();
+      if (data.success) {
+        form.classList.add('hidden');
+        document.getElementById('progress-wrap').classList.add('hidden');
+        const success = document.getElementById('form-success');
+        success.classList.remove('hidden');
+        setTimeout(() => {
+          success.querySelector('.success-circle').classList.add('drawn');
+          success.querySelector('.success-check').classList.add('drawn');
+        }, 50);
+      } else { throw new Error(); }
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = 'Envoyer la demande <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>';
+      alert('Erreur lors de l\'envoi. Veuillez réessayer ou nous appeler.');
+    }
+  });
+
+  /* Lazy-load map */
+  const mapFrame = document.getElementById('contact-map');
+  if (mapFrame && mapFrame.dataset.src) {
+    new IntersectionObserver(([entry], self) => {
+      if (entry.isIntersecting) {
+        mapFrame.src = mapFrame.dataset.src;
+        self.unobserve(mapFrame);
+      }
+    }, { rootMargin: '300px' }).observe(mapFrame);
+  }
+});
+</script>
+
+</body>
+</html>
