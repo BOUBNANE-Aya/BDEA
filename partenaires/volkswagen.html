@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volkswagen — BDEA Carrosserie | Partenaire Officiel</title>
+  <meta name="description" content="Transformation et aménagement de véhicules Volkswagen — du Crafter au Transporter — adaptés aux besoins spécifiques de chaque client. BDEA Carrosserie, Mohammedia.">
+  <meta property="og:title" content="Volkswagen × BDEA Carrosserie">
+  <meta property="og:description" content="Du Crafter au Transporter. +45 véhicules aménagés sur mesure.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { blue:'#212677', ink:'#050062', purple:'#7660A8', lilac:'#9D8EBF', paper:'#FFFAFA', mist:'#6B6B86', line:'#ECEAF2' }
+        },
+        fontFamily: {
+          display: ['"Clash Display"','sans-serif'],
+          sans: ['Inter','sans-serif'],
+          mono: ['"Space Mono"','monospace'],
+        }
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* ── Scene engine ── */
+    .s-track { position: relative; }
+    .s-pin { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+
+    /* ── Initial JS states ── */
+    html.js #s1-title   { transform: translateY(80px) scale(0.92); opacity: 0.2; will-change: transform, opacity; }
+    html.js #s1-eyebrow { opacity: 0; }
+    html.js #s1-line    { width: 0; }
+    /* S2: block enters from BOTTOM */
+    html.js #s2-block   { transform: translateY(60%); opacity: 0; will-change: transform, opacity; }
+    html.js #s3-img1    { transform: translateX(-140px) translateY(40px); opacity: 0; will-change: transform, opacity; }
+    html.js #s3-img2    { transform: translateX(140px) translateY(-30px); opacity: 0; will-change: transform, opacity; }
+    html.js #s3-img3    { transform: translateY(70px); opacity: 0; will-change: transform, opacity; }
+    html.js #s4-img     { transform: scale(1.16); will-change: transform; }
+    html.js #s4-overlay { opacity: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html.js #s1-title, html.js #s1-eyebrow, html.js #s1-line,
+      html.js #s2-block, html.js #s3-img1, html.js #s3-img2,
+      html.js #s3-img3, html.js #s4-img, html.js #s4-overlay {
+        transform: none !important; opacity: 1 !important; width: auto !important;
+      }
+    }
+
+    /* ── Scene 3 image layout — diagonal for VW ── */
+    .s3-canvas { position: absolute; inset: 0; }
+    #s3-img1 { position: absolute; left: 5%; top: 18%; width: 40%; height: 64%; border-radius: 12px; overflow: hidden; }
+    #s3-img2 { position: absolute; left: 28%; top: 4%; width: 44%; height: 66%; border-radius: 12px; overflow: hidden; z-index: 1; }
+    #s3-img3 { position: absolute; right: 4%; top: 28%; width: 36%; height: 54%; border-radius: 12px; overflow: hidden; z-index: 2; }
+    #s3-img1 img, #s3-img2 img, #s3-img3 img { width: 100%; height: 100%; object-fit: cover; }
+    .s3-caption { position: absolute; bottom: 1rem; left: 0; right: 0; padding: 0 .75rem; text-align: center; }
+
+    @media (max-width: 767px) {
+      #s3-img1 { left: 2%; top: 8%; width: 60%; height: 55%; }
+      #s3-img2 { left: 28%; top: 30%; width: 66%; height: 55%; z-index: 1; }
+      #s3-img3 { display: none; }
+      html.js #s3-img1 { transform: translateX(-70px) translateY(20px); }
+      html.js #s3-img2 { transform: translateX(70px) translateY(-15px); }
+      html.js #s2-block { transform: translateY(55%); }
+    }
+
+    /* ── S1 line — lilac accent for VW ── */
+    #s1-line { height: 1px; background: linear-gradient(90deg, transparent, #9D8EBF, transparent); display: block; }
+
+    /* ── Buttons ── */
+    .btn-cta   { display: inline-flex; align-items: center; gap: .5rem; padding: .9rem 1.85rem; border-radius: 999px; background: linear-gradient(135deg,#212677,#7660A8); color: #fff; font-weight: 600; font-size: .875rem; font-family: Inter, sans-serif; transition: opacity .2s, transform .2s; }
+    .btn-cta:hover { opacity: .88; transform: translateY(-2px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: .5rem; padding: .9rem 1.85rem; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.22); color: rgba(255,255,255,.75); font-size: .875rem; font-family: Inter, sans-serif; transition: border-color .2s, color .2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+  </style>
+</head>
+
+<body class="bg-brand-ink text-white font-sans antialiased">
+
+<!-- ===== Navbar ===== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+    <a href="../index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
+      <svg class="h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
+      </svg>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
+      <a href="../index.html"              class="text-sm font-medium text-white/75 hover:text-white transition-colors">Accueil</a>
+      <a href="../about.html"             class="text-sm font-medium text-white/75 hover:text-white transition-colors">À propos</a>
+      <a href="../services.html"          class="text-sm font-medium text-white/75 hover:text-white transition-colors">Services</a>
+      <a href="../index.html#partenaires" class="text-sm font-medium text-white transition-colors" aria-current="page">Partenaires</a>
+      <a href="../contact.html"           class="inline-flex items-center px-5 py-2.5 rounded-full border border-white/35 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
+    </nav>
+    <button id="menu-toggle" class="hamburger lg:hidden relative z-[51] flex flex-col justify-center gap-[5px] w-8 h-8" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bg-white"></span><span class="bg-white"></span><span class="bg-white"></span>
+    </button>
+  </div>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
+  <a href="../index.html"              class="text-2xl font-display font-semibold text-white">Accueil</a>
+  <a href="../about.html"             class="text-2xl font-display font-semibold text-white">À propos</a>
+  <a href="../services.html"          class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="../index.html#partenaires" class="text-2xl font-display font-semibold text-brand-lilac">Partenaires</a>
+  <a href="../contact.html"           class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+</div>
+
+<main>
+
+<!-- ════════════════════════════════════════════════
+     SCENE 1 · Cinematic opening (280vh)
+     ════════════════════════════════════════════════ -->
+<div id="s1-track" class="s-track" style="height:280vh">
+  <div id="s1-pin" class="s-pin" style="background:#050062">
+
+    <!-- Video background — swap: client video -->
+    <video id="s1-video" class="absolute inset-0 w-full h-full object-cover" style="opacity:.82"
+           muted playsinline preload="metadata"
+           poster="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1920&q=60">
+      <source src="../assets/videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <!-- Scrim — purple tint for VW -->
+    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top,rgba(5,0,62,0.80) 0%,rgba(30,0,80,0.12) 45%,rgba(5,0,98,0.55) 100%)"></div>
+
+    <!-- Title composition -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+      <p id="s1-eyebrow" class="font-mono text-xs font-semibold tracking-[0.28em] uppercase text-brand-lilac mb-5">
+        Partenaire — Volkswagen
+      </p>
+      <span id="s1-line" class="block mb-5" style="width:160px"></span>
+      <h1 id="s1-title" class="font-display font-bold text-white leading-none tracking-tighter"
+          style="font-size:clamp(3rem,10vw,8.5rem)">
+        VOLKSWAGEN
+      </h1>
+      <p class="mt-6 text-white/40 text-sm font-mono tracking-[0.15em] uppercase">Crafter · Transporter · Sur mesure</p>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+      <span class="font-mono text-[10px] tracking-widest uppercase">Défiler</span>
+      <div class="w-px h-10 bg-gradient-to-b from-white/30 to-transparent"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     SCENE 2 · Story block — enters from BOTTOM (250vh)
+     ════════════════════════════════════════════════ -->
+<div id="s2-track" class="s-track" style="height:250vh">
+  <div class="s-pin" style="background:#050062">
+
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1920&q=35"
+           alt="" class="w-full h-full object-cover" aria-hidden="true" style="opacity:.28">
+    </div>
+    <div class="absolute inset-0" style="background:#050062;opacity:0.68;z-index:1"></div>
+
+    <!-- Story block — slides from BOTTOM (unique to VW) -->
+    <div id="s2-block" class="absolute inset-0 flex items-end justify-center z-10 pb-20 px-5 md:pb-28">
+      <div class="max-w-lg text-center">
+        <p class="font-mono text-[10px] tracking-[0.28em] uppercase text-brand-lilac mb-4">Notre partenariat</p>
+        <p class="font-display font-bold text-white text-2xl md:text-3xl leading-[1.2] mb-7">
+          Transformation et aménagement de véhicules Volkswagen — du Crafter au Transporter — adaptés aux besoins spécifiques de chaque client.
+        </p>
+        <!-- Stat — lilac accent for VW -->
+        <div class="inline-block border-b-2 border-brand-lilac pb-3 px-6">
+          <p id="s2-stat" class="font-display font-bold text-white" style="font-size:clamp(3rem,8vw,5.5rem);line-height:1">
+            +45
+          </p>
+          <p class="text-white/45 font-mono text-xs tracking-[0.18em] uppercase mt-1">véhicules aménagés</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     SCENE 3 · Project images reveal (320vh)
+     — deep purple tint for VW
+     ════════════════════════════════════════════════ -->
+<div id="s3-track" class="s-track" style="height:320vh">
+  <div class="s-pin" style="background:#120020">
+
+    <div class="absolute inset-0 opacity-20 pointer-events-none" style="background:radial-gradient(ellipse 80% 60% at 60% 40%,#9D8EBF,transparent)"></div>
+
+    <div class="absolute top-10 left-0 right-0 text-center z-10">
+      <p class="font-mono text-[10px] tracking-[0.28em] uppercase text-brand-lilac/60">Réalisations — Volkswagen</p>
+    </div>
+
+    <div class="s3-canvas" aria-label="Galerie de réalisations Volkswagen">
+
+      <!-- swap: client media -->
+      <div id="s3-img1" aria-label="Projet 01">
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=900&q=80"
+             alt="Volkswagen Transporter aménagé — BDEA Carrosserie" loading="lazy" width="900" height="600">
+        <div class="s3-caption">
+          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 01 — <span class="text-white/70">Transporter aménagé</span></p>
+        </div>
+      </div>
+
+      <div id="s3-img2" aria-label="Projet 02">
+        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80"
+             alt="Volkswagen Crafter transformation — BDEA" loading="lazy" width="900" height="600">
+        <div class="s3-caption">
+          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 02 — <span class="text-white/70">Crafter utilitaire</span></p>
+        </div>
+      </div>
+
+      <div id="s3-img3" aria-label="Projet 03">
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80"
+             alt="Atelier BDEA — transformation sur mesure" loading="lazy" width="900" height="600">
+        <div class="s3-caption">
+          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 03 — <span class="text-white/70">Aménagement spécifique</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     SCENE 4 · Signature detail — slow scale 1.16→1 (200vh)
+     ════════════════════════════════════════════════ -->
+<div id="s4-track" class="s-track" style="height:200vh">
+  <div class="s-pin" style="background:#120020;overflow:hidden">
+
+    <!-- Detail image — swap: client media -->
+    <div id="s4-img" class="absolute inset-0" style="transform-origin:center center">
+      <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1920&q=85"
+           class="w-full h-full object-cover"
+           alt="Finition intérieure Volkswagen — BDEA Carrosserie"
+           width="1920" height="1080">
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(18,0,32,0.88) 0%,rgba(18,0,32,0.15) 50%,transparent 100%)"></div>
+    </div>
+
+    <!-- Overlay text -->
+    <div id="s4-overlay" class="absolute inset-0 flex flex-col items-center justify-end pb-16 text-center z-10 pointer-events-none px-5">
+      <p class="font-mono text-[10px] tracking-[0.28em] uppercase text-brand-lilac mb-3">Signature</p>
+      <p class="font-display font-bold text-white leading-tight" style="font-size:clamp(1.6rem,4vw,3rem)">
+        Fonctionnel, durable, et à votre image.
+      </p>
+      <p class="mt-3 text-white/50 text-sm max-w-sm">De l'utilitaire au transport de personnes — chaque Volkswagen reçoit un aménagement taillé pour l'usage.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     SCENE 5 · Handoff CTA — loops back to Auto Nejma
+     ════════════════════════════════════════════════ -->
+<section class="min-h-screen flex flex-col items-center justify-center text-center px-5 py-24 relative overflow-hidden"
+         style="background:linear-gradient(160deg,#1e0040 0%,#050062 50%,#0a001a 100%)">
+  <div class="absolute inset-0 pointer-events-none opacity-25" style="background:radial-gradient(ellipse 65% 50% at 35% 55%,#7660A8,transparent)"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto">
+    <p class="font-mono text-[10px] tracking-[0.32em] uppercase text-brand-lilac mb-6">Volkswagen × BDEA</p>
+
+    <h2 class="font-display font-bold text-white leading-tight"
+        style="font-size:clamp(2rem,5.5vw,4.25rem)">
+      Votre projet,<br>notre savoir-faire.
+    </h2>
+
+    <p class="mt-5 text-white/55 text-lg leading-relaxed max-w-md mx-auto">
+      Du Crafter au Transporter, nous transformons chaque Volkswagen en outil sur mesure. Parlons de votre besoin.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="../contact.html" class="btn-cta">
+        Demander un devis
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="auto-nejma.html" class="btn-ghost">
+        Partenaire suivant
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- Partner chain -->
+    <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-center gap-8">
+      <a href="auto-nejma.html"    class="font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors">Auto Nejma</a>
+      <span class="w-8 h-px bg-white/20"></span>
+      <a href="mercedes-benz.html" class="font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors">Mercedes-Benz</a>
+      <span class="w-8 h-px bg-white/20"></span>
+      <a href="volkswagen.html"    class="font-mono text-[10px] tracking-widest uppercase text-white border-b border-white/40 pb-0.5">Volkswagen</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ===== Footer ===== -->
+<footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div class="lg:col-span-1">
+        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
+          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+        <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="../index.html"              class="hover:text-white transition-colors">Accueil</a>
+          <a href="../about.html"             class="hover:text-white transition-colors">À propos</a>
+          <a href="../services.html"          class="hover:text-white transition-colors">Services</a>
+          <a href="../index.html#partenaires" class="hover:text-white transition-colors">Partenaires</a>
+          <a href="../contact.html"           class="hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Contact</h4>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Sidi Moussa El Majdoub, Sidi Azzouz, Mohammedia</span>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+212719907777" class="hover:text-white transition-colors">+212 71 99 07 07</a>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+            <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-5">
+          <a href="https://wa.me/212719907777" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Partenaires</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="auto-nejma.html"    class="hover:text-white transition-colors">Auto Nejma</a>
+          <a href="mercedes-benz.html" class="hover:text-white transition-colors">Mercedes-Benz</a>
+          <a href="volkswagen.html"    class="text-white hover:text-brand-lilac transition-colors">Volkswagen</a>
+        </nav>
+      </div>
+    </div>
+    <div class="pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+      <span>&copy; 2026 BDEA Carrosserie. Tous droits réservés.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white/70 transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/212719907777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+  </svg>
+</a>
+
+<script src="../js/main.js" defer></script>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobile  = window.matchMedia('(max-width: 768px)').matches;
+
+  var s1Track   = document.getElementById('s1-track');
+  var s1Video   = document.getElementById('s1-video');
+  var s1Title   = document.getElementById('s1-title');
+  var s1Eyebrow = document.getElementById('s1-eyebrow');
+  var s1Line    = document.getElementById('s1-line');
+  var s2Track   = document.getElementById('s2-track');
+  var s2Block   = document.getElementById('s2-block');
+  var s2Stat    = document.getElementById('s2-stat');
+  var s3Track   = document.getElementById('s3-track');
+  var s3Img1    = document.getElementById('s3-img1');
+  var s3Img2    = document.getElementById('s3-img2');
+  var s3Img3    = document.getElementById('s3-img3');
+  var s4Track   = document.getElementById('s4-track');
+  var s4Img     = document.getElementById('s4-img');
+  var s4Overlay = document.getElementById('s4-overlay');
+
+  function getP(track) {
+    if (!track) return 0;
+    var rect = track.getBoundingClientRect();
+    var range = track.offsetHeight - window.innerHeight;
+    if (range <= 0) return 1;
+    return Math.max(0, Math.min(1, -rect.top / range));
+  }
+  function easeOut(t)   { return 1 - Math.pow(1 - t, 3); }
+  function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function clamp01(v)   { return Math.max(0, Math.min(1, v)); }
+
+  var counted = false;
+  function countUp(el, to, prefix, suffix, ms) {
+    var start = performance.now();
+    function step(now) {
+      var pct = Math.min(1, (now - start) / ms);
+      el.textContent = prefix + Math.round(to * (1 - Math.pow(1 - pct, 3))) + suffix;
+      if (pct < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (s1Video) {
+    var vidObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) s1Video.play().catch(function(){});
+        else s1Video.pause();
+      });
+    }, { threshold: 0.1 });
+    vidObs.observe(s1Track);
+  }
+
+  var ticking = false;
+  function animate() {
+    var p1 = getP(s1Track);
+    var p2 = getP(s2Track);
+    var p3 = getP(s3Track);
+    var p4 = getP(s4Track);
+
+    if (!reduced) {
+      /* Scene 1 */
+      var t1 = easeInOut(p1);
+      var dist1 = mobile ? 40 : 80;
+      s1Title.style.transform  = 'translateY(' + lerp(dist1, 0, t1) + 'px) scale(' + lerp(0.92, 1, t1) + ')';
+      s1Title.style.opacity    = lerp(0.2, 1, t1);
+      s1Eyebrow.style.opacity  = clamp01((p1 - 0.25) / 0.6);
+      s1Line.style.width       = lerp(0, 200, easeOut(p1)) + 'px';
+
+      /* Scene 2 — from BOTTOM */
+      var t2 = easeInOut(p2);
+      var dy2 = mobile ? window.innerHeight * 0.55 : window.innerHeight * 0.5;
+      s2Block.style.transform  = 'translateY(' + lerp(dy2, 0, t2) + 'px)';
+      s2Block.style.opacity    = clamp01(p2 * 2.5);
+
+      /* Scene 3 */
+      var d3 = mobile ? 60 : 140;
+      s3Img1.style.transform = 'translateX(' + lerp(-d3, 0, easeOut(clamp01(p3 * 2.5))) + 'px) translateY(' + lerp(40, -20, p3) + 'px)';
+      s3Img1.style.opacity   = clamp01(p3 * 3);
+      s3Img2.style.transform = 'translateX(' + lerp(d3, 0, easeOut(clamp01((p3-0.15)*2.5))) + 'px) translateY(' + lerp(-30, 20, p3) + 'px)';
+      s3Img2.style.opacity   = clamp01((p3 - 0.15) * 3);
+      if (s3Img3) {
+        s3Img3.style.transform = 'translateY(' + lerp(70, -30, easeOut(clamp01((p3-0.3)*2.5))) + 'px)';
+        s3Img3.style.opacity   = clamp01((p3 - 0.3) * 3);
+      }
+
+      /* Scene 4 — scale out */
+      if (s4Img) {
+        s4Img.style.transform = 'scale(' + lerp(1.16, 1, easeInOut(p4)) + ')';
+      }
+      s4Overlay.style.opacity = clamp01(p4 * 2.5);
+    }
+
+    if (!counted && p2 >= 0.5 && s2Stat) {
+      counted = true;
+      countUp(s2Stat, 45, '+', '', 1400);
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(animate); ticking = true; }
+  }, { passive: true });
+
+  animate();
+})();
+</script>
+
+</body>
+</html>

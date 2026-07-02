@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — BDEA Carrosserie | Aménagement & Transformation de Véhicules</title>
+  <meta name="description" content="Découvrez les services BDEA Carrosserie : aménagement d'autobus et de vans, fabrication et transformation de carrosserie, équipements & accessoires sur mesure.">
+
+  <meta property="og:title" content="Services — BDEA Carrosserie">
+  <meta property="og:description" content="Un savoir-faire complet : aménagement d'autobus, vans, carrosserie sur mesure et équipements — Mohammedia, Maroc.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { blue:'#212677', ink:'#050062', purple:'#7660A8', lilac:'#9D8EBF', paper:'#FFFAFA', mist:'#6B6B86', line:'#ECEAF2' }
+        },
+        fontFamily: {
+          display: ['"Clash Display"','sans-serif'],
+          sans: ['Inter','sans-serif'],
+          mono: ['"Space Mono"','monospace'],
+        }
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* ── Scroll spy nav ── */
+    .spy-nav { position: sticky; top: 6rem; }
+    .spy-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: #9D8EBF; margin-bottom: 1rem; padding-left: 1rem;
+    }
+    .spy-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.45rem 0.75rem; border-left: 2px solid transparent;
+      text-decoration: none; transition: all 0.25s ease;
+      color: #6B6B86; font-size: 0.8rem; line-height: 1.4;
+    }
+    .spy-num { font-family: 'Space Mono', monospace; font-size: 0.58rem; opacity: 0.5; min-width: 1.2rem; }
+    .spy-item.active { border-left-color: #212677; color: #212677; font-weight: 600; }
+    .spy-item.active .spy-num { opacity: 1; color: #212677; }
+    .spy-divider { border-top: 1px solid #ECEAF2; margin: 0.75rem 1rem; }
+
+    /* ── Chapter watermark number ── */
+    .chap-num {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(4rem, 10vw, 8rem); font-weight: 700; line-height: 0.85;
+      color: transparent; -webkit-text-stroke: 1px rgba(33,38,119,0.1);
+      user-select: none; pointer-events: none;
+    }
+
+    /* ── Service sticky image ── */
+    .svc-img { border-radius: 1.5rem; overflow: hidden; }
+    @media (min-width: 768px) { .svc-img { position: sticky; top: 5.5rem; } }
+    .svc-img > img { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+    .svc-img:hover > img { transform: scale(1.04); }
+
+    /* ── Process timeline ── */
+    .process-line-fill {
+      transform: scaleY(0); transform-origin: top;
+      transition: transform 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-process].in-view .process-line-fill { transform: scaleY(1); }
+    .process-dot {
+      background: #ECEAF2;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    [data-process].in-view .process-dot { background: #212677; box-shadow: 0 0 0 4px rgba(33,38,119,0.12); }
+
+    /* ── Partner cinematic (Mercedes) ── */
+    .partner-cinematic { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
+    .cinematic-bg { position: absolute; inset: 0; }
+    .cinematic-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .cinematic-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(5,0,98,0.88) 0%, rgba(33,38,119,0.72) 55%, rgba(118,96,168,0.5) 100%);
+    }
+
+    /* ── CTA band ── */
+    .cta-band { background: linear-gradient(135deg, #050062 0%, #212677 55%, #7660A8 100%); }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .process-line-fill { transition: none !important; transform: scaleY(1) !important; }
+      .process-dot { transition: none !important; background: #212677 !important; box-shadow: 0 0 0 4px rgba(33,38,119,0.12) !important; }
+    }
+
+    /* ══ Réalisations — filter chips ══ */
+    .filter-chips { display:flex; gap:.5rem; overflow-x:auto; scrollbar-width:none; padding-bottom:4px; }
+    .filter-chips::-webkit-scrollbar { display:none; }
+    .chip {
+      flex-shrink:0; padding:.4rem 1.1rem; border-radius:999px;
+      border:1.5px solid #ECEAF2; font-size:.8125rem; font-weight:500;
+      cursor:pointer; background:transparent; color:#6B6B86; white-space:nowrap;
+      transition:background .2s,border-color .2s,color .2s;
+    }
+    .chip.active { border-color:#212677; background:#212677; color:#fff; }
+    .chip:hover:not(.active) { border-color:#9D8EBF; color:#212677; }
+
+    /* ══ Réalisations — mosaic grid ══ */
+    .real-mosaic {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      grid-auto-rows:210px; grid-auto-flow:dense; gap:.625rem;
+    }
+    @media(max-width:1023px){ .real-mosaic{grid-template-columns:repeat(3,1fr);} }
+    @media(max-width:639px) { .real-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:155px;} }
+
+    .tile-tall { grid-row:span 2; }
+    .tile-wide { grid-column:span 2; }
+    .tile-big  { grid-column:span 2; grid-row:span 2; }
+    @media(max-width:639px){ .tile-big{grid-row:span 1;} }
+
+    .real-tile { position:relative; overflow:hidden; border-radius:14px; background:#ECEAF2; display:block; }
+    .real-tile[aria-hidden="true"] { display:none; }
+    .real-tile > img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+    .real-tile:hover > img { transform:scale(1.065); }
+
+    .tile-overlay {
+      position:absolute; inset:0; border-radius:14px;
+      background:linear-gradient(to top,rgba(5,0,98,.92) 0%,rgba(33,38,119,.68) 40%,transparent 75%);
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:1rem 1.2rem; opacity:0; transform:translateY(7px);
+      transition:opacity .3s,transform .3s;
+    }
+    .real-tile:hover .tile-overlay,
+    .real-tile:focus-visible .tile-overlay { opacity:1; transform:translateY(0); }
+    .tile-brand { font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#9D8EBF; margin-bottom:.2rem; }
+    .tile-title { font-family:'Clash Display',sans-serif; font-weight:600; font-size:.88rem; color:#fff; line-height:1.3; margin-bottom:.15rem; }
+    .tile-type  { font-size:.68rem; color:rgba(255,255,255,.52); }
+  </style>
+</head>
+
+<body class="bg-brand-paper text-[#2C2C3A] font-sans antialiased">
+
+<!-- ===== Navbar ===== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+    <a href="index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
+      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
+      </svg>
+      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/>
+      </svg>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
+      <a href="index.html"    class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
+      <a href="about.html"    class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
+      <a href="services.html" class="nav-link text-sm font-medium text-white transition-colors" aria-current="page">Services</a>
+      <a href="#partenaires"  class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
+      <a href="contact.html"  class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
+    </nav>
+
+    <button id="menu-toggle" class="hamburger lg:hidden relative z-[51] flex flex-col justify-center gap-[5px] w-8 h-8" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bg-white"></span>
+      <span class="bg-white"></span>
+      <span class="bg-white"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Mobile Menu ===== -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
+  <a href="index.html"    class="text-2xl font-display font-semibold text-white">Accueil</a>
+  <a href="about.html"    class="text-2xl font-display font-semibold text-white">À propos</a>
+  <a href="services.html" class="text-2xl font-display font-semibold text-brand-lilac">Services</a>
+  <a href="#partenaires"  class="text-2xl font-display font-semibold text-white">Partenaires</a>
+  <a href="contact.html"  class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+</div>
+
+<main>
+
+<!-- ===== 1 · Intro Header ===== -->
+<section id="intro" class="pt-32 md:pt-44 pb-28 md:pb-36 relative overflow-hidden bg-brand-ink" data-chapter="intro">
+  <div class="absolute -top-40 -right-32 w-[640px] h-[640px] rounded-full opacity-[0.14] pointer-events-none" style="background:radial-gradient(circle,#7660A8,transparent 70%);" aria-hidden="true"></div>
+  <div class="absolute -bottom-24 -left-24 w-[440px] h-[440px] rounded-full opacity-[0.08] pointer-events-none" style="background:radial-gradient(circle,#212677,transparent 70%);" aria-hidden="true"></div>
+  <!-- fade to page bg -->
+  <div class="absolute bottom-0 inset-x-0 h-20 pointer-events-none" style="background:linear-gradient(to bottom,transparent,#FFFAFA);" aria-hidden="true"></div>
+
+  <div class="max-w-4xl mx-auto px-5 relative z-10">
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">Services</p>
+    <h1 data-reveal data-delay="1" class="font-display font-bold text-white text-[clamp(2.2rem,4.5vw+0.5rem,4rem)] leading-[1.08] tracking-tight">
+      Un savoir-faire complet,<br class="hidden md:block"> de la carrosserie à l'aménagement.
+    </h1>
+    <p data-reveal data-delay="2" class="mt-6 text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed">
+      De la conception à la livraison, nous transformons chaque véhicule en un outil taillé pour l'usage — robuste, fonctionnel, et à votre image.
+    </p>
+
+    <div data-reveal data-delay="3" class="mt-10 flex flex-wrap gap-x-12 gap-y-5">
+      <div>
+        <p class="font-display font-bold text-white text-3xl"><span data-count="200" data-prefix="+" data-suffix="">+200</span></p>
+        <p class="text-white/45 text-sm mt-0.5">véhicules aménagés</p>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white text-3xl"><span data-count="15" data-prefix="" data-suffix=" ans">15 ans</span></p>
+        <p class="text-white/45 text-sm mt-0.5">d'expertise</p>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white text-3xl"><span data-count="4" data-prefix="" data-suffix="">4</span></p>
+        <p class="text-white/45 text-sm mt-0.5">services sur mesure</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 · Spy nav + Chapters ===== -->
+<div class="max-w-7xl mx-auto px-5">
+  <div class="xl:grid xl:grid-cols-[220px_1fr] xl:gap-20 items-start">
+
+    <!-- Scroll Spy Sidebar -->
+    <aside class="hidden xl:block" aria-label="Navigation des services">
+      <nav class="spy-nav">
+        <p class="spy-label">Nos services</p>
+        <a href="#svc-01" class="spy-item active" data-target="svc-01"><span class="spy-num">01</span>Aménagement d'autobus</a>
+        <a href="#svc-02" class="spy-item" data-target="svc-02"><span class="spy-num">02</span>Aménagement de vans</a>
+        <a href="#svc-03" class="spy-item" data-target="svc-03"><span class="spy-num">03</span>Fabrication & carrosserie</a>
+        <a href="#svc-04" class="spy-item" data-target="svc-04"><span class="spy-num">04</span>Équipements & accessoires</a>
+        <div class="spy-divider"></div>
+        <p class="spy-label">Partenaires</p>
+        <a href="#auto-nejma"  class="spy-item" data-target="auto-nejma"><span class="spy-num">—</span>Auto Nejma</a>
+        <a href="#mercedes"    class="spy-item" data-target="mercedes"><span class="spy-num">—</span>Mercedes-Benz</a>
+        <a href="#volkswagen"  class="spy-item" data-target="volkswagen"><span class="spy-num">—</span>Volkswagen</a>
+      </nav>
+    </aside>
+
+    <!-- Chapters -->
+    <div>
+
+      <!-- ── Chapter 01 · Aménagement d'autobus ── -->
+      <section id="svc-01" class="py-20 md:py-28 border-b border-brand-line" data-chapter="svc-01">
+        <div class="md:grid md:grid-cols-2 md:gap-14 items-start">
+
+          <!-- Sticky image (left) -->
+          <div class="svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
+            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80"
+                 alt="Aménagement intérieur d'autobus" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+          </div>
+
+          <!-- Content (right) -->
+          <div>
+            <p class="chap-num" aria-hidden="true">01</p>
+            <h2 data-reveal class="font-display font-bold text-brand-ink text-3xl md:text-[2.25rem] leading-tight mt-3">
+              Aménagement<br>d'autobus
+            </h2>
+            <p data-reveal data-delay="1" class="mt-4 text-brand-mist leading-relaxed">
+              Nos équipes conçoivent et réalisent l'aménagement complet d'autobus scolaires, de transport touristique et de transport privé. Sièges, revêtements, climatisation, éclairage — chaque détail est pensé pour le confort et la durabilité.
+            </p>
+            <ul data-reveal data-delay="2" class="mt-5 space-y-2.5 text-sm text-brand-mist">
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Transport scolaire & éducatif
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Autobus touristiques & privés
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Minibus & véhicules collectifs
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Aménagements intérieurs sur mesure
+              </li>
+            </ul>
+
+            <!-- Process line -->
+            <div class="mt-10" data-process data-reveal data-delay="3">
+              <p class="font-mono text-xs text-brand-lilac tracking-widest uppercase mb-6">Notre processus</p>
+              <div class="relative pl-8">
+                <div class="absolute left-[1px] top-2 bottom-2 w-px bg-brand-line">
+                  <div class="process-line-fill absolute inset-0 bg-gradient-to-b from-brand-blue to-brand-purple"></div>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.3s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">01</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Analyse & Conception</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Étude des besoins, plans techniques et choix des matériaux.</p>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.7s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">02</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Fabrication sur mesure</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Réalisation en atelier par nos carrossiers spécialisés.</p>
+                </div>
+                <div class="relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:1.1s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">03</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Livraison & Suivi</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Contrôle qualité, livraison et accompagnement après-vente.</p>
+                </div>
+              </div>
+            </div>
+
+            <a data-reveal data-delay="4" href="contact.html" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+              Demander un devis
+              <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Chapter 02 · Aménagement de vans ── -->
+      <section id="svc-02" class="py-20 md:py-28 border-b border-brand-line" data-chapter="svc-02">
+        <div class="md:grid md:grid-cols-2 md:gap-14 items-start">
+
+          <!-- Content (left — alternating) -->
+          <div class="order-2 md:order-1">
+            <p class="chap-num" aria-hidden="true">02</p>
+            <h2 data-reveal class="font-display font-bold text-brand-ink text-3xl md:text-[2.25rem] leading-tight mt-3">
+              Aménagement<br>de vans
+            </h2>
+            <p data-reveal data-delay="1" class="mt-4 text-brand-mist leading-relaxed">
+              Transformation complète de vans utilitaires en véhicules de transport, de tourisme ou de service. Nous adaptons chaque fourgon à son usage réel — banquettes, mobilier, isolation, systèmes électriques.
+            </p>
+            <ul data-reveal data-delay="2" class="mt-5 space-y-2.5 text-sm text-brand-mist">
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Vans de transport & navettes
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Véhicules médicaux & ambulances
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Véhicules VIP & confort premium
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Aménagements techniques spéciaux
+              </li>
+            </ul>
+
+            <div class="mt-10" data-process data-reveal data-delay="3">
+              <p class="font-mono text-xs text-brand-lilac tracking-widest uppercase mb-6">Notre processus</p>
+              <div class="relative pl-8">
+                <div class="absolute left-[1px] top-2 bottom-2 w-px bg-brand-line">
+                  <div class="process-line-fill absolute inset-0 bg-gradient-to-b from-brand-blue to-brand-purple"></div>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.3s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">01</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Évaluation & Brief</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Étude de l'usage, volume et contraintes techniques.</p>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.7s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">02</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Transformation complète</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Plancher, isolation, menuiserie, électricité et finitions.</p>
+                </div>
+                <div class="relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:1.1s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">03</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Homologation & Livraison</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Mise en conformité et livraison avec garantie.</p>
+                </div>
+              </div>
+            </div>
+
+            <a data-reveal data-delay="4" href="contact.html" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+              Demander un devis
+              <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Sticky image (right) -->
+          <div class="order-1 md:order-2 svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
+            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=8"
+                 alt="Aménagement intérieur de van" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Chapter 03 · Fabrication & Transformation ── -->
+      <section id="svc-03" class="py-20 md:py-28 border-b border-brand-line" data-chapter="svc-03">
+        <div class="md:grid md:grid-cols-2 md:gap-14 items-start">
+
+          <!-- Sticky BA slider (left) -->
+          <div class="svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
+            <div class="ba-slider w-full h-full">
+              <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80"
+                   alt="Avant transformation carrosserie" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+              <div class="ba-after">
+                <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=800&q=80"
+                     alt="Après transformation carrosserie" loading="lazy" width="800" height="600" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="ba-handle"></div>
+              <span class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 text-[0.6rem] font-medium tracking-wider uppercase text-white/75 bg-black/35 backdrop-blur-sm px-3 py-1 rounded-full pointer-events-none select-none">Avant / Après</span>
+            </div>
+          </div>
+
+          <!-- Content (right) -->
+          <div>
+            <p class="chap-num" aria-hidden="true">03</p>
+            <h2 data-reveal class="font-display font-bold text-brand-ink text-3xl md:text-[2.25rem] leading-tight mt-3">
+              Fabrication &<br>transformation
+            </h2>
+            <p data-reveal data-delay="1" class="mt-4 text-brand-mist leading-relaxed">
+              Notre atelier prend en charge la fabrication et la transformation complète de structures métalliques, de bennes, de plateaux et de carrosseries sur cahier des charges. Soudure, découpe, peinture — tout est réalisé en interne.
+            </p>
+            <ul data-reveal data-delay="2" class="mt-5 space-y-2.5 text-sm text-brand-mist">
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Structures métalliques sur mesure
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Bennes, plateaux & citernes
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Peinture industrielle & finitions
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Réparation & rénovation de carrosseries
+              </li>
+            </ul>
+
+            <div class="mt-10" data-process data-reveal data-delay="3">
+              <p class="font-mono text-xs text-brand-lilac tracking-widest uppercase mb-6">Notre processus</p>
+              <div class="relative pl-8">
+                <div class="absolute left-[1px] top-2 bottom-2 w-px bg-brand-line">
+                  <div class="process-line-fill absolute inset-0 bg-gradient-to-b from-brand-blue to-brand-purple"></div>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.3s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">01</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Étude technique</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Plans, métrés et choix des alliages adaptés à l'usage.</p>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.7s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">02</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Fabrication atelier</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Soudure, découpe, formage et assemblage en interne.</p>
+                </div>
+                <div class="relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:1.1s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">03</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Finition & Contrôle</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Peinture, anti-corrosion et contrôle qualité final.</p>
+                </div>
+              </div>
+            </div>
+
+            <a data-reveal data-delay="4" href="contact.html" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+              Demander un devis
+              <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Chapter 04 · Équipements & Accessoires ── -->
+      <section id="svc-04" class="py-20 md:py-28" data-chapter="svc-04">
+        <div class="md:grid md:grid-cols-2 md:gap-14 items-start">
+
+          <!-- Content (left — alternating) -->
+          <div class="order-2 md:order-1">
+            <p class="chap-num" aria-hidden="true">04</p>
+            <h2 data-reveal class="font-display font-bold text-brand-ink text-3xl md:text-[2.25rem] leading-tight mt-3">
+              Équipements<br>& accessoires
+            </h2>
+            <p data-reveal data-delay="1" class="mt-4 text-brand-mist leading-relaxed">
+              Fourniture et pose d'équipements spécifiques pour compléter l'aménagement de vos véhicules : galeries, systèmes de fixation, protections, habillages intérieurs et équipements de sécurité.
+            </p>
+            <ul data-reveal data-delay="2" class="mt-5 space-y-2.5 text-sm text-brand-mist">
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Galeries & systèmes de chargement
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Protections & habillages intérieurs
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Équipements de sécurité & signalisation
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 mt-0.5 text-brand-purple shrink-0" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Systèmes audio-visuels & confort
+              </li>
+            </ul>
+
+            <div class="mt-10" data-process data-reveal data-delay="3">
+              <p class="font-mono text-xs text-brand-lilac tracking-widest uppercase mb-6">Notre processus</p>
+              <div class="relative pl-8">
+                <div class="absolute left-[1px] top-2 bottom-2 w-px bg-brand-line">
+                  <div class="process-line-fill absolute inset-0 bg-gradient-to-b from-brand-blue to-brand-purple"></div>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.3s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">01</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Sélection & Sourcing</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Identification des équipements adaptés à vos besoins.</p>
+                </div>
+                <div class="mb-7 relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:0.7s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">02</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Pose professionnelle</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Installation par nos techniciens dans notre atelier.</p>
+                </div>
+                <div class="relative">
+                  <div class="process-dot absolute -left-[1.85rem] top-1.5 w-3 h-3 rounded-full ring-2 ring-brand-paper" style="transition-delay:1.1s"></div>
+                  <p class="font-mono text-xs text-brand-lilac mb-1">03</p>
+                  <h4 class="font-display font-semibold text-brand-ink text-sm">Validation & Remise</h4>
+                  <p class="text-xs text-brand-mist mt-1 leading-relaxed">Essais, documentation et remise clé en main.</p>
+                </div>
+              </div>
+            </div>
+
+            <a data-reveal data-delay="4" href="contact.html" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+              Demander un devis
+              <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Sticky image (right) -->
+          <div class="order-1 md:order-2 svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+                 alt="Équipements et accessoires véhicules" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /chapters -->
+  </div><!-- /spy grid -->
+</div><!-- /container -->
+
+<!-- ===== 3 · Partners ===== -->
+<div id="partenaires">
+
+  <!-- ── Auto Nejma ── -->
+  <section id="auto-nejma" class="py-20 md:py-28 bg-[#FAFAF9] border-t border-brand-line" data-chapter="auto-nejma">
+    <div class="max-w-7xl mx-auto px-5">
+      <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-purple mb-10 md:mb-14 text-center">Nos partenaires</p>
+      <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+
+        <!-- BA Slider (left) -->
+        <div data-reveal class="ba-slider partner-img-clip aspect-[4/3] rounded-2xl overflow-hidden mb-10 md:mb-0">
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80"
+               alt="Autobus Auto Nejma — avant aménagement" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+                 alt="Autobus Auto Nejma — après aménagement" loading="lazy" width="800" height="600" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-handle"></div>
+          <span class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 text-[0.6rem] font-medium tracking-wider uppercase text-white/75 bg-black/35 backdrop-blur-sm px-3 py-1 rounded-full pointer-events-none select-none">Glissez pour voir la transformation</span>
+        </div>
+
+        <!-- Text (right) -->
+        <div>
+          <span data-reveal class="font-display font-bold text-brand-lilac/25 text-6xl md:text-7xl leading-none select-none" aria-hidden="true">01</span>
+          <h3 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-3xl md:text-4xl leading-tight -mt-4 md:-mt-5">Auto Nejma</h3>
+          <p data-reveal data-delay="1" class="mt-1 font-mono text-xs text-brand-purple">
+            <span data-count="80" data-prefix="+" data-suffix=" véhicules aménagés">+80 véhicules aménagés</span>
+          </p>
+          <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
+            Auto Nejma nous fait confiance depuis 2016 pour l'aménagement et la transformation de leur flotte. De l'autobus scolaire au van de transport, nous livrons des solutions durables adaptées à leurs standards exigeants.
+          </p>
+          <a data-reveal data-delay="3" href="partenaires/auto-nejma.html" class="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+            Découvrir la page partenaire
+            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Mercedes-Benz (cinematic full-bleed) ── -->
+  <section id="mercedes" class="partner-cinematic" data-chapter="mercedes">
+    <div class="cinematic-bg" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80"
+           alt="" loading="lazy" width="1920" height="1080">
+    </div>
+    <div class="cinematic-overlay" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 py-28 text-center w-full">
+      <span data-reveal class="font-display font-bold text-white/20 text-6xl md:text-7xl leading-none select-none" aria-hidden="true">02</span>
+      <h3 data-reveal data-delay="1" class="font-display font-bold text-white text-3xl md:text-4xl leading-tight -mt-3">
+        Mercedes-Benz
+      </h3>
+      <p data-reveal data-delay="1" class="mt-1 font-mono text-xs text-brand-lilac">Partenaire officiel</p>
+      <p data-reveal data-delay="2" class="mt-5 text-white/65 text-lg leading-relaxed max-w-xl mx-auto">
+        L'excellence allemande, aménagée à la marocaine. Nous transformons Sprinters et Tourismo en respectant les standards de la marque — pour chaque usage, chaque exigence.
+      </p>
+      <a data-reveal data-delay="3" href="partenaires/mercedes-benz.html" class="inline-flex items-center gap-2 mt-8 px-7 py-3.5 rounded-full bg-white text-brand-ink font-semibold text-sm hover:bg-white/90 transition-colors">
+        Découvrir la page partenaire
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Volkswagen (offset diagonal) ── -->
+  <section id="volkswagen" class="py-20 md:py-28 bg-[#FAFAF9] border-t border-brand-line" data-chapter="volkswagen">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+
+        <!-- Text (left) -->
+        <div>
+          <span data-reveal class="font-display font-bold text-brand-lilac/25 text-6xl md:text-7xl leading-none select-none" aria-hidden="true">03</span>
+          <h3 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-3xl md:text-4xl leading-tight -mt-4 md:-mt-5">Volkswagen</h3>
+          <p data-reveal data-delay="1" class="mt-1 font-mono text-xs text-brand-purple">
+            <span data-count="45" data-prefix="+" data-suffix=" véhicules aménagés">+45 véhicules aménagés</span>
+          </p>
+          <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
+            Du Crafter au Transporter, nous aménageons et transformons chaque véhicule Volkswagen selon les besoins spécifiques de nos clients. Fiabilité et performance au cœur de chaque projet.
+          </p>
+          <a data-reveal data-delay="3" href="partenaires/volkswagen.html" class="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+            Découvrir la page partenaire
+            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Image (right, clipped + offset) -->
+        <div data-reveal class="order-1 md:order-2 md:translate-y-8 overflow-hidden partner-img-clip-r aspect-[4/3] rounded-xl mt-10 md:mt-0">
+          <div class="partner-sheen rounded-xl"></div>
+          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80"
+               alt="Volkswagen Transporter aménagé" class="partner-visual w-full h-full object-cover" loading="lazy" width="800" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /partenaires -->
+
+<!-- ===== Réalisations — filterable mosaic ===== -->
+<section id="realisations" class="py-20 md:py-28 lg:py-32 bg-brand-paper">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="md:flex md:items-end md:justify-between gap-8 mb-8">
+      <div>
+        <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Réalisations</p>
+        <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-lg">
+          Nos réalisations parlent pour nous.
+        </h2>
+        <p data-reveal data-delay="2" class="mt-3 text-brand-mist text-base max-w-md">
+          Autobus, vans, carrosseries sur mesure — chaque projet livré est une carte de visite.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter chips -->
+    <div data-reveal class="filter-chips mb-7" role="group" aria-label="Filtrer par marque">
+      <button class="chip active" data-brand="all">Toutes</button>
+      <button class="chip" data-brand="auto-nejma">Auto Nejma</button>
+      <button class="chip" data-brand="mercedes">Mercedes-Benz</button>
+      <button class="chip" data-brand="volkswagen">Volkswagen</button>
+      <button class="chip" data-brand="fiat">Fiat</button>
+      <button class="chip" data-brand="iveco">Iveco</button>
+      <button class="chip" data-brand="man">MAN</button>
+    </div>
+
+    <!-- Bento mosaic -->
+    <div class="real-mosaic" id="realisations-grid">
+
+      <!-- 1 · big · Auto Nejma -->
+      <article class="real-tile tile-big" data-brand="auto-nejma" data-reveal>
+        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80"
+             alt="Aménagement autobus — Auto Nejma" loading="lazy" width="900" height="675">
+        <div class="tile-overlay">
+          <p class="tile-brand">Auto Nejma</p>
+          <h3 class="tile-title">Autobus scolaire aménagé</h3>
+          <p class="tile-type">Aménagement intérieur</p>
+        </div>
+      </article>
+
+      <!-- 2 · sq · Mercedes -->
+      <article class="real-tile tile-sq" data-brand="mercedes" data-reveal data-delay="1">
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80"
+             alt="Mercedes-Benz — transformation" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Mercedes-Benz</p>
+          <h3 class="tile-title">Sprinter transformé</h3>
+          <p class="tile-type">Transformation complète</p>
+        </div>
+      </article>
+
+      <!-- 3 · tall · Volkswagen -->
+      <article class="real-tile tile-tall" data-brand="volkswagen" data-reveal data-delay="2">
+        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=500&q=80"
+             alt="Volkswagen Transporter — aménagement" loading="lazy" width="500" height="800">
+        <div class="tile-overlay">
+          <p class="tile-brand">Volkswagen</p>
+          <h3 class="tile-title">Transporter équipé</h3>
+          <p class="tile-type">Aménagement sur mesure</p>
+        </div>
+      </article>
+
+      <!-- 4 · sq · Mercedes -->
+      <article class="real-tile tile-sq" data-brand="mercedes" data-reveal data-delay="1">
+        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80"
+             alt="Mercedes-Benz Tourismo" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Mercedes-Benz</p>
+          <h3 class="tile-title">Tourismo VIP</h3>
+          <p class="tile-type">Transport premium</p>
+        </div>
+      </article>
+
+      <!-- 5 · wide · Auto Nejma -->
+      <article class="real-tile tile-wide" data-brand="auto-nejma" data-reveal data-delay="2">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80"
+             alt="Flotte de minibus Auto Nejma" loading="lazy" width="900" height="450">
+        <div class="tile-overlay">
+          <p class="tile-brand">Auto Nejma</p>
+          <h3 class="tile-title">Flotte de minibus</h3>
+          <p class="tile-type">Transport collectif</p>
+        </div>
+      </article>
+
+      <!-- 6 · sq · Fiat -->
+      <article class="real-tile tile-sq" data-brand="fiat" data-reveal data-delay="3">
+        <img src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=600&q=80"
+             alt="Fiat Ducato aménagé" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Fiat</p>
+          <h3 class="tile-title">Ducato utilitaire</h3>
+          <p class="tile-type">Aménagement</p>
+        </div>
+      </article>
+
+      <!-- 7 · sq · Iveco -->
+      <article class="real-tile tile-sq" data-brand="iveco" data-reveal data-delay="3">
+        <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
+             alt="Iveco — carrosserie sur mesure" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Iveco</p>
+          <h3 class="tile-title">Carrosserie sur mesure</h3>
+          <p class="tile-type">Fabrication</p>
+        </div>
+      </article>
+
+      <!-- 8 · tall · Fiat -->
+      <article class="real-tile tile-tall" data-brand="fiat" data-reveal data-delay="2">
+        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=500&q=80"
+             alt="Fiat — atelier et finitions" loading="lazy" width="500" height="800">
+        <div class="tile-overlay">
+          <p class="tile-brand">Fiat</p>
+          <h3 class="tile-title">Atelier & finitions</h3>
+          <p class="tile-type">Carrosserie</p>
+        </div>
+      </article>
+
+      <!-- 9 · wide · Volkswagen -->
+      <article class="real-tile tile-wide" data-brand="volkswagen" data-reveal data-delay="3">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80"
+             alt="Volkswagen Crafter — transformation" loading="lazy" width="900" height="450">
+        <div class="tile-overlay">
+          <p class="tile-brand">Volkswagen</p>
+          <h3 class="tile-title">Crafter reconfiguré</h3>
+          <p class="tile-type">Transformation</p>
+        </div>
+      </article>
+
+      <!-- 10 · sq · MAN -->
+      <article class="real-tile tile-sq" data-brand="man" data-reveal data-delay="4">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+             alt="MAN — carrosserie poids lourd" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">MAN</p>
+          <h3 class="tile-title">Poids lourd équipé</h3>
+          <p class="tile-type">Fabrication</p>
+        </div>
+      </article>
+
+      <!-- 11 · wide · Auto Nejma -->
+      <article class="real-tile tile-wide" data-brand="auto-nejma" data-reveal data-delay="4">
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80"
+             alt="Auto Nejma — minibus scolaire" loading="lazy" width="900" height="450">
+        <div class="tile-overlay">
+          <p class="tile-brand">Auto Nejma</p>
+          <h3 class="tile-title">Minibus scolaire</h3>
+          <p class="tile-type">Aménagement complet</p>
+        </div>
+      </article>
+
+    </div><!-- /real-mosaic -->
+  </div>
+</section>
+
+<!-- ===== 4 · CTA Band ===== -->
+<section id="cta" class="cta-band py-24 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 text-center">
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">Parlons de votre projet</p>
+    <h2 data-reveal data-delay="1" class="font-display font-bold text-white text-[clamp(2rem,4vw+0.5rem,3.5rem)] leading-[1.1] tracking-tight">
+      Un projet en tête ?<br>Parlons-en.
+    </h2>
+    <p data-reveal data-delay="2" class="mt-5 text-white/60 text-lg leading-relaxed">
+      Que vous ayez un besoin précis ou une idée à concrétiser, notre équipe vous accompagne de la conception à la livraison.
+    </p>
+    <div data-reveal data-delay="3" class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand-ink font-semibold text-sm hover:bg-white/90 transition-colors shadow-xl shadow-brand-ink/25">
+        Demander un devis
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+      </a>
+      <a href="tel:+212719907777" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +212 71 99 07 07
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div class="lg:col-span-1">
+        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
+          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+        <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
+      </div>
+
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="index.html"    class="hover:text-white transition-colors">Accueil</a>
+          <a href="about.html"    class="hover:text-white transition-colors">À propos</a>
+          <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <a href="#partenaires"  class="hover:text-white transition-colors">Partenaires</a>
+          <a href="contact.html"  class="hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Contact</h4>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Sidi Moussa El Majdoub, Sidi Azzouz, Mohammedia</span>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+212719907777" class="hover:text-white transition-colors">+212 71 99 07 07</a>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+            <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-5">
+          <a href="https://wa.me/212719907777" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Localisation</h4>
+        <div class="rounded-xl overflow-hidden border border-white/10 aspect-[4/3]">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53168!2d-7.42!3d33.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62d60c3bcb8c9%3A0x6281653ac90e3!2sMohammedia!5e0!3m2!1sfr!2sma!4v1"
+            class="w-full h-full border-0 grayscale brightness-[0.85]" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="BDEA Carrosserie — Mohammedia, Maroc"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+      <span>&copy; 2026 BDEA Carrosserie. Tous droits réservés.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white/70 transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/212719907777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- ===== JS ===== -->
+<script src="js/main.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Réalisations filter ──
+  const chips = document.querySelectorAll('.chip[data-brand]');
+  const tiles = document.querySelectorAll('.real-tile[data-brand]');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      tiles.forEach(function (tile) {
+        var match = brand === 'all' || tile.getAttribute('data-brand') === brand;
+        if (match) tile.removeAttribute('aria-hidden');
+        else tile.setAttribute('aria-hidden', 'true');
+      });
+    });
+  });
+
+  // ── Scroll spy ──
+  const spyItems = document.querySelectorAll('.spy-item[data-target]');
+  const chapters = document.querySelectorAll('[data-chapter]');
+
+  if (spyItems.length && chapters.length) {
+    if (reduced) {
+      spyItems[0] && spyItems[0].classList.add('active');
+    } else {
+      const spyObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('data-chapter');
+            spyItems.forEach(item => item.classList.toggle('active', item.getAttribute('data-target') === id));
+          }
+        });
+      }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+      chapters.forEach(c => spyObs.observe(c));
+    }
+  }
+
+  // ── Process line animation ──
+  const processEls = document.querySelectorAll('[data-process]');
+  if (reduced) {
+    processEls.forEach(el => el.classList.add('in-view'));
+  } else {
+    const procObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          procObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    processEls.forEach(el => procObs.observe(el));
+  }
+});
+</script>
+
+</body>
+</html>

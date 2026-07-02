@@ -45,6 +45,130 @@
   <!-- Progressive enhancement: mark JS-capable browsers so reveals can animate -->
   <script>document.documentElement.classList.add('js');</script>
 
+  <style>
+  /* ══ Réalisations — filter chips ══ */
+  .filter-chips { display:flex; gap:.5rem; overflow-x:auto; scrollbar-width:none; padding-bottom:4px; }
+  .filter-chips::-webkit-scrollbar { display:none; }
+  .chip {
+    flex-shrink:0; padding:.4rem 1.1rem; border-radius:999px;
+    border:1.5px solid #ECEAF2; font-size:.8125rem; font-weight:500;
+    cursor:pointer; background:transparent; color:#6B6B86; white-space:nowrap;
+    transition:background .2s,border-color .2s,color .2s;
+  }
+  .chip.active { border-color:#212677; background:#212677; color:#fff; }
+  .chip:hover:not(.active) { border-color:#9D8EBF; color:#212677; }
+
+  /* ══ Réalisations — mosaic grid ══ */
+  .real-mosaic {
+    display:grid; grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:210px; grid-auto-flow:dense; gap:.625rem;
+  }
+  @media(max-width:1023px){ .real-mosaic{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:639px) { .real-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:155px;} }
+
+  .tile-tall { grid-row:span 2; }
+  .tile-wide { grid-column:span 2; }
+  .tile-big  { grid-column:span 2; grid-row:span 2; }
+  @media(max-width:639px){ .tile-big{grid-row:span 1;} }
+
+  .real-tile { position:relative; overflow:hidden; border-radius:14px; background:#ECEAF2; display:block; }
+  .real-tile[aria-hidden="true"] { display:none; }
+  .real-tile > img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+  .real-tile:hover > img { transform:scale(1.065); }
+
+  .tile-overlay {
+    position:absolute; inset:0; border-radius:14px;
+    background:linear-gradient(to top,rgba(5,0,98,.92) 0%,rgba(33,38,119,.68) 40%,transparent 75%);
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:1rem 1.2rem; opacity:0; transform:translateY(7px);
+    transition:opacity .3s,transform .3s;
+  }
+  .real-tile:hover .tile-overlay,
+  .real-tile:focus-visible .tile-overlay { opacity:1; transform:translateY(0); }
+  .tile-brand { font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#9D8EBF; margin-bottom:.2rem; }
+  .tile-title { font-family:'Clash Display',sans-serif; font-weight:600; font-size:.88rem; color:#fff; line-height:1.3; margin-bottom:.15rem; }
+  .tile-type  { font-size:.68rem; color:rgba(255,255,255,.52); }
+
+  /* ══ Explorer — expanding panels ══ */
+  .exp-row { display:flex; height:480px; gap:6px; border-radius:20px; overflow:hidden; }
+  .exp-panel {
+    position:relative; flex:1; overflow:hidden; min-width:54px;
+    text-decoration:none; transition:flex .55s cubic-bezier(.16,1,.3,1);
+  }
+  .exp-panel img {
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:brightness(.5) saturate(.75);
+    transition:transform .55s cubic-bezier(.16,1,.3,1),filter .4s;
+  }
+  /* CSS :has() expansion (modern browsers) */
+  .exp-row:has(.exp-panel:hover) .exp-panel:not(:hover) { flex:.25; }
+  .exp-panel:hover { flex:3.5; }
+  .exp-panel:hover img { transform:scale(1.04); filter:brightness(.4) saturate(.9); }
+  /* JS-class fallback */
+  .exp-row.js-hov .exp-panel:not(.js-active) { flex:.25; }
+  .exp-row.js-hov .exp-panel.js-active { flex:3.5; }
+  .exp-row.js-hov .exp-panel.js-active img { transform:scale(1.04); filter:brightness(.4) saturate(.9); }
+
+  .exp-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to top,rgba(5,0,98,.88) 0%,rgba(33,38,119,.42) 55%,transparent 85%);
+  }
+  .exp-label-vert {
+    position:absolute; bottom:1.6rem; left:50%;
+    transform:translateX(-50%) rotate(-90deg); transform-origin:center;
+    white-space:nowrap; font-family:'Clash Display',sans-serif;
+    font-weight:600; font-size:.85rem; color:rgba(255,255,255,.9);
+    letter-spacing:.06em; pointer-events:none; transition:opacity .25s;
+  }
+  .exp-panel:hover .exp-label-vert,
+  .exp-row.js-hov .exp-panel.js-active .exp-label-vert { opacity:0; }
+
+  .exp-content {
+    position:absolute; bottom:1.75rem; left:1.5rem; right:1.5rem;
+    opacity:0; transform:translateY(10px); pointer-events:none;
+    transition:opacity .3s .12s,transform .3s .12s;
+  }
+  .exp-panel:hover .exp-content,
+  .exp-row.js-hov .exp-panel.js-active .exp-content { opacity:1; transform:translateY(0); }
+  .exp-content-num  { font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#9D8EBF; margin-bottom:.4rem; }
+  .exp-content-title{ font-family:'Clash Display',sans-serif; font-weight:700; font-size:1.35rem; color:#fff; line-height:1.2; margin-bottom:.3rem; }
+  .exp-content-sub  { font-size:.78rem; color:rgba(255,255,255,.52); margin-bottom:.8rem; }
+  .exp-arrow {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:34px; height:34px; border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.35); color:#fff;
+    transition:border-color .2s,background .2s;
+  }
+  .exp-arrow svg { width:13px; height:13px; }
+
+  /* Mobile: scroll-snap row */
+  @media(max-width:767px){
+    .exp-row {
+      height:auto; border-radius:0; overflow-x:auto;
+      scroll-snap-type:x mandatory; scrollbar-width:none;
+      -webkit-overflow-scrolling:touch; padding:0 .125rem;
+    }
+    .exp-row::-webkit-scrollbar { display:none; }
+    .exp-panel { flex:none; width:78vw; height:270px; scroll-snap-align:start; border-radius:16px; min-width:unset; }
+    .exp-label-vert { display:none; }
+    .exp-content { opacity:1!important; transform:none!important; }
+    .exp-row:has(.exp-panel:hover) .exp-panel:not(:hover),
+    .exp-row.js-hov .exp-panel:not(.js-active) { flex:none; }
+    .exp-panel:hover, .exp-row.js-hov .exp-panel.js-active { flex:none; }
+  }
+
+  /* Reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    .real-tile > img,.tile-overlay,
+    .exp-panel,.exp-panel img,.exp-label-vert,.exp-content { transition:none!important; }
+    .exp-panel { flex:1!important; }
+    .exp-content { opacity:1!important; transform:none!important; }
+    .exp-label-vert { opacity:0!important; }
+    .tile-overlay { opacity:1!important; transform:none!important;
+      background:linear-gradient(to top,rgba(5,0,98,.72) 0%,rgba(33,38,119,.28) 50%,transparent 80%); }
+  }
+  </style>
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -77,10 +201,10 @@
     <!-- Desktop links -->
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
       <a href="#hero"         class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
-      <a href="#apropos"      class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
-      <a href="#services"     class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Services</a>
+      <a href="about.html"    class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
+      <a href="services.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Services</a>
       <a href="#partenaires"  class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
-      <a href="#contact"      class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
+      <a href="contact.html"      class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
     </nav>
 
     <!-- Mobile hamburger -->
@@ -95,10 +219,10 @@
 <!-- ===== Mobile Menu ===== -->
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
   <a href="#hero"        class="text-2xl font-display font-semibold text-white">Accueil</a>
-  <a href="#apropos"     class="text-2xl font-display font-semibold text-white">À propos</a>
-  <a href="#services"    class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="about.html"    class="text-2xl font-display font-semibold text-white">À propos</a>
+  <a href="services.html" class="text-2xl font-display font-semibold text-white">Services</a>
   <a href="#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
-  <a href="#contact"     class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+  <a href="contact.html"     class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
 </div>
 
 <main>
@@ -128,10 +252,10 @@
       Transformation et aménagement d'autobus et de vans — tourisme, transport scolaire et privé.
     </p>
     <div data-reveal data-delay="2" class="mt-8 flex flex-wrap gap-4">
-      <a href="#contact" class="inline-flex items-center px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium shadow-lg shadow-brand-blue/25 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-0.5 transition-all">
+      <a href="contact.html" class="inline-flex items-center px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium shadow-lg shadow-brand-blue/25 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-0.5 transition-all">
         Demander un devis
       </a>
-      <a href="#services" class="inline-flex items-center px-7 py-3.5 rounded-full border border-white/40 text-white font-medium hover:bg-white/10 transition-colors">
+      <a href="services.html" class="inline-flex items-center px-7 py-3.5 rounded-full border border-white/40 text-white font-medium hover:bg-white/10 transition-colors">
         Découvrir nos réalisations
       </a>
     </div>
@@ -270,11 +394,176 @@
     </div>
 
     <div data-reveal class="mt-10 text-center">
-      <a href="/services" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-brand-line text-brand-blue font-medium hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+      <a href="services.html" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-brand-line text-brand-blue font-medium hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
         Voir plus
         <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ===== 4b · Réalisations — filterable mosaic ===== -->
+<section id="realisations" class="py-20 md:py-28 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="md:flex md:items-end md:justify-between gap-8 mb-8">
+      <div>
+        <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Réalisations</p>
+        <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-lg">
+          Nos réalisations parlent pour nous.
+        </h2>
+        <p data-reveal data-delay="2" class="mt-3 text-brand-mist text-base max-w-md">
+          Autobus, vans, carrosseries sur mesure — chaque projet livré est une carte de visite.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter chips -->
+    <div data-reveal class="filter-chips mb-7" role="group" aria-label="Filtrer par marque">
+      <button class="chip active" data-brand="all">Toutes</button>
+      <button class="chip" data-brand="auto-nejma">Auto Nejma</button>
+      <button class="chip" data-brand="mercedes">Mercedes-Benz</button>
+      <button class="chip" data-brand="volkswagen">Volkswagen</button>
+      <button class="chip" data-brand="fiat">Fiat</button>
+      <button class="chip" data-brand="iveco">Iveco</button>
+      <button class="chip" data-brand="man">MAN</button>
+    </div>
+
+    <!-- Bento mosaic -->
+    <div class="real-mosaic" id="realisations-grid">
+
+      <!-- 1 · big · Auto Nejma -->
+      <article class="real-tile tile-big" data-brand="auto-nejma" data-reveal>
+        <!-- swap: client image — autobus Auto Nejma -->
+        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80"
+             alt="Aménagement autobus — Auto Nejma" loading="lazy" width="900" height="675">
+        <div class="tile-overlay">
+          <p class="tile-brand">Auto Nejma</p>
+          <h3 class="tile-title">Autobus scolaire aménagé</h3>
+          <p class="tile-type">Aménagement intérieur</p>
+        </div>
+      </article>
+
+      <!-- 2 · sq · Mercedes -->
+      <article class="real-tile tile-sq" data-brand="mercedes" data-reveal data-delay="1">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80"
+             alt="Mercedes-Benz — transformation" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Mercedes-Benz</p>
+          <h3 class="tile-title">Sprinter transformé</h3>
+          <p class="tile-type">Transformation complète</p>
+        </div>
+      </article>
+
+      <!-- 3 · tall · Volkswagen -->
+      <article class="real-tile tile-tall" data-brand="volkswagen" data-reveal data-delay="2">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=500&q=80"
+             alt="Volkswagen Transporter — aménagement" loading="lazy" width="500" height="800">
+        <div class="tile-overlay">
+          <p class="tile-brand">Volkswagen</p>
+          <h3 class="tile-title">Transporter équipé</h3>
+          <p class="tile-type">Aménagement sur mesure</p>
+        </div>
+      </article>
+
+      <!-- 4 · sq · Mercedes -->
+      <article class="real-tile tile-sq" data-brand="mercedes" data-reveal data-delay="1">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80"
+             alt="Mercedes-Benz Tourismo" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Mercedes-Benz</p>
+          <h3 class="tile-title">Tourismo VIP</h3>
+          <p class="tile-type">Transport premium</p>
+        </div>
+      </article>
+
+      <!-- 5 · wide · Auto Nejma -->
+      <article class="real-tile tile-wide" data-brand="auto-nejma" data-reveal data-delay="2">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80"
+             alt="Flotte de minibus Auto Nejma" loading="lazy" width="900" height="450">
+        <div class="tile-overlay">
+          <p class="tile-brand">Auto Nejma</p>
+          <h3 class="tile-title">Flotte de minibus</h3>
+          <p class="tile-type">Transport collectif</p>
+        </div>
+      </article>
+
+      <!-- 6 · sq · Fiat -->
+      <article class="real-tile tile-sq" data-brand="fiat" data-reveal data-delay="3">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=600&q=80"
+             alt="Fiat Ducato aménagé" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Fiat</p>
+          <h3 class="tile-title">Ducato utilitaire</h3>
+          <p class="tile-type">Aménagement</p>
+        </div>
+      </article>
+
+      <!-- 7 · sq · Iveco -->
+      <article class="real-tile tile-sq" data-brand="iveco" data-reveal data-delay="3">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
+             alt="Iveco — carrosserie sur mesure" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">Iveco</p>
+          <h3 class="tile-title">Carrosserie sur mesure</h3>
+          <p class="tile-type">Fabrication</p>
+        </div>
+      </article>
+
+      <!-- 8 · tall · Fiat -->
+      <article class="real-tile tile-tall" data-brand="fiat" data-reveal data-delay="2">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=500&q=80"
+             alt="Fiat — atelier et finitions" loading="lazy" width="500" height="800">
+        <div class="tile-overlay">
+          <p class="tile-brand">Fiat</p>
+          <h3 class="tile-title">Atelier & finitions</h3>
+          <p class="tile-type">Carrosserie</p>
+        </div>
+      </article>
+
+      <!-- 9 · wide · Volkswagen -->
+      <article class="real-tile tile-wide" data-brand="volkswagen" data-reveal data-delay="3">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80"
+             alt="Volkswagen Crafter — transformation" loading="lazy" width="900" height="450">
+        <div class="tile-overlay">
+          <p class="tile-brand">Volkswagen</p>
+          <h3 class="tile-title">Crafter reconfiguré</h3>
+          <p class="tile-type">Transformation</p>
+        </div>
+      </article>
+
+      <!-- 10 · sq · MAN -->
+      <article class="real-tile tile-sq" data-brand="man" data-reveal data-delay="4">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+             alt="MAN — carrosserie poids lourd" loading="lazy" width="600" height="600">
+        <div class="tile-overlay">
+          <p class="tile-brand">MAN</p>
+          <h3 class="tile-title">Poids lourd équipé</h3>
+          <p class="tile-type">Fabrication</p>
+        </div>
+      </article>
+
+      <!-- 11 · wide · Auto Nejma -->
+      <article class="real-tile tile-wide" data-brand="auto-nejma" data-reveal data-delay="4">
+        <!-- swap: client image -->
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80"
+             alt="Auto Nejma — minibus scolaire" loading="lazy" width="900" height="450">
+        <div class="tile-overlay">
+          <p class="tile-brand">Auto Nejma</p>
+          <h3 class="tile-title">Minibus scolaire</h3>
+          <p class="tile-type">Aménagement complet</p>
+        </div>
+      </article>
+
+    </div><!-- /real-mosaic -->
   </div>
 </section>
 
@@ -324,8 +613,7 @@
       <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
         Partenaire Mercedes-Benz au Maroc, Auto Nejma confie à BDEA Carrosserie la transformation et l'aménagement de ses véhicules, avec des finitions conformes aux standards de la marque.
       </p>
-      <!-- link: /partenaires/auto-nejma (placeholder → /services) -->
-      <a data-reveal data-delay="3" href="/services" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+      <a data-reveal data-delay="3" href="partenaires/auto-nejma.html" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
         Voir les réalisations
         <svg class="arrow w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
       </a>
@@ -354,8 +642,7 @@
     <p data-reveal data-delay="2" class="mt-4 text-white/70 max-w-md leading-relaxed">
       Aménagement et transformation de véhicules Mercedes-Benz pour le transport de personnes, avec des finitions haut de gamme.
     </p>
-    <!-- link: /partenaires/mercedes-benz (placeholder → /services) -->
-    <a data-reveal data-delay="3" href="/services" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 hover:border-white/50 transition-colors">
+    <a data-reveal data-delay="3" href="partenaires/mercedes-benz.html" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 hover:border-white/50 transition-colors">
       Voir les réalisations
       <svg class="arrow w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
     </a>
@@ -381,8 +668,7 @@
       <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
         Transformation et aménagement de véhicules Volkswagen — du Crafter au Transporter — adaptés aux besoins spécifiques de chaque client.
       </p>
-      <!-- link: /partenaires/volkswagen (placeholder → /services) -->
-      <a data-reveal data-delay="3" href="/services" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+      <a data-reveal data-delay="3" href="partenaires/volkswagen.html" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
         Voir les réalisations
         <svg class="arrow w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
       </a>
@@ -395,6 +681,105 @@
       <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80"
            alt="Volkswagen Transporter" class="partner-visual w-full h-full object-cover" loading="lazy" width="800" height="600">
     </div>
+  </div>
+</section>
+
+<!-- ===== 7 · Explorer — expanding panels ===== -->
+<section id="explorer" class="py-20 md:py-28 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Explorer</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-2xl mb-10 md:mb-12">
+      Naviguez dans notre univers.
+    </h2>
+
+    <div class="exp-row" id="exp-row" data-reveal data-delay="2" role="list">
+
+      <!-- Panel 1 · Nos services -->
+      <a href="services.html" class="exp-panel" role="listitem" aria-label="Nos services">
+        <!-- swap: client image — atelier -->
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=800&q=80"
+             alt="" loading="lazy" width="800" height="1000" aria-hidden="true">
+        <div class="exp-overlay" aria-hidden="true"></div>
+        <span class="exp-label-vert" aria-hidden="true">Nos services</span>
+        <div class="exp-content">
+          <p class="exp-content-num">01</p>
+          <h3 class="exp-content-title">Nos services</h3>
+          <p class="exp-content-sub">Aménagement, fabrication &amp; équipements</p>
+          <div class="exp-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Panel 2 · Réalisations -->
+      <a href="#realisations" class="exp-panel" role="listitem" aria-label="Nos réalisations">
+        <!-- swap: client image — autobus -->
+        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80"
+             alt="" loading="lazy" width="800" height="1000" aria-hidden="true">
+        <div class="exp-overlay" aria-hidden="true"></div>
+        <span class="exp-label-vert" aria-hidden="true">Réalisations</span>
+        <div class="exp-content">
+          <p class="exp-content-num">02</p>
+          <h3 class="exp-content-title">Nos réalisations</h3>
+          <p class="exp-content-sub">+200 véhicules transformés</p>
+          <div class="exp-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Panel 3 · Partenaires -->
+      <a href="#partenaires" class="exp-panel" role="listitem" aria-label="Nos partenaires">
+        <!-- swap: client image — Mercedes -->
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80"
+             alt="" loading="lazy" width="800" height="1000" aria-hidden="true">
+        <div class="exp-overlay" aria-hidden="true"></div>
+        <span class="exp-label-vert" aria-hidden="true">Partenaires</span>
+        <div class="exp-content">
+          <p class="exp-content-num">03</p>
+          <h3 class="exp-content-title">Nos partenaires</h3>
+          <p class="exp-content-sub">Mercedes, Volkswagen &amp; plus</p>
+          <div class="exp-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Panel 4 · À propos -->
+      <a href="about.html" class="exp-panel" role="listitem" aria-label="À propos de BDEA">
+        <!-- swap: client image — équipe / atelier -->
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80"
+             alt="" loading="lazy" width="800" height="1000" aria-hidden="true">
+        <div class="exp-overlay" aria-hidden="true"></div>
+        <span class="exp-label-vert" aria-hidden="true">À propos</span>
+        <div class="exp-content">
+          <p class="exp-content-num">04</p>
+          <h3 class="exp-content-title">À propos</h3>
+          <p class="exp-content-sub">Notre histoire &amp; savoir-faire</p>
+          <div class="exp-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Panel 5 · Contact -->
+      <a href="contact.html" class="exp-panel" role="listitem" aria-label="Contactez-nous">
+        <!-- swap: client image — équipements -->
+        <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=800&q=80"
+             alt="" loading="lazy" width="800" height="1000" aria-hidden="true">
+        <div class="exp-overlay" aria-hidden="true"></div>
+        <span class="exp-label-vert" aria-hidden="true">Contact</span>
+        <div class="exp-content">
+          <p class="exp-content-num">05</p>
+          <h3 class="exp-content-title">Contact</h3>
+          <p class="exp-content-sub">Demandez un devis gratuit</p>
+          <div class="exp-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /exp-row -->
   </div>
 </section>
 
@@ -417,11 +802,11 @@
       <div>
         <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
         <nav class="flex flex-col gap-2 text-sm">
-          <a href="#hero" class="hover:text-white transition-colors">Accueil</a>
-          <a href="#apropos" class="hover:text-white transition-colors">À propos</a>
-          <a href="#services" class="hover:text-white transition-colors">Services</a>
-          <a href="#partenaires" class="hover:text-white transition-colors">Partenaires</a>
-          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+          <a href="index.html"    class="hover:text-white transition-colors">Accueil</a>
+          <a href="about.html"    class="hover:text-white transition-colors">À propos</a>
+          <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <a href="#partenaires"  class="hover:text-white transition-colors">Partenaires</a>
+          <a href="contact.html"      class="hover:text-white transition-colors">Contact</a>
         </nav>
       </div>
 
@@ -461,7 +846,7 @@
       <div>
         <h4 class="font-display font-semibold text-white text-sm mb-4">Localisation</h4>
         <div class="rounded-xl overflow-hidden border border-white/10 aspect-[4/3]">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53168!2d-7.42!3d33.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62d60c3bcb8c9%3A0x6281653ac90e3!2sMohammedia!5e0!3m2!1sfr!2sma!4v1"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6645.9903821872185!2d-7.3938631566612045!3d33.605429243313594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7b4e46dbd9c2f%3A0xed2bec736a71f5b2!2sSidi%20Moussa%20El%20Mejdoub!5e0!3m2!1sen!2sma!4v1782903061801!5m2!1sen!2sma"
             class="w-full h-full border-0 grayscale brightness-[0.85]" allowfullscreen loading="lazy"
             referrerpolicy="no-referrer-when-downgrade" title="BDEA Carrosserie — Mohammedia, Maroc"></iframe>
         </div>
@@ -489,6 +874,43 @@
 
 <!-- ===== JS (no libraries) ===== -->
 <script src="js/main.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  /* ── Réalisations filter ── */
+  var chips = document.querySelectorAll('.chip[data-brand]');
+  var tiles = document.querySelectorAll('.real-tile[data-brand]');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      tiles.forEach(function (tile) {
+        var match = brand === 'all' || tile.getAttribute('data-brand') === brand;
+        tile.setAttribute('aria-hidden', match ? 'false' : 'true');
+        if (match) tile.removeAttribute('aria-hidden');
+      });
+    });
+  });
+
+  /* ── Explorer panels — JS fallback for browsers without :has() ── */
+  var expRow = document.getElementById('exp-row');
+  if (expRow) {
+    var panels = expRow.querySelectorAll('.exp-panel');
+    panels.forEach(function (panel) {
+      panel.addEventListener('mouseenter', function () {
+        expRow.classList.add('js-hov');
+        panels.forEach(function (p) { p.classList.remove('js-active'); });
+        panel.classList.add('js-active');
+      });
+      panel.addEventListener('mouseleave', function () {
+        panel.classList.remove('js-active');
+        expRow.classList.remove('js-hov');
+      });
+    });
+  }
+});
+</script>
 
 </body>
 </html>
