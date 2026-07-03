@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BDEA Carrosserie — Transformation & Aménagement de Véhicules | Mohammedia</title>
   <meta name="description" content="BDEA Carrosserie conçoit, transforme et aménage des véhicules d'exception — autobus, vans et carrosseries sur mesure à Mohammedia, Maroc.">
 
@@ -167,6 +167,87 @@
     .tile-overlay { opacity:1!important; transform:none!important;
       background:linear-gradient(to top,rgba(5,0,98,.72) 0%,rgba(33,38,119,.28) 50%,transparent 80%); }
   }
+
+  /* ══ Services dropdown ══ */
+  .svc-trigger { position:relative; }
+  .svc-panel {
+    position:absolute; top:calc(100% + .75rem); left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    background:#fff; border:1px solid #ECEAF2; border-radius:14px;
+    box-shadow:0 12px 40px rgba(5,0,98,.13); padding:.5rem 0; min-width:250px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .15s,transform .15s,visibility .15s;
+  }
+  .svc-trigger.open .svc-panel { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+  .svc-panel-link {
+    display:flex; align-items:center; gap:.65rem; padding:.65rem 1.25rem;
+    font-size:.8125rem; color:#2C2C3A; text-decoration:none; transition:background .12s,color .12s;
+  }
+  .svc-panel-link:hover { background:#F5F4FC; color:#212677; }
+  .svc-panel-link svg { flex-shrink:0; color:#9D8EBF; }
+  .svc-divider { height:1px; background:#ECEAF2; margin:.35rem 1.25rem; }
+
+  /* ══ Nos gammes — tabs & cards ══ */
+  .gamme-tabs { display:flex; gap:.5rem; overflow-x:auto; scrollbar-width:none; padding-bottom:4px; }
+  .gamme-tabs::-webkit-scrollbar { display:none; }
+  .gamme-tab {
+    flex-shrink:0; padding:.45rem 1.2rem; border-radius:999px;
+    border:1.5px solid #ECEAF2; font-size:.8125rem; font-weight:500;
+    cursor:pointer; background:transparent; color:#6B6B86; white-space:nowrap;
+    transition:background .18s,border-color .18s,color .18s;
+  }
+  .gamme-tab.active { border-color:#212677; background:#212677; color:#fff; }
+  .gamme-tab:hover:not(.active) { border-color:#9D8EBF; color:#212677; }
+  .gamme-panel { display:none; }
+  .gamme-panel.active { display:block; }
+  .gamme-row { display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding-bottom:4px; }
+  .gamme-row::-webkit-scrollbar { display:none; }
+  .gamme-card {
+    flex-shrink:0; width:200px; border-radius:14px; overflow:hidden;
+    border:1.5px solid #ECEAF2; background:#fff; cursor:pointer;
+    transition:border-color .2s,box-shadow .2s; scroll-snap-align:start;
+    text-align:left; padding:0;
+  }
+  .gamme-card:hover { border-color:#9D8EBF; box-shadow:0 4px 20px rgba(33,38,119,.1); }
+  .gamme-card img { width:100%; height:130px; object-fit:cover; display:block; }
+  .gamme-card-body { padding:.75rem .9rem; }
+  .gamme-card-name { font-family:'Clash Display',sans-serif; font-weight:600; font-size:.875rem; color:#050062; line-height:1.2; }
+  .gamme-card-sub { font-size:.7rem; color:#6B6B86; margin-top:.1rem; }
+
+  /* ══ Auto Nejma flagship ══ */
+  .nej-display { position:relative; overflow:hidden; border-radius:20px; aspect-ratio:16/9; background:#ECEAF2; }
+  .nej-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .4s ease; }
+  .nej-img.active { opacity:1; }
+  html:not(.js) .nej-img:first-child { opacity:1; }
+  .nej-swatch {
+    width:30px; height:30px; border-radius:50%; border:2.5px solid transparent;
+    cursor:pointer; transition:transform .15s,border-color .15s; padding:0;
+  }
+  .nej-swatch:hover { transform:scale(1.12); }
+  .nej-swatch.active { border-color:#212677; transform:scale(1.12); }
+  .nej-thumb-row { display:flex; gap:.5rem; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; margin-top:.75rem; }
+  .nej-thumb-row::-webkit-scrollbar { display:none; }
+  .nej-thumb {
+    flex-shrink:0; width:80px; height:60px; border-radius:8px; overflow:hidden;
+    border:2px solid transparent; cursor:pointer; padding:0; transition:border-color .15s;
+  }
+  .nej-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+  .nej-thumb.ring { border-color:#212677; }
+
+  /* ══ Shared lightbox ══ */
+  #bdea-lb { display:none; position:fixed; inset:0; z-index:9999; background:rgba(5,0,98,.93); align-items:center; justify-content:center; padding:1.5rem; }
+  #bdea-lb.open { display:flex; }
+  #bdea-lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:10px; display:block; }
+  #bdea-lb-cap { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.65); font-size:.78rem; white-space:nowrap; pointer-events:none; }
+  #bdea-lb-close { position:absolute; top:1.25rem; right:1.25rem; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.12); border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  #bdea-lb-prev,#bdea-lb-next { position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.12); border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  #bdea-lb-prev { left:1.25rem; }
+  #bdea-lb-next { right:1.25rem; }
+  #bdea-lb-close:hover,#bdea-lb-prev:hover,#bdea-lb-next:hover { background:rgba(255,255,255,.22); }
+
+  @media(prefers-reduced-motion:reduce){
+    .svc-panel,.gamme-tab,.gamme-card,.nej-img,.nej-swatch,.nej-thumb { transition:none!important; }
+  }
   </style>
 
   <!-- JSON-LD -->
@@ -202,7 +283,30 @@
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
       <a href="#hero"         class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
       <a href="about.html"    class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
-      <a href="services.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Services</a>
+      <!-- Nos services dropdown -->
+      <div class="svc-trigger" id="svc-trigger">
+        <button id="svc-btn" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors flex items-center gap-1.5"
+                aria-haspopup="true" aria-expanded="false" aria-controls="svc-panel">
+          Nos services
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="svc-panel" class="svc-panel" role="region" aria-label="Catégories de services">
+          <a href="services-vehicule.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Modèles & Véhicules
+          </a>
+          <div class="svc-divider"></div>
+          <a href="services-amenagement.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Aménagement Intérieur
+          </a>
+          <div class="svc-divider"></div>
+          <a href="services-carrosserie.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+            Carrosserie & Transformation
+          </a>
+        </div>
+      </div>
       <a href="#partenaires"  class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
       <a href="contact.html"      class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
     </nav>
@@ -220,7 +324,12 @@
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
   <a href="#hero"        class="text-2xl font-display font-semibold text-white">Accueil</a>
   <a href="about.html"    class="text-2xl font-display font-semibold text-white">À propos</a>
-  <a href="services.html" class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="services.html" class="text-2xl font-display font-semibold text-white">Nos services</a>
+  <div class="flex flex-col items-center gap-2 -mt-2">
+    <a href="services-vehicule.html"    class="text-sm text-white/55 hover:text-white/80 transition-colors">Modèles & Véhicules</a>
+    <a href="services-amenagement.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Aménagement Intérieur</a>
+    <a href="services-carrosserie.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Carrosserie & Transformation</a>
+  </div>
   <a href="#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
   <a href="contact.html"     class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
 </div>
@@ -331,78 +440,321 @@
   </div>
 </section>
 
-<!-- ===== 4 · Services ===== -->
-<section id="services" class="py-20 md:py-28 lg:py-32 bg-white">
+
+
+<!-- ===== 4b · Nos gammes — tabbed product lines ===== -->
+<section id="gammes" class="py-20 md:py-28 lg:py-32">
   <div class="max-w-7xl mx-auto px-5">
-    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Nos métiers</p>
-    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl">
-      Un métier, plusieurs expertises.
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Nos gammes</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl mb-8">
+      Des gammes pensées pour chaque usage.
     </h2>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-      <!-- Card 1 -->
-      <article data-reveal class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
-        <div class="aspect-[4/3] overflow-hidden">
-          <!-- swap: client image — autobus interior -->
-          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
-               alt="Autobus — aménagement intérieur" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
-        </div>
-        <div class="p-5">
-          <h3 class="font-display font-semibold text-brand-ink text-lg">Aménagement d'autobus</h3>
-          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Tourisme, scolaire et transport privé.</p>
-        </div>
-      </article>
+    <!-- Tab pills -->
+    <div data-reveal class="gamme-tabs mb-8" role="tablist" aria-label="Gammes de véhicules">
+      <button class="gamme-tab active" role="tab" aria-selected="true"  aria-controls="gpanel-crafter"  id="gtab-crafter">Crafter Prestige</button>
+      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-sprinter" id="gtab-sprinter" tabindex="-1">Sprinter VIP</button>
+      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-master"   id="gtab-master"   tabindex="-1">Master Supreme</button>
+      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-ducato"   id="gtab-ducato"   tabindex="-1">Ducato Elite</button>
+      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-man"      id="gtab-man"      tabindex="-1">MAN</button>
+    </div>
 
-      <!-- Card 2 -->
-      <article data-reveal data-delay="1" class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
-        <div class="aspect-[4/3] overflow-hidden">
-          <!-- swap: client image — van interior -->
-          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&q=80"
-               alt="Van — agencement intérieur sur mesure" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
-        </div>
-        <div class="p-5">
-          <h3 class="font-display font-semibold text-brand-ink text-lg">Aménagement de vans</h3>
-          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Agencement intérieur sur mesure.</p>
-        </div>
-      </article>
+    <!-- Crafter Prestige -->
+    <div class="gamme-panel active" id="gpanel-crafter" role="tabpanel" aria-labelledby="gtab-crafter">
+      <p class="text-brand-mist text-sm mb-5">Volkswagen Crafter transformé en minibus de prestige — sièges premium, éclairage ambiance, finitions sur mesure.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Crafter Prestige — Minibus 9 places"
+          data-glb-src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Crafter Prestige — Minibus 9 places">
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=400&q=70" alt="Crafter Prestige — Minibus 9 places" loading="lazy" width="400" height="260"><!-- swap: client image — Crafter Prestige minibus -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Minibus 9 places</p><p class="gamme-card-sub">Crafter Prestige</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Crafter Prestige — Navette VIP"
+          data-glb-src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Crafter Prestige — Navette VIP">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=70" alt="Crafter Prestige — Navette VIP" loading="lazy" width="400" height="260"><!-- swap: client image — Crafter Prestige navette -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Navette VIP</p><p class="gamme-card-sub">Crafter Prestige</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Crafter Prestige — Version scolaire"
+          data-glb-src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Crafter Prestige — Version scolaire">
+          <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=400&q=70" alt="Crafter Prestige — Version scolaire" loading="lazy" width="400" height="260"><!-- swap: client image — Crafter Prestige scolaire -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Version scolaire</p><p class="gamme-card-sub">Crafter Prestige</p></div>
+        </button>
+      </div>
+    </div>
 
-      <!-- Card 3 -->
-      <article data-reveal data-delay="2" class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
-        <div class="aspect-[4/3] overflow-hidden">
-          <!-- swap: client image — metal fabrication -->
-          <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=600&q=80"
-               alt="Fabrication de carrosserie — soudure" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
-        </div>
-        <div class="p-5">
-          <h3 class="font-display font-semibold text-brand-ink text-lg">Fabrication de carrosserie</h3>
-          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Conception et transformation adaptées.</p>
-        </div>
-      </article>
+    <!-- Sprinter VIP -->
+    <div class="gamme-panel" id="gpanel-sprinter" role="tabpanel" aria-labelledby="gtab-sprinter">
+      <p class="text-brand-mist text-sm mb-5">Mercedes Sprinter aménagé en espace VIP — cuir premium, tables intégrées, système multimédia et finitions luxe.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Sprinter VIP — Salon privatif"
+          data-glb-src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Sprinter VIP — Salon privatif">
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=70" alt="Sprinter VIP — Salon privatif" loading="lazy" width="400" height="260"><!-- swap: client image — Sprinter VIP intérieur -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Salon privatif</p><p class="gamme-card-sub">Sprinter VIP</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Sprinter VIP — Navette aéroport"
+          data-glb-src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Sprinter VIP — Navette aéroport">
+          <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=400&q=70" alt="Sprinter VIP — Navette aéroport" loading="lazy" width="400" height="260"><!-- swap: client image — Sprinter VIP navette -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Navette aéroport</p><p class="gamme-card-sub">Sprinter VIP</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Sprinter VIP — Tourisme de luxe"
+          data-glb-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Sprinter VIP — Tourisme de luxe">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=70" alt="Sprinter VIP — Tourisme de luxe" loading="lazy" width="400" height="260"><!-- swap: client image — Sprinter VIP tourisme -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Tourisme de luxe</p><p class="gamme-card-sub">Sprinter VIP</p></div>
+        </button>
+      </div>
+    </div>
 
-      <!-- Card 4 -->
-      <article data-reveal data-delay="3" class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
-        <div class="aspect-[4/3] overflow-hidden">
-          <!-- swap: client image — equipment & accessories -->
-          <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
-               alt="Équipements et accessoires automobile" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
-        </div>
-        <div class="p-5">
-          <h3 class="font-display font-semibold text-brand-ink text-lg">Équipements & accessoires</h3>
-          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Vente et installation pour l'industrie du véhicule.</p>
-        </div>
-      </article>
+    <!-- Master Supreme -->
+    <div class="gamme-panel" id="gpanel-master" role="tabpanel" aria-labelledby="gtab-master">
+      <p class="text-brand-mist text-sm mb-5">Renault Master Supreme — aménagement élaboré, idéal pour le transport semi-VIP et le tourisme régional.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Master Supreme — Configuration semi-VIP"
+          data-glb-src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Master Supreme — Configuration semi-VIP">
+          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=400&q=70" alt="Master Supreme — Configuration semi-VIP" loading="lazy" width="400" height="260"><!-- swap: client image — Master Supreme VIP -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Configuration semi-VIP</p><p class="gamme-card-sub">Master Supreme</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Master Supreme — Transport scolaire"
+          data-glb-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Master Supreme — Transport scolaire">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=70" alt="Master Supreme — Transport scolaire" loading="lazy" width="400" height="260"><!-- swap: client image — Master Supreme scolaire -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Transport scolaire</p><p class="gamme-card-sub">Master Supreme</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Master Supreme — Tourisme régional"
+          data-glb-src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Master Supreme — Tourisme régional">
+          <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=400&q=70" alt="Master Supreme — Tourisme régional" loading="lazy" width="400" height="260"><!-- swap: client image — Master Supreme tourisme -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Tourisme régional</p><p class="gamme-card-sub">Master Supreme</p></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Ducato Elite -->
+    <div class="gamme-panel" id="gpanel-ducato" role="tabpanel" aria-labelledby="gtab-ducato">
+      <p class="text-brand-mist text-sm mb-5">Fiat Ducato Elite — transformation complète pour la livraison premium, le transport médical ou l'aménagement spécial.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Ducato Elite — Utilitaire premium"
+          data-glb-src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Ducato Elite — Utilitaire premium">
+          <img src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=400&q=70" alt="Ducato Elite — Utilitaire premium" loading="lazy" width="400" height="260"><!-- swap: client image — Ducato Elite utilitaire -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Utilitaire premium</p><p class="gamme-card-sub">Ducato Elite</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Ducato Elite — Version médicale"
+          data-glb-src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Ducato Elite — Version médicale">
+          <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=400&q=70" alt="Ducato Elite — Version médicale" loading="lazy" width="400" height="260"><!-- swap: client image — Ducato Elite médical -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Version médicale</p><p class="gamme-card-sub">Ducato Elite</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Ducato Elite — Caravane compact"
+          data-glb-src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="Ducato Elite — Caravane compact">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=70" alt="Ducato Elite — Caravane compact" loading="lazy" width="400" height="260"><!-- swap: client image — Ducato Elite caravane -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Caravane compact</p><p class="gamme-card-sub">Ducato Elite</p></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- MAN -->
+    <div class="gamme-panel" id="gpanel-man" role="tabpanel" aria-labelledby="gtab-man">
+      <p class="text-brand-mist text-sm mb-5">MAN — autocar grand tourisme, TGE et TGL transformés pour le transport interurbain et le fret spécialisé.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="MAN Autocar — Grand tourisme"
+          data-glb-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="MAN Autocar — Grand tourisme">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=70" alt="MAN Autocar — Grand tourisme" loading="lazy" width="400" height="260"><!-- swap: client image — MAN autocar -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Grand tourisme</p><p class="gamme-card-sub">MAN Autocar</p></div>
+        </button>
+        <button class="gamme-card" aria-label="MAN TGE — Van utilitaire"
+          data-glb-src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="MAN TGE — Van utilitaire">
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=400&q=70" alt="MAN TGE — Van utilitaire" loading="lazy" width="400" height="260"><!-- swap: client image — MAN TGE -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Van utilitaire</p><p class="gamme-card-sub">MAN TGE</p></div>
+        </button>
+        <button class="gamme-card" aria-label="MAN TGL — Porteur transformé"
+          data-glb-src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=1200&q=90"
+          data-glb-cap="MAN TGL — Porteur transformé">
+          <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=400&q=70" alt="MAN TGL — Porteur transformé" loading="lazy" width="400" height="260"><!-- swap: client image — MAN TGL -->
+          <div class="gamme-card-body"><p class="gamme-card-name">Porteur transformé</p><p class="gamme-card-sub">MAN TGL</p></div>
+        </button>
+      </div>
     </div>
 
     <div data-reveal class="mt-10 text-center">
       <a href="services.html" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-brand-line text-brand-blue font-medium hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
-        Voir plus
+        Voir tout le catalogue
         <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ===== 4b · Réalisations — filterable mosaic ===== -->
+
+
+<!-- ===== 6d · Auto Nejma — Flagship showcase ===== -->
+<section id="auto-nejma-showcase" class="py-20 md:py-28 lg:py-32 overflow-hidden" style="background:#F8F7FF;">
+  <div class="max-w-7xl mx-auto px-5">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-3">Partenariat</p>
+      <h2 data-reveal data-delay="1" class="font-display font-bold text-brand-ink text-[clamp(2rem,4vw+0.5rem,3.5rem)] leading-tight">
+        Auto Nejma × BDEA
+      </h2>
+      <p data-reveal data-delay="2" class="mt-4 text-brand-mist text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+        Partenaire Mercedes-Benz au Maroc, Auto Nejma confie à BDEA la transformation et l'aménagement de ses véhicules.
+      </p>
+    </div>
+
+    <!-- Two-column showcase -->
+    <div class="grid lg:grid-cols-[1fr_300px] gap-8 items-start">
+
+      <!-- Left — display image + swatches + thumbs -->
+      <div data-reveal>
+        <!-- Display image (crossfade) -->
+        <div class="nej-display" id="nej-display" aria-label="Sprinter Luxe — aperçu coloris">
+          <!-- swap: client image — Sprinter Luxe Tabaco -->
+          <img class="nej-img active" id="nej-img-tabaco" data-nej-variant="tabaco"
+               src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
+               alt="Sprinter Luxe — Tabaco" loading="lazy" width="1000" height="562">
+          <!-- swap: client image — Sprinter Luxe Noir -->
+          <img class="nej-img" id="nej-img-noir" data-nej-variant="noir"
+               src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1000&q=80"
+               alt="Sprinter Luxe — Noir" loading="lazy" width="1000" height="562">
+          <!-- swap: client image — Sprinter Luxe Gris -->
+          <img class="nej-img" id="nej-img-gris" data-nej-variant="gris"
+               src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80"
+               alt="Sprinter Luxe — Gris" loading="lazy" width="1000" height="562">
+          <!-- swap: client image — Sprinter Luxe Bordo -->
+          <img class="nej-img" id="nej-img-bordo" data-nej-variant="bordo"
+               src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1000&q=80"
+               alt="Sprinter Luxe — Bordo" loading="lazy" width="1000" height="562">
+        </div>
+
+        <!-- Swatches row + caption + lightbox trigger -->
+        <div class="flex items-center gap-4 flex-wrap mt-5">
+          <div class="flex items-center gap-2.5" role="group" aria-label="Choisir un coloris">
+            <button class="nej-swatch active" data-nej-variant="tabaco" aria-label="Coloris Tabaco"  style="background:#8B5E3C;"></button>
+            <button class="nej-swatch"        data-nej-variant="noir"   aria-label="Coloris Noir"   style="background:#1A1A1A;"></button>
+            <button class="nej-swatch"        data-nej-variant="gris"   aria-label="Coloris Gris"   style="background:#9CA3AF;"></button>
+            <button class="nej-swatch"        data-nej-variant="bordo"  aria-label="Coloris Bordo"  style="background:#6B1A2A;"></button>
+          </div>
+          <span class="text-sm font-medium text-brand-ink">Sprinter Luxe — <span id="nej-color-name">Tabaco</span></span>
+          <button id="nej-lb-open" class="ml-auto text-xs font-medium text-brand-purple underline underline-offset-2 hover:text-brand-blue transition-colors">
+            Voir en grand
+          </button>
+        </div>
+
+        <!-- Thumbnail row per variant -->
+        <div class="nej-thumb-row" id="nej-thumb-row">
+          <!-- Tabaco thumbs -->
+          <button class="nej-thumb ring" data-nej-variant="tabaco"
+            data-nej-lb-src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Tabaco · Vue 1" aria-label="Tabaco vue 1">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Tabaco 1 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="tabaco"
+            data-nej-lb-src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Tabaco · Vue 2" aria-label="Tabaco vue 2">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Tabaco 2 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="tabaco"
+            data-nej-lb-src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Tabaco · Vue 3" aria-label="Tabaco vue 3">
+            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Tabaco 3 -->
+          </button>
+          <!-- Noir thumbs (hidden until selected) -->
+          <button class="nej-thumb" data-nej-variant="noir" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Noir · Vue 1" aria-label="Noir vue 1">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Noir 1 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="noir" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Noir · Vue 2" aria-label="Noir vue 2">
+            <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Noir 2 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="noir" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Noir · Vue 3" aria-label="Noir vue 3">
+            <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Noir 3 -->
+          </button>
+          <!-- Gris thumbs -->
+          <button class="nej-thumb" data-nej-variant="gris" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Gris · Vue 1" aria-label="Gris vue 1">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Gris 1 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="gris" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Gris · Vue 2" aria-label="Gris vue 2">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Gris 2 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="gris" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Gris · Vue 3" aria-label="Gris vue 3">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Gris 3 -->
+          </button>
+          <!-- Bordo thumbs -->
+          <button class="nej-thumb" data-nej-variant="bordo" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Bordo · Vue 1" aria-label="Bordo vue 1">
+            <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Bordo 1 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="bordo" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Bordo · Vue 2" aria-label="Bordo vue 2">
+            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Bordo 2 -->
+          </button>
+          <button class="nej-thumb" data-nej-variant="bordo" style="display:none"
+            data-nej-lb-src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=1200&q=90"
+            data-nej-lb-cap="Sprinter Luxe — Bordo · Vue 3" aria-label="Bordo vue 3">
+            <img src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=160&q=60" alt="" loading="lazy" width="160" height="120"><!-- swap: client thumb — Sprinter Bordo 3 -->
+          </button>
+        </div>
+      </div>
+
+      <!-- Right — Sprinter Premium card + CTAs -->
+      <div data-reveal data-delay="1" class="flex flex-col gap-4 lg:sticky lg:top-24">
+        <!-- Premium card -->
+        <div class="rounded-2xl overflow-hidden border border-brand-line bg-white">
+          <div class="overflow-hidden" style="aspect-ratio:16/10;">
+            <!-- swap: client image — Sprinter Premium intérieur -->
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=640&q=80"
+                 alt="Sprinter Premium — intérieur luxe" loading="lazy" width="640" height="400"
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-[.18em] uppercase text-brand-purple mb-1">Auto Nejma</p>
+            <h3 class="font-display font-bold text-brand-ink text-xl leading-tight">Sprinter Premium</h3>
+            <p class="text-brand-mist text-sm mt-2 leading-relaxed">
+              Sièges en cuir, système multimédia intégré et finitions haut de gamme aux standards Mercedes-Benz.
+            </p>
+          </div>
+        </div>
+        <!-- CTAs -->
+        <a href="partenaires/auto-nejma.html"
+           class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+          Découvrir Auto Nejma
+          <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </a>
+        <a href="contact.html"
+           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+          Demander un devis similaire
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ===== 4c · Réalisations — filterable mosaic ===== -->
 <section id="realisations" class="py-20 md:py-28 lg:py-32">
   <div class="max-w-7xl mx-auto px-5">
     <div class="md:flex md:items-end md:justify-between gap-8 mb-8">
@@ -632,7 +984,7 @@
   <div class="absolute inset-0 bg-gradient-to-r from-brand-ink/85 via-brand-ink/60 to-transparent"></div>
 
   <!-- Orb -->
-  <div class="partner-orb w-80 h-80 bg-gradient-to-br from-brand-purple/20 to-brand-lilac/10 -bottom-32 -right-20" data-speed="-0.03" aria-hidden="true"></div>
+  <div class="partner-orb w-80 h-80 bg-gradient-to-br from-brand-purple/20 to-brand-lilac/10 -bottom-32 -right-20 hidden md:block" data-speed="-0.03" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-5 py-20 md:py-28 w-full">
     <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-lilac mb-2">Partenaire</p>
@@ -683,6 +1035,79 @@
     </div>
   </div>
 </section>
+
+<!-- ===== 4 · Services ===== -->
+<section id="services" class="py-20 md:py-28 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Nos métiers</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl">
+      Un métier, plusieurs expertises.
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+      <!-- Card 1 -->
+      <article data-reveal class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — autobus interior -->
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
+               alt="Autobus — aménagement intérieur" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Aménagement d'autobus</h3>
+          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Tourisme, scolaire et transport privé.</p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article data-reveal data-delay="1" class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — van interior -->
+          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&q=80"
+               alt="Van — agencement intérieur sur mesure" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Aménagement de vans</h3>
+          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Agencement intérieur sur mesure.</p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article data-reveal data-delay="2" class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — metal fabrication -->
+          <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=600&q=80"
+               alt="Fabrication de carrosserie — soudure" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Fabrication de carrosserie</h3>
+          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Conception et transformation adaptées.</p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article data-reveal data-delay="3" class="service-card group rounded-2xl overflow-hidden border border-brand-line bg-white cursor-default">
+        <div class="aspect-[4/3] overflow-hidden">
+          <!-- swap: client image — equipment & accessories -->
+          <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
+               alt="Équipements et accessoires automobile" class="w-full h-full object-cover" loading="lazy" width="600" height="450">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-brand-ink text-lg">Équipements & accessoires</h3>
+          <p class="mt-1.5 text-brand-mist text-sm leading-relaxed">Vente et installation pour l'industrie du véhicule.</p>
+        </div>
+      </article>
+    </div>
+
+    <div data-reveal class="mt-10 text-center">
+      <a href="services.html" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-brand-line text-brand-blue font-medium hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+        Voir plus
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- ===== 7 · Explorer — expanding panels ===== -->
 <section id="explorer" class="py-20 md:py-28 bg-white overflow-hidden">
@@ -784,6 +1209,21 @@
 </section>
 
 </main>
+
+<!-- ===== Shared lightbox ===== -->
+<div id="bdea-lb" role="dialog" aria-modal="true" aria-label="Visionneuse d'images">
+  <img id="bdea-lb-img" src="" alt="" width="1200" height="800">
+  <p id="bdea-lb-cap"></p>
+  <button id="bdea-lb-close" aria-label="Fermer">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+  </button>
+  <button id="bdea-lb-prev" aria-label="Image précédente">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2L4 8l6 6"/></svg>
+  </button>
+  <button id="bdea-lb-next" aria-label="Image suivante">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2l6 6-6 6"/></svg>
+  </button>
+</div>
 
 <!-- ===== Footer ===== -->
 <footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
@@ -909,6 +1349,171 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ── Services dropdown ── */
+  var svcTrigger = document.getElementById('svc-trigger');
+  var svcBtn     = document.getElementById('svc-btn');
+  if (svcTrigger && svcBtn) {
+    svcBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = svcTrigger.classList.toggle('open');
+      svcBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!svcTrigger.contains(e.target)) {
+        svcTrigger.classList.remove('open');
+        svcBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && svcTrigger.classList.contains('open')) {
+        svcTrigger.classList.remove('open');
+        svcBtn.setAttribute('aria-expanded', 'false');
+        svcBtn.focus();
+      }
+    });
+  }
+
+  /* ── Shared lightbox ── */
+  var bdLb    = document.getElementById('bdea-lb');
+  var bdLbImg = document.getElementById('bdea-lb-img');
+  var bdLbCap = document.getElementById('bdea-lb-cap');
+  var bdLbSet = [];
+  var bdLbIdx = 0;
+  var bdLbLast = null;
+
+  function bdLbOpen(set, idx) {
+    bdLbSet = set || [];
+    bdLbIdx = idx || 0;
+    if (bdLbSet[bdLbIdx]) {
+      bdLbImg.src = bdLbSet[bdLbIdx].src;
+      bdLbCap.textContent = bdLbSet[bdLbIdx].cap || '';
+    }
+    bdLb.classList.add('open');
+    bdLbLast = document.activeElement;
+    document.getElementById('bdea-lb-close').focus();
+    document.body.style.overflow = 'hidden';
+  }
+  function bdLbClose() {
+    bdLb.classList.remove('open');
+    bdLbImg.src = '';
+    document.body.style.overflow = '';
+    if (bdLbLast) { bdLbLast.focus(); bdLbLast = null; }
+  }
+  function bdLbGo(dir) {
+    if (!bdLbSet.length) return;
+    bdLbIdx = (bdLbIdx + dir + bdLbSet.length) % bdLbSet.length;
+    bdLbImg.src = bdLbSet[bdLbIdx].src;
+    bdLbCap.textContent = bdLbSet[bdLbIdx].cap || '';
+  }
+  if (bdLb) {
+    document.getElementById('bdea-lb-close').addEventListener('click', bdLbClose);
+    document.getElementById('bdea-lb-prev').addEventListener('click', function () { bdLbGo(-1); });
+    document.getElementById('bdea-lb-next').addEventListener('click', function () { bdLbGo(1); });
+    bdLb.addEventListener('click', function (e) { if (e.target === bdLb) bdLbClose(); });
+    document.addEventListener('keydown', function (e) {
+      if (!bdLb.classList.contains('open')) return;
+      if (e.key === 'Escape')     bdLbClose();
+      if (e.key === 'ArrowLeft')  bdLbGo(-1);
+      if (e.key === 'ArrowRight') bdLbGo(1);
+    });
+  }
+
+  /* ── Gamme tabs ── */
+  var gammeTabs   = Array.from(document.querySelectorAll('.gamme-tab'));
+  var gammePanels = Array.from(document.querySelectorAll('.gamme-panel'));
+  function activateGammeTab(idx) {
+    gammeTabs.forEach(function (t, i) {
+      t.classList.toggle('active', i === idx);
+      t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+      t.setAttribute('tabindex', i === idx ? '0' : '-1');
+    });
+    gammePanels.forEach(function (p, i) { p.classList.toggle('active', i === idx); });
+  }
+  gammeTabs.forEach(function (tab, idx) {
+    tab.addEventListener('click', function () { activateGammeTab(idx); });
+    tab.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        var n = (idx + 1) % gammeTabs.length;
+        activateGammeTab(n); gammeTabs[n].focus();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        var p = (idx - 1 + gammeTabs.length) % gammeTabs.length;
+        activateGammeTab(p); gammeTabs[p].focus();
+      }
+    });
+  });
+
+  /* ── Gamme cards → lightbox ── */
+  document.querySelectorAll('.gamme-card[data-glb-src]').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var panel    = card.closest('.gamme-panel');
+      var allCards = Array.from(panel.querySelectorAll('.gamme-card[data-glb-src]'));
+      var idx      = allCards.indexOf(card);
+      var set      = allCards.map(function (c) {
+        return { src: c.getAttribute('data-glb-src'), cap: c.getAttribute('data-glb-cap') || '' };
+      });
+      bdLbOpen(set, idx);
+    });
+  });
+
+  /* ── Auto Nejma swatch picker ── */
+  var nejSwatches   = Array.from(document.querySelectorAll('.nej-swatch'));
+  var nejImgs       = Array.from(document.querySelectorAll('.nej-img'));
+  var nejThumbs     = Array.from(document.querySelectorAll('.nej-thumb'));
+  var nejColorName  = document.getElementById('nej-color-name');
+  var nejNames      = { tabaco:'Tabaco', noir:'Noir', gris:'Gris', bordo:'Bordo' };
+
+  function activateNejVariant(v) {
+    nejSwatches.forEach(function (s) { s.classList.toggle('active', s.getAttribute('data-nej-variant') === v); });
+    nejImgs.forEach(function (img)   { img.classList.toggle('active', img.getAttribute('data-nej-variant') === v); });
+    var first = true;
+    nejThumbs.forEach(function (t) {
+      var match = t.getAttribute('data-nej-variant') === v;
+      t.style.display = match ? '' : 'none';
+      if (match) { t.classList.toggle('ring', first); first = false; }
+      else { t.classList.remove('ring'); }
+    });
+    if (nejColorName) nejColorName.textContent = nejNames[v] || v;
+  }
+
+  nejSwatches.forEach(function (s) {
+    s.addEventListener('click', function () { activateNejVariant(s.getAttribute('data-nej-variant')); });
+  });
+
+  /* ── Auto Nejma thumbs → lightbox ── */
+  function getNejSet(v) {
+    return Array.from(document.querySelectorAll('.nej-thumb[data-nej-variant="' + v + '"]')).map(function (t) {
+      return { src: t.getAttribute('data-nej-lb-src'), cap: t.getAttribute('data-nej-lb-cap') || '' };
+    });
+  }
+  nejThumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      var v       = thumb.getAttribute('data-nej-variant');
+      var allT    = Array.from(document.querySelectorAll('.nej-thumb[data-nej-variant="' + v + '"]'));
+      var idx     = allT.indexOf(thumb);
+      bdLbOpen(getNejSet(v), idx);
+    });
+  });
+
+  /* ── "Voir en grand" button ── */
+  var nejLbBtn = document.getElementById('nej-lb-open');
+  if (nejLbBtn) {
+    nejLbBtn.addEventListener('click', function () {
+      var active = document.querySelector('.nej-swatch.active');
+      var v = active ? active.getAttribute('data-nej-variant') : 'tabaco';
+      var set = getNejSet(v);
+      bdLbOpen(set, 0);
+    });
+  }
+
 });
 </script>
 
