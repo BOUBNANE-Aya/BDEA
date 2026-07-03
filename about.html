@@ -227,6 +227,15 @@
       .team-card:hover { transform: none !important; }
       .team-img { filter: none !important; }
     }
+
+    /* ══ Services dropdown ══ */
+    .svc-trigger { position:relative; }
+    .svc-panel { position:absolute; top:calc(100% + .75rem); left:50%; transform:translateX(-50%) translateY(-6px); background:#fff; border:1px solid #ECEAF2; border-radius:14px; box-shadow:0 12px 40px rgba(5,0,98,.13); padding:.5rem 0; min-width:250px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .15s,transform .15s,visibility .15s; }
+    .svc-trigger.open .svc-panel { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+    .svc-panel-link { display:flex; align-items:center; gap:.65rem; padding:.65rem 1.25rem; font-size:.8125rem; color:#2C2C3A; text-decoration:none; transition:background .12s,color .12s; }
+    .svc-panel-link:hover { background:#F5F4FC; color:#212677; }
+    .svc-panel-link svg { flex-shrink:0; color:#9D8EBF; }
+    .svc-divider { height:1px; background:#ECEAF2; margin:.35rem 1.25rem; }
   </style>
 </head>
 
@@ -248,7 +257,29 @@
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
       <a href="index.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
       <a href="about.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors border-b border-brand-purple pb-0.5">À propos</a>
-      <a href="services.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Services</a>
+      <div class="svc-trigger" id="svc-trigger">
+        <button id="svc-btn" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors flex items-center gap-1.5"
+                aria-haspopup="true" aria-expanded="false" aria-controls="svc-panel">
+          Nos services
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="svc-panel" class="svc-panel" role="region" aria-label="Catégories de services">
+          <a href="services-vehicule.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Modèles & Véhicules
+          </a>
+          <div class="svc-divider"></div>
+          <a href="services-amenagement.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Aménagement Intérieur
+          </a>
+          <div class="svc-divider"></div>
+          <a href="services-carrosserie.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+            Carrosserie & Transformation
+          </a>
+        </div>
+      </div>
       <a href="index.html#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
       <a href="contact.html" class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
     </nav>
@@ -261,7 +292,12 @@
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
   <a href="index.html" class="text-2xl font-display font-semibold text-white">Accueil</a>
   <a href="about.html" class="text-2xl font-display font-semibold text-white">À propos</a>
-  <a href="services.html" class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="services.html" class="text-2xl font-display font-semibold text-white">Nos services</a>
+  <div class="flex flex-col items-center gap-2 -mt-2">
+    <a href="services-vehicule.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Modèles & Véhicules</a>
+    <a href="services-amenagement.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Aménagement Intérieur</a>
+    <a href="services-carrosserie.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Carrosserie & Transformation</a>
+  </div>
   <a href="index.html#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
   <a href="contact.html" class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
 </div>
@@ -553,6 +589,11 @@
           <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
           <a href="about.html" class="hover:text-white transition-colors">À propos</a>
           <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <div class="flex flex-col gap-1.5 pl-3 mt-0.5 border-l border-white/15">
+            <a href="services-vehicule.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Modèles & Véhicules</a>
+            <a href="services-amenagement.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Aménagement Intérieur</a>
+            <a href="services-carrosserie.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Carrosserie & Transformation</a>
+          </div>
           <a href="index.html#partenaires" class="hover:text-white transition-colors">Partenaires</a>
           <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
         </nav>
@@ -614,6 +655,15 @@
 
 <!-- ===== Page JS ===== -->
 <script src="js/main.js" defer></script>
+<script>
+(function(){
+  var t=document.getElementById('svc-trigger'),b=document.getElementById('svc-btn');
+  if(!t||!b)return;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=t.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(){t.classList.remove('open');b.setAttribute('aria-expanded','false');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){t.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+})();
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
