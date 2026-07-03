@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Carrosserie & Transformation — Services BDEA Carrosserie</title>
+  <meta name="description" content="BDEA Carrosserie fabrique et transforme minibus, midibus, autocars et réalise des rallongements de châssis — expertise carrosserie sur mesure, Mohammedia.">
+
+  <meta property="og:title" content="Carrosserie & Transformation — Services BDEA Carrosserie">
+  <meta property="og:description" content="BDEA Carrosserie fabrique et transforme minibus, midibus, autocars et réalise des rallongements de châssis — expertise carrosserie sur mesure, Mohammedia.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { blue:'#212677', ink:'#050062', purple:'#7660A8', lilac:'#9D8EBF', paper:'#FFFAFA', mist:'#6B6B86', line:'#ECEAF2' }
+        },
+        fontFamily: {
+          display: ['"Clash Display"','sans-serif'],
+          sans: ['Inter','sans-serif'],
+          mono: ['"Space Mono"','monospace'],
+        }
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* ── Scroll spy nav ── */
+    .spy-nav { position: sticky; top: 6rem; }
+    .spy-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #9D8EBF; margin-bottom: 1rem; padding-left: 1rem; }
+    .spy-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.75rem; border-left: 2px solid transparent; text-decoration: none; transition: all 0.25s ease; color: #6B6B86; font-size: 0.8rem; line-height: 1.4; }
+    .spy-num { font-family: 'Space Mono', monospace; font-size: 0.58rem; opacity: 0.5; min-width: 1.2rem; }
+    .spy-item.active { border-left-color: #212677; color: #212677; font-weight: 600; }
+    .spy-item.active .spy-num { opacity: 1; color: #212677; }
+    .spy-divider { border-top: 1px solid #ECEAF2; margin: 0.75rem 1rem; }
+    .chap-num { font-family: 'Space Mono', monospace; font-size: clamp(4rem, 10vw, 8rem); font-weight: 700; line-height: 0.85; color: transparent; -webkit-text-stroke: 1px rgba(33,38,119,0.1); user-select: none; pointer-events: none; }
+    .svc-img { border-radius: 1.5rem; overflow: hidden; }
+    @media (min-width: 768px) { .svc-img { position: sticky; top: 5.5rem; } }
+    .svc-img > img { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+    .svc-img:hover > img { transform: scale(1.04); }
+    .process-line-fill { transform: scaleY(0); transform-origin: top; transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+    [data-process].in-view .process-line-fill { transform: scaleY(1); }
+    .process-dot { background: #ECEAF2; transition: background 0.4s, box-shadow 0.4s; }
+    [data-process].in-view .process-dot { background: #212677; box-shadow: 0 0 0 4px rgba(33,38,119,0.12); }
+    .cta-band { background: linear-gradient(135deg, #050062 0%, #212677 55%, #7660A8 100%); }
+    @media (prefers-reduced-motion: reduce) {
+      .process-line-fill { transition: none !important; transform: scaleY(1) !important; }
+      .process-dot { transition: none !important; background: #212677 !important; box-shadow: 0 0 0 4px rgba(33,38,119,0.12) !important; }
+    }
+    .filter-chips { display:flex; gap:.5rem; overflow-x:auto; scrollbar-width:none; padding-bottom:4px; }
+    .filter-chips::-webkit-scrollbar { display:none; }
+    .chip { flex-shrink:0; padding:.4rem 1.1rem; border-radius:999px; border:1.5px solid #ECEAF2; font-size:.8125rem; font-weight:500; cursor:pointer; background:transparent; color:#6B6B86; white-space:nowrap; transition:background .2s,border-color .2s,color .2s; }
+    .chip.active { border-color:#212677; background:#212677; color:#fff; }
+    .chip:hover:not(.active) { border-color:#9D8EBF; color:#212677; }
+    .real-mosaic { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:210px; grid-auto-flow:dense; gap:.625rem; }
+    @media(max-width:1023px){ .real-mosaic{grid-template-columns:repeat(3,1fr);} }
+    @media(max-width:639px) { .real-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:155px;} }
+    .tile-tall { grid-row:span 2; }
+    .tile-wide { grid-column:span 2; }
+    .tile-big  { grid-column:span 2; grid-row:span 2; }
+    @media(max-width:639px){ .tile-big{grid-row:span 1;} }
+    .real-tile { position:relative; overflow:hidden; border-radius:14px; background:#ECEAF2; cursor:pointer; }
+    .real-tile[aria-hidden="true"] { display:none; }
+    .real-tile > img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+    .real-tile:hover > img { transform:scale(1.065); }
+    .tile-overlay { position:absolute; inset:0; border-radius:14px; background:linear-gradient(to top,rgba(5,0,98,.92) 0%,rgba(33,38,119,.68) 40%,transparent 75%); display:flex; flex-direction:column; justify-content:flex-end; padding:1rem 1.2rem; opacity:0; transform:translateY(7px); transition:opacity .3s,transform .3s; }
+    .real-tile:hover .tile-overlay, .real-tile:focus-visible .tile-overlay { opacity:1; transform:translateY(0); }
+    .tile-brand { font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#9D8EBF; margin-bottom:.2rem; }
+    .tile-title { font-family:'Clash Display',sans-serif; font-weight:600; font-size:.88rem; color:#fff; line-height:1.3; margin-bottom:.15rem; }
+    .tile-type  { font-size:.68rem; color:rgba(255,255,255,.52); }
+
+    /* ── Services dropdown ── */
+    .svc-trigger { position:relative; }
+    .svc-panel { position:absolute; top:calc(100% + .75rem); left:50%; transform:translateX(-50%) translateY(-6px); background:#fff; border:1px solid #ECEAF2; border-radius:14px; box-shadow:0 12px 40px rgba(5,0,98,.13); padding:.5rem 0; min-width:250px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .15s,transform .15s,visibility .15s; }
+    .svc-trigger.open .svc-panel { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+    .svc-panel-link { display:flex; align-items:center; gap:.65rem; padding:.65rem 1.25rem; font-size:.8125rem; color:#2C2C3A; text-decoration:none; transition:background .12s,color .12s; }
+    .svc-panel-link:hover { background:#F5F4FC; color:#212677; }
+    .svc-panel-link svg { flex-shrink:0; color:#9D8EBF; }
+    .svc-divider { height:1px; background:#ECEAF2; margin:.35rem 1.25rem; }
+    .svc-panel-link.svc-current { color:#212677; font-weight:600; background:#F5F4FC; }
+
+    /* ── Category card grid ── */
+    .sv-cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    @media(max-width:1023px) { .sv-cat-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:639px) { .sv-cat-grid { grid-template-columns:1fr; } }
+    .sv-cat-img { border-radius:1.25rem; overflow:hidden; aspect-ratio:4/3; }
+    .sv-cat-img > img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.16,1,.3,1); }
+    .sv-cat-img:hover > img { transform:scale(1.05); }
+
+    /* ── Lightbox ── */
+    #sv-lb { display:none; position:fixed; inset:0; z-index:9999; background:rgba(5,0,98,.93); align-items:center; justify-content:center; padding:1.5rem; }
+    #sv-lb.open { display:flex; }
+    #sv-lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:10px; display:block; }
+    #sv-lb-cap { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.65); font-size:.78rem; white-space:nowrap; pointer-events:none; }
+    #sv-lb-close,#sv-lb-prev,#sv-lb-next { position:absolute; border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,.12); }
+    #sv-lb-close { top:1.25rem; right:1.25rem; width:40px; height:40px; }
+    #sv-lb-prev { left:1.25rem; top:50%; transform:translateY(-50%); width:44px; height:44px; }
+    #sv-lb-next { right:1.25rem; top:50%; transform:translateY(-50%); width:44px; height:44px; }
+    #sv-lb-close:hover,#sv-lb-prev:hover,#sv-lb-next:hover { background:rgba(255,255,255,.22); }
+
+    @media(prefers-reduced-motion:reduce){ .real-tile > img,.tile-overlay,.sv-cat-img > img { transition:none!important; } .tile-overlay { opacity:1!important; transform:none!important; background:linear-gradient(to top,rgba(5,0,98,.72) 0%,rgba(33,38,119,.28) 50%,transparent 80%); } }
+  </style>
+</head>
+
+<body class="bg-brand-paper text-[#2C2C3A] font-sans antialiased">
+
+<!-- ===== Navbar ===== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+    <a href="index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
+      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
+      </svg>
+      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true">
+        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text>
+        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/>
+      </svg>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
+      <a href="index.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
+      <a href="about.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
+      <div class="svc-trigger" id="svc-trigger">
+        <button id="svc-btn" class="nav-link text-sm font-medium text-white transition-colors flex items-center gap-1.5"
+                aria-haspopup="true" aria-expanded="false" aria-controls="svc-panel" aria-current="true">
+          Nos services
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="svc-panel" class="svc-panel" role="region" aria-label="Catégories de services">
+          <a href="services-vehicule.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Modèles & Véhicules
+          </a>
+          <div class="svc-divider"></div>
+          <a href="services-amenagement.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Aménagement Intérieur
+          </a>
+          <div class="svc-divider"></div>
+          <a href="services-carrosserie.html" class="svc-panel-link svc-current">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+            Carrosserie & Transformation
+          </a>
+        </div>
+      </div>
+      <a href="#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
+      <a href="contact.html" class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
+    </nav>
+
+    <button id="menu-toggle" class="hamburger lg:hidden relative z-[51] flex flex-col justify-center gap-[5px] w-8 h-8" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bg-white"></span>
+      <span class="bg-white"></span>
+      <span class="bg-white"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Mobile Menu ===== -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
+  <a href="index.html" class="text-2xl font-display font-semibold text-white">Accueil</a>
+  <a href="about.html" class="text-2xl font-display font-semibold text-white">À propos</a>
+  <a href="services.html" class="text-2xl font-display font-semibold text-brand-lilac">Nos services</a>
+  <div class="flex flex-col items-center gap-2 -mt-2">
+    <a href="services-vehicule.html" class="text-sm text-white/55">Modèles & Véhicules</a>
+    <a href="services-amenagement.html" class="text-sm text-white/55">Aménagement Intérieur</a>
+    <a href="services-carrosserie.html" class="text-sm font-medium text-white">Carrosserie & Transformation</a>
+  </div>
+  <a href="#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
+  <a href="contact.html" class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+</div>
+
+<main>
+
+<!-- ===== Hero ===== -->
+<section id="intro" class="pt-32 md:pt-44 pb-28 md:pb-36 relative overflow-hidden bg-brand-ink">
+  <div class="absolute -top-40 -right-32 w-[640px] h-[640px] rounded-full opacity-[0.18] pointer-events-none" style="background:radial-gradient(circle,#050062,transparent 70%);" aria-hidden="true"></div>
+  <div class="absolute -bottom-24 -left-24 w-[440px] h-[440px] rounded-full opacity-[0.09] pointer-events-none" style="background:radial-gradient(circle,#7660A8,transparent 70%);" aria-hidden="true"></div>
+  <div class="absolute bottom-0 inset-x-0 h-20 pointer-events-none" style="background:linear-gradient(to bottom,transparent,#FFFAFA);" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto px-5 relative z-10">
+    <!-- Breadcrumb -->
+    <nav aria-label="Fil d'Ariane" class="mb-6">
+      <ol class="flex items-center gap-2 text-xs text-white/40">
+        <li><a href="services.html" class="hover:text-white/70 transition-colors">Services</a></li>
+        <li aria-hidden="true">›</li>
+        <li class="text-white/60">Carrosserie & Transformation</li>
+      </ol>
+    </nav>
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">Carrosserie & Transformation</p>
+    <h1 data-reveal data-delay="1" class="font-display font-bold text-white text-[clamp(2.2rem,4.5vw+0.5rem,4rem)] leading-[1.08] tracking-tight">
+      De la structure à la carrosserie,<br class="hidden md:block"> adaptée à chaque besoin.
+    </h1>
+    <p data-reveal data-delay="2" class="mt-6 text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed">
+      Minibus, midibus, autocar ou rallongement de châssis — nous concevons et fabriquons la carrosserie qui correspond exactement à votre usage.
+    </p>
+    <div data-reveal data-delay="3" class="mt-8 flex flex-wrap gap-3">
+      <a href="#realisations" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium hover:bg-white/15 transition-colors">
+        Voir les réalisations
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1v14M1 8l7 7 7-7"/></svg>
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white text-sm font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        Demander un devis
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Sub-type cards ===== -->
+<section id="sous-types" class="py-20 md:py-28 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Nos types</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl mb-12">
+      Nos types de carrosserie.
+    </h2>
+    <div class="sv-cat-grid">
+
+      <!-- 01 · Minibus -->
+      <article class="group" data-reveal data-delay="0">
+        <div class="sv-cat-img mb-4">
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
+               alt="Minibus fabriqué par BDEA Carrosserie" loading="lazy" width="600" height="450"><!-- swap: client image — Minibus -->
+        </div>
+        <p class="chap-num" aria-hidden="true">01</p>
+        <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Minibus</h3>
+        <p class="mt-2 text-brand-mist text-sm leading-relaxed">9 à 19 places, le minibus est idéal pour le transport collectif urbain, scolaire et les navettes d'entreprise.</p>
+        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+          En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 02 · Midibus -->
+      <article class="group" data-reveal data-delay="1">
+        <div class="sv-cat-img mb-4">
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80"
+               alt="Midibus fabriqué par BDEA Carrosserie" loading="lazy" width="600" height="450"><!-- swap: client image — Midibus -->
+        </div>
+        <p class="chap-num" aria-hidden="true">02</p>
+        <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Midibus</h3>
+        <p class="mt-2 text-brand-mist text-sm leading-relaxed">20 à 35 places, le midibus répond aux besoins du tourisme régional, des liaisons interurbaines et du transport scolaire.</p>
+        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+          En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 03 · Autocar -->
+      <article class="group" data-reveal data-delay="2">
+        <div class="sv-cat-img mb-4">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+               alt="Autocar grand tourisme fabriqué par BDEA Carrosserie" loading="lazy" width="600" height="450"><!-- swap: client image — Autocar -->
+        </div>
+        <p class="chap-num" aria-hidden="true">03</p>
+        <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Autocar</h3>
+        <p class="mt-2 text-brand-mist text-sm leading-relaxed">Au-delà de 35 places, l'autocar grand tourisme avec toutes les finitions et options de confort premium.</p>
+        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+          En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- 04 · Rallongement de châssis -->
+      <article class="group" data-reveal data-delay="3">
+        <div class="sv-cat-img mb-4">
+          <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
+               alt="Rallongement de châssis réalisé par BDEA Carrosserie" loading="lazy" width="600" height="450"><!-- swap: client image — Rallongement de châssis -->
+        </div>
+        <p class="chap-num" aria-hidden="true">04</p>
+        <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Rallongement de châssis</h3>
+        <p class="mt-2 text-brand-mist text-sm leading-relaxed">Extension structurelle du châssis pour augmenter la capacité de chargement, le nombre de places ou la longueur utile.</p>
+        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+          En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Réalisations — filterable mosaic ===== -->
+<section id="realisations" class="py-20 md:py-28 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="md:flex md:items-end md:justify-between gap-8 mb-8">
+      <div>
+        <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Réalisations</p>
+        <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-lg">
+          Nos réalisations par type de carrosserie.
+        </h2>
+        <p data-reveal data-delay="2" class="mt-3 text-brand-mist text-base max-w-md">
+          Cliquez sur un type pour filtrer les projets — cliquez sur une image pour l'agrandir.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter chips -->
+    <div data-reveal class="filter-chips mb-7" role="group" aria-label="Filtrer par type de carrosserie">
+      <button class="chip active" data-cat="all">Tous</button>
+      <button class="chip" data-cat="minibus">Minibus</button>
+      <button class="chip" data-cat="midibus">Midibus</button>
+      <button class="chip" data-cat="autocar">Autocar</button>
+      <button class="chip" data-cat="rallongement">Rallongement</button>
+    </div>
+
+    <!-- Bento mosaic -->
+    <div class="real-mosaic" id="realisations-grid">
+
+      <!-- 1 · big · Autocar -->
+      <article class="real-tile tile-big" data-cat="autocar"
+               data-lb-src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Grand tourisme 52 places — Transport interurbain">
+        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80"
+             alt="Autocar — Grand tourisme 52 places" loading="lazy" width="900" height="675"><!-- swap: client image — Autocar -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Autocar</p>
+          <h3 class="tile-title">Grand tourisme 52 places</h3>
+          <p class="tile-type">Transport interurbain</p>
+        </div>
+      </article>
+
+      <!-- 2 · sq · Minibus -->
+      <article class="real-tile" data-cat="minibus"
+               data-lb-src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="12 places — transport urbain — Collectif">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=600&q=80"
+             alt="Minibus — 12 places transport urbain" loading="lazy" width="600" height="600"><!-- swap: client image — Minibus -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Minibus</p>
+          <h3 class="tile-title">12 places — transport urbain</h3>
+          <p class="tile-type">Collectif</p>
+        </div>
+      </article>
+
+      <!-- 3 · tall · Midibus -->
+      <article class="real-tile tile-tall" data-cat="midibus"
+               data-lb-src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="28 places — tourisme régional — Semi-interurbain">
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80"
+             alt="Midibus — 28 places tourisme régional" loading="lazy" width="500" height="800"><!-- swap: client image — Midibus -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Midibus</p>
+          <h3 class="tile-title">28 places — tourisme régional</h3>
+          <p class="tile-type">Semi-interurbain</p>
+        </div>
+      </article>
+
+      <!-- 4 · sq · Rallongement -->
+      <article class="real-tile" data-cat="rallongement"
+               data-lb-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Châssis allongé — Extension structurelle">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+             alt="Rallongement — Châssis allongé" loading="lazy" width="600" height="600"><!-- swap: client image — Rallongement -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Rallongement</p>
+          <h3 class="tile-title">Châssis allongé</h3>
+          <p class="tile-type">Extension structurelle</p>
+        </div>
+      </article>
+
+      <!-- 5 · wide · Minibus -->
+      <article class="real-tile tile-wide" data-cat="minibus"
+               data-lb-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Flotte minibus scolaire — Transport collectif">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80"
+             alt="Minibus — Flotte minibus scolaire" loading="lazy" width="900" height="450"><!-- swap: client image — Minibus scolaire -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Minibus</p>
+          <h3 class="tile-title">Flotte minibus scolaire</h3>
+          <p class="tile-type">Transport collectif</p>
+        </div>
+      </article>
+
+      <!-- 6 · sq · Autocar -->
+      <article class="real-tile" data-cat="autocar"
+               data-lb-src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Intercités confort premium — Lignes régulières">
+        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80"
+             alt="Autocar — Intercités confort premium" loading="lazy" width="600" height="600"><!-- swap: client image — Autocar intercités -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Autocar</p>
+          <h3 class="tile-title">Intercités confort premium</h3>
+          <p class="tile-type">Lignes régulières</p>
+        </div>
+      </article>
+
+      <!-- 7 · sq · Midibus -->
+      <article class="real-tile" data-cat="midibus"
+               data-lb-src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Navette aéroport — Transport pro">
+        <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
+             alt="Midibus — Navette aéroport" loading="lazy" width="600" height="600"><!-- swap: client image — Midibus navette -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Midibus</p>
+          <h3 class="tile-title">Navette aéroport</h3>
+          <p class="tile-type">Transport pro</p>
+        </div>
+      </article>
+
+      <!-- 8 · tall · Minibus -->
+      <article class="real-tile tile-tall" data-cat="minibus"
+               data-lb-src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Minibus VIP intérieur — Aménagement premium">
+        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=500&q=80"
+             alt="Minibus — VIP intérieur" loading="lazy" width="500" height="800"><!-- swap: client image — Minibus VIP -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Minibus</p>
+          <h3 class="tile-title">Minibus VIP intérieur</h3>
+          <p class="tile-type">Aménagement premium</p>
+        </div>
+      </article>
+
+      <!-- 9 · wide · Rallongement -->
+      <article class="real-tile tile-wide" data-cat="rallongement"
+               data-lb-src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1200&q=90"
+               tabindex="0" role="button" aria-label="Porteur transformé — Fret spécialisé">
+        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80"
+             alt="Rallongement — Porteur transformé" loading="lazy" width="900" height="450"><!-- swap: client image — Rallongement porteur -->
+        <div class="tile-overlay">
+          <p class="tile-brand">Rallongement</p>
+          <h3 class="tile-title">Porteur transformé</h3>
+          <p class="tile-type">Fret spécialisé</p>
+        </div>
+      </article>
+
+    </div><!-- /real-mosaic -->
+  </div>
+</section>
+
+<!-- ===== CTA Band ===== -->
+<section id="cta" class="cta-band py-24 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 text-center">
+    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">Parlons de votre projet</p>
+    <h2 data-reveal data-delay="1" class="font-display font-bold text-white text-[clamp(2rem,4vw+0.5rem,3.5rem)] leading-[1.1] tracking-tight">
+      Un projet en tête ?<br>Parlons-en.
+    </h2>
+    <p data-reveal data-delay="2" class="mt-5 text-white/60 text-lg leading-relaxed">
+      Que vous ayez un besoin précis ou une idée à concrétiser, notre équipe vous accompagne de la conception à la livraison.
+    </p>
+    <div data-reveal data-delay="3" class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand-ink font-semibold text-sm hover:bg-white/90 transition-colors shadow-xl shadow-brand-ink/25">
+        Demander un devis
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+      </a>
+      <a href="tel:+212719907777" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +212 71 99 07 07
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Lightbox ===== -->
+<div id="sv-lb" role="dialog" aria-modal="true" aria-label="Visionneuse">
+  <img id="sv-lb-img" src="" alt="" width="1200" height="800">
+  <p id="sv-lb-cap"></p>
+  <button id="sv-lb-close" aria-label="Fermer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2l12 12M14 2L2 14"/></svg></button>
+  <button id="sv-lb-prev" aria-label="Précédent"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2L4 8l6 6"/></svg></button>
+  <button id="sv-lb-next" aria-label="Suivant"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2l6 6-6 6"/></svg></button>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div class="lg:col-span-1">
+        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
+          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
+          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+        <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
+      </div>
+
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="index.html"    class="hover:text-white transition-colors">Accueil</a>
+          <a href="about.html"    class="hover:text-white transition-colors">À propos</a>
+          <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <a href="#partenaires"  class="hover:text-white transition-colors">Partenaires</a>
+          <a href="contact.html"  class="hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Contact</h4>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Sidi Moussa El Majdoub, Sidi Azzouz, Mohammedia</span>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+212719907777" class="hover:text-white transition-colors">+212 71 99 07 07</a>
+          </div>
+          <div class="flex gap-2.5">
+            <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+            <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-5">
+          <a href="https://wa.me/212719907777" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4">Localisation</h4>
+        <div class="rounded-xl overflow-hidden border border-white/10 aspect-[4/3]">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53168!2d-7.42!3d33.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62d60c3bcb8c9%3A0x6281653ac90e3!2sMohammedia!5e0!3m2!1sfr!2sma!4v1"
+            class="w-full h-full border-0 grayscale brightness-[0.85]" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="BDEA Carrosserie — Mohammedia, Maroc"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+      <span>&copy; 2026 BDEA Carrosserie. Tous droits réservés.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white/70 transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/212719907777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- ===== JS ===== -->
+<script src="js/main.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* ── Services dropdown ── */
+  var svcTrigger = document.getElementById('svc-trigger');
+  var svcBtn = document.getElementById('svc-btn');
+  if (svcTrigger && svcBtn) {
+    svcBtn.addEventListener('click', function(e) { e.stopPropagation(); var open = svcTrigger.classList.toggle('open'); svcBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+    document.addEventListener('click', function(e) { if (!svcTrigger.contains(e.target)) { svcTrigger.classList.remove('open'); svcBtn.setAttribute('aria-expanded','false'); } });
+    document.addEventListener('keydown', function(e) { if (e.key==='Escape' && svcTrigger.classList.contains('open')) { svcTrigger.classList.remove('open'); svcBtn.setAttribute('aria-expanded','false'); svcBtn.focus(); } });
+  }
+
+  /* ── Filter chips ── */
+  var chips = document.querySelectorAll('.chip[data-cat]');
+  var tiles = document.querySelectorAll('.real-tile[data-cat]');
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var cat = chip.getAttribute('data-cat');
+      tiles.forEach(function(tile) {
+        var match = cat === 'all' || tile.getAttribute('data-cat') === cat;
+        if (match) tile.removeAttribute('aria-hidden');
+        else tile.setAttribute('aria-hidden', 'true');
+      });
+    });
+  });
+
+  /* ── Lightbox ── */
+  var svLb = document.getElementById('sv-lb');
+  var svLbImg = document.getElementById('sv-lb-img');
+  var svLbCap = document.getElementById('sv-lb-cap');
+  var svLbSet = []; var svLbIdx = 0; var svLbLast = null;
+  function svLbOpen(set, idx) { svLbSet=set; svLbIdx=idx; svLbImg.src=set[idx].src; svLbCap.textContent=set[idx].cap||''; svLb.classList.add('open'); svLbLast=document.activeElement; document.getElementById('sv-lb-close').focus(); document.body.style.overflow='hidden'; }
+  function svLbClose() { svLb.classList.remove('open'); svLbImg.src=''; document.body.style.overflow=''; if(svLbLast){svLbLast.focus();svLbLast=null;} }
+  function svLbGo(dir) { if(!svLbSet.length)return; svLbIdx=(svLbIdx+dir+svLbSet.length)%svLbSet.length; svLbImg.src=svLbSet[svLbIdx].src; svLbCap.textContent=svLbSet[svLbIdx].cap||''; }
+  if (svLb) {
+    document.getElementById('sv-lb-close').addEventListener('click', svLbClose);
+    document.getElementById('sv-lb-prev').addEventListener('click', function(){ svLbGo(-1); });
+    document.getElementById('sv-lb-next').addEventListener('click', function(){ svLbGo(1); });
+    svLb.addEventListener('click', function(e){ if(e.target===svLb) svLbClose(); });
+    document.addEventListener('keydown', function(e){ if(!svLb.classList.contains('open'))return; if(e.key==='Escape')svLbClose(); if(e.key==='ArrowLeft')svLbGo(-1); if(e.key==='ArrowRight')svLbGo(1); });
+  }
+  // Wire tiles
+  var allTiles = Array.from(document.querySelectorAll('.real-tile[data-lb-src]'));
+  allTiles.forEach(function(tile) {
+    tile.addEventListener('click', function() {
+      var vis = allTiles.filter(function(t){ return t.getAttribute('aria-hidden') !== 'true'; });
+      var idx = vis.indexOf(tile); if(idx<0) idx=0;
+      var set = vis.map(function(t){ return { src:t.getAttribute('data-lb-src'), cap:t.querySelector('.tile-title') ? t.querySelector('.tile-title').textContent : '' }; });
+      svLbOpen(set, idx);
+    });
+    tile.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); tile.click(); } });
+  });
+
+  /* ── Process line ── */
+  var processEls = document.querySelectorAll('[data-process]');
+  if (reduced) { processEls.forEach(function(el){ el.classList.add('in-view'); }); }
+  else {
+    var procObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in-view');procObs.unobserve(e.target);} }); }, { threshold: 0.3 });
+    processEls.forEach(function(el){ procObs.observe(el); });
+  }
+});
+</script>
+
+</body>
+</html>
