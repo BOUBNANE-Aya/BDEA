@@ -77,6 +77,36 @@ html { scroll-behavior: smooth; }
 #mobile-menu.open a:nth-child(4) { transition-delay: 0.16s; }
 #mobile-menu.open a:nth-child(5) { transition-delay: 0.20s; }
 #mobile-menu.open a:nth-child(6) { transition-delay: 0.24s; }
+#mobile-menu.open a:nth-child(7) { transition-delay: 0.28s; }
+#mobile-menu.open a:nth-child(8) { transition-delay: 0.32s; }
+
+/* --- "Nos services" dropdown (desktop navbar) ---
+   Shared here (not duplicated per-page) so every page — including any
+   new page — gets working dropdown behavior automatically. */
+.svc-trigger { position: relative; }
+.svc-panel {
+  position: absolute; top: calc(100% + .75rem); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: #fff; border: 1px solid #ECEAF2; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(5,0,98,.13); padding: .5rem 0; min-width: 250px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .15s, transform .15s, visibility .15s;
+}
+.svc-trigger.open .svc-panel {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.svc-panel-link {
+  display: flex; align-items: center; gap: .65rem; padding: .65rem 1.25rem;
+  font-size: .8125rem; color: #2C2C3A; text-decoration: none;
+  transition: background .12s, color .12s;
+}
+.svc-panel-link:hover { background: #F5F4FC; color: #212677; }
+.svc-panel-link svg { flex-shrink: 0; color: #9D8EBF; }
+.svc-divider { height: 1px; background: #ECEAF2; margin: .35rem 1.25rem; }
+@media (prefers-reduced-motion: reduce) {
+  .svc-panel { transition: none !important; }
+}
 
 /* Hamburger animation */
 .hamburger span {

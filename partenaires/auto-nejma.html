@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Auto Nejma — BDEA Carrosserie | Partenaire Officiel</title>
   <meta name="description" content="Découvrez notre partenariat avec Auto Nejma : transformation et aménagement de véhicules Mercedes-Benz avec des finitions conformes aux standards de la marque.">
+  <!-- Canonical / hreflang (FR only for now — TODO: replace placeholder domain with real domain before launch) -->
+  <link rel="canonical" href="https://www.bdeacarrosserie.com/partenaires/auto-nejma.html">
+  <link rel="alternate" hreflang="fr" href="https://www.bdeacarrosserie.com/partenaires/auto-nejma.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.bdeacarrosserie.com/partenaires/auto-nejma.html">
+
   <meta property="og:title" content="Auto Nejma × BDEA Carrosserie">
-  <meta property="og:description" content="Partenaire Mercedes-Benz au Maroc. +120 véhicules transformés.">
+  <meta property="og:description" content="Partenaire stratégique et distributeur agréé Mercedes-Benz au Maroc.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_MA">
+  <meta property="og:url" content="https://www.bdeacarrosserie.com/partenaires/auto-nejma.html">
+  <meta property="og:image" content="https://www.bdeacarrosserie.com/assets/images/optimized/og-default.jpg">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,11 +113,35 @@
       </svg>
     </a>
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
-      <a href="../index.html"              class="text-sm font-medium text-white/75 hover:text-white transition-colors">Accueil</a>
-      <a href="../about.html"             class="text-sm font-medium text-white/75 hover:text-white transition-colors">À propos</a>
-      <a href="../services.html"          class="text-sm font-medium text-white/75 hover:text-white transition-colors">Services</a>
-      <a href="../index.html#partenaires" class="text-sm font-medium text-white transition-colors" aria-current="page">Partenaires</a>
-      <a href="../contact.html"           class="inline-flex items-center px-5 py-2.5 rounded-full border border-white/35 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contactez-nous</a>
+      <a href="../index.html"              class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
+      <a href="../about.html"             class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">À propos</a>
+      <div class="svc-trigger" id="svc-trigger">
+        <button id="svc-btn" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors flex items-center gap-1.5"
+                aria-haspopup="true" aria-expanded="false" aria-controls="svc-panel">
+          Nos services
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="svc-panel" class="svc-panel" role="region" aria-label="Catégories de services">
+          <a href="../services-vehicule.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Modèles & Véhicules
+          </a>
+          <div class="svc-divider"></div>
+          <a href="../services-amenagement.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Aménagement Intérieur
+          </a>
+          <div class="svc-divider"></div>
+          <a href="../services-carrosserie.html" class="svc-panel-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+            Carrosserie & Transformation
+          </a>
+        </div>
+      </div>
+      <a href="../index.html#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors" aria-current="page">Partenaires</a>
+      <a href="../faq.html"               class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">FAQ</a>
+      <a href="../actualites.html"        class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Actualités</a>
+      <a href="../contact.html"           class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Demander un devis</a>
     </nav>
     <button id="menu-toggle" class="hamburger lg:hidden relative z-[51] flex flex-col justify-center gap-[5px] w-8 h-8" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="bg-white"></span><span class="bg-white"></span><span class="bg-white"></span>
@@ -121,9 +152,16 @@
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
   <a href="../index.html"              class="text-2xl font-display font-semibold text-white">Accueil</a>
   <a href="../about.html"             class="text-2xl font-display font-semibold text-white">À propos</a>
-  <a href="../services.html"          class="text-2xl font-display font-semibold text-white">Services</a>
+  <a href="../services.html" class="text-2xl font-display font-semibold text-white">Nos services</a>
+  <div class="flex flex-col items-center gap-2 -mt-2">
+    <a href="../services-vehicule.html"    class="text-sm text-white/55 hover:text-white/80 transition-colors">Modèles & Véhicules</a>
+    <a href="../services-amenagement.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Aménagement Intérieur</a>
+    <a href="../services-carrosserie.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Carrosserie & Transformation</a>
+  </div>
   <a href="../index.html#partenaires" class="text-2xl font-display font-semibold text-brand-lilac">Partenaires</a>
-  <a href="../contact.html"           class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Contactez-nous</a>
+  <a href="../faq.html"               class="text-2xl font-display font-semibold text-white">FAQ</a>
+  <a href="../actualites.html"        class="text-2xl font-display font-semibold text-white">Actualités</a>
+  <a href="../contact.html"           class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Demander un devis</a>
 </div>
 
 <main>
@@ -185,14 +223,14 @@
       <div class="max-w-sm md:max-w-md">
         <p class="font-mono text-[10px] tracking-[0.28em] uppercase text-brand-lilac mb-4">Notre partenariat</p>
         <p class="font-display font-bold text-white text-2xl md:text-3xl leading-[1.2] mb-7">
-          Partenaire Mercedes-Benz au Maroc, Auto Nejma confie à BDEA la transformation et l'aménagement de ses véhicules, avec des finitions conformes aux standards de la marque.
+          L'un de nos partenaires stratégiques et distributeur agréé Mercedes-Benz au Maroc. Nous collaborons sur des projets de transformation de véhicules spécialisés tout en respectant les standards de qualité du constructeur.
         </p>
-        <!-- Stat -->
+        <!-- Caption -->
         <div class="border-l-2 border-brand-purple pl-5">
-          <p id="s2-stat" class="font-display font-bold text-white" style="font-size:clamp(3rem,8vw,5.5rem);line-height:1">
-            +120
+          <p class="font-display font-bold text-white leading-snug" style="font-size:clamp(1.4rem,3vw,2rem)">
+            Partenaire stratégique
           </p>
-          <p class="text-white/45 font-mono text-xs tracking-[0.18em] uppercase mt-1">véhicules transformés</p>
+          <p class="text-white/45 font-mono text-xs tracking-[0.18em] uppercase mt-1">Distributeur agréé Mercedes-Benz au Maroc</p>
         </div>
         <div class="mt-8 w-12 h-px" style="background:linear-gradient(90deg,#7660A8,transparent)"></div>
       </div>
@@ -219,30 +257,30 @@
     <!-- Image canvas -->
     <div class="s3-canvas" aria-label="Galerie de réalisations">
 
-      <!-- Image 1: Bus interior — swap: client media -->
+      <!-- Image 1: BDEA × Auto Nejma project photo -->
       <div id="s3-img1" aria-label="Projet 01">
-        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80"
-             alt="Aménagement intérieur autobus — Auto Nejma × BDEA" loading="lazy" width="900" height="600">
+        <img src="../assets/images/optimized/project-1-1600.jpg"
+             alt="Aménagement intérieur — minibus Mercedes-Benz — Auto Nejma × BDEA" loading="lazy" width="1600" height="2400">
         <div class="s3-caption">
-          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 01 — <span class="text-white/70">Autobus touristique</span></p>
+          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 01 — <span class="text-white/70">Minibus aménagé</span></p>
         </div>
       </div>
 
-      <!-- Image 2: Van fitting — swap: client media -->
+      <!-- Image 2: BDEA × Auto Nejma project photo -->
       <div id="s3-img2" aria-label="Projet 02">
-        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80"
-             alt="Aménagement van Mercedes-Benz — Auto Nejma × BDEA" loading="lazy" width="900" height="600">
+        <img src="../assets/images/optimized/project-2-1600.jpg"
+             alt="Aménagement intérieur — sellerie cuir Mercedes-Benz — Auto Nejma × BDEA" loading="lazy" width="1600" height="2400">
         <div class="s3-caption">
-          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 02 — <span class="text-white/70">Van aménagé</span></p>
+          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 02 — <span class="text-white/70">Sellerie cuir premium</span></p>
         </div>
       </div>
 
-      <!-- Image 3: Detail — swap: client media -->
+      <!-- Image 3: BDEA × Auto Nejma project photo -->
       <div id="s3-img3" aria-label="Projet 03">
-        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80"
-             alt="Finition carrosserie atelier BDEA" loading="lazy" width="900" height="600">
+        <img src="../assets/images/optimized/service-1-1600.jpg"
+             alt="Aménagement intérieur — sièges premium Mercedes-Benz — Auto Nejma × BDEA" loading="lazy" width="1600" height="2400">
         <div class="s3-caption">
-          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 03 — <span class="text-white/70">Carrosserie sur mesure</span></p>
+          <p class="font-mono text-[10px] text-white/40 tracking-widest">PROJET 03 — <span class="text-white/70">Finition intérieure</span></p>
         </div>
       </div>
 
@@ -257,7 +295,7 @@
 <div id="s4-track" class="s-track" style="height:200vh">
   <div class="s-pin" style="background:#0a0018">
 
-    <!-- BA Slider — swap: client media -->
+    <!-- BA Slider — swap: client media (TODO: pending real before/after photos from the client; no verified pair on hand yet) -->
     <div class="ba-slider absolute inset-0" id="s4-ba">
 
       <!-- Before image -->
@@ -330,7 +368,7 @@
       <span class="w-8 h-px bg-white/20"></span>
       <a href="mercedes-benz.html" class="font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors">Mercedes-Benz</a>
       <span class="w-8 h-px bg-white/20"></span>
-      <a href="volkswagen.html"    class="font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors">Volkswagen</a>
+      <a href="volkswagen.html"    class="font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors">Volkswagen CAC</a>
     </div>
   </div>
 </section>
@@ -348,6 +386,7 @@
           <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
         </svg>
         <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
+        <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-white/50"><svg class="w-3.5 h-3.5 text-brand-lilac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>Certifié ISO 9001:2015</p>
       </div>
       <div>
         <h4 class="font-display font-semibold text-white text-sm mb-4">Navigation</h4>
@@ -361,6 +400,8 @@
             <a href="../services-carrosserie.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Carrosserie & Transformation</a>
           </div>
           <a href="../index.html#partenaires" class="hover:text-white transition-colors">Partenaires</a>
+          <a href="../faq.html" class="hover:text-white transition-colors">FAQ</a>
+          <a href="../actualites.html" class="hover:text-white transition-colors">Actualités</a>
           <a href="../contact.html"           class="hover:text-white transition-colors">Contact</a>
         </nav>
       </div>
@@ -373,22 +414,25 @@
           </div>
           <div class="flex gap-2.5">
             <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+212719907777" class="hover:text-white transition-colors">+212 71 99 07 07</a>
+            <a href="tel:+212523286174" class="hover:text-white transition-colors">+212 5 232-86174</a>
           </div>
           <div class="flex gap-2.5">
             <svg class="w-4 h-4 mt-0.5 text-brand-lilac shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
-            <a href="mailto:zaid.benallouch@bdeacarrosserie.com" class="hover:text-white transition-colors break-all">zaid.benallouch@bdeacarrosserie.com</a>
+            <a href="mailto:direction@bdeacarroserie.com" class="hover:text-white transition-colors break-all">direction@bdeacarroserie.com</a>
           </div>
         </div>
         <div class="flex gap-3 mt-5">
-          <a href="https://wa.me/212719907777" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+          <a href="https://wa.me/212671990707" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+          <a href="https://www.instagram.com/bdeacarrosserie/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+          <a href="https://www.facebook.com/bdeacarrosserie/" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://ma.linkedin.com/company/bdea-carrosserie" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-lilac hover:bg-white/5 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
           </a>
         </div>
       </div>
@@ -397,22 +441,22 @@
         <nav class="flex flex-col gap-2 text-sm">
           <a href="auto-nejma.html"    class="text-white hover:text-brand-lilac transition-colors">Auto Nejma</a>
           <a href="mercedes-benz.html" class="hover:text-white transition-colors">Mercedes-Benz</a>
-          <a href="volkswagen.html"    class="hover:text-white transition-colors">Volkswagen</a>
+          <a href="volkswagen.html"    class="hover:text-white transition-colors">Volkswagen CAC</a>
         </nav>
       </div>
     </div>
     <div class="pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
       <span>&copy; 2026 BDEA Carrosserie. Tous droits réservés.</span>
       <div class="flex gap-5">
-        <a href="#" class="hover:text-white/70 transition-colors">Mentions légales</a>
-        <a href="#" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
+        <a href="../politique-confidentialite.html#mentions-legales" class="hover:text-white/70 transition-colors">Mentions légales</a>
+        <a href="../politique-confidentialite.html" class="hover:text-white/70 transition-colors">Politique de confidentialité</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/212719907777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+<a href="https://wa.me/212671990707" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
   <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.126 1.528 5.86L.06 23.49a.5.5 0 00.611.611l5.632-1.469A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.232-3.343.872.892-3.258-.254-.404A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
@@ -435,7 +479,6 @@
 
   var s2Track  = document.getElementById('s2-track');
   var s2Block  = document.getElementById('s2-block');
-  var s2Stat   = document.getElementById('s2-stat');
 
   var s3Track  = document.getElementById('s3-track');
   var s3Img1   = document.getElementById('s3-img1');
@@ -458,19 +501,6 @@
   function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
   function lerp(a, b, t) { return a + (b - a) * t; }
   function clamp01(v) { return Math.max(0, Math.min(1, v)); }
-
-  /* ── Count-up ── */
-  var counted = false;
-  function countUp(el, to, prefix, suffix, ms) {
-    var start = performance.now();
-    function step(now) {
-      var pct = Math.min(1, (now - start) / ms);
-      var val = Math.round(to * (1 - Math.pow(1 - pct, 3)));
-      el.textContent = prefix + val + suffix;
-      if (pct < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
 
   /* ── Video control ── */
   if (s1Video) {
@@ -520,12 +550,6 @@
 
       /* Scene 4 */
       s4Overlay.style.opacity = clamp01(p4 * 3);
-    }
-
-    /* Count-up (one-shot) */
-    if (!counted && p2 >= 0.5 && s2Stat) {
-      counted = true;
-      countUp(s2Stat, 120, '+', '', 1600);
     }
 
     ticking = false;
