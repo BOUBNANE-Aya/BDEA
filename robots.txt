@@ -1,0 +1,5 @@
+# TODO: replace placeholder domain below with the real live domain before launch
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bdeacarrosserie.com/sitemap.xml

@@ -34,6 +34,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── "Nos services" dropdown (desktop navbar) ──
+     Shared here (not duplicated per-page) so every page gets working
+     dropdown behavior automatically, including any new page. */
+  const svcTrigger = document.getElementById('svc-trigger');
+  const svcBtn = document.getElementById('svc-btn');
+  if (svcTrigger && svcBtn) {
+    svcBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = svcTrigger.classList.toggle('open');
+      svcBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!svcTrigger.contains(e.target)) {
+        svcTrigger.classList.remove('open');
+        svcBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && svcTrigger.classList.contains('open')) {
+        svcTrigger.classList.remove('open');
+        svcBtn.setAttribute('aria-expanded', 'false');
+        svcBtn.focus();
+      }
+    });
+  }
+
   /* ── Reveal on scroll ── */
   if (!reducedMotion) {
     const els = document.querySelectorAll('[data-reveal]');
