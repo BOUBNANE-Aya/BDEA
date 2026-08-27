@@ -5,6 +5,119 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Resolve the client's image library for every existing gallery surface. */
+  const imageSets = {
+    sprinter: [
+      'assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/1.png',
+      'assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/1.png',
+      'assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/1.png',
+      'assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/1.png',
+      'assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/1.png',
+      'assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/1.png'
+    ],
+    crafter: [
+      'assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/1.png',
+      'assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/1.png',
+      'assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/1.png',
+      'assets/images/VW Crafter New Model 2026/VW Crafter - Black/1.png',
+      'assets/images/VW Crafter New Model 2026/VW Crafter - Broown/1.png',
+      'assets/images/VW Crafter New Model 2026/VW Crafter - Red/1.png'
+    ],
+    master: [
+      'assets/images/Renault Master/Renault Master - Model 1/1.png',
+      'assets/images/Renault Master/Renault Master - Model 2/1.png',
+      'assets/images/Renault Master/Renault Master - Model 1/2.png'
+    ],
+    autres: [
+      'assets/images/Minibus Iveco/1.png',
+      'assets/images/Minibus Iveco/2.png',
+      'assets/images/Jac - Marron/1.png'
+    ],
+    autoNejma: [
+      'assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/1.png',
+      'assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/1.png',
+      'assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/1.png'
+    ],
+    intro: [
+      'assets/images/Intro and main Page pictures/1.png',
+      'assets/images/Intro and main Page pictures/2.png',
+      'assets/images/Intro and main Page pictures/3.png',
+      'assets/images/Intro and main Page pictures/4.png',
+      'assets/images/Intro and main Page pictures/5.png',
+      'assets/images/Intro and main Page pictures/6.png'
+    ]
+  };
+
+  const toPartnerPath = (path) => window.location.pathname.includes('/partenaires/') ? '../' + path : path;
+  const chooseImage = (key, index) => toPartnerPath(imageSets[key] && imageSets[key][index % imageSets[key].length] || imageSets.intro[index % imageSets.intro.length]);
+  const serviceImage = (label, index) => {
+    const value = label.toLowerCase();
+    if (value.includes('sprinter') || value.includes('vip')) return chooseImage('sprinter', index);
+    if (value.includes('crafter') || value.includes('midibus')) return chooseImage('crafter', index);
+    if (value.includes('master')) return chooseImage('master', index);
+    if (value.includes('iveco') || value.includes('minibus') || value.includes('autocar')) return chooseImage('autres', index);
+    return chooseImage('intro', index);
+  };
+
+  const replaceClientImages = () => {
+    let fallbackIndex = 0;
+    document.querySelectorAll('img, video').forEach((media) => {
+      const current = media.getAttribute('src') || media.getAttribute('poster') || '';
+      const isPlaceholder = /unsplash|optimized\//.test(current);
+      if (!isPlaceholder) return;
+
+      const tile = media.closest('.real-tile');
+      const gamme = media.closest('.gamme-card');
+      const variant = media.closest('[data-nej-variant]') || media;
+      const alt = (media.getAttribute('alt') || media.getAttribute('aria-label') || '').toLowerCase();
+      let path;
+
+      if (variant.hasAttribute('data-nej-variant')) {
+        const variantMap = { tabaco: 'autoNejma', noir: 'sprinter', gris: 'sprinter', bordo: 'sprinter' };
+        path = chooseImage(variantMap[variant.getAttribute('data-nej-variant')] || 'autoNejma', fallbackIndex);
+      } else if (tile && tile.dataset.cat) {
+        const categoryMap = {
+          touristique: 'sprinter', personnel: 'master', scolaire: 'crafter', vip: 'sprinter', caravane: 'master',
+          minibus: 'autres', midibus: 'crafter', autocar: 'autres', rallongement: 'intro'
+        };
+        path = chooseImage(categoryMap[tile.dataset.cat] || tile.dataset.cat, fallbackIndex);
+      } else if (tile && tile.dataset.brand) {
+        const brandMap = { 'auto-nejma': 'autoNejma', mercedes: 'sprinter', volkswagen: 'crafter', fiat: 'master', iveco: 'autres', man: 'autres' };
+        path = chooseImage(brandMap[tile.dataset.brand] || 'intro', fallbackIndex);
+      } else if (gamme) {
+        const panel = gamme.closest('.gamme-panel');
+        const panelKey = panel ? panel.id.replace('gpanel-', '') : '';
+        path = chooseImage(panelKey === 'man' || panelKey === 'ducato' ? panelKey === 'ducato' ? 'master' : 'autres' : panelKey || 'intro', fallbackIndex);
+      } else if (document.title.includes('Auto Nejma')) {
+        path = chooseImage('autoNejma', fallbackIndex);
+      } else if (document.title.includes('Mercedes')) {
+        path = chooseImage('sprinter', fallbackIndex);
+      } else if (document.title.includes('Volkswagen')) {
+        path = chooseImage('crafter', fallbackIndex);
+      } else {
+        path = serviceImage(alt, fallbackIndex);
+      }
+
+      if (media.tagName === 'VIDEO') media.setAttribute('poster', path);
+      else media.setAttribute('src', path);
+      ['data-lb-src', 'data-glb-src', 'data-nej-lb-src'].forEach((attribute) => {
+        if (media.hasAttribute(attribute)) media.setAttribute(attribute, path);
+      });
+      fallbackIndex++;
+    });
+
+    document.querySelectorAll('[data-lb-src], [data-glb-src], [data-nej-lb-src]').forEach((element) => {
+      const childImage = element.querySelector('img');
+      const resolvedChild = childImage && childImage.getAttribute('src');
+      ['data-lb-src', 'data-glb-src', 'data-nej-lb-src'].forEach((attribute) => {
+        if (/unsplash|optimized\//.test(element.getAttribute(attribute) || '')) {
+          element.setAttribute(attribute, resolvedChild || chooseImage('intro', fallbackIndex++));
+        }
+      });
+    });
+  };
+  replaceClientImages();
+
   /* ── Navbar: transparent → solid ── */
   const navbar = document.getElementById('navbar');
   const hero   = document.getElementById('hero');
