@@ -160,6 +160,28 @@
     .tile-brand { font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#9D8EBF; margin-bottom:.2rem; }
     .tile-title { font-family:'Clash Display',sans-serif; font-weight:600; font-size:.88rem; color:#fff; line-height:1.3; margin-bottom:.15rem; }
     .tile-type  { font-size:.68rem; color:rgba(255,255,255,.52); }
+
+    /* ══ Workflow — atelier step strip ══ */
+    .workflow-row { scrollbar-width: none; }
+    .workflow-row::-webkit-scrollbar { display: none; }
+    .workflow-card {
+      scroll-snap-align: start;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .workflow-card:hover { transform: translateY(-6px); }
+    .workflow-card img {
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s;
+      filter: brightness(0.6) saturate(0.9);
+    }
+    .workflow-card:hover img { transform: scale(1.06); filter: brightness(0.5) saturate(1); }
+    .workflow-connector { display: none; }
+    @media (min-width: 1024px) {
+      .workflow-connector { display: block; position: absolute; top: 34px; left: 34px; right: 34px; height: 2px; background: linear-gradient(90deg, #212677, #7660A8); z-index: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .workflow-card:hover { transform: none !important; }
+      .workflow-card:hover img { transform: none !important; }
+    }
   </style>
 </head>
 
@@ -207,6 +229,7 @@
         </div>
       </div>
       <a href="#partenaires"  class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
+      <a href="gallery.html"  class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Galerie</a>
       <a href="faq.html"      class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">FAQ</a>
       <a href="actualites.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Actualités</a>
       <a href="contact.html"  class="nav-cta inline-flex items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-medium text-white hover:bg-white/10 transition-colors">Demander un devis</a>
@@ -231,6 +254,7 @@
     <a href="services-carrosserie.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Carrosserie & Transformation</a>
   </div>
   <a href="#partenaires"  class="text-2xl font-display font-semibold text-white">Partenaires</a>
+  <a href="gallery.html" class="text-2xl font-display font-semibold text-white">Galerie</a>
   <a href="faq.html" class="text-2xl font-display font-semibold text-white">FAQ</a>
   <a href="actualites.html" class="text-2xl font-display font-semibold text-white">Actualités</a>
   <a href="contact.html"  class="mt-4 inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-medium">Demander un devis</a>
@@ -300,7 +324,7 @@
 
           <!-- Sticky image (left) -->
           <div class="svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
-            <img src="assets/images/optimized/project-1-800.jpg"
+            <img src="assets/images/Minibus Iveco/4.png"
                  alt="Aménagement intérieur d'autobus — réalisation BDEA Carrosserie" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
           </div>
 
@@ -435,7 +459,7 @@
 
           <!-- Sticky image (right) -->
           <div class="order-1 md:order-2 svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
-            <img src="assets/images/optimized/project-2-800.jpg"
+            <img src="assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/2.png"
                  alt="Aménagement intérieur de van — réalisation BDEA Carrosserie" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
           </div>
         </div>
@@ -448,11 +472,11 @@
           <!-- Sticky BA slider (left) -->
           <div class="svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
             <div class="ba-slider w-full h-full">
-              <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80"
-                   alt="Avant transformation carrosserie" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+              <img src="assets/images/Employees pictures/Soudeur/4.png"
+                   alt="Avant transformation — fabrication carrosserie en atelier" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
               <div class="ba-after">
-                <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=800&q=80"
-                     alt="Après transformation carrosserie" loading="lazy" width="800" height="600" style="width:100%;height:100%;object-fit:cover;">
+                <img src="assets/images/VW Crafter New Model 2026/VW Crafter - Black/1.png"
+                     alt="Après transformation — véhicule fini livré" loading="lazy" width="800" height="600" style="width:100%;height:100%;object-fit:cover;">
               </div>
               <div class="ba-handle"></div>
               <span class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 text-[0.6rem] font-medium tracking-wider uppercase text-white/75 bg-black/35 backdrop-blur-sm px-3 py-1 rounded-full pointer-events-none select-none">Avant / Après</span>
@@ -589,7 +613,7 @@
 
           <!-- Sticky image (right) -->
           <div class="order-1 md:order-2 svc-img aspect-[4/3] mb-10 md:mb-0" data-reveal>
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+            <img src="assets/images/Employees pictures/Menuiserie/2.png"
                  alt="Équipements et accessoires véhicules" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
           </div>
         </div>
@@ -598,6 +622,110 @@
     </div><!-- /chapters -->
   </div><!-- /spy grid -->
 </div><!-- /container -->
+
+<!-- ===== 2b · Notre méthode en images — atelier step strip ===== -->
+<section class="py-20 md:py-28 bg-white border-t border-brand-line overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Notre méthode</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-2xl">
+      Sept étapes, une seule équipe, un seul atelier.
+    </h2>
+    <p data-reveal data-delay="2" class="mt-3 text-brand-mist text-base max-w-xl">
+      De la soudure du châssis au nettoyage final, chaque véhicule passe entre les mains de nos artisans avant la livraison.
+    </p>
+
+    <div data-reveal data-delay="3" class="relative mt-12">
+      <div class="workflow-connector" aria-hidden="true"></div>
+      <div class="workflow-row flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4">
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Soudeur/1.png" alt="Soudure — fabrication du châssis" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">01</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Soudure</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Fabrication et renfort de la structure métallique.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Menuiserie/1.png" alt="Menuiserie — habillage intérieur" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">02</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Menuiserie</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Découpe et habillage bois sur mesure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Electricity/1.png" alt="Électricité — câblage et éclairage" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">03</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Électricité</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Câblage, éclairage et systèmes embarqués.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Peintre/1.png" alt="Peinture — finition et protection" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">04</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Peinture</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Application et protection anti-corrosion.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Finition/1.png" alt="Finition — assemblage et sellerie" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">05</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Finition</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Assemblage, sellerie et derniers réglages.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Quality control/1.png" alt="Contrôle qualité — inspection avant livraison" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">06</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Contrôle qualité</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Inspection conforme à notre certification ISO 9001:2015.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow-card snap-start shrink-0 w-[46vw] sm:w-[220px] relative rounded-2xl overflow-hidden aspect-[3/4]">
+          <img src="assets/images/Employees pictures/Cleaning/1.png" alt="Nettoyage — préparation avant livraison" loading="lazy" width="440" height="586" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/95 via-brand-ink/20 to-transparent"></div>
+          <div class="absolute inset-0 p-4 flex flex-col justify-between">
+            <span class="w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center font-display font-bold text-white text-xs">07</span>
+            <div>
+              <h3 class="font-display font-semibold text-white text-base leading-tight">Nettoyage & livraison</h3>
+              <p class="mt-1 text-white/60 text-xs leading-relaxed">Préparation finale et remise au client.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== 3 · Partners ===== -->
 <div id="partenaires">
@@ -610,11 +738,11 @@
 
         <!-- BA Slider (left) -->
         <div data-reveal class="ba-slider partner-img-clip aspect-[4/3] rounded-2xl overflow-hidden mb-10 md:mb-0">
-          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80"
-               alt="Autobus Auto Nejma — avant aménagement" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
+          <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/2.png"
+               alt="Sprinter Auto Nejma — extérieur avant aménagement" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
           <div class="ba-after">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
-                 alt="Autobus Auto Nejma — après aménagement" loading="lazy" width="800" height="600" style="width:100%;height:100%;object-fit:cover;">
+            <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/8.png"
+                 alt="Sprinter VIP Rafi — intérieur après aménagement" loading="lazy" width="800" height="600" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="ba-handle"></div>
           <span class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 text-[0.6rem] font-medium tracking-wider uppercase text-white/75 bg-black/35 backdrop-blur-sm px-3 py-1 rounded-full pointer-events-none select-none">Glissez pour voir la transformation</span>
@@ -640,7 +768,7 @@
   <!-- ── Mercedes-Benz (cinematic full-bleed) ── -->
   <section id="mercedes" class="partner-cinematic" data-chapter="mercedes">
     <div class="cinematic-bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80"
+      <img src="assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/6.png"
            alt="" loading="lazy" width="1920" height="1080">
     </div>
     <div class="cinematic-overlay" aria-hidden="true"></div>
@@ -682,8 +810,8 @@
         <!-- Image (right, clipped + offset) -->
         <div data-reveal class="order-1 md:order-2 md:translate-y-8 overflow-hidden partner-img-clip-r aspect-[4/3] rounded-xl mt-10 md:mt-0">
           <div class="partner-sheen rounded-xl"></div>
-          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80"
-               alt="Volkswagen Transporter aménagé" class="partner-visual w-full h-full object-cover" loading="lazy" width="800" height="600">
+          <img src="assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/1.png"
+               alt="Volkswagen Crafter aménagé — intérieur" class="partner-visual w-full h-full object-cover" loading="lazy" width="800" height="600">
         </div>
       </div>
     </div>
@@ -722,74 +850,74 @@
 
       <!-- 1 · big · Auto Nejma -->
       <article class="real-tile tile-big" data-brand="auto-nejma" data-reveal>
-        <img src="assets/images/optimized/project-3-800.jpg"
-             alt="Aménagement autobus — Auto Nejma" loading="lazy" width="900" height="675">
+        <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/9.png"
+             alt="Aménagement intérieur — Sprinter VIP Rafi, Auto Nejma" loading="lazy" width="900" height="675">
         <div class="tile-overlay">
           <p class="tile-brand">Auto Nejma</p>
-          <h3 class="tile-title">Autobus scolaire aménagé</h3>
+          <h3 class="tile-title">Sprinter VIP Rafi</h3>
           <p class="tile-type">Aménagement intérieur</p>
         </div>
       </article>
 
       <!-- 2 · sq · Mercedes -->
       <article class="real-tile tile-sq" data-brand="mercedes" data-reveal data-delay="1">
-        <img src="assets/images/optimized/service-1-800.jpg"
-             alt="Mercedes-Benz — transformation" loading="lazy" width="600" height="600">
+        <img src="assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/7.png"
+             alt="Mercedes-Benz Sprinter Premium — habitacle" loading="lazy" width="600" height="600">
         <div class="tile-overlay">
           <p class="tile-brand">Mercedes-Benz</p>
-          <h3 class="tile-title">Sprinter transformé</h3>
+          <h3 class="tile-title">Sprinter Premium</h3>
           <p class="tile-type">Transformation complète</p>
         </div>
       </article>
 
       <!-- 3 · tall · Volkswagen -->
       <article class="real-tile tile-tall" data-brand="volkswagen" data-reveal data-delay="2">
-        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=500&q=80"
-             alt="Volkswagen Transporter — aménagement" loading="lazy" width="500" height="800">
+        <img src="assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/2.png"
+             alt="Volkswagen Crafter 20 places — aménagement intérieur" loading="lazy" width="500" height="800">
         <div class="tile-overlay">
           <p class="tile-brand">Volkswagen</p>
-          <h3 class="tile-title">Transporter équipé</h3>
+          <h3 class="tile-title">Crafter 20 places</h3>
           <p class="tile-type">Aménagement sur mesure</p>
         </div>
       </article>
 
       <!-- 4 · sq · Mercedes -->
       <article class="real-tile tile-sq" data-brand="mercedes" data-reveal data-delay="1">
-        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80"
-             alt="Mercedes-Benz Tourismo" loading="lazy" width="600" height="600">
+        <img src="assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/2.png"
+             alt="Mercedes-Benz Sprinter Luxe Marron — sellerie cuir" loading="lazy" width="600" height="600">
         <div class="tile-overlay">
           <p class="tile-brand">Mercedes-Benz</p>
-          <h3 class="tile-title">Tourismo VIP</h3>
+          <h3 class="tile-title">Sprinter Luxe Marron</h3>
           <p class="tile-type">Transport premium</p>
         </div>
       </article>
 
       <!-- 5 · wide · Auto Nejma -->
       <article class="real-tile tile-wide" data-brand="auto-nejma" data-reveal data-delay="2">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80"
-             alt="Flotte de minibus Auto Nejma" loading="lazy" width="900" height="450">
+        <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/2.png"
+             alt="Sprinter VIP Light — habitacle Auto Nejma" loading="lazy" width="900" height="450">
         <div class="tile-overlay">
           <p class="tile-brand">Auto Nejma</p>
-          <h3 class="tile-title">Flotte de minibus</h3>
+          <h3 class="tile-title">Sprinter VIP Light</h3>
           <p class="tile-type">Transport collectif</p>
         </div>
       </article>
 
-      <!-- 6 · sq · Fiat -->
+      <!-- 6 · sq · Fiat (aucun véhicule Fiat en stock — aménagement premium équivalent) -->
       <article class="real-tile tile-sq" data-brand="fiat" data-reveal data-delay="3">
-        <img src="https://images.unsplash.com/photo-1609601228038-1c8f9e35b57a?auto=format&fit=crop&w=600&q=80"
-             alt="Fiat Ducato aménagé" loading="lazy" width="600" height="600">
+        <img src="assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/2.png"
+             alt="Aménagement utilitaire premium — habitacle" loading="lazy" width="600" height="600">
         <div class="tile-overlay">
           <p class="tile-brand">Fiat</p>
-          <h3 class="tile-title">Ducato utilitaire</h3>
+          <h3 class="tile-title">Aménagement utilitaire premium</h3>
           <p class="tile-type">Aménagement</p>
         </div>
       </article>
 
       <!-- 7 · sq · Iveco -->
       <article class="real-tile tile-sq" data-brand="iveco" data-reveal data-delay="3">
-        <img src="https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=600&q=80"
-             alt="Iveco — carrosserie sur mesure" loading="lazy" width="600" height="600">
+        <img src="assets/images/Minibus Iveco/5.png"
+             alt="Iveco — carrosserie sur mesure, intérieur VIP" loading="lazy" width="600" height="600">
         <div class="tile-overlay">
           <p class="tile-brand">Iveco</p>
           <h3 class="tile-title">Carrosserie sur mesure</h3>
@@ -797,21 +925,21 @@
         </div>
       </article>
 
-      <!-- 8 · tall · Fiat -->
+      <!-- 8 · tall · Fiat (aucun véhicule Fiat en stock — aménagement premium équivalent) -->
       <article class="real-tile tile-tall" data-brand="fiat" data-reveal data-delay="2">
-        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=500&q=80"
-             alt="Fiat — atelier et finitions" loading="lazy" width="500" height="800">
+        <img src="assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/2.png"
+             alt="Atelier et finitions — habitacle sur mesure" loading="lazy" width="500" height="800">
         <div class="tile-overlay">
           <p class="tile-brand">Fiat</p>
           <h3 class="tile-title">Atelier & finitions</h3>
-          <p class="tile-type">Carrosserie</p>
+          <p class="tile-type">Aménagement intérieur</p>
         </div>
       </article>
 
       <!-- 9 · wide · Volkswagen -->
       <article class="real-tile tile-wide" data-brand="volkswagen" data-reveal data-delay="3">
-        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80"
-             alt="Volkswagen Crafter — transformation" loading="lazy" width="900" height="450">
+        <img src="assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/2.png"
+             alt="Volkswagen Crafter — transformation intérieure" loading="lazy" width="900" height="450">
         <div class="tile-overlay">
           <p class="tile-brand">Volkswagen</p>
           <h3 class="tile-title">Crafter reconfiguré</h3>
@@ -821,22 +949,22 @@
 
       <!-- 10 · sq · MAN -->
       <article class="real-tile tile-sq" data-brand="man" data-reveal data-delay="4">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
-             alt="MAN — carrosserie poids lourd" loading="lazy" width="600" height="600">
+        <img src="assets/images/Intro and main Page pictures/5.png"
+             alt="Flotte MAN livrée par BDEA Carrosserie" loading="lazy" width="600" height="600">
         <div class="tile-overlay">
           <p class="tile-brand">MAN</p>
-          <h3 class="tile-title">Poids lourd équipé</h3>
+          <h3 class="tile-title">Flotte MAN livrée</h3>
           <p class="tile-type">Fabrication</p>
         </div>
       </article>
 
       <!-- 11 · wide · Auto Nejma -->
       <article class="real-tile tile-wide" data-brand="auto-nejma" data-reveal data-delay="4">
-        <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80"
-             alt="Auto Nejma — minibus scolaire" loading="lazy" width="900" height="450">
+        <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/5.png"
+             alt="Sprinter navette aéroport — intérieur Auto Nejma" loading="lazy" width="900" height="450">
         <div class="tile-overlay">
           <p class="tile-brand">Auto Nejma</p>
-          <h3 class="tile-title">Minibus scolaire</h3>
+          <h3 class="tile-title">Navette aéroport</h3>
           <p class="tile-type">Aménagement complet</p>
         </div>
       </article>
@@ -898,6 +1026,7 @@
             <a href="services-carrosserie.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Carrosserie & Transformation</a>
           </div>
           <a href="#partenaires"  class="hover:text-white transition-colors">Partenaires</a>
+          <a href="gallery.html" class="hover:text-white transition-colors">Galerie</a>
           <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
           <a href="actualites.html" class="hover:text-white transition-colors">Actualités</a>
           <a href="contact.html"  class="hover:text-white transition-colors">Contact</a>

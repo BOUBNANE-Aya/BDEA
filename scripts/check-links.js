@@ -5,7 +5,7 @@ const root = path.join(__dirname, '..');
 const pages = [
   'index.html','about.html','services.html','services-vehicule.html',
   'services-amenagement.html','services-carrosserie.html','contact.html',
-  'faq.html','actualites.html','politique-confidentialite.html',
+  'faq.html','actualites.html','politique-confidentialite.html','gallery.html',
   'partenaires/auto-nejma.html','partenaires/mercedes-benz.html','partenaires/volkswagen.html'
 ];
 
