@@ -11,10 +11,17 @@ const pages = [
 
 let problems = 0;
 
+// Drop HTML comments and <script> bodies so only live markup is checked.
+const stripInert = html => html
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+
 for (const page of pages) {
   const filePath = path.join(root, page);
   const dir = path.dirname(filePath);
-  const html = fs.readFileSync(filePath, 'utf8');
+  // Commented-out markup (card templates, TODO snippets) and script bodies (which build
+  // src values at runtime) are not live references — strip them before scanning.
+  const html = stripInert(fs.readFileSync(filePath, 'utf8'));
 
   const refs = new Set();
   for (const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) refs.add(m[1]);
@@ -38,7 +45,7 @@ for (const page of pages) {
     const [, target, anchor] = m;
     const targetPath = path.resolve(dir, target);
     if (!fs.existsSync(targetPath)) continue; // already reported above
-    const targetHtml = fs.readFileSync(targetPath, 'utf8');
+    const targetHtml = stripInert(fs.readFileSync(targetPath, 'utf8'));
     const idRegex = new RegExp(`id="${anchor}"`);
     if (!idRegex.test(targetHtml)) {
       console.log(`MISSING ANCHOR  ${page} -> ${target}#${anchor}`);

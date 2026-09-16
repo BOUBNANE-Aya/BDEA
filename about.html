@@ -133,18 +133,23 @@
 
 <body class="bg-brand-paper text-[#2C2C3A] font-sans antialiased">
 
+  <style>
+  /* À propos photo grid (block moved from the home page) */
+  .apropos-shot {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(5, 0, 98, 0.12);
+  }
+  </style>
+
 <!-- ===== Navbar ===== -->
 <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
   <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
     <a href="index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
-      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
-        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
-        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
-      </svg>
-      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true">
-        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text>
-        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/>
-      </svg>
+      <img class="logo-white h-9 w-auto" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="" width="661" height="224">
+      <img class="logo-color h-9 w-auto hidden" src="assets/images/MAIN LOGO BDEA/dark-logo-trim.png" alt="" width="661" height="224">
     </a>
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
       <a href="index.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
@@ -237,6 +242,34 @@
         <p class="font-display font-bold text-white text-2xl md:text-3xl leading-none">~30</p>
         <p class="mt-1.5 text-white/45 text-xs font-mono tracking-widest uppercase">Collaborateurs</p>
       </div>
+      <div>
+        <p class="font-display font-bold text-white text-2xl md:text-3xl leading-none">50+</p>
+        <p class="mt-1.5 text-white/45 text-xs font-mono tracking-widest uppercase">Véhicules transformés</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1b · À propos (déplacé depuis la page d'accueil) ===== -->
+<section id="apropos" class="pt-20 md:pt-28 lg:pt-32">
+  <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <!-- Text -->
+    <div>
+      <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Qui sommes-nous</p>
+      <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-[1.12]">
+        Des véhicules d'exception, du châssis au moindre&nbsp;détail.
+      </h2>
+      <p data-reveal data-delay="2" class="mt-5 text-brand-mist text-base md:text-lg leading-relaxed">
+        BDEA Carrosserie est une entreprise marocaine spécialisée dans la transformation de véhicules et les solutions de mobilité sur mesure. Depuis 2012, nous concevons, fabriquons et aménageons des véhicules commerciaux et à usage spécial pour une clientèle publique et privée — des solutions fiables, durables et de haute qualité, adaptées aux besoins opérationnels de chaque client.
+      </p>
+    </div>
+
+    <!-- Photo grid -->
+    <div data-reveal data-delay="2" class="grid grid-cols-2 gap-3 md:gap-4" aria-label="Photos de nos réalisations">
+      <img class="apropos-shot" src="assets/images/showcase/01.jpg" alt="Aménagement intérieur — Sprinter VIP, sellerie cuir" loading="lazy" width="1400" height="875">
+      <img class="apropos-shot mt-6 md:mt-8" src="assets/images/showcase/13.jpg" alt="Volkswagen Crafter 17 places — habitacle aménagé" loading="lazy" width="1400" height="875">
+      <img class="apropos-shot" src="assets/images/showcase/09.jpg" alt="Sprinter Premium — habitacle complet" loading="lazy" width="1400" height="875">
+      <img class="apropos-shot mt-6 md:mt-8" src="assets/images/showcase/15.jpg" alt="Volkswagen Crafter 20 places — plafond et éclairage signature" loading="lazy" width="1400" height="875">
     </div>
   </div>
 </section>
@@ -583,10 +616,7 @@
   <div class="max-w-7xl mx-auto px-5">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
       <div class="lg:col-span-1">
-        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
-          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
-          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
-        </svg>
+        <img class="h-10 w-auto mb-4" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="BDEA Carrosserie" width="661" height="224" loading="lazy">
         <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
         <p class="mt-3 text-[0.7rem] tracking-wide text-white/40">Transforming Vehicles, Delivering Solutions.</p>
         <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-white/50">
