@@ -232,43 +232,133 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '200px' }).observe(viewer3d);
   }
 
-  /* ── 3D Image wheel ── */
-  const ring = document.getElementById('wheel-ring');
-  if (ring) {
-    const cards = ring.querySelectorAll('.wheel-card');
-    const n = cards.length;
-    const angle = 360 / n;
-    const radius = Math.round(ring.offsetWidth * 1.4) || 280;
+  /* ── Chiffres clés: count up from 0 once the row scrolls into view ── */
+  const counters = document.querySelectorAll('[data-count-to]');
+  if (counters.length) {
+    const render = (el, value) =>
+      el.textContent = (el.dataset.countPrefix || '') + value + (el.dataset.countSuffix || '');
 
-    cards.forEach((card, i) => {
-      const deg = angle * i;
-      card.style.transform = 'rotateY(' + deg + 'deg) translateZ(' + radius + 'px)';
-      card.dataset.angle = deg;
-    });
+    /* The final figure is in the HTML so it survives without JS; zero it only once
+       we know we can animate it back up. */
+    if (!reducedMotion) counters.forEach(el => render(el, 0));
 
-    let current = 0;
-    ring.style.transform = 'rotateY(0deg)';
+    const countUp = el => {
+      const target = parseInt(el.dataset.countTo, 10);
+      if (reducedMotion) { render(el, target); return; }
+      const duration = 1600;
+      const start = performance.now();
+      const step = now => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);   /* easeOutCubic */
+        render(el, Math.round(target * eased));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
 
-    const updateFade = () => {
-      const ringAngle = ((current % 360) + 360) % 360;
-      cards.forEach(card => {
-        const cardAngle = parseFloat(card.dataset.angle);
-        let diff = ((cardAngle + ringAngle) % 360 + 360) % 360;
-        if (diff > 180) diff = 360 - diff;
-        const isBehind = diff > 90;
-        card.style.opacity = isBehind ? '0.35' : '1';
-        card.style.filter = isBehind ? 'brightness(0.7)' : 'none';
+    const counterObserver = new IntersectionObserver((entries, self) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countUp(entry.target);
+        self.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterObserver.observe(el));
+  }
+
+  /* ── Showcase slider (home) ── */
+  const shx = document.getElementById('shx');
+  if (shx) {
+    const rail   = document.getElementById('shx-rail');
+    const thumbs = Array.from(rail.querySelectorAll('.shx-thumb'));
+    const railWrap = rail.parentElement;
+    const layers = [document.getElementById('shx-a'), document.getElementById('shx-b')];
+    const cap    = document.getElementById('shx-cap');
+    const count  = document.getElementById('shx-count');
+    const total  = thumbs.length;
+
+    let index = 0;      // slide currently on the stage
+    let front = 0;      // which of the two stage layers is visible
+    let timer = null;
+
+    const srcFor = i => 'assets/images/showcase/' + String(i + 1).padStart(2, '0') + '.jpg';
+
+    /* Slide the rail so the current square sits in the middle of the strip. */
+    const centreRail = () => {
+      const current = thumbs[index];
+      const offset = current.offsetLeft + current.offsetWidth / 2 - railWrap.offsetWidth / 2;
+      rail.style.transform = 'translateX(' + (-offset) + 'px)';
+    };
+
+    const markThumbs = () => {
+      thumbs.forEach((t, i) => {
+        t.classList.toggle('is-current', i === index);
+        t.classList.toggle('is-past', i < index);
+        t.classList.toggle('is-next', i > index);
+        t.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        t.setAttribute('tabindex', i === index ? '0' : '-1');
       });
     };
-    updateFade();
 
-    if (!reducedMotion) {
-      setInterval(() => {
-        current -= angle;
-        ring.style.transform = 'rotateY(' + current + 'deg)';
-        setTimeout(updateFade, 600);
-      }, 2500);
-    }
+    const show = i => {
+      const next = ((i % total) + total) % total;
+      if (next === index) return;
+      index = next;
+
+      const text = thumbs[index].dataset.cap || '';
+      const back = layers[1 - front];
+
+      /* Paint the hidden layer first, then crossfade — avoids a blank flash. */
+      back.src = srcFor(index);
+      back.alt = text;
+      const reveal = () => {
+        back.classList.add('active');
+        layers[front].classList.remove('active');
+        layers[front].setAttribute('aria-hidden', 'true');
+        back.removeAttribute('aria-hidden');
+        front = 1 - front;
+      };
+      if (back.decode) back.decode().then(reveal).catch(reveal);
+      else back.onload = reveal;
+
+      cap.textContent = text;
+      count.innerHTML = '<b>' + String(index + 1).padStart(2, '0') + '</b>&thinsp;/&thinsp;' + total;
+      markThumbs();
+      centreRail();
+    };
+
+    const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const start = () => { if (!reducedMotion && !timer) timer = setInterval(() => show(index + 1), 4500); };
+
+    document.getElementById('shx-prev').addEventListener('click', () => { show(index - 1); stop(); start(); });
+    document.getElementById('shx-next').addEventListener('click', () => { show(index + 1); stop(); start(); });
+
+    thumbs.forEach((t, i) => {
+      t.addEventListener('click', () => { show(i); stop(); start(); });
+      t.addEventListener('keydown', e => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + total) % total;
+        show(n);
+        thumbs[n].focus();
+        stop(); start();
+      });
+    });
+
+    shx.addEventListener('mouseenter', stop);
+    shx.addEventListener('mouseleave', start);
+    shx.addEventListener('focusin', stop);
+    shx.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+
+    markThumbs();
+    /* Wait for layout (thumb widths) before the first centring. */
+    requestAnimationFrame(centreRail);
+    window.addEventListener('resize', centreRail);
+
+    /* Only autoplay while the section is actually on screen. */
+    new IntersectionObserver(([entry]) => { entry.isIntersecting ? start() : stop(); },
+      { threshold: 0.25 }).observe(shx);
   }
 
   /* ── Before/After slider ── */

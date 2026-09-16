@@ -110,15 +110,15 @@
     .sv-cat-img:hover > img { transform:scale(1.05); }
 
     /* ── Lightbox ── */
-    #sv-lb { display:none; position:fixed; inset:0; z-index:9999; background:rgba(5,0,98,.93); align-items:center; justify-content:center; padding:1.5rem; }
+    #sv-lb { display:none; position:fixed; inset:0; z-index:9999; background:#fff; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:1.5rem; }
     #sv-lb.open { display:flex; }
-    #sv-lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:10px; display:block; }
-    #sv-lb-cap { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.65); font-size:.78rem; white-space:nowrap; pointer-events:none; }
-    #sv-lb-close,#sv-lb-prev,#sv-lb-next { position:absolute; border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,.12); }
+    #sv-lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:10px; box-shadow:0 18px 60px rgba(5,0,98,.22); display:block; }
+    #sv-lb-cap { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); color:#6B6B86; font-size:.78rem; white-space:nowrap; pointer-events:none; }
+    #sv-lb-close,#sv-lb-prev,#sv-lb-next { position:absolute; border:none; color:#050062; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(5,0,98,.07); }
     #sv-lb-close { top:1.25rem; right:1.25rem; width:40px; height:40px; }
     #sv-lb-prev { left:1.25rem; top:50%; transform:translateY(-50%); width:44px; height:44px; }
     #sv-lb-next { right:1.25rem; top:50%; transform:translateY(-50%); width:44px; height:44px; }
-    #sv-lb-close:hover,#sv-lb-prev:hover,#sv-lb-next:hover { background:rgba(255,255,255,.22); }
+    #sv-lb-close:hover,#sv-lb-prev:hover,#sv-lb-next:hover { background:rgba(5,0,98,.14); }
 
     @media(prefers-reduced-motion:reduce){ .real-tile > img,.tile-overlay,.sv-cat-img > img { transition:none!important; } .tile-overlay { opacity:1!important; transform:none!important; background:linear-gradient(to top,rgba(5,0,98,.72) 0%,rgba(33,38,119,.28) 50%,transparent 80%); } }
   </style>
@@ -130,14 +130,8 @@
 <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
   <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
     <a href="index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
-      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
-        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
-        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
-      </svg>
-      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true">
-        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text>
-        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/>
-      </svg>
+      <img class="logo-white h-9 w-auto" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="" width="661" height="224">
+      <img class="logo-color h-9 w-auto hidden" src="assets/images/MAIN LOGO BDEA/dark-logo-trim.png" alt="" width="661" height="224">
     </a>
 
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
@@ -166,7 +160,7 @@
           </a>
         </div>
       </div>
-      <a href="#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
+      <a href="index.html#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
       <a href="gallery.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Galerie</a>
       <a href="faq.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">FAQ</a>
       <a href="actualites.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Actualités</a>
@@ -191,7 +185,7 @@
     <a href="services-amenagement.html" class="text-sm font-medium text-white">Aménagement Intérieur</a>
     <a href="services-carrosserie.html" class="text-sm text-white/55">Carrosserie & Transformation</a>
   </div>
-  <a href="#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
+  <a href="index.html#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
   <a href="gallery.html" class="text-2xl font-display font-semibold text-white">Galerie</a>
   <a href="faq.html" class="text-2xl font-display font-semibold text-white">FAQ</a>
   <a href="actualites.html" class="text-2xl font-display font-semibold text-white">Actualités</a>
@@ -517,10 +511,7 @@
   <div class="max-w-7xl mx-auto px-5">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
       <div class="lg:col-span-1">
-        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
-          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
-          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
-        </svg>
+        <img class="h-10 w-auto mb-4" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="BDEA Carrosserie" width="661" height="224" loading="lazy">
         <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
         <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-white/50">
           <svg class="w-3.5 h-3.5 text-brand-lilac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -539,7 +530,7 @@
             <a href="services-amenagement.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Aménagement Intérieur</a>
             <a href="services-carrosserie.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Carrosserie & Transformation</a>
           </div>
-          <a href="#partenaires"  class="hover:text-white transition-colors">Partenaires</a>
+          <a href="index.html#partenaires"  class="hover:text-white transition-colors">Partenaires</a>
           <a href="gallery.html" class="hover:text-white transition-colors">Galerie</a>
           <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
           <a href="actualites.html" class="hover:text-white transition-colors">Actualités</a>

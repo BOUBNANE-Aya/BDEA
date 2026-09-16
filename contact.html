@@ -159,8 +159,8 @@
 <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4 scrolled" role="banner">
   <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
     <a href="index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
-      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true"><text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text><circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/></svg>
-      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true"><text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text><circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/></svg>
+      <img class="logo-white h-9 w-auto" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="" width="661" height="224">
+      <img class="logo-color h-9 w-auto hidden" src="assets/images/MAIN LOGO BDEA/dark-logo-trim.png" alt="" width="661" height="224">
     </a>
     <nav class="hidden lg:flex items-center gap-7" aria-label="Navigation principale">
       <a href="index.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Accueil</a>
@@ -336,14 +336,17 @@
             <p class="fl-error" role="alert">Veuillez saisir votre nom.</p>
           </div>
           <div class="fl-group">
-            <input type="tel" id="c-tel" name="telephone" placeholder=" " required autocomplete="tel">
-            <label for="c-tel">Téléphone</label>
-            <p class="fl-error" role="alert">Veuillez saisir votre numéro.</p>
+            <input type="text" id="c-societe" name="societe" placeholder=" " autocomplete="organization">
+            <label for="c-societe">Nom de la société (optionnel)</label>
           </div>
           <div class="fl-group">
             <input type="email" id="c-email" name="email" placeholder=" " required autocomplete="email">
             <label for="c-email">Email</label>
             <p class="fl-error" role="alert">Veuillez saisir un email valide.</p>
+          </div>
+          <div class="fl-group">
+            <input type="tel" id="c-tel" name="telephone" placeholder=" " autocomplete="tel">
+            <label for="c-tel">Téléphone (optionnel)</label>
           </div>
         </div>
 
@@ -359,11 +362,10 @@
         <p class="text-brand-mist text-sm mb-6">Quelques détails pour mieux vous accompagner.</p>
 
         <div class="flex flex-wrap gap-2 mb-6">
-          <label class="chip"><input type="checkbox" name="tags[]" value="Tourisme">Aménagement touristique</label>
-          <label class="chip"><input type="checkbox" name="tags[]" value="Scolaire">Scolaire</label>
-          <label class="chip"><input type="checkbox" name="tags[]" value="Transport privé">Transport privé</label>
-          <label class="chip"><input type="checkbox" name="tags[]" value="Carrosserie">Carrosserie</label>
-          <label class="chip"><input type="checkbox" name="tags[]" value="Autre">Autre</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Transport touristique">Transport touristique</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Transport scolaire">Transport scolaire</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Transport personnel">Transport personnel</label>
+          <label class="chip"><input type="checkbox" name="tags[]" value="Transport VIP / privé">Transport VIP / privé</label>
         </div>
 
         <div class="fl-group">
@@ -416,7 +418,7 @@
   <div class="max-w-7xl mx-auto px-5">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-10 border-b border-white/10">
       <div>
-        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie"><text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text><circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/></svg>
+        <img class="h-10 w-auto mb-4" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="BDEA Carrosserie" width="661" height="224" loading="lazy">
         <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
         <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-white/50">
           <svg class="w-3.5 h-3.5 text-brand-lilac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -527,15 +529,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const validateStep2 = () => {
     let ok = true;
     const nom = form.querySelector('#c-nom');
-    const tel = form.querySelector('#c-tel');
     const email = form.querySelector('#c-email');
-    [nom, tel, email].forEach(f => f.closest('.fl-group').classList.remove('has-error'));
+    /* Société and téléphone are optional — only nom and email block the step. */
+    [nom, email].forEach(f => f.closest('.fl-group').classList.remove('has-error'));
 
     if (!nom.value.trim()) { nom.closest('.fl-group').classList.add('has-error'); nom.setAttribute('aria-invalid','true'); ok = false; }
     else nom.removeAttribute('aria-invalid');
-
-    if (!tel.value.trim()) { tel.closest('.fl-group').classList.add('has-error'); tel.setAttribute('aria-invalid','true'); ok = false; }
-    else tel.removeAttribute('aria-invalid');
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.closest('.fl-group').classList.add('has-error'); email.setAttribute('aria-invalid','true'); ok = false; }
     else email.removeAttribute('aria-invalid');

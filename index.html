@@ -53,6 +53,61 @@
   <script>document.documentElement.classList.add('js');</script>
 
   <style>
+  /* ══ Chiffres clés — compteurs animés ══ */
+  .stat-row { display:grid; grid-template-columns:repeat(2,1fr); gap:2.25rem 1.25rem; }
+  @media(min-width:768px){ .stat-row { grid-template-columns:repeat(4,1fr); gap:0; } }
+  .stat-item { min-width:0; }
+  @media(min-width:768px){
+    .stat-item { padding-left:2rem; border-left:1px solid #ECEAF2; }
+    .stat-item:first-child { padding-left:0; border-left:0; }
+  }
+  .stat-num {
+    font-family:'Clash Display',sans-serif; font-weight:700; line-height:1;
+    font-size:clamp(1.9rem, 2vw + 0.6rem, 2.6rem); color:#212677;
+    font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1;
+  }
+  .stat-num-text { font-size:clamp(1.25rem, 1.4vw + 0.5rem, 1.75rem); letter-spacing:-0.01em; }
+  .stat-label {
+    margin-top:.65rem; font-size:.68rem; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:#6B6B86;
+  }
+
+  /* ══ Témoignages — avis Google ══ */
+  .tm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+  @media(max-width:1023px){ .tm-grid{grid-template-columns:1fr;max-width:42rem;} }
+  .tm-card {
+    position:relative; display:flex; flex-direction:column;
+    padding:1.75rem 1.6rem 1.4rem; border:1.5px solid #ECEAF2; border-radius:16px;
+    background:#FFFAFA; transition:border-color .25s, box-shadow .25s, transform .25s;
+  }
+  .tm-card:hover { border-color:#9D8EBF; box-shadow:0 10px 32px rgba(5,0,98,.08); transform:translateY(-3px); }
+  .tm-quote { width:26px; height:20px; color:#9D8EBF; margin-bottom:1rem; flex-shrink:0; }
+  .tm-card blockquote { flex:1; margin:0; }
+  .tm-card blockquote p { color:#2C2C3A; font-size:.9375rem; line-height:1.65; }
+  .tm-trans { margin-top:.85rem; font-size:.8125rem; line-height:1.6; color:#6B6B86; }
+  .tm-trans-label { font-size:.65rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#9D8EBF; }
+  .tm-author { display:flex; align-items:center; gap:.7rem; margin-top:1.5rem; padding-top:1.1rem; border-top:1px solid #ECEAF2; }
+  .tm-avatar {
+    width:36px; height:36px; flex-shrink:0; border-radius:50%;
+    background:linear-gradient(135deg,#212677,#7660A8); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Clash Display',sans-serif; font-weight:600; font-size:.9rem;
+  }
+  .tm-name { display:block; font-family:'Clash Display',sans-serif; font-weight:600; font-size:.875rem; color:#050062; }
+  .tm-src  { display:block; font-size:.7rem; color:#6B6B86; margin-top:.1rem; }
+
+  /* ══ Partenaires — badges ══ */
+  .partner-badge {
+    display:flex; flex-direction:column; gap:.35rem;
+    padding:1.5rem 1.6rem; border:1.5px solid #ECEAF2; border-radius:16px;
+    background:#fff; transition:border-color .25s, box-shadow .25s, transform .25s;
+  }
+  .partner-badge:hover { border-color:#9D8EBF; box-shadow:0 10px 32px rgba(5,0,98,.08); transform:translateY(-3px); }
+  .partner-badge-name { font-family:'Clash Display',sans-serif; font-weight:600; font-size:1.375rem; color:#050062; line-height:1.15; }
+  .partner-badge-role { font-size:.8125rem; color:#6B6B86; line-height:1.5; }
+  .partner-badge-cta  { display:inline-flex; align-items:center; gap:.4rem; margin-top:.6rem; font-size:.8125rem; font-weight:500; color:#212677; }
+  .partner-badge:hover .partner-badge-cta { color:#7660A8; }
+
   /* ══ Réalisations — filter chips ══ */
   .filter-chips { display:flex; gap:.5rem; overflow-x:auto; scrollbar-width:none; padding-bottom:4px; }
   .filter-chips::-webkit-scrollbar { display:none; }
@@ -242,18 +297,18 @@
   .nej-thumb.ring { border-color:#212677; }
 
   /* ══ Shared lightbox ══ */
-  #bdea-lb { display:none; position:fixed; inset:0; z-index:9999; background:rgba(5,0,98,.93); align-items:center; justify-content:center; padding:1.5rem; }
+  #bdea-lb { display:none; position:fixed; inset:0; z-index:9999; background:#fff; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:1.5rem; }
   #bdea-lb.open { display:flex; }
-  #bdea-lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:10px; display:block; }
-  #bdea-lb-cap { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.65); font-size:.78rem; white-space:nowrap; pointer-events:none; }
-  #bdea-lb-close { position:absolute; top:1.25rem; right:1.25rem; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.12); border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; }
-  #bdea-lb-prev,#bdea-lb-next { position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.12); border:none; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  #bdea-lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:10px; box-shadow:0 18px 60px rgba(5,0,98,.22); display:block; }
+  #bdea-lb-cap { position:absolute; bottom:1.25rem; left:50%; transform:translateX(-50%); color:#6B6B86; font-size:.78rem; white-space:nowrap; pointer-events:none; }
+  #bdea-lb-close { position:absolute; top:1.25rem; right:1.25rem; width:40px; height:40px; border-radius:50%; background:rgba(5,0,98,.07); border:none; color:#050062; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  #bdea-lb-prev,#bdea-lb-next { position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(5,0,98,.07); border:none; color:#050062; cursor:pointer; display:flex; align-items:center; justify-content:center; }
   #bdea-lb-prev { left:1.25rem; }
   #bdea-lb-next { right:1.25rem; }
-  #bdea-lb-close:hover,#bdea-lb-prev:hover,#bdea-lb-next:hover { background:rgba(255,255,255,.22); }
+  #bdea-lb-close:hover,#bdea-lb-prev:hover,#bdea-lb-next:hover { background:rgba(5,0,98,.14); }
 
   @media(prefers-reduced-motion:reduce){
-    .svc-panel,.gamme-tab,.gamme-card,.nej-img,.nej-swatch,.nej-thumb { transition:none!important; }
+    .svc-panel,.gamme-tab,.gamme-card,.nej-img,.nej-swatch,.nej-thumb,.tm-card,.partner-badge { transition:none!important; }
   }
   </style>
 
@@ -286,15 +341,9 @@
 <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
   <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
     <!-- Logo -->
-    <a href="#" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
-      <svg class="logo-white h-9" viewBox="0 0 130 40" fill="none" aria-hidden="true">
-        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
-        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#fff"/>
-      </svg>
-      <svg class="logo-color h-9 hidden" viewBox="0 0 130 40" fill="none" aria-hidden="true">
-        <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#050062">BDEA</text>
-        <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="#212677"/>
-      </svg>
+    <a href="index.html" class="relative z-[51]" aria-label="BDEA Carrosserie — Accueil">
+      <img class="logo-white h-9 w-auto" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="" width="661" height="224">
+      <img class="logo-color h-9 w-auto hidden" src="assets/images/MAIN LOGO BDEA/dark-logo-trim.png" alt="" width="661" height="224">
     </a>
 
     <!-- Desktop links -->
@@ -395,29 +444,141 @@
   </div>
 </section>
 
-<!-- ===== 2 · À propos + 3D ===== -->
-<section id="apropos" class="py-20 md:py-28 lg:py-32">
-  <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <!-- Text -->
-    <div>
-      <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">À propos</p>
-      <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-[1.12]">
-        Des véhicules d'exception, du châssis au moindre&nbsp;détail.
-      </h2>
-      <p data-reveal data-delay="2" class="mt-5 text-brand-mist text-base md:text-lg leading-relaxed">
-        BDEA Carrosserie est une entreprise marocaine spécialisée dans la transformation de véhicules et les solutions de mobilité sur mesure. Depuis 2012, nous concevons, fabriquons et aménageons des véhicules commerciaux et à usage spécial pour une clientèle publique et privée — des solutions fiables, durables et de haute qualité, adaptées aux besoins opérationnels de chaque client.
-      </p>
+<!-- ===== 1b · Chiffres clés — animated counters ===== -->
+<section id="chiffres" class="bg-white border-b border-brand-line py-14 md:py-16">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="stat-row">
+        <div class="stat-item" data-reveal data-delay="0">
+          <p class="stat-num" data-count-to="2012">2012</p>
+          <p class="stat-label">Année de création</p>
+        </div>
+        <div class="stat-item" data-reveal data-delay="1">
+          <p class="stat-num stat-num-text">ISO 9001:2015</p>
+          <p class="stat-label">Certifiée qualité</p>
+        </div>
+        <div class="stat-item" data-reveal data-delay="2">
+          <p class="stat-num" data-count-to="30" data-count-prefix="~">~30</p>
+          <p class="stat-label">Collaborateurs</p>
+        </div>
+        <div class="stat-item" data-reveal data-delay="3">
+          <p class="stat-num" data-count-to="50" data-count-suffix="+">50+</p>
+          <p class="stat-label">Véhicules transformés</p>
+        </div>
     </div>
+  </div>
+</section>
 
-    <!-- 3D Image Wheel — 6 images arranged in a rotating ring -->
-    <div data-reveal data-delay="2" class="image-wheel" aria-label="Photos de nos réalisations">
-      <div class="wheel-ring" id="wheel-ring">
-        <div class="wheel-card"><img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/3.png" alt="Aménagement intérieur — Sprinter VIP Rafi, sellerie cuir cognac" loading="lazy" width="400" height="400"></div>
-        <div class="wheel-card"><img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/11.png" alt="Finition sur mesure — plancher et rangements Sprinter VIP Rafi" loading="lazy" width="400" height="400"></div>
-        <div class="wheel-card"><img src="assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/3.png" alt="Aménagement intérieur — Volkswagen Crafter 17 places" loading="lazy" width="400" height="400"></div>
-        <div class="wheel-card"><img src="assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/2.png" alt="Éclairage d'ambiance — habitacle Volkswagen Crafter 18 places" loading="lazy" width="400" height="400"></div>
-        <div class="wheel-card"><img src="assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/1.png" alt="Plafond signature — Volkswagen Crafter 20 places" loading="lazy" width="400" height="400"></div>
-        <div class="wheel-card"><img src="assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/3.png" alt="Coin bar sur mesure — Volkswagen Crafter 17 places" loading="lazy" width="400" height="400"></div>
+<!-- ===== 2 · En images — showcase slider (20 réalisations) ===== -->
+<section id="showcase" class="py-20 md:py-28 lg:py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">En images</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-[1.12] max-w-xl mb-10">
+      Vingt véhicules, vingt aménagements sur&nbsp;mesure.
+    </h2>
+
+    <div data-reveal data-delay="2" class="shx" id="shx">
+      <!-- Stage — two stacked layers crossfade, so only 2 large images sit in the DOM at once -->
+      <div class="shx-stage">
+        <img class="shx-layer active" id="shx-a" src="assets/images/showcase/01.jpg"
+             alt="Sprinter VIP Rafi — habitacle VIP sur mesure" width="1400" height="875">
+        <img class="shx-layer" id="shx-b" alt="" aria-hidden="true" width="1400" height="875">
+        <div class="shx-scrim" aria-hidden="true"></div>
+
+        <p class="shx-cap" id="shx-cap">Sprinter VIP Rafi — habitacle VIP sur mesure</p>
+        <span class="shx-count" id="shx-count" aria-hidden="true"><b>01</b>&thinsp;/&thinsp;20</span>
+
+        <button type="button" class="shx-nav shx-prev" id="shx-prev" aria-label="Image précédente">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L4 8l6 6"/></svg>
+        </button>
+        <button type="button" class="shx-nav shx-next" id="shx-next" aria-label="Image suivante">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2l6 6-6 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Rail — the current image as a small square, passed ones to the left, upcoming to the right -->
+      <div class="shx-rail-wrap">
+        <div class="shx-rail" id="shx-rail" role="tablist" aria-label="Choisir une réalisation">
+          <button type="button" class="shx-thumb is-current" role="tab" aria-selected="true" tabindex="0"
+                  data-i="0" data-cap="Sprinter VIP Rafi — habitacle VIP sur mesure" aria-label="Sprinter VIP Rafi — habitacle VIP sur mesure">
+            <img src="assets/images/showcase/thumbs/01.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="1" data-cap="Sprinter VIP Rafi — sellerie cuir cognac" aria-label="Sprinter VIP Rafi — sellerie cuir cognac">
+            <img src="assets/images/showcase/thumbs/02.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="2" data-cap="Sprinter VIP Light — aménagement clair" aria-label="Sprinter VIP Light — aménagement clair">
+            <img src="assets/images/showcase/thumbs/03.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="3" data-cap="Sprinter — navette aéroport" aria-label="Sprinter — navette aéroport">
+            <img src="assets/images/showcase/thumbs/04.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="4" data-cap="Sprinter Luxe — finition Bordo" aria-label="Sprinter Luxe — finition Bordo">
+            <img src="assets/images/showcase/thumbs/05.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="5" data-cap="Sprinter Luxe — finition Marron" aria-label="Sprinter Luxe — finition Marron">
+            <img src="assets/images/showcase/thumbs/06.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="6" data-cap="Sprinter Luxe — finition Noir" aria-label="Sprinter Luxe — finition Noir">
+            <img src="assets/images/showcase/thumbs/07.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="7" data-cap="Sprinter Premium — cuir gris" aria-label="Sprinter Premium — cuir gris">
+            <img src="assets/images/showcase/thumbs/08.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="8" data-cap="Sprinter Premium — habitacle complet" aria-label="Sprinter Premium — habitacle complet">
+            <img src="assets/images/showcase/thumbs/09.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="9" data-cap="Sprinter Tourer — modèle 1" aria-label="Sprinter Tourer — modèle 1">
+            <img src="assets/images/showcase/thumbs/10.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="10" data-cap="Sprinter Tourer — modèle 2" aria-label="Sprinter Tourer — modèle 2">
+            <img src="assets/images/showcase/thumbs/11.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="11" data-cap="Sprinter Tourer — modèle 3" aria-label="Sprinter Tourer — modèle 3">
+            <img src="assets/images/showcase/thumbs/12.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="12" data-cap="Volkswagen Crafter — 17 places" aria-label="Volkswagen Crafter — 17 places">
+            <img src="assets/images/showcase/thumbs/13.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="13" data-cap="Volkswagen Crafter — 18 places" aria-label="Volkswagen Crafter — 18 places">
+            <img src="assets/images/showcase/thumbs/14.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="14" data-cap="Volkswagen Crafter — 20 places" aria-label="Volkswagen Crafter — 20 places">
+            <img src="assets/images/showcase/thumbs/15.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="15" data-cap="Crafter nouveau modèle — finition noire" aria-label="Crafter nouveau modèle — finition noire">
+            <img src="assets/images/showcase/thumbs/16.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="16" data-cap="Crafter nouveau modèle — finition rouge" aria-label="Crafter nouveau modèle — finition rouge">
+            <img src="assets/images/showcase/thumbs/17.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="17" data-cap="Renault Master — aménagement sur mesure" aria-label="Renault Master — aménagement sur mesure">
+            <img src="assets/images/showcase/thumbs/18.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="18" data-cap="Minibus Iveco — transport touristique" aria-label="Minibus Iveco — transport touristique">
+            <img src="assets/images/showcase/thumbs/19.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+          <button type="button" class="shx-thumb" role="tab" aria-selected="false" tabindex="-1"
+                  data-i="19" data-cap="JAC — finition marron" aria-label="JAC — finition marron">
+            <img src="assets/images/showcase/thumbs/20.jpg" alt="" loading="lazy" width="200" height="200">
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -462,15 +623,18 @@
     </div>
 
     <div data-reveal class="mt-14 flex flex-wrap items-center gap-4 pt-10 border-t border-brand-line">
-      <a href="assets/documents/BDEA-Company-Profile.pdf" download class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-medium text-sm hover:bg-brand-ink transition-colors">
-        Télécharger notre plaquette
-        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 13h12"/></svg>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-medium text-sm hover:bg-brand-ink transition-colors">
+        Demander notre plaquette
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
       </a>
       <a href="about.html#certifications" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
         Notre certification ISO 9001:2015
       </a>
     </div>
-    <!-- TODO: assets/documents/BDEA-Company-Profile.pdf must be supplied by the client (export of their Canva company presentation) -->
+    <!-- TODO: once the client supplies assets/documents/BDEA-Company-Profile.pdf (export of their
+         Canva company presentation), restore the direct download here:
+         <a href="assets/documents/BDEA-Company-Profile.pdf" download ...>Télécharger notre plaquette</a>
+         Until then this button routes to the contact page so it never 404s. -->
   </div>
 </section>
 
@@ -529,114 +693,162 @@
 
     <!-- Tab pills -->
     <div data-reveal class="gamme-tabs mb-8" role="tablist" aria-label="Gammes de véhicules">
-      <button class="gamme-tab active" role="tab" aria-selected="true"  aria-controls="gpanel-crafter"  id="gtab-crafter">Crafter Prestige</button>
-      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-sprinter" id="gtab-sprinter" tabindex="-1">Sprinter VIP</button>
-      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-master"   id="gtab-master"   tabindex="-1">Master Supreme</button>
-      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-ducato"   id="gtab-ducato"   tabindex="-1">Ducato Elite</button>
-      <button class="gamme-tab"        role="tab" aria-selected="false" aria-controls="gpanel-man"      id="gtab-man"      tabindex="-1">MAN</button>
+      <button class="gamme-tab active" role="tab" aria-selected="true" aria-controls="gpanel-sprinter" id="gtab-sprinter">Sprinter</button>
+      <button class="gamme-tab" role="tab" aria-selected="false" aria-controls="gpanel-crafter" id="gtab-crafter" tabindex="-1">Crafter</button>
+      <button class="gamme-tab" role="tab" aria-selected="false" aria-controls="gpanel-master" id="gtab-master" tabindex="-1">Master</button>
+      <button class="gamme-tab" role="tab" aria-selected="false" aria-controls="gpanel-ducato" id="gtab-ducato" tabindex="-1">Ducato</button>
+      <button class="gamme-tab" role="tab" aria-selected="false" aria-controls="gpanel-boxer" id="gtab-boxer" tabindex="-1">Boxer</button>
+      <button class="gamme-tab" role="tab" aria-selected="false" aria-controls="gpanel-iveco" id="gtab-iveco" tabindex="-1">Iveco</button>
+      <button class="gamme-tab" role="tab" aria-selected="false" aria-controls="gpanel-man" id="gtab-man" tabindex="-1">MAN</button>
     </div>
 
-    <!-- Crafter Prestige -->
-    <div class="gamme-panel active" id="gpanel-crafter" role="tabpanel" aria-labelledby="gtab-crafter">
-      <p class="text-brand-mist text-sm mb-5">Volkswagen Crafter transformé en minibus de prestige — sièges premium, éclairage ambiance, finitions sur mesure.</p>
+    <div class="gamme-panel active" id="gpanel-sprinter" role="tabpanel" aria-labelledby="gtab-sprinter">
+      <p class="text-brand-mist text-sm mb-5">Mercedes Sprinter aménagé sur mesure — cuir premium, tables intégrées, système multimédia et finitions luxe.</p>
       <div class="gamme-row">
-        <button class="gamme-card" aria-label="Crafter Prestige — Minibus 9 places"
-          data-glb-src="assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/1.png"
-          data-glb-cap="Crafter Prestige — Minibus 9 places">
-          <img src="assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/1.png" alt="Crafter Prestige — Minibus 9 places" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Minibus 9 places</p><p class="gamme-card-sub">Crafter Prestige</p></div>
-        </button>
-        <button class="gamme-card" aria-label="Crafter Prestige — Navette VIP"
-          data-glb-src="assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/1.png"
-          data-glb-cap="Crafter Prestige — Navette VIP">
-          <img src="assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/1.png" alt="Crafter Prestige — Navette VIP" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Navette VIP</p><p class="gamme-card-sub">Crafter Prestige</p></div>
-        </button>
-        <button class="gamme-card" aria-label="Crafter Prestige — Version scolaire"
-          data-glb-src="assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/1.png"
-          data-glb-cap="Crafter Prestige — Version scolaire">
-          <img src="assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/1.png" alt="Crafter Prestige — Version scolaire" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Version scolaire</p><p class="gamme-card-sub">Crafter Prestige</p></div>
-        </button>
-      </div>
-    </div>
-
-    <!-- Sprinter VIP -->
-    <div class="gamme-panel" id="gpanel-sprinter" role="tabpanel" aria-labelledby="gtab-sprinter">
-      <p class="text-brand-mist text-sm mb-5">Mercedes Sprinter aménagé en espace VIP — cuir premium, tables intégrées, système multimédia et finitions luxe.</p>
-      <div class="gamme-row">
-        <button class="gamme-card" aria-label="Sprinter VIP — Salon privatif"
+        <button class="gamme-card" aria-label="Sprinter — Sprinter Luxe"
           data-glb-src="assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/1.png"
-          data-glb-cap="Sprinter VIP — Salon privatif">
-          <img src="assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/1.png" alt="Sprinter VIP — Salon privatif" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Salon privatif</p><p class="gamme-card-sub">Sprinter VIP</p></div>
+          data-glb-cap="Sprinter — Sprinter Luxe">
+          <img src="assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/1.png" alt="Sprinter — Sprinter Luxe" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Sprinter Luxe</p><p class="gamme-card-sub">Sprinter</p></div>
         </button>
-        <button class="gamme-card" aria-label="Sprinter VIP — Navette aéroport"
+        <button class="gamme-card" aria-label="Sprinter — Navette aéroport"
           data-glb-src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/4.png"
-          data-glb-cap="Sprinter VIP — Navette aéroport">
-          <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/4.png" alt="Sprinter VIP — Navette aéroport" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Navette aéroport</p><p class="gamme-card-sub">Sprinter VIP</p></div>
+          data-glb-cap="Sprinter — Navette aéroport">
+          <img src="assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/4.png" alt="Sprinter — Navette aéroport" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Navette aéroport</p><p class="gamme-card-sub">Sprinter</p></div>
         </button>
-        <button class="gamme-card" aria-label="Sprinter VIP — Tourisme de luxe"
+        <button class="gamme-card" aria-label="Sprinter — Tourisme de luxe"
           data-glb-src="assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/1.png"
-          data-glb-cap="Sprinter VIP — Tourisme de luxe">
-          <img src="assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/1.png" alt="Sprinter VIP — Tourisme de luxe" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Tourisme de luxe</p><p class="gamme-card-sub">Sprinter VIP</p></div>
+          data-glb-cap="Sprinter — Tourisme de luxe">
+          <img src="assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/1.png" alt="Sprinter — Tourisme de luxe" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Tourisme de luxe</p><p class="gamme-card-sub">Sprinter</p></div>
         </button>
       </div>
     </div>
 
-    <!-- Master Supreme -->
+    <div class="gamme-panel" id="gpanel-crafter" role="tabpanel" aria-labelledby="gtab-crafter">
+      <p class="text-brand-mist text-sm mb-5">Volkswagen Crafter transformé en minibus — disponible en 17, 18 et 20 places. Cliquez pour voir les modèles de chaque configuration.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Crafter — 17 places"
+          data-glb-src="assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/1.png"
+          data-glb-cap="Crafter — 17 places"
+          data-glb-set="assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/1.png::Crafter 17 places — modèle 10|assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/1.png::Crafter 17 places — modèle 1|assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/1.png::Crafter 17 places — modèle 3|assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/1.png::Crafter 17 places — modèle 12|assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/1.png::Crafter 17 places — modèle 11">
+          <img src="assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/1.png" alt="Crafter — 17 places" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">17 places</p><p class="gamme-card-sub">Crafter</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Crafter — 18 places"
+          data-glb-src="assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/1.png"
+          data-glb-cap="Crafter — 18 places"
+          data-glb-set="assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/1.png::Crafter 18 places — modèle 8|assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/1.png::Crafter 18 places — modèle 5|assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/1.png::Crafter 18 places — modèle 4|assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/1.png::Crafter 18 places — modèle 7">
+          <img src="assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/1.png" alt="Crafter — 18 places" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">18 places</p><p class="gamme-card-sub">Crafter</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Crafter — 20 places"
+          data-glb-src="assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/1.png"
+          data-glb-cap="Crafter — 20 places"
+          data-glb-set="assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/1.png::Crafter 20 places — modèle 13|assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/1.png::Crafter 20 places — modèle 15|assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/1.png::Crafter 20 places — modèle 14|assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/1.png::Crafter 20 places — modèle 16">
+          <img src="assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/1.png" alt="Crafter — 20 places" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">20 places</p><p class="gamme-card-sub">Crafter</p></div>
+        </button>
+      </div>
+    </div>
+
     <div class="gamme-panel" id="gpanel-master" role="tabpanel" aria-labelledby="gtab-master">
-      <p class="text-brand-mist text-sm mb-5">Renault Master Supreme — aménagement élaboré, idéal pour le transport semi-VIP et le tourisme régional.</p>
+      <p class="text-brand-mist text-sm mb-5">Renault Master — aménagement élaboré, idéal pour le transport semi-VIP et le tourisme régional.</p>
       <div class="gamme-row">
-        <button class="gamme-card" aria-label="Master Supreme — Configuration semi-VIP"
+        <button class="gamme-card" aria-label="Master — Configuration semi-VIP"
           data-glb-src="assets/images/Renault Master/Renault Master - Model 1/1.png"
-          data-glb-cap="Master Supreme — Configuration semi-VIP">
-          <img src="assets/images/Renault Master/Renault Master - Model 1/1.png" alt="Master Supreme — Configuration semi-VIP" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Configuration semi-VIP</p><p class="gamme-card-sub">Master Supreme</p></div>
+          data-glb-cap="Master — Configuration semi-VIP">
+          <img src="assets/images/Renault Master/Renault Master - Model 1/1.png" alt="Master — Configuration semi-VIP" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Configuration semi-VIP</p><p class="gamme-card-sub">Master</p></div>
         </button>
-        <button class="gamme-card" aria-label="Master Supreme — Transport scolaire"
+        <button class="gamme-card" aria-label="Master — Transport scolaire"
           data-glb-src="assets/images/Renault Master/Renault Master - Model 2/1.png"
-          data-glb-cap="Master Supreme — Transport scolaire">
-          <img src="assets/images/Renault Master/Renault Master - Model 2/1.png" alt="Master Supreme — Transport scolaire" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Transport scolaire</p><p class="gamme-card-sub">Master Supreme</p></div>
+          data-glb-cap="Master — Transport scolaire">
+          <img src="assets/images/Renault Master/Renault Master - Model 2/1.png" alt="Master — Transport scolaire" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Transport scolaire</p><p class="gamme-card-sub">Master</p></div>
         </button>
-        <button class="gamme-card" aria-label="Master Supreme — Tourisme régional"
+        <button class="gamme-card" aria-label="Master — Tourisme régional"
           data-glb-src="assets/images/Renault Master/Renault Master - Model 1/2.png"
-          data-glb-cap="Master Supreme — Tourisme régional">
-          <img src="assets/images/Renault Master/Renault Master - Model 1/2.png" alt="Master Supreme — Tourisme régional" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Tourisme régional</p><p class="gamme-card-sub">Master Supreme</p></div>
+          data-glb-cap="Master — Tourisme régional">
+          <img src="assets/images/Renault Master/Renault Master - Model 1/2.png" alt="Master — Tourisme régional" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Tourisme régional</p><p class="gamme-card-sub">Master</p></div>
         </button>
       </div>
     </div>
 
-    <!-- Ducato Elite -->
     <div class="gamme-panel" id="gpanel-ducato" role="tabpanel" aria-labelledby="gtab-ducato">
-      <p class="text-brand-mist text-sm mb-5">Fiat Ducato Elite — transformation complète pour la livraison premium, le transport médical ou l'aménagement spécial.</p>
+      <p class="text-brand-mist text-sm mb-5">Fiat Ducato — transformation complète pour la livraison premium, le transport médical ou l'aménagement spécial.</p>
       <div class="gamme-row">
-        <button class="gamme-card" aria-label="Ducato Elite — Utilitaire premium"
+        <button class="gamme-card" aria-label="Ducato — Utilitaire premium"
           data-glb-src="assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/1.png"
-          data-glb-cap="Ducato Elite — Utilitaire premium">
-          <img src="assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/1.png" alt="Ducato Elite — Utilitaire premium" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Utilitaire premium</p><p class="gamme-card-sub">Ducato Elite</p></div>
+          data-glb-cap="Ducato — Utilitaire premium">
+          <img src="assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/1.png" alt="Ducato — Utilitaire premium" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Utilitaire premium</p><p class="gamme-card-sub">Ducato</p></div>
         </button>
-        <button class="gamme-card" aria-label="Ducato Elite — Version médicale"
+        <button class="gamme-card" aria-label="Ducato — Version médicale"
           data-glb-src="assets/images/VW Crafter New Model 2026/VW Crafter - Broown/1.png"
-          data-glb-cap="Ducato Elite — Version médicale">
-          <img src="assets/images/VW Crafter New Model 2026/VW Crafter - Broown/1.png" alt="Ducato Elite — Version médicale" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Version médicale</p><p class="gamme-card-sub">Ducato Elite</p></div>
+          data-glb-cap="Ducato — Version médicale">
+          <img src="assets/images/VW Crafter New Model 2026/VW Crafter - Broown/1.png" alt="Ducato — Version médicale" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Version médicale</p><p class="gamme-card-sub">Ducato</p></div>
         </button>
-        <button class="gamme-card" aria-label="Ducato Elite — Caravane compact"
+        <button class="gamme-card" aria-label="Ducato — Caravane compact"
           data-glb-src="assets/images/VW Crafter New Model 2026/VW Crafter - Red/1.png"
-          data-glb-cap="Ducato Elite — Caravane compact">
-          <img src="assets/images/VW Crafter New Model 2026/VW Crafter - Red/1.png" alt="Ducato Elite — Caravane compact" loading="lazy" width="400" height="260">
-          <div class="gamme-card-body"><p class="gamme-card-name">Caravane compact</p><p class="gamme-card-sub">Ducato Elite</p></div>
+          data-glb-cap="Ducato — Caravane compact">
+          <img src="assets/images/VW Crafter New Model 2026/VW Crafter - Red/1.png" alt="Ducato — Caravane compact" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Caravane compact</p><p class="gamme-card-sub">Ducato</p></div>
         </button>
       </div>
     </div>
 
-    <!-- MAN -->
+    <div class="gamme-panel" id="gpanel-boxer" role="tabpanel" aria-labelledby="gtab-boxer">
+      <p class="text-brand-mist text-sm mb-5">Peugeot Boxer — aménagement de transport de personnel et transformation utilitaire sur mesure.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Boxer — Transport de personnel"
+          data-glb-src="assets/images/Jac - Marron/1.png"
+          data-glb-cap="Boxer — Transport de personnel">
+          <img src="assets/images/Jac - Marron/1.png" alt="Boxer — Transport de personnel" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Transport de personnel</p><p class="gamme-card-sub">Boxer</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Boxer — Aménagement intérieur"
+          data-glb-src="assets/images/Jac - Marron/3.png"
+          data-glb-cap="Boxer — Aménagement intérieur">
+          <img src="assets/images/Jac - Marron/3.png" alt="Boxer — Aménagement intérieur" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Aménagement intérieur</p><p class="gamme-card-sub">Boxer</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Boxer — Version utilitaire"
+          data-glb-src="assets/images/Renault Master/Renault Master - Model 2/2.png"
+          data-glb-cap="Boxer — Version utilitaire">
+          <img src="assets/images/Renault Master/Renault Master - Model 2/2.png" alt="Boxer — Version utilitaire" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Version utilitaire</p><p class="gamme-card-sub">Boxer</p></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="gamme-panel" id="gpanel-iveco" role="tabpanel" aria-labelledby="gtab-iveco">
+      <p class="text-brand-mist text-sm mb-5">Minibus Iveco — transformation grand tourisme, sièges inclinables, éclairage d'ambiance et rangements bagages.</p>
+      <div class="gamme-row">
+        <button class="gamme-card" aria-label="Iveco — Minibus grand tourisme"
+          data-glb-src="assets/images/Minibus Iveco/1.png"
+          data-glb-cap="Iveco — Minibus grand tourisme">
+          <img src="assets/images/Minibus Iveco/1.png" alt="Iveco — Minibus grand tourisme" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Minibus grand tourisme</p><p class="gamme-card-sub">Iveco</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Iveco — Habitacle passagers"
+          data-glb-src="assets/images/Minibus Iveco/4.png"
+          data-glb-cap="Iveco — Habitacle passagers">
+          <img src="assets/images/Minibus Iveco/4.png" alt="Iveco — Habitacle passagers" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Habitacle passagers</p><p class="gamme-card-sub">Iveco</p></div>
+        </button>
+        <button class="gamme-card" aria-label="Iveco — Finitions intérieures"
+          data-glb-src="assets/images/Minibus Iveco/7.png"
+          data-glb-cap="Iveco — Finitions intérieures">
+          <img src="assets/images/Minibus Iveco/7.png" alt="Iveco — Finitions intérieures" loading="lazy" width="400" height="260">
+          <div class="gamme-card-body"><p class="gamme-card-name">Finitions intérieures</p><p class="gamme-card-sub">Iveco</p></div>
+        </button>
+      </div>
+    </div>
+
     <div class="gamme-panel" id="gpanel-man" role="tabpanel" aria-labelledby="gtab-man">
       <p class="text-brand-mist text-sm mb-5">MAN — autocar grand tourisme, TGE et TGL transformés pour le transport interurbain et le fret spécialisé.</p>
       <div class="gamme-row">
@@ -1023,23 +1235,100 @@
   </div>
 </section>
 
-<!-- ===== 5 · Partenaires — Carousel ===== -->
-<section id="partenaires" class="py-16 md:py-20 border-y border-brand-line overflow-hidden">
-  <div class="max-w-7xl mx-auto px-5 mb-10">
-    <h2 data-reveal class="font-display font-semibold text-brand-ink text-2xl md:text-3xl">Ils nous font confiance</h2>
-  </div>
-  <!-- TODO: logos below are hotlinked from a third-party site pending real client-supplied logo files (Auto Nejma, Mercedes-Benz, Volkswagen CAC, Stellantis, etc.) -->
-  <div class="overflow-hidden" aria-label="Logos partenaires">
-    <div class="marquee-track">
-      <div class="marquee-item"><div class="logo-frame"><img class="marquee-logo" src="https://www.carlogos.org/car-logos/mercedes-benz-logo.png" alt="Mercedes-Benz" loading="lazy"></div></div>
-      <div class="marquee-item"><div class="logo-frame"><img class="marquee-logo" src="https://www.carlogos.org/car-logos/volkswagen-logo.png" alt="Volkswagen" loading="lazy"></div></div>
-      <div class="marquee-item"><div class="logo-frame"><img class="marquee-logo" src="https://www.carlogos.org/car-logos/fiat-logo.png" alt="Fiat" loading="lazy"></div></div>
-      <div class="marquee-item"><div class="logo-frame"><img class="marquee-logo" src="https://www.carlogos.org/car-logos/iveco-logo.png" alt="Iveco" loading="lazy"></div></div>
-      <div class="marquee-item"><div class="logo-frame"><img class="marquee-logo" src="https://www.carlogos.org/car-logos/man-logo.png" alt="MAN" loading="lazy"></div></div>
+<!-- ===== 4d · Témoignages — avis Google ===== -->
+<section id="temoignages" class="py-20 md:py-28 lg:py-32 bg-white border-y border-brand-line">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Témoignages</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl mb-12">
+      Ce que nos clients en disent.
+    </h2>
+
+    <div class="tm-grid">
+      <figure data-reveal class="tm-card">
+        <svg class="tm-quote" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V13.2C0 5.9 4.2 1.4 12 0l1.4 4.4C9 5.6 6.8 8 6.6 11.4H12V24H0zm18.6 0V13.2C18.6 5.9 22.8 1.4 30.6 0L32 4.4c-4.4 1.2-6.6 3.6-6.8 7h5.4V24H18.6z" fill="currentColor"/></svg>
+        <blockquote>
+          <p lang="tr">Fas da caroser firmaları bu bölge de oldukça yoğun, bu firma bu bölgenin en eskisi yaptıkları işlerinde özen var gözle görülüyor. Fakat şehrin dışında ulaşımı çok zor yollar çok kötü bunun dışında oldukça iyi.</p>
+        <p class="tm-trans"><span class="tm-trans-label">Traduit du turc · </span>Les entreprises de carrosserie sont nombreuses dans cette région du Maroc ; celle-ci est la plus ancienne du secteur et le soin apporté à leur travail se voit à l'œil nu. En revanche, elle se situe en dehors de la ville et l'accès est difficile, les routes sont mauvaises — à part cela, c'est très bien.</p>
+        </blockquote>
+        <figcaption class="tm-author">
+          <span class="tm-avatar" aria-hidden="true">Ş</span>
+          <span>
+            <span class="tm-name">Şerif Günay</span>
+            <span class="tm-src">Avis Google</span>
+          </span>
+        </figcaption>
+      </figure>
+      <figure data-reveal class="tm-card">
+        <svg class="tm-quote" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V13.2C0 5.9 4.2 1.4 12 0l1.4 4.4C9 5.6 6.8 8 6.6 11.4H12V24H0zm18.6 0V13.2C18.6 5.9 22.8 1.4 30.6 0L32 4.4c-4.4 1.2-6.6 3.6-6.8 7h5.4V24H18.6z" fill="currentColor"/></svg>
+        <blockquote>
+          <p lang="en">Excellent and well-done work. We wish them further development in the future.</p>
+        <p class="tm-trans"><span class="tm-trans-label">Traduit de l'anglais · </span>Un travail excellent et bien réalisé. Nous leur souhaitons de continuer à se développer.</p>
+        </blockquote>
+        <figcaption class="tm-author">
+          <span class="tm-avatar" aria-hidden="true">A</span>
+          <span>
+            <span class="tm-name">Abdelhadi Elkorami</span>
+            <span class="tm-src">Avis Google</span>
+          </span>
+        </figcaption>
+      </figure>
+      <figure data-reveal class="tm-card">
+        <svg class="tm-quote" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V13.2C0 5.9 4.2 1.4 12 0l1.4 4.4C9 5.6 6.8 8 6.6 11.4H12V24H0zm18.6 0V13.2C18.6 5.9 22.8 1.4 30.6 0L32 4.4c-4.4 1.2-6.6 3.6-6.8 7h5.4V24H18.6z" fill="currentColor"/></svg>
+        <blockquote>
+          <p lang="fr">Très très bon services et beaucoup de professionnalisme, je recommande vivement.</p>
+        </blockquote>
+        <figcaption class="tm-author">
+          <span class="tm-avatar" aria-hidden="true">M</span>
+          <span>
+            <span class="tm-name">Mohamed Amine</span>
+            <span class="tm-src">Avis Google</span>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div data-reveal class="mt-12 text-center">
+      <a href="https://maps.app.goo.gl/rTeNCjG1RM4CthLv6" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-brand-line text-brand-blue font-medium hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.63h6.45a5.5 5.5 0 0 1-2.39 3.62v3h3.86c2.26-2.08 3.56-5.15 3.56-8.8z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.87-3a7.2 7.2 0 0 1-10.72-3.78H1.35v3.09A11.99 11.99 0 0 0 12 24z"/>
+          <path fill="#FBBC05" d="M5.34 14.3a7.19 7.19 0 0 1 0-4.6V6.62H1.35a12 12 0 0 0 0 10.77l3.99-3.09z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.35 6.62l3.99 3.09A7.15 7.15 0 0 1 12 4.75z"/>
+        </svg>
+        Voir tous les avis sur Google
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto px-5 mt-8">
-    <p class="text-center text-brand-mist text-sm">Ainsi que Stellantis, des agences de transport, des institutions publiques et de nombreuses entreprises privées.</p>
+</section>
+
+<!-- ===== 5 · Partenaires ===== -->
+<section id="partenaires" class="py-16 md:py-20 border-y border-brand-line overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5">
+    <h2 data-reveal class="font-display font-semibold text-brand-ink text-2xl md:text-3xl">Ils nous font confiance</h2>
+    <p data-reveal data-delay="1" class="mt-3 text-brand-mist text-sm max-w-xl">Deux partenaires constructeurs, avec lesquels nous travaillons sur des projets de transformation de véhicules.</p>
+
+    <div data-reveal data-delay="2" class="mt-8 grid sm:grid-cols-2 gap-4 max-w-3xl">
+      <a href="partenaires/auto-nejma.html" class="partner-badge">
+        <span class="partner-badge-name">Auto Nejma</span>
+        <span class="partner-badge-role">Distributeur agréé Mercedes-Benz au Maroc</span>
+        <span class="partner-badge-cta">
+          Voir les réalisations
+          <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a href="partenaires/volkswagen.html" class="partner-badge">
+        <span class="partner-badge-name">Volkswagen CAC</span>
+        <span class="partner-badge-role">Crafter, Transporter et utilitaires Volkswagen</span>
+        <span class="partner-badge-cta">
+          Voir les réalisations
+          <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <p class="mt-8 text-brand-mist text-sm">Nous travaillons également avec des agences de transport, des institutions publiques et de nombreuses entreprises privées.</p>
   </div>
 </section>
 
@@ -1073,45 +1362,20 @@
       <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
         L'un de nos partenaires stratégiques et distributeur agréé Mercedes-Benz au Maroc. Nous collaborons sur des projets de transformation de véhicules spécialisés tout en respectant les standards de qualité du constructeur.
       </p>
-      <a data-reveal data-delay="3" href="partenaires/auto-nejma.html" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
-        Voir les réalisations
-        <svg class="arrow w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
-      </a>
+      <div data-reveal data-delay="3" class="flex flex-wrap items-center gap-x-5 gap-y-3 mt-6">
+        <a href="partenaires/auto-nejma.html" class="partner-cta inline-flex items-center gap-2 px-6 py-3 rounded-full border border-brand-line text-brand-blue font-medium text-sm hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
+          Voir les réalisations
+          <svg class="arrow w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+        </a>
+        <a href="partenaires/mercedes-benz.html" class="text-sm font-medium text-brand-purple underline underline-offset-4 hover:text-brand-blue transition-colors">
+          Nos véhicules Mercedes-Benz
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 6b · Partner 02 — Mercedes-Benz (full-bleed cinematic) ===== -->
-<section class="relative min-h-[55vh] md:min-h-[65vh] flex items-center overflow-hidden">
-  <div class="absolute inset-0 overflow-hidden">
-    <img src="assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/10.png"
-         alt="Aménagement intérieur Mercedes-Benz — sièges premium" class="partner-cinema w-full h-full object-cover" loading="lazy" width="1600" height="900"
-         style="filter:grayscale(0.2) brightness(0.7);">
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-r from-brand-ink/85 via-brand-ink/60 to-transparent"></div>
-
-  <!-- Orb -->
-  <div class="partner-orb w-80 h-80 bg-gradient-to-br from-brand-purple/20 to-brand-lilac/10 -bottom-32 -right-20 hidden md:block" data-speed="-0.03" aria-hidden="true"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-5 py-20 md:py-28 w-full">
-    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-lilac mb-2">Partenaire</p>
-    <span data-reveal data-delay="1" class="font-display font-bold text-white/10 text-7xl md:text-8xl leading-none select-none" aria-hidden="true">02</span>
-    <h3 data-reveal data-delay="1" class="font-display font-bold text-white text-4xl md:text-5xl leading-tight -mt-5 md:-mt-8 max-w-lg">Mercedes-Benz</h3>
-    <p data-reveal data-delay="1" class="mt-2 font-mono text-xs text-brand-lilac">Véhicules fournis via notre partenaire Auto Nejma</p>
-    <p data-reveal data-delay="2" class="mt-4 text-white/70 max-w-md leading-relaxed">
-      Aménagement et transformation de véhicules Mercedes-Benz pour le transport de personnes, avec des finitions haut de gamme, en tant que partenaire de transformation d'Auto Nejma.
-    </p>
-    <a data-reveal data-delay="3" href="partenaires/mercedes-benz.html" class="partner-cta inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 hover:border-white/50 transition-colors">
-      Voir les réalisations
-      <svg class="arrow w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
-    </a>
-
-    <!-- Stars -->
-    <svg class="stars-motif absolute right-8 bottom-10 hidden md:block" width="40" height="40" aria-hidden="true"><polygon points="20,1 24,15 39,15 27,23 31,37 20,29 9,37 13,23 1,15 16,15" fill="rgba(255,255,255,0.12)"/></svg>
-  </div>
-</section>
-
-<!-- ===== 6c · Partner 03 — Volkswagen (content left, shaped image right, offset) ===== -->
+<!-- ===== 6b · Partner 02 — Volkswagen (content left, shaped image right, offset) ===== -->
 <section class="py-20 md:py-28 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-10 lg:gap-16 items-center partner-block">
     <!-- Orb + stars (right side, bleeding off edge) -->
@@ -1121,7 +1385,7 @@
     <!-- Content (left) -->
     <div class="order-2 md:order-1">
       <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-2">Partenaire</p>
-      <span data-reveal data-delay="1" class="font-display font-bold text-brand-lilac/25 text-6xl md:text-7xl leading-none select-none" aria-hidden="true">03</span>
+      <span data-reveal data-delay="1" class="font-display font-bold text-brand-lilac/25 text-6xl md:text-7xl leading-none select-none" aria-hidden="true">02</span>
       <h3 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-3xl md:text-4xl leading-tight -mt-4 md:-mt-6">Volkswagen CAC</h3>
       <p data-reveal data-delay="1" class="mt-1 font-mono text-xs text-brand-purple">Partenaire</p>
       <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
@@ -1328,10 +1592,7 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <svg class="h-9 mb-4" viewBox="0 0 130 40" fill="none" aria-label="BDEA Carrosserie">
-          <text x="0" y="29" font-family="'Clash Display',sans-serif" font-weight="700" font-size="24" fill="#fff">BDEA</text>
-          <circle cx="112" cy="10" r="3" fill="#9D8EBF"/><circle cx="112" cy="20" r="3" fill="#7660A8"/><circle cx="112" cy="30" r="3" fill="rgba(255,255,255,0.5)"/>
-        </svg>
+        <img class="h-10 w-auto mb-4" src="assets/images/MAIN LOGO BDEA/light-logo-trim.png" alt="BDEA Carrosserie" width="661" height="224" loading="lazy">
         <p class="text-sm leading-relaxed">Carrosserie & aménagement de véhicules — Mohammedia, Maroc</p>
         <p class="mt-3 text-[0.7rem] tracking-wide text-white/40">Transforming Vehicles, Delivering Solutions.</p>
         <p class="mt-3 inline-flex items-center gap-1.5 text-xs text-white/50">
@@ -1543,6 +1804,16 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Gamme cards → lightbox ── */
   document.querySelectorAll('.gamme-card[data-glb-src]').forEach(function (card) {
     card.addEventListener('click', function () {
+      /* A card carrying data-glb-set opens its own gallery (e.g. every 17-place
+         Crafter); otherwise the whole panel becomes the set. */
+      var own = card.getAttribute('data-glb-set');
+      if (own) {
+        bdLbOpen(own.split('|').map(function (entry) {
+          var parts = entry.split('::');
+          return { src: parts[0], cap: parts[1] || '' };
+        }), 0);
+        return;
+      }
       var panel    = card.closest('.gamme-panel');
       var allCards = Array.from(panel.querySelectorAll('.gamme-card[data-glb-src]'));
       var idx      = allCards.indexOf(card);
