@@ -57,6 +57,31 @@
     .chip:hover:not(.active) { border-color:#9D8EBF; color:#212677; }
     .chip .chip-count { opacity:.6; font-size:.7em; margin-left:.15em; }
 
+    /* ══ Faceted filters ══ */
+    .gal-filters { display:flex; flex-direction:column; gap:1.1rem; margin-bottom:1.5rem; }
+    .facet[hidden] { display:none; }
+    .facet-label {
+      font-size:.65rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+      color:#9D8EBF; margin-bottom:.55rem;
+    }
+    .facet-chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .facet-chips .chip { display:inline-flex; align-items:center; gap:.45rem; }
+    .chip-dot {
+      width:12px; height:12px; border-radius:50%; flex-shrink:0;
+      border:1px solid rgba(5,0,98,.18);
+    }
+    .chip.active .chip-dot { border-color:rgba(255,255,255,.55); }
+
+    .gal-summary { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+    #gal-count { font-size:.8125rem; color:#6B6B86; }
+    #gal-count b { color:#050062; font-weight:600; }
+    #gal-reset {
+      display:inline-flex; align-items:center; gap:.4rem; background:none; border:none;
+      padding:0; cursor:pointer; font-size:.78rem; font-weight:500; color:#7660A8;
+    }
+    #gal-reset:hover { color:#212677; }
+    #gal-reset[hidden] { display:none; }
+
     /* ══ Gallery grid ══ */
     .gal-grid {
       display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem;
@@ -152,7 +177,7 @@
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
   <a href="index.html" class="text-2xl font-display font-semibold text-white">Accueil</a>
   <a href="about.html" class="text-2xl font-display font-semibold text-white">À propos</a>
-  <a href="services.html" class="text-2xl font-display font-semibold text-white">Nos services</a>
+  <a href="services-vehicule.html" class="text-2xl font-display font-semibold text-white">Nos services</a>
   <div class="flex flex-col items-center gap-2 -mt-2">
     <a href="services-vehicule.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Modèles & Véhicules</a>
     <a href="services-amenagement.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Aménagement Intérieur</a>
@@ -184,15 +209,49 @@
 <!-- ===== Filters + Grid ===== -->
 <section class="py-12 md:py-16">
   <div class="max-w-7xl mx-auto px-5">
-    <div data-reveal class="filter-chips mb-8" role="group" aria-label="Filtrer par catégorie" id="gal-chips">
-      <!-- populated by JS -->
+
+    <div class="gal-filters" id="gal-filters">
+      <!-- Facet 1 — vehicle / category (always visible) -->
+      <div class="facet" id="facet-v">
+        <p class="facet-label">Véhicule</p>
+        <div class="facet-chips" role="group" aria-label="Filtrer par véhicule"></div>
+      </div>
+
+      <!-- Facet 2 — colour (only for vehicles that have colour variants) -->
+      <div class="facet" id="facet-c" hidden>
+        <p class="facet-label">Couleur</p>
+        <div class="facet-chips" role="group" aria-label="Filtrer par couleur"></div>
+      </div>
+
+      <!-- Facet 3 — seats (only where the folders record a seat count) -->
+      <div class="facet" id="facet-p" hidden>
+        <p class="facet-label">Nombre de places</p>
+        <div class="facet-chips" role="group" aria-label="Filtrer par nombre de places"></div>
+      </div>
+
+      <!-- Facet 4 — what it was built for -->
+      <div class="facet" id="facet-u">
+        <p class="facet-label">Type d'aménagement</p>
+        <div class="facet-chips" role="group" aria-label="Filtrer par type d'aménagement"></div>
+      </div>
+    </div>
+
+    <div class="gal-summary">
+      <p id="gal-count" aria-live="polite"></p>
+      <button id="gal-reset" type="button" hidden>
+        Réinitialiser les filtres
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+      </button>
     </div>
 
     <div class="gal-grid" id="gal-grid" role="list" aria-label="Photos de réalisations BDEA Carrosserie">
       <!-- populated by JS -->
     </div>
 
-    <p id="gal-none" class="gal-empty text-center text-brand-mist py-16">Aucune photo dans cette catégorie.</p>
+    <p id="gal-none" class="gal-empty text-center text-brand-mist py-16">
+      Aucune photo ne correspond à ces filtres.
+      <a href="contact.html" class="text-brand-blue underline underline-offset-2">Parlez-nous de votre projet</a>.
+    </p>
 
     <div class="mt-10 text-center">
       <button id="gal-loadmore" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-brand-line text-brand-blue font-medium hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-colors">
@@ -254,7 +313,7 @@
         <nav class="flex flex-col gap-2 text-sm">
           <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
           <a href="about.html" class="hover:text-white transition-colors">À propos</a>
-          <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <a href="services-vehicule.html" class="hover:text-white transition-colors">Services</a>
           <div class="flex flex-col gap-1.5 pl-3 mt-0.5 border-l border-white/15">
             <a href="services-vehicule.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Modèles & Véhicules</a>
             <a href="services-amenagement.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Aménagement Intérieur</a>
@@ -330,83 +389,230 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var CAT_LABELS = {
-    all: 'Toutes',
-    mercedes: 'Mercedes-Benz',
-    'auto-nejma': 'Auto Nejma × Mercedes',
-    volkswagen: 'Volkswagen',
-    renault: 'Renault Master',
-    iveco: 'Iveco',
-    jac: 'JAC',
-    intro: 'Sélection BDEA',
-    equipe: 'Notre équipe & atelier'
+  if (typeof GALLERY === 'undefined') return;
+
+  var DATA    = GALLERY.items;
+  var VEHICLE = GALLERY.vehicles;
+  var COLOR   = GALLERY.colors;
+  var USAGE   = GALLERY.usages;
+
+  /* Order the facet values appear in. */
+  var V_ORDER = ['sprinter', 'crafter', 'master', 'iveco', 'jac'];
+  var C_ORDER = ['noir', 'noir-premium', 'gris', 'marron', 'marron-noir', 'bordo', 'rouge'];
+  var U_ORDER = ['tourisme', 'scolaire', 'personnel', 'vip', 'atelier'];
+
+  /* Active selection. null = "Tous" for that facet. */
+  var sel = { v: null, c: null, p: [], u: null };   /* p is multi-select */
+
+  /* ── URL <-> state, so service pages can deep-link a pre-filtered view ── */
+  function readURL() {
+    var q = new URLSearchParams(location.search);
+    var v = q.get('v'), c = q.get('c'), p = q.get('p'), u = q.get('u');
+    if (v && (VEHICLE[v] || v === 'atelier')) sel.v = v;
+    if (c && COLOR[c]) sel.c = c;
+    if (p) sel.p = p.split(',').filter(function (s) { return /^\d+$/.test(s); })
+                    .map(function (s) { return parseInt(s, 10); });
+    if (u && USAGE[u]) sel.u = u;
+  }
+  function writeURL() {
+    var q = new URLSearchParams();
+    if (sel.v) q.set('v', sel.v);
+    if (sel.c) q.set('c', sel.c);
+    if (sel.p.length) q.set('p', sel.p.join(','));
+    if (sel.u) q.set('u', sel.u);
+    var qs = q.toString();
+    history.replaceState(null, '', qs ? location.pathname + '?' + qs : location.pathname);
+  }
+
+  /* An item belongs to the "atelier" pseudo-vehicle when it has no vehicle. */
+  function vehicleOf(item) { return item.v || (item.usage && item.usage[0] === 'atelier' ? 'atelier' : null); }
+
+  /* Match against every facet except `skip` — that's what powers the counts:
+     each chip shows how many photos you would get if you picked it. */
+  function matches(item, state, skip) {
+    if (skip !== 'v' && state.v && vehicleOf(item) !== state.v) return false;
+    if (skip !== 'c' && state.c && item.color !== state.c) return false;
+    if (skip !== 'p' && state.p && state.p.length && state.p.indexOf(item.seats) === -1) return false;
+    if (skip !== 'u' && state.u && (!item.usage || item.usage.indexOf(state.u) === -1)) return false;
+    return true;
+  }
+  function countFor(facet, value) {
+    var probe = { v: sel.v, c: sel.c, p: sel.p, u: sel.u };
+    probe[facet] = facet === 'p' ? (value === null ? [] : [value]) : value;
+    var n = 0;
+    for (var i = 0; i < DATA.length; i++) if (matches(DATA[i], probe)) n++;
+    return n;
+  }
+
+  /* ── Chip building ── */
+  function isActive(facet, value) {
+    if (facet !== 'p') return sel[facet] === value;
+    return value === null ? sel.p.length === 0 : sel.p.indexOf(value) !== -1;
+  }
+
+  function chip(facet, value, label, count, dot) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    var on = isActive(facet, value);
+    b.className = 'chip' + (on ? ' active' : '');
+    b.dataset.facet = facet;
+    b.dataset.value = value === null ? '' : String(value);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    var html = '';
+    if (dot) html += '<span class="chip-dot" style="background:' + dot + '"></span>';
+    html += label + ' <span class="chip-count">(' + count + ')</span>';
+    b.innerHTML = html;
+    return b;
+  }
+
+  var facetEls = {
+    v: document.querySelector('#facet-v .facet-chips'),
+    c: document.querySelector('#facet-c .facet-chips'),
+    p: document.querySelector('#facet-p .facet-chips'),
+    u: document.querySelector('#facet-u .facet-chips')
   };
-  var CAT_ORDER = ['all', 'mercedes', 'auto-nejma', 'volkswagen', 'renault', 'iveco', 'jac', 'intro', 'equipe'];
 
-  var data = (typeof GALLERY_DATA !== 'undefined') ? GALLERY_DATA : [];
-  document.getElementById('gal-total').textContent = data.length;
+  function renderFacets() {
+    /* Vehicle — counted ignoring colour/seats, which are vehicle-specific: otherwise
+       picking "18 places" would zero out every other vehicle and strand the user. */
+    function vehicleCount(value) {
+      var probe = { v: value, c: null, p: null, u: sel.u };
+      var n = 0;
+      for (var i = 0; i < DATA.length; i++) if (matches(DATA[i], probe)) n++;
+      return n;
+    }
+    var vBox = facetEls.v;
+    vBox.innerHTML = '';
+    vBox.appendChild(chip('v', null, 'Tous', vehicleCount(null)));
+    V_ORDER.forEach(function (key) {
+      var n = vehicleCount(key);
+      if (n) vBox.appendChild(chip('v', key, VEHICLE[key], n));
+    });
+    var atelier = vehicleCount('atelier');
+    if (atelier) vBox.appendChild(chip('v', 'atelier', 'Atelier & équipe', atelier));
 
-  var counts = { all: data.length };
-  data.forEach(function (item) { counts[item.cat] = (counts[item.cat] || 0) + 1; });
+    /* Colour / seats — contextual: only values that exist in the current vehicle. */
+    function renderContextual(facet, order, labelOf, dotOf) {
+      var box = facetEls[facet];
+      var wrap = box.parentElement;
+      box.innerHTML = '';
+      var available = order.filter(function (val) { return countFor(facet, val) > 0; });
+      /* Hide the whole row unless it actually narrows something down. */
+      if (available.length < 2) {
+        wrap.hidden = true;
+        if (facet === 'p') sel.p = [];
+        else if (sel[facet] && available.indexOf(sel[facet]) === -1) sel[facet] = null;
+        return;
+      }
+      wrap.hidden = false;
+      box.appendChild(chip(facet, null, 'Toutes', countFor(facet, null)));
+      available.forEach(function (val) {
+        box.appendChild(chip(facet, val, labelOf(val), countFor(facet, val), dotOf ? dotOf(val) : null));
+      });
+    }
 
-  var chipsEl = document.getElementById('gal-chips');
-  CAT_ORDER.forEach(function (key) {
-    if (key !== 'all' && !counts[key]) return;
-    var btn = document.createElement('button');
-    btn.className = 'chip' + (key === 'all' ? ' active' : '');
-    btn.setAttribute('data-cat', key);
-    btn.innerHTML = (CAT_LABELS[key] || key) + ' <span class="chip-count">(' + (counts[key] || 0) + ')</span>';
-    chipsEl.appendChild(btn);
-  });
+    renderContextual('c', C_ORDER,
+      function (k) { return COLOR[k].label; },
+      function (k) { return COLOR[k].swatch; });
 
+    var seatValues = [];
+    DATA.forEach(function (i) { if (i.seats && seatValues.indexOf(i.seats) === -1) seatValues.push(i.seats); });
+    seatValues.sort(function (a, b) { return a - b; });
+    renderContextual('p', seatValues, function (n) { return n + ' places'; });
+
+    /* Usage — always shown. */
+    var uBox = facetEls.u;
+    uBox.innerHTML = '';
+    uBox.appendChild(chip('u', null, 'Tous', countFor('u', null)));
+    U_ORDER.forEach(function (key) {
+      var n = countFor('u', key);
+      if (n) uBox.appendChild(chip('u', key, USAGE[key], n));
+    });
+  }
+
+  /* ── Grid ── */
   var gridEl = document.getElementById('gal-grid');
   var noneEl = document.getElementById('gal-none');
+  var countEl = document.getElementById('gal-count');
+  var resetEl = document.getElementById('gal-reset');
   var loadMoreBtn = document.getElementById('gal-loadmore');
   var PAGE_SIZE = 24;
-  var currentCat = 'all';
-  var currentSet = data;
+  var currentSet = [];
   var shown = 0;
 
+  function esc(s) { return String(s).replace(/"/g, '&quot;'); }
+
   function tileHTML(item, idx) {
+    var bits = [];
+    if (item.colorLabel) bits.push(item.colorLabel);
+    if (item.seats) bits.push(item.seats + ' places');
+    var meta = item.vLabel || (item.usage && item.usage[0] === 'atelier' ? 'Atelier' : 'BDEA');
     var caption = item.sub + (item.n ? ' · ' + item.n : '');
-    return '<button class="gal-tile" data-idx="' + idx + '" role="listitem" aria-label="' + caption.replace(/"/g, '&quot;') + '">' +
-      '<img src="' + item.src + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy" width="400" height="300">' +
-      '<span class="gal-overlay"><span class="gal-cat">' + item.catLabel + '</span><span class="gal-sub">' + item.sub + '</span></span>' +
+    return '<button class="gal-tile" data-idx="' + idx + '" role="listitem" aria-label="' + esc(caption) + '">' +
+      '<img src="' + item.src + '" alt="' + esc(caption) + '" loading="lazy" width="400" height="300">' +
+      '<span class="gal-overlay"><span class="gal-cat">' + esc(meta) + '</span>' +
+      '<span class="gal-sub">' + esc(item.sub + (bits.length ? ' — ' + bits.join(' · ') : '')) + '</span></span>' +
       '</button>';
   }
 
   function renderMore() {
     var next = currentSet.slice(shown, shown + PAGE_SIZE);
     var html = '';
-    next.forEach(function (item) {
-      var globalIdx = currentSet.indexOf(item);
-      html += tileHTML(item, globalIdx);
-    });
+    next.forEach(function (item, i) { html += tileHTML(item, shown + i); });
     gridEl.insertAdjacentHTML('beforeend', html);
     shown += next.length;
     loadMoreBtn.style.display = shown >= currentSet.length ? 'none' : '';
     bindTiles();
   }
 
-  function applyFilter(cat) {
-    currentCat = cat;
-    currentSet = cat === 'all' ? data : data.filter(function (i) { return i.cat === cat; });
-    gridEl.innerHTML = '';
+  function apply(pushUrl) {
+    currentSet = DATA.filter(function (i) { return matches(i, sel); });
     shown = 0;
+    gridEl.innerHTML = '';
     noneEl.style.display = currentSet.length ? 'none' : 'block';
     loadMoreBtn.style.display = currentSet.length ? '' : 'none';
+
+    var active = [];
+    if (sel.v) active.push(sel.v === 'atelier' ? 'Atelier & équipe' : VEHICLE[sel.v]);
+    if (sel.c) active.push(COLOR[sel.c].label);
+    if (sel.p.length) active.push(sel.p.join(' · ') + ' places');
+    if (sel.u) active.push(USAGE[sel.u]);
+    countEl.innerHTML = '<b>' + currentSet.length + '</b> photo' + (currentSet.length > 1 ? 's' : '') +
+      (active.length ? ' — ' + active.join(' · ') : '');
+    resetEl.hidden = active.length === 0;
+
+    renderFacets();
     renderMore();
+    if (pushUrl !== false) writeURL();
   }
 
-  chipsEl.addEventListener('click', function (e) {
+  /* One delegated listener covers every facet row. */
+  document.getElementById('gal-filters').addEventListener('click', function (e) {
     var btn = e.target.closest('.chip');
     if (!btn) return;
-    chipsEl.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
-    btn.classList.add('active');
-    applyFilter(btn.getAttribute('data-cat'));
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    var facet = btn.dataset.facet;
+    var raw = btn.dataset.value;
+    var value = raw === '' ? null : (facet === 'p' ? parseInt(raw, 10) : raw);
+    if (facet === 'p') {
+      if (value === null) { if (!sel.p.length) return; sel.p = []; }
+      else {
+        var at = sel.p.indexOf(value);
+        if (at === -1) sel.p = sel.p.concat([value]).sort(function (a, b) { return a - b; });
+        else sel.p = sel.p.slice(0, at).concat(sel.p.slice(at + 1));
+      }
+    } else {
+      if (sel[facet] === value) return;
+      sel[facet] = value;
+    }
+    /* Switching vehicle drops colour/seat picks that no longer apply. */
+    if (facet === 'v') { sel.c = null; sel.p = []; }
+    apply();
   });
 
+  resetEl.addEventListener('click', function () {
+    sel = { v: null, c: null, p: [], u: null };
+    apply();
+  });
   loadMoreBtn.addEventListener('click', renderMore);
 
   /* ── Lightbox ── */
@@ -414,43 +620,41 @@ document.addEventListener('DOMContentLoaded', function () {
   var bdLbImg = document.getElementById('bdea-lb-img');
   var bdLbCap = document.getElementById('bdea-lb-cap');
   var bdLbCount = document.getElementById('bdea-lb-count');
-  var bdLbIdx = 0;
-  var bdLbLast = null;
+  var lbIdx = 0, lbLast = null;
 
-  function openAt(idx) {
-    bdLbIdx = idx;
-    var item = currentSet[bdLbIdx];
+  function paint() {
+    var item = currentSet[lbIdx];
     if (!item) return;
     bdLbImg.src = item.src;
-    bdLbCap.textContent = item.catLabel + ' — ' + item.sub + (item.n ? ' · Vue ' + item.n : '');
-    bdLbCount.textContent = (bdLbIdx + 1) + ' / ' + currentSet.length;
+    bdLbImg.alt = item.sub;
+    bdLbCap.textContent = item.sub + (item.n ? ' · ' + item.n : '');
+    bdLbCount.textContent = (lbIdx + 1) + ' / ' + currentSet.length;
+  }
+  function openAt(idx) {
+    lbIdx = idx;
+    paint();
     bdLb.classList.add('open');
-    bdLbLast = document.activeElement;
+    lbLast = document.activeElement;
     document.getElementById('bdea-lb-close').focus();
     document.body.style.overflow = 'hidden';
   }
   function closeLb() {
     bdLb.classList.remove('open');
-    bdLbImg.src = '';
+    bdLbImg.removeAttribute('src');
     document.body.style.overflow = '';
-    if (bdLbLast) { bdLbLast.focus(); bdLbLast = null; }
+    if (lbLast) { lbLast.focus(); lbLast = null; }
   }
   function go(dir) {
     if (!currentSet.length) return;
-    bdLbIdx = (bdLbIdx + dir + currentSet.length) % currentSet.length;
-    if (bdLbIdx >= shown) renderMore();
-    openAt(bdLbIdx);
+    lbIdx = (lbIdx + dir + currentSet.length) % currentSet.length;
+    paint();
   }
-
   function bindTiles() {
     gridEl.querySelectorAll('.gal-tile:not([data-bound])').forEach(function (tile) {
       tile.setAttribute('data-bound', '1');
-      tile.addEventListener('click', function () {
-        openAt(parseInt(tile.getAttribute('data-idx'), 10));
-      });
+      tile.addEventListener('click', function () { openAt(parseInt(tile.dataset.idx, 10)); });
     });
   }
-
   document.getElementById('bdea-lb-close').addEventListener('click', closeLb);
   document.getElementById('bdea-lb-prev').addEventListener('click', function () { go(-1); });
   document.getElementById('bdea-lb-next').addEventListener('click', function () { go(1); });
@@ -462,7 +666,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowRight') go(1);
   });
 
-  applyFilter('all');
+  var totalEl = document.getElementById('gal-total');
+  if (totalEl) totalEl.textContent = DATA.length;
+
+  readURL();
+  apply(false);
+  writeURL();
 });
 </script>
 

@@ -120,11 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Navbar: transparent → solid ── */
   const navbar = document.getElementById('navbar');
-  const hero   = document.getElementById('hero');
-  if (navbar && hero) {
+  /* Pages name their opening banner #hero or #intro; without a fallback the navbar
+     stayed transparent (white links, pale logo) over light content and vanished. */
+  const banner = document.getElementById('hero') || document.getElementById('intro');
+  if (navbar && banner) {
     new IntersectionObserver(([entry]) => {
       navbar.classList.toggle('scrolled', !entry.isIntersecting);
-    }, { rootMargin: '-80px 0px 0px 0px' }).observe(hero);
+    }, { rootMargin: '-80px 0px 0px 0px' }).observe(banner);
+  } else if (navbar) {
+    /* No banner at all (gallery, contact, partner pages) — go solid on any scroll. */
+    const syncNavbar = () => navbar.classList.toggle('scrolled', window.scrollY > 40);
+    syncNavbar();
+    window.addEventListener('scroll', syncNavbar, { passive: true });
   }
 
   /* ── Mobile menu ── */

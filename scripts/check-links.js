@@ -3,7 +3,7 @@ const path = require('path');
 
 const root = path.join(__dirname, '..');
 const pages = [
-  'index.html','about.html','services.html','services-vehicule.html',
+  'index.html','about.html','services-vehicule.html',
   'services-amenagement.html','services-carrosserie.html','contact.html',
   'faq.html','actualites.html','politique-confidentialite.html','gallery.html',
   'partenaires/auto-nejma.html','partenaires/mercedes-benz.html','partenaires/volkswagen.html'
@@ -31,7 +31,8 @@ for (const page of pages) {
     if (ref.startsWith('mailto:') || ref.startsWith('tel:')) continue;
     if (ref.startsWith('data:')) continue;
     if (ref === '#' || ref.startsWith('#')) continue; // in-page anchor
-    let clean = ref.split('#')[0];
+    // Strip both the fragment and the query (gallery.html?v=sprinter is still gallery.html).
+    let clean = ref.split('#')[0].split('?')[0];
     if (!clean) continue;
     const resolved = path.resolve(dir, clean);
     if (!fs.existsSync(resolved)) {

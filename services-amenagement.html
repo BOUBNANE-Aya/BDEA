@@ -102,6 +102,10 @@
     .svc-panel-link.svc-current { color:#212677; font-weight:600; background:#F5F4FC; }
 
     /* ── Category card grid ── */
+    /* Whole sub-type card is clickable — the "En savoir plus" link is stretched over it. */
+    .sv-cat-link::after { content:''; position:absolute; inset:0; z-index:1; border-radius:14px; }
+    .sv-cat-link:focus-visible::after { outline:2px solid #7660A8; outline-offset:4px; }
+
     .sv-cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
     @media(max-width:1023px) { .sv-cat-grid { grid-template-columns:repeat(2,1fr); } }
     @media(max-width:639px) { .sv-cat-grid { grid-template-columns:1fr; } }
@@ -179,7 +183,7 @@
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-ink flex flex-col items-center justify-center gap-6" role="dialog" aria-label="Menu">
   <a href="index.html" class="text-2xl font-display font-semibold text-white">Accueil</a>
   <a href="about.html" class="text-2xl font-display font-semibold text-white">À propos</a>
-  <a href="services.html" class="text-2xl font-display font-semibold text-brand-lilac">Nos services</a>
+  <a href="services-vehicule.html" class="text-2xl font-display font-semibold text-brand-lilac">Nos services</a>
   <div class="flex flex-col items-center gap-2 -mt-2">
     <a href="services-vehicule.html" class="text-sm font-medium text-white/55">Modèles & Véhicules</a>
     <a href="services-amenagement.html" class="text-sm font-medium text-white">Aménagement Intérieur</a>
@@ -203,7 +207,7 @@
     <!-- Breadcrumb -->
     <nav aria-label="Fil d'Ariane" class="mb-6">
       <ol class="flex items-center gap-2 text-xs text-white/40">
-        <li><a href="services.html" class="hover:text-white/70 transition-colors">Services</a></li>
+        <li><a href="services-vehicule.html" class="hover:text-white/70 transition-colors">Services</a></li>
         <li aria-hidden="true">›</li>
         <li class="text-white/60">Aménagement Intérieur</li>
       </ol>
@@ -237,7 +241,7 @@
     <div class="sv-cat-grid">
 
       <!-- 01 · Transport touristique -->
-      <article class="group" data-reveal data-delay="0">
+      <article class="group relative" data-reveal data-delay="0">
         <div class="sv-cat-img mb-4">
           <img src="assets/images/Minibus Iveco/7.png"
                alt="Transport touristique aménagé" loading="lazy" width="600" height="450">
@@ -245,13 +249,13 @@
         <p class="chap-num" aria-hidden="true">01</p>
         <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Transport touristique</h3>
         <p class="mt-2 text-brand-mist text-sm leading-relaxed">Autobus et vans aménagés pour les circuits, excursions et transferts. Confort, sièges ergonomiques et espace bagage.</p>
-        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+        <a href="gallery.html?u=tourisme" class="sv-cat-link inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
           En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
         </a>
       </article>
 
       <!-- 02 · Transport personnel -->
-      <article class="group" data-reveal data-delay="1">
+      <article class="group relative" data-reveal data-delay="1">
         <div class="sv-cat-img mb-4">
           <img src="assets/images/Renault Master/Renault Master - Model 2/3.png"
                alt="Transport personnel aménagé" loading="lazy" width="600" height="450">
@@ -259,13 +263,13 @@
         <p class="chap-num" aria-hidden="true">02</p>
         <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Transport personnel</h3>
         <p class="mt-2 text-brand-mist text-sm leading-relaxed">Navettes d'entreprise, véhicules médicaux et transports spécialisés — adaptés aux besoins des professionnels.</p>
-        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+        <a href="gallery.html?u=personnel" class="sv-cat-link inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
           En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
         </a>
       </article>
 
       <!-- 03 · Transport scolaire -->
-      <article class="group" data-reveal data-delay="2">
+      <article class="group relative" data-reveal data-delay="2">
         <div class="sv-cat-img mb-4">
           <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&q=80"
                alt="Transport scolaire aménagé" loading="lazy" width="600" height="450"><!-- swap: client image — Transport scolaire -->
@@ -273,13 +277,13 @@
         <p class="chap-num" aria-hidden="true">03</p>
         <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Transport scolaire</h3>
         <p class="mt-2 text-brand-mist text-sm leading-relaxed">Aménagements prioritairement axés sur la sécurité et le confort des enfants et jeunes passagers.</p>
-        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+        <a href="gallery.html?u=scolaire" class="sv-cat-link inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
           En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
         </a>
       </article>
 
       <!-- 04 · VIP et semi-VIP -->
-      <article class="group" data-reveal data-delay="3">
+      <article class="group relative" data-reveal data-delay="3">
         <div class="sv-cat-img mb-4">
           <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80"
                alt="Aménagement VIP et semi-VIP" loading="lazy" width="600" height="450"><!-- swap: client image — VIP et semi-VIP -->
@@ -287,13 +291,13 @@
         <p class="chap-num" aria-hidden="true">04</p>
         <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">VIP et semi-VIP</h3>
         <p class="mt-2 text-brand-mist text-sm leading-relaxed">Intérieurs luxueux avec sièges en cuir, tables intégrées, système multimédia et finitions premium.</p>
-        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+        <a href="gallery.html?u=vip" class="sv-cat-link inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
           En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
         </a>
       </article>
 
       <!-- 05 · Caravane -->
-      <article class="group" data-reveal data-delay="4">
+      <article class="group relative" data-reveal data-delay="4">
         <div class="sv-cat-img mb-4">
           <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80"
                alt="Aménagement caravane" loading="lazy" width="600" height="450"><!-- swap: client image — Caravane -->
@@ -301,7 +305,7 @@
         <p class="chap-num" aria-hidden="true">05</p>
         <h3 class="font-display font-bold text-brand-ink text-xl md:text-2xl leading-tight mt-2">Caravane</h3>
         <p class="mt-2 text-brand-mist text-sm leading-relaxed">Transformation de fourgons en espaces de vie autonomes — couchette, cuisine, sanitaires intégrés.</p>
-        <a href="services.html" class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
+        <a href="gallery.html?u=vip" class="sv-cat-link inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-brand-blue hover:text-brand-purple transition-colors">
           En savoir plus <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
         </a>
       </article>
@@ -472,6 +476,120 @@
   </div>
 </section>
 
+<!-- ===== Nos expertises — prestations + processus (repris de l'ancienne page services) ===== -->
+<section id="expertises" class="py-20 md:py-28 lg:py-32 bg-brand-paper border-t border-brand-line">
+  <div class="max-w-7xl mx-auto px-5">
+    <p data-reveal class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-purple mb-4">Nos expertises</p>
+    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-[clamp(1.8rem,3vw+0.4rem,3rem)] leading-tight max-w-xl mb-4">
+      Trois métiers, un même processus.
+    </h2>
+    <p data-reveal data-delay="2" class="text-brand-mist max-w-2xl mb-12 leading-relaxed">
+      De l'étude technique au contrôle qualité final, chaque projet suit des étapes maîtrisées entièrement en interne, dans notre atelier de Mohammedia.
+    </p>
+
+    <div class="xp-grid">
+        <article class="xp-card" data-reveal data-delay="0">
+          <div class="xp-img">
+            <img src="assets/images/expertises/autobus.jpg" alt="Aménagement intérieur d'autobus réalisé par BDEA Carrosserie" loading="lazy" width="800" height="600">
+          </div>
+          <p class="xp-num" aria-hidden="true">01</p>
+          <h3 class="xp-title">Aménagement d'autobus</h3>
+          <p class="xp-desc">Nos équipes conçoivent et réalisent l'aménagement complet d'autobus scolaires, de transport touristique et de transport privé. Sièges, revêtements, climatisation, éclairage — chaque détail est pensé pour le confort et la durabilité.</p>
+          <ol class="xp-steps">
+            <li>
+              <span class="xp-step-num" aria-hidden="true">01</span>
+              <div>
+                <h4 class="xp-step-title">Analyse & Conception</h4>
+                <p class="xp-step-desc">Étude des besoins, plans techniques et choix des matériaux.</p>
+              </div>
+            </li>
+            <li>
+              <span class="xp-step-num" aria-hidden="true">02</span>
+              <div>
+                <h4 class="xp-step-title">Fabrication sur mesure</h4>
+                <p class="xp-step-desc">Réalisation en atelier par nos carrossiers spécialisés.</p>
+              </div>
+            </li>
+            <li>
+              <span class="xp-step-num" aria-hidden="true">03</span>
+              <div>
+                <h4 class="xp-step-title">Livraison & Suivi</h4>
+                <p class="xp-step-desc">Contrôle qualité, livraison et accompagnement après-vente.</p>
+              </div>
+            </li>
+          </ol>
+          <a href="contact.html" class="xp-cta">Demander un devis <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="xp-card" data-reveal data-delay="1">
+          <div class="xp-img">
+            <img src="assets/images/expertises/vans.jpg" alt="Van aménagé par BDEA Carrosserie" loading="lazy" width="800" height="600">
+          </div>
+          <p class="xp-num" aria-hidden="true">02</p>
+          <h3 class="xp-title">Aménagement de vans</h3>
+          <p class="xp-desc">Transformation complète de vans utilitaires en véhicules de transport, de tourisme ou de service. Nous adaptons chaque fourgon à son usage réel — banquettes, mobilier, isolation, systèmes électriques.</p>
+          <ol class="xp-steps">
+            <li>
+              <span class="xp-step-num" aria-hidden="true">01</span>
+              <div>
+                <h4 class="xp-step-title">Évaluation & Brief</h4>
+                <p class="xp-step-desc">Étude de l'usage, volume et contraintes techniques.</p>
+              </div>
+            </li>
+            <li>
+              <span class="xp-step-num" aria-hidden="true">02</span>
+              <div>
+                <h4 class="xp-step-title">Transformation complète</h4>
+                <p class="xp-step-desc">Plancher, isolation, menuiserie, électricité et finitions.</p>
+              </div>
+            </li>
+            <li>
+              <span class="xp-step-num" aria-hidden="true">03</span>
+              <div>
+                <h4 class="xp-step-title">Homologation & Livraison</h4>
+                <p class="xp-step-desc">Mise en conformité et livraison avec garantie.</p>
+              </div>
+            </li>
+          </ol>
+          <a href="contact.html" class="xp-cta">Demander un devis <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="xp-card" data-reveal data-delay="2">
+          <div class="xp-img">
+            <img src="assets/images/expertises/fabrication.jpg" alt="Soudure et fabrication en atelier chez BDEA Carrosserie" loading="lazy" width="800" height="600">
+          </div>
+          <p class="xp-num" aria-hidden="true">03</p>
+          <h3 class="xp-title">Fabrication & transformation</h3>
+          <p class="xp-desc">Notre atelier prend en charge la fabrication et la transformation complète de structures métalliques, de bennes, de plateaux et de carrosseries sur cahier des charges. Soudure, découpe, peinture — tout est réalisé en interne.</p>
+          <ol class="xp-steps">
+            <li>
+              <span class="xp-step-num" aria-hidden="true">01</span>
+              <div>
+                <h4 class="xp-step-title">Étude technique</h4>
+                <p class="xp-step-desc">Plans, métrés et choix des alliages adaptés à l'usage.</p>
+              </div>
+            </li>
+            <li>
+              <span class="xp-step-num" aria-hidden="true">02</span>
+              <div>
+                <h4 class="xp-step-title">Fabrication atelier</h4>
+                <p class="xp-step-desc">Soudure, découpe, formage et assemblage en interne.</p>
+              </div>
+            </li>
+            <li>
+              <span class="xp-step-num" aria-hidden="true">03</span>
+              <div>
+                <h4 class="xp-step-title">Finition & Contrôle</h4>
+                <p class="xp-step-desc">Peinture, anti-corrosion et contrôle qualité final.</p>
+              </div>
+            </li>
+          </ol>
+          <a href="contact.html" class="xp-cta">Demander un devis <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg></a>
+        </article>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CTA Band ===== -->
 <section id="cta" class="cta-band py-24 md:py-32">
   <div class="max-w-3xl mx-auto px-5 text-center">
@@ -524,7 +642,7 @@
         <nav class="flex flex-col gap-2 text-sm">
           <a href="index.html"    class="hover:text-white transition-colors">Accueil</a>
           <a href="about.html"    class="hover:text-white transition-colors">À propos</a>
-          <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <a href="services-vehicule.html" class="hover:text-white transition-colors">Services</a>
           <div class="flex flex-col gap-1.5 pl-3 mt-0.5 border-l border-white/15">
             <a href="services-vehicule.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Modèles & Véhicules</a>
             <a href="services-amenagement.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Aménagement Intérieur</a>
