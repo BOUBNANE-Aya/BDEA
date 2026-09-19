@@ -110,7 +110,10 @@ function walk(dir, inherited) {
   if (files.length && inherited) {
     files.forEach((f, i) => {
       const rel = path.relative(ROOT, path.join(dir, f)).split(path.sep).join('/');
-      const item = { src: rel, sub: inherited.sub, n: i + 1 };
+      /* Serve the WebP derivatives built by scripts/optimize-media.js: a 600px tile
+         for the grid and a 1400px copy for the lightbox, instead of a ~1.5MB master. */
+      const stem = 'assets/opt/' + rel.slice('assets/images/'.length).replace(/\.(png|jpe?g)$/i, '');
+      const item = { src: stem + '-600.webp', full: stem + '-1400.webp', sub: inherited.sub, n: i + 1 };
       if (inherited.v) { item.v = inherited.v; item.vLabel = VEHICLES[inherited.v]; }
       if (inherited.color) { item.color = inherited.color; item.colorLabel = COLORS[inherited.color].label; }
       if (inherited.seats) item.seats = inherited.seats;

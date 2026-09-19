@@ -8,43 +8,43 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Resolve the client's image library for every existing gallery surface. */
   const imageSets = {
     sprinter: [
-      'assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/1.png',
-      'assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/1.png',
-      'assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/1.png',
-      'assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/1.png',
-      'assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/1.png',
-      'assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/1.png'
+      'assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/1-600.webp'
     ],
     crafter: [
-      'assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/1.png',
-      'assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/1.png',
-      'assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/1.png',
-      'assets/images/VW Crafter New Model 2026/VW Crafter - Black/1.png',
-      'assets/images/VW Crafter New Model 2026/VW Crafter - Broown/1.png',
-      'assets/images/VW Crafter New Model 2026/VW Crafter - Red/1.png'
+      'assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/1-600.webp',
+      'assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/1-600.webp',
+      'assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/1-600.webp',
+      'assets/opt/VW Crafter New Model 2026/VW Crafter - Black/1-600.webp',
+      'assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/1-600.webp',
+      'assets/opt/VW Crafter New Model 2026/VW Crafter - Red/1-600.webp'
     ],
     master: [
-      'assets/images/Renault Master/Renault Master - Model 1/1.png',
-      'assets/images/Renault Master/Renault Master - Model 2/1.png',
-      'assets/images/Renault Master/Renault Master - Model 1/2.png'
+      'assets/opt/Renault Master/Renault Master - Model 1/1-600.webp',
+      'assets/opt/Renault Master/Renault Master - Model 2/1-600.webp',
+      'assets/opt/Renault Master/Renault Master - Model 1/2-600.webp'
     ],
     autres: [
-      'assets/images/Minibus Iveco/1.png',
-      'assets/images/Minibus Iveco/2.png',
-      'assets/images/Jac - Marron/1.png'
+      'assets/opt/Minibus Iveco/1-600.webp',
+      'assets/opt/Minibus Iveco/2-600.webp',
+      'assets/opt/Jac - Marron/1-600.webp'
     ],
     autoNejma: [
-      'assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/1.png',
-      'assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/1.png',
-      'assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/1.png'
+      'assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/1-600.webp',
+      'assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/1-600.webp'
     ],
     intro: [
-      'assets/images/Intro and main Page pictures/1.png',
-      'assets/images/Intro and main Page pictures/2.png',
-      'assets/images/Intro and main Page pictures/3.png',
-      'assets/images/Intro and main Page pictures/4.png',
-      'assets/images/Intro and main Page pictures/5.png',
-      'assets/images/Intro and main Page pictures/6.png'
+      'assets/opt/Intro and main Page pictures/1-600.webp',
+      'assets/opt/Intro and main Page pictures/2-600.webp',
+      'assets/opt/Intro and main Page pictures/3-600.webp',
+      'assets/opt/Intro and main Page pictures/4-600.webp',
+      'assets/opt/Intro and main Page pictures/5-600.webp',
+      'assets/opt/Intro and main Page pictures/6-600.webp'
     ]
   };
 
@@ -98,10 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
         path = serviceImage(alt, fallbackIndex);
       }
 
-      if (media.tagName === 'VIDEO') media.setAttribute('poster', path);
+      /* Cards get the 600px copy; posters and lightbox targets the 1400px one. */
+      const large = path.replace('-600.webp', '-1400.webp');
+      if (media.tagName === 'VIDEO') media.setAttribute('poster', large);
       else media.setAttribute('src', path);
       ['data-lb-src', 'data-glb-src', 'data-nej-lb-src'].forEach((attribute) => {
-        if (media.hasAttribute(attribute)) media.setAttribute(attribute, path);
+        if (media.hasAttribute(attribute)) media.setAttribute(attribute, large);
       });
       fallbackIndex++;
     });
@@ -111,7 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const resolvedChild = childImage && childImage.getAttribute('src');
       ['data-lb-src', 'data-glb-src', 'data-nej-lb-src'].forEach((attribute) => {
         if (/unsplash|optimized\//.test(element.getAttribute(attribute) || '')) {
-          element.setAttribute(attribute, resolvedChild || chooseImage('intro', fallbackIndex++));
+          const fallback = resolvedChild || chooseImage('intro', fallbackIndex++);
+          element.setAttribute(attribute, fallback.replace('-600.webp', '-1400.webp'));
         }
       });
     });
@@ -288,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let front = 0;      // which of the two stage layers is visible
     let timer = null;
 
-    const srcFor = i => 'assets/images/showcase/' + String(i + 1).padStart(2, '0') + '.jpg';
+    const srcFor = i => 'assets/images/showcase/' + String(i + 1).padStart(2, '0') + '.webp';
 
     /* Slide the rail so the current square sits in the middle of the strip. */
     const centreRail = () => {

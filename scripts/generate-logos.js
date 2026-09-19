@@ -11,7 +11,7 @@ async function run() {
     const out = path.join(DIR, `${name}-trim.png`);
     const buf = await sharp(path.join(DIR, `${name}.png`))
       .trim({ threshold: 1 })
-      .png({ compressionLevel: 9 })
+      .png({ palette: true, colours: 32, compressionLevel: 9 })
       .toBuffer();
     fs.writeFileSync(out, buf);
     const m = await sharp(out).metadata();

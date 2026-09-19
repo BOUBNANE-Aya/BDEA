@@ -46,7 +46,8 @@ const GALLERY = {
  },
  "items": [
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/1-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 1,
    "v": "sprinter",
@@ -58,7 +59,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/2-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 2,
    "v": "sprinter",
@@ -70,7 +72,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/3-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 3,
    "v": "sprinter",
@@ -82,7 +85,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/4-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 4,
    "v": "sprinter",
@@ -94,7 +98,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/5-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 5,
    "v": "sprinter",
@@ -106,7 +111,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/6-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 6,
    "v": "sprinter",
@@ -118,7 +124,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/7-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 7,
    "v": "sprinter",
@@ -130,7 +137,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/8.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/8-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/8-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 8,
    "v": "sprinter",
@@ -142,7 +150,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/9.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/9-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/9-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 9,
    "v": "sprinter",
@@ -154,7 +163,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/10.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/10-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Airport Budas/10-1400.webp",
    "sub": "Sprinter — Navette aéroport",
    "n": 10,
    "v": "sprinter",
@@ -166,7 +176,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/1-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 1,
    "v": "sprinter",
@@ -178,7 +189,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/2-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 2,
    "v": "sprinter",
@@ -190,7 +202,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/3-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 3,
    "v": "sprinter",
@@ -202,7 +215,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/4-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 4,
    "v": "sprinter",
@@ -214,7 +228,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/5-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 5,
    "v": "sprinter",
@@ -226,7 +241,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/6-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 6,
    "v": "sprinter",
@@ -238,7 +254,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/7-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 7,
    "v": "sprinter",
@@ -250,7 +267,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Bordo/8.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/8-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Bordo/8-1400.webp",
    "sub": "Sprinter Luxe — Bordo",
    "n": 8,
    "v": "sprinter",
@@ -262,7 +280,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/1-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 1,
    "v": "sprinter",
@@ -274,7 +293,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/2-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 2,
    "v": "sprinter",
@@ -286,7 +306,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/3-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 3,
    "v": "sprinter",
@@ -298,7 +319,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/4-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 4,
    "v": "sprinter",
@@ -310,7 +332,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/5-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 5,
    "v": "sprinter",
@@ -322,7 +345,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/6-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 6,
    "v": "sprinter",
@@ -334,7 +358,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/7-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 7,
    "v": "sprinter",
@@ -346,7 +371,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Marron/8.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/8-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Marron/8-1400.webp",
    "sub": "Sprinter Luxe — Marron",
    "n": 8,
    "v": "sprinter",
@@ -358,7 +384,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/1-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 1,
    "v": "sprinter",
@@ -370,7 +397,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/2-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 2,
    "v": "sprinter",
@@ -382,7 +410,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/3-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 3,
    "v": "sprinter",
@@ -394,7 +423,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/4-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 4,
    "v": "sprinter",
@@ -406,7 +436,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/5-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 5,
    "v": "sprinter",
@@ -418,7 +449,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/6-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 6,
    "v": "sprinter",
@@ -430,7 +462,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/7-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 7,
    "v": "sprinter",
@@ -442,7 +475,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/8.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/8-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/8-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 8,
    "v": "sprinter",
@@ -454,7 +488,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/9.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/9-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/9-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 9,
    "v": "sprinter",
@@ -466,7 +501,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Luxe Noir/10.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/10-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Luxe Noir/10-1400.webp",
    "sub": "Sprinter Luxe — Noir",
    "n": 10,
    "v": "sprinter",
@@ -478,7 +514,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/1-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 1,
    "v": "sprinter",
@@ -490,7 +527,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/2-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 2,
    "v": "sprinter",
@@ -502,7 +540,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/3-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 3,
    "v": "sprinter",
@@ -514,7 +553,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/4-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 4,
    "v": "sprinter",
@@ -526,7 +566,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/5-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 5,
    "v": "sprinter",
@@ -538,7 +579,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/6-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 6,
    "v": "sprinter",
@@ -550,7 +592,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Premuim Gris Cuire/7-1400.webp",
    "sub": "Sprinter Premium — Gris Cuir",
    "n": 7,
    "v": "sprinter",
@@ -562,7 +605,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/1-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 1,
    "v": "sprinter",
@@ -574,7 +618,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/2-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 2,
    "v": "sprinter",
@@ -586,7 +631,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/3-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 3,
    "v": "sprinter",
@@ -598,7 +644,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/4-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 4,
    "v": "sprinter",
@@ -610,7 +657,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/5-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 5,
    "v": "sprinter",
@@ -622,7 +670,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/6-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 6,
    "v": "sprinter",
@@ -634,7 +683,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/7-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 7,
    "v": "sprinter",
@@ -646,7 +696,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/8.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/8-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/8-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 8,
    "v": "sprinter",
@@ -658,7 +709,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/9.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/9-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/9-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 9,
    "v": "sprinter",
@@ -670,7 +722,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/10.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/10-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/10-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 10,
    "v": "sprinter",
@@ -682,7 +735,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Project/MB - Sprinter Premuim/11.png",
+   "src": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/11-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Project/MB - Sprinter Premuim/11-1400.webp",
    "sub": "Sprinter Premium — Noir",
    "n": 11,
    "v": "sprinter",
@@ -694,7 +748,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/1-1400.webp",
    "sub": "Sprinter Tourer — Modèle 1",
    "n": 1,
    "v": "sprinter",
@@ -705,7 +760,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/2-1400.webp",
    "sub": "Sprinter Tourer — Modèle 1",
    "n": 2,
    "v": "sprinter",
@@ -716,7 +772,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/3-1400.webp",
    "sub": "Sprinter Tourer — Modèle 1",
    "n": 3,
    "v": "sprinter",
@@ -727,7 +784,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/4-1400.webp",
    "sub": "Sprinter Tourer — Modèle 1",
    "n": 4,
    "v": "sprinter",
@@ -738,7 +796,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 1/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 1/5-1400.webp",
    "sub": "Sprinter Tourer — Modèle 1",
    "n": 5,
    "v": "sprinter",
@@ -749,7 +808,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 2/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/1-1400.webp",
    "sub": "Sprinter Tourer — Modèle 2",
    "n": 1,
    "v": "sprinter",
@@ -760,7 +820,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 2/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/2-1400.webp",
    "sub": "Sprinter Tourer — Modèle 2",
    "n": 2,
    "v": "sprinter",
@@ -771,7 +832,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 2/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/3-1400.webp",
    "sub": "Sprinter Tourer — Modèle 2",
    "n": 3,
    "v": "sprinter",
@@ -782,7 +844,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 2/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/4-1400.webp",
    "sub": "Sprinter Tourer — Modèle 2",
    "n": 4,
    "v": "sprinter",
@@ -793,7 +856,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 2/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/5-1400.webp",
    "sub": "Sprinter Tourer — Modèle 2",
    "n": 5,
    "v": "sprinter",
@@ -804,7 +868,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 2/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 2/6-1400.webp",
    "sub": "Sprinter Tourer — Modèle 2",
    "n": 6,
    "v": "sprinter",
@@ -815,7 +880,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 3/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/1-1400.webp",
    "sub": "Sprinter Tourer — Modèle 3",
    "n": 1,
    "v": "sprinter",
@@ -826,7 +892,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 3/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/2-1400.webp",
    "sub": "Sprinter Tourer — Modèle 3",
    "n": 2,
    "v": "sprinter",
@@ -837,7 +904,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 3/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/3-1400.webp",
    "sub": "Sprinter Tourer — Modèle 3",
    "n": 3,
    "v": "sprinter",
@@ -848,7 +916,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 3/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/4-1400.webp",
    "sub": "Sprinter Tourer — Modèle 3",
    "n": 4,
    "v": "sprinter",
@@ -859,7 +928,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special/MB - Tourer Model 3/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special/MB - Tourer Model 3/5-1400.webp",
    "sub": "Sprinter Tourer — Modèle 3",
    "n": 5,
    "v": "sprinter",
@@ -870,7 +940,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/1-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 1,
    "v": "sprinter",
@@ -881,7 +952,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/2-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 2,
    "v": "sprinter",
@@ -892,7 +964,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/3-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 3,
    "v": "sprinter",
@@ -903,7 +976,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/4-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 4,
    "v": "sprinter",
@@ -914,7 +988,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/5-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 5,
    "v": "sprinter",
@@ -925,7 +1000,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/6-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 6,
    "v": "sprinter",
@@ -936,7 +1012,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP LIGHT/7-1400.webp",
    "sub": "Sprinter VIP Light",
    "n": 7,
    "v": "sprinter",
@@ -947,7 +1024,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/1.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/1-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/1-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 1,
    "v": "sprinter",
@@ -958,7 +1036,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/2.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/2-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/2-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 2,
    "v": "sprinter",
@@ -969,7 +1048,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/3.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/3-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/3-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 3,
    "v": "sprinter",
@@ -980,7 +1060,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/4.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/4-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/4-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 4,
    "v": "sprinter",
@@ -991,7 +1072,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/5.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/5-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/5-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 5,
    "v": "sprinter",
@@ -1002,7 +1084,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/6.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/6-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/6-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 6,
    "v": "sprinter",
@@ -1013,7 +1096,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/7.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/7-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/7-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 7,
    "v": "sprinter",
@@ -1024,7 +1108,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/8.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/8-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/8-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 8,
    "v": "sprinter",
@@ -1035,7 +1120,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/9.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/9-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/9-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 9,
    "v": "sprinter",
@@ -1046,7 +1132,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/10.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/10-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/10-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 10,
    "v": "sprinter",
@@ -1057,7 +1144,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/11.png",
+   "src": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/11-600.webp",
+   "full": "assets/opt/Mercedes Sprinter - Special with Auto Nejma/MB - Sprinter VIP Rafi/11-1400.webp",
    "sub": "Sprinter VIP Rafi",
    "n": 11,
    "v": "sprinter",
@@ -1068,7 +1156,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/1-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 1,
    "v": "crafter",
@@ -1080,7 +1169,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/2-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 2,
    "v": "crafter",
@@ -1092,7 +1182,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/3-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 3,
    "v": "crafter",
@@ -1104,7 +1195,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/4-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 4,
    "v": "crafter",
@@ -1116,7 +1208,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/5-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 5,
    "v": "crafter",
@@ -1128,7 +1221,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/6-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 6,
    "v": "crafter",
@@ -1140,7 +1234,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/11_VW Model 1 - 17 P/7.png",
+   "src": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/7-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/11_VW Model 1 - 17 P/7-1400.webp",
    "sub": "Crafter — Modèle 1 (17 places)",
    "n": 7,
    "v": "crafter",
@@ -1152,7 +1247,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/1-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 1,
    "v": "crafter",
@@ -1164,7 +1260,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/2-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 2,
    "v": "crafter",
@@ -1176,7 +1273,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/3-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 3,
    "v": "crafter",
@@ -1188,7 +1286,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/4-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 4,
    "v": "crafter",
@@ -1200,7 +1299,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/5-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 5,
    "v": "crafter",
@@ -1212,7 +1312,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/6-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 6,
    "v": "crafter",
@@ -1224,7 +1325,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/7.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/7-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/7-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 7,
    "v": "crafter",
@@ -1236,7 +1338,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/8.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/8-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/8-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 8,
    "v": "crafter",
@@ -1248,7 +1351,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/1_VW Model 10 - 17 P/9.png",
+   "src": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/9-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/1_VW Model 10 - 17 P/9-1400.webp",
    "sub": "Crafter — Modèle 10 (17 places)",
    "n": 9,
    "v": "crafter",
@@ -1260,7 +1364,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/1-1400.webp",
    "sub": "Crafter — Modèle 11 (17 places)",
    "n": 1,
    "v": "crafter",
@@ -1272,7 +1377,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/2-1400.webp",
    "sub": "Crafter — Modèle 11 (17 places)",
    "n": 2,
    "v": "crafter",
@@ -1284,7 +1390,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/3-1400.webp",
    "sub": "Crafter — Modèle 11 (17 places)",
    "n": 3,
    "v": "crafter",
@@ -1296,7 +1403,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/4-1400.webp",
    "sub": "Crafter — Modèle 11 (17 places)",
    "n": 4,
    "v": "crafter",
@@ -1308,7 +1416,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/5-1400.webp",
    "sub": "Crafter — Modèle 11 (17 places)",
    "n": 5,
    "v": "crafter",
@@ -1320,7 +1429,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/7_VW Model 11 - 17 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/7_VW Model 11 - 17 P/6-1400.webp",
    "sub": "Crafter — Modèle 11 (17 places)",
    "n": 6,
    "v": "crafter",
@@ -1332,7 +1442,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/1-1400.webp",
    "sub": "Crafter — Modèle 12 (17 places)",
    "n": 1,
    "v": "crafter",
@@ -1344,7 +1455,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/2-1400.webp",
    "sub": "Crafter — Modèle 12 (17 places)",
    "n": 2,
    "v": "crafter",
@@ -1356,7 +1468,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/3-1400.webp",
    "sub": "Crafter — Modèle 12 (17 places)",
    "n": 3,
    "v": "crafter",
@@ -1368,7 +1481,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/4-1400.webp",
    "sub": "Crafter — Modèle 12 (17 places)",
    "n": 4,
    "v": "crafter",
@@ -1380,7 +1494,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/5-1400.webp",
    "sub": "Crafter — Modèle 12 (17 places)",
    "n": 5,
    "v": "crafter",
@@ -1392,7 +1507,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/6_VW Model 12 - 17 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/6_VW Model 12 - 17 P/6-1400.webp",
    "sub": "Crafter — Modèle 12 (17 places)",
    "n": 6,
    "v": "crafter",
@@ -1404,7 +1520,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/1-1400.webp",
    "sub": "Crafter — Modèle 13 (20 places)",
    "n": 1,
    "v": "crafter",
@@ -1416,7 +1533,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/2-1400.webp",
    "sub": "Crafter — Modèle 13 (20 places)",
    "n": 2,
    "v": "crafter",
@@ -1428,7 +1546,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/3-1400.webp",
    "sub": "Crafter — Modèle 13 (20 places)",
    "n": 3,
    "v": "crafter",
@@ -1440,7 +1559,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/4-1400.webp",
    "sub": "Crafter — Modèle 13 (20 places)",
    "n": 4,
    "v": "crafter",
@@ -1452,7 +1572,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/5-1400.webp",
    "sub": "Crafter — Modèle 13 (20 places)",
    "n": 5,
    "v": "crafter",
@@ -1464,7 +1585,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/5_VW Model 13 - 20 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/5_VW Model 13 - 20 P/6-1400.webp",
    "sub": "Crafter — Modèle 13 (20 places)",
    "n": 6,
    "v": "crafter",
@@ -1476,7 +1598,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/1-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 1,
    "v": "crafter",
@@ -1488,7 +1611,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/2-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 2,
    "v": "crafter",
@@ -1500,7 +1624,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/3-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 3,
    "v": "crafter",
@@ -1512,7 +1637,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/4-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 4,
    "v": "crafter",
@@ -1524,7 +1650,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/5-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 5,
    "v": "crafter",
@@ -1536,7 +1663,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/6-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 6,
    "v": "crafter",
@@ -1548,7 +1676,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/4_VW Model 14 - 20 P/7.png",
+   "src": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/7-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/4_VW Model 14 - 20 P/7-1400.webp",
    "sub": "Crafter — Modèle 14 (20 places)",
    "n": 7,
    "v": "crafter",
@@ -1560,7 +1689,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/1-1400.webp",
    "sub": "Crafter — Modèle 15 (20 places)",
    "n": 1,
    "v": "crafter",
@@ -1572,7 +1702,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/2-1400.webp",
    "sub": "Crafter — Modèle 15 (20 places)",
    "n": 2,
    "v": "crafter",
@@ -1584,7 +1715,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/3-1400.webp",
    "sub": "Crafter — Modèle 15 (20 places)",
    "n": 3,
    "v": "crafter",
@@ -1596,7 +1728,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/4-1400.webp",
    "sub": "Crafter — Modèle 15 (20 places)",
    "n": 4,
    "v": "crafter",
@@ -1608,7 +1741,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/12_VW Model 15 - 20 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/12_VW Model 15 - 20 P/5-1400.webp",
    "sub": "Crafter — Modèle 15 (20 places)",
    "n": 5,
    "v": "crafter",
@@ -1620,7 +1754,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/1-1400.webp",
    "sub": "Crafter — Modèle 16 (20 places)",
    "n": 1,
    "v": "crafter",
@@ -1632,7 +1767,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/2-1400.webp",
    "sub": "Crafter — Modèle 16 (20 places)",
    "n": 2,
    "v": "crafter",
@@ -1644,7 +1780,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/3-1400.webp",
    "sub": "Crafter — Modèle 16 (20 places)",
    "n": 3,
    "v": "crafter",
@@ -1656,7 +1793,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/4-1400.webp",
    "sub": "Crafter — Modèle 16 (20 places)",
    "n": 4,
    "v": "crafter",
@@ -1668,7 +1806,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/8_VW Model 16 - 20 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/8_VW Model 16 - 20 P/5-1400.webp",
    "sub": "Crafter — Modèle 16 (20 places)",
    "n": 5,
    "v": "crafter",
@@ -1680,7 +1819,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/1-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 1,
    "v": "crafter",
@@ -1692,7 +1832,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/2-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 2,
    "v": "crafter",
@@ -1704,7 +1845,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/3-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 3,
    "v": "crafter",
@@ -1716,7 +1858,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/4-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 4,
    "v": "crafter",
@@ -1728,7 +1871,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/5-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 5,
    "v": "crafter",
@@ -1740,7 +1884,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/6.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/6-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 6,
    "v": "crafter",
@@ -1752,7 +1897,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/13_VW Model 3 - 17 P/7.png",
+   "src": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/7-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/13_VW Model 3 - 17 P/7-1400.webp",
    "sub": "Crafter — Modèle 3 (17 places)",
    "n": 7,
    "v": "crafter",
@@ -1764,7 +1910,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/1-1400.webp",
    "sub": "Crafter — Modèle 4 (18 places)",
    "n": 1,
    "v": "crafter",
@@ -1776,7 +1923,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/2-1400.webp",
    "sub": "Crafter — Modèle 4 (18 places)",
    "n": 2,
    "v": "crafter",
@@ -1788,7 +1936,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/3-1400.webp",
    "sub": "Crafter — Modèle 4 (18 places)",
    "n": 3,
    "v": "crafter",
@@ -1800,7 +1949,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/4-1400.webp",
    "sub": "Crafter — Modèle 4 (18 places)",
    "n": 4,
    "v": "crafter",
@@ -1812,7 +1962,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/2_VW Model 4 - 18 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/2_VW Model 4 - 18 P/5-1400.webp",
    "sub": "Crafter — Modèle 4 (18 places)",
    "n": 5,
    "v": "crafter",
@@ -1824,7 +1975,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/1-1400.webp",
    "sub": "Crafter — Modèle 5 (18 places)",
    "n": 1,
    "v": "crafter",
@@ -1836,7 +1988,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/2-1400.webp",
    "sub": "Crafter — Modèle 5 (18 places)",
    "n": 2,
    "v": "crafter",
@@ -1848,7 +2001,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/3-1400.webp",
    "sub": "Crafter — Modèle 5 (18 places)",
    "n": 3,
    "v": "crafter",
@@ -1860,7 +2014,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/4-1400.webp",
    "sub": "Crafter — Modèle 5 (18 places)",
    "n": 4,
    "v": "crafter",
@@ -1872,7 +2027,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/10_VW Model 5 - 18 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/10_VW Model 5 - 18 P/5-1400.webp",
    "sub": "Crafter — Modèle 5 (18 places)",
    "n": 5,
    "v": "crafter",
@@ -1884,7 +2040,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/1.png",
+   "src": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/1-1400.webp",
    "sub": "Crafter — Modèle 7 (18 places)",
    "n": 1,
    "v": "crafter",
@@ -1896,7 +2053,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/2.png",
+   "src": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/2-1400.webp",
    "sub": "Crafter — Modèle 7 (18 places)",
    "n": 2,
    "v": "crafter",
@@ -1908,7 +2066,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/3.png",
+   "src": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/3-1400.webp",
    "sub": "Crafter — Modèle 7 (18 places)",
    "n": 3,
    "v": "crafter",
@@ -1920,7 +2079,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/4.png",
+   "src": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/4-1400.webp",
    "sub": "Crafter — Modèle 7 (18 places)",
    "n": 4,
    "v": "crafter",
@@ -1932,7 +2092,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/9_VW Model 7 - 18 P/5.png",
+   "src": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/9_VW Model 7 - 18 P/5-1400.webp",
    "sub": "Crafter — Modèle 7 (18 places)",
    "n": 5,
    "v": "crafter",
@@ -1944,7 +2105,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/1.png",
+   "src": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/1-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/1-1400.webp",
    "sub": "Crafter — Modèle 8 (18 places)",
    "n": 1,
    "v": "crafter",
@@ -1956,7 +2118,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/2.png",
+   "src": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/2-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/2-1400.webp",
    "sub": "Crafter — Modèle 8 (18 places)",
    "n": 2,
    "v": "crafter",
@@ -1968,7 +2131,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/3.png",
+   "src": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/3-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/3-1400.webp",
    "sub": "Crafter — Modèle 8 (18 places)",
    "n": 3,
    "v": "crafter",
@@ -1980,7 +2144,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/4.png",
+   "src": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/4-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/4-1400.webp",
    "sub": "Crafter — Modèle 8 (18 places)",
    "n": 4,
    "v": "crafter",
@@ -1992,7 +2157,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/5.png",
+   "src": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/5-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/5-1400.webp",
    "sub": "Crafter — Modèle 8 (18 places)",
    "n": 5,
    "v": "crafter",
@@ -2004,7 +2170,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Volkswagen Crafter/3_VW Model 8 - 18 p/6.png",
+   "src": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/6-600.webp",
+   "full": "assets/opt/Volkswagen Crafter/3_VW Model 8 - 18 p/6-1400.webp",
    "sub": "Crafter — Modèle 8 (18 places)",
    "n": 6,
    "v": "crafter",
@@ -2016,7 +2183,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/1.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/1-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/1-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 1,
    "v": "crafter",
@@ -2029,7 +2197,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/2.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/2-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/2-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 2,
    "v": "crafter",
@@ -2042,7 +2211,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/3.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/3-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/3-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 3,
    "v": "crafter",
@@ -2055,7 +2225,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/4.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/4-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/4-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 4,
    "v": "crafter",
@@ -2068,7 +2239,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/5.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/5-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/5-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 5,
    "v": "crafter",
@@ -2081,7 +2253,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/6.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/6-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/6-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 6,
    "v": "crafter",
@@ -2094,7 +2267,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Broown/7.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/7-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Broown/7-1400.webp",
    "sub": "Crafter 2026 — Marron",
    "n": 7,
    "v": "crafter",
@@ -2107,7 +2281,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Black/1.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/1-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/1-1400.webp",
    "sub": "Crafter 2026 — Noir",
    "n": 1,
    "v": "crafter",
@@ -2120,7 +2295,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Black/2.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/2-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/2-1400.webp",
    "sub": "Crafter 2026 — Noir",
    "n": 2,
    "v": "crafter",
@@ -2133,7 +2309,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Black/3.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/3-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/3-1400.webp",
    "sub": "Crafter 2026 — Noir",
    "n": 3,
    "v": "crafter",
@@ -2146,7 +2323,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Black/4.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/4-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/4-1400.webp",
    "sub": "Crafter 2026 — Noir",
    "n": 4,
    "v": "crafter",
@@ -2159,7 +2337,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Black/5.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/5-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/5-1400.webp",
    "sub": "Crafter 2026 — Noir",
    "n": 5,
    "v": "crafter",
@@ -2172,7 +2351,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Black/6.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/6-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Black/6-1400.webp",
    "sub": "Crafter 2026 — Noir",
    "n": 6,
    "v": "crafter",
@@ -2185,7 +2365,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Red/1.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/1-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/1-1400.webp",
    "sub": "Crafter 2026 — Rouge",
    "n": 1,
    "v": "crafter",
@@ -2198,7 +2379,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Red/2.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/2-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/2-1400.webp",
    "sub": "Crafter 2026 — Rouge",
    "n": 2,
    "v": "crafter",
@@ -2211,7 +2393,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Red/3.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/3-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/3-1400.webp",
    "sub": "Crafter 2026 — Rouge",
    "n": 3,
    "v": "crafter",
@@ -2224,7 +2407,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/VW Crafter New Model 2026/VW Crafter - Red/4.png",
+   "src": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/4-600.webp",
+   "full": "assets/opt/VW Crafter New Model 2026/VW Crafter - Red/4-1400.webp",
    "sub": "Crafter 2026 — Rouge",
    "n": 4,
    "v": "crafter",
@@ -2237,7 +2421,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/1.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/1-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/1-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 1,
    "v": "master",
@@ -2250,7 +2435,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/2.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/2-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/2-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 2,
    "v": "master",
@@ -2263,7 +2449,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/3.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/3-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/3-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 3,
    "v": "master",
@@ -2276,7 +2463,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/4.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/4-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/4-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 4,
    "v": "master",
@@ -2289,7 +2477,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/5.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/5-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/5-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 5,
    "v": "master",
@@ -2302,7 +2491,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/6.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/6-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/6-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 6,
    "v": "master",
@@ -2315,7 +2505,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 2/7.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 2/7-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 2/7-1400.webp",
    "sub": "Renault Master — Marron",
    "n": 7,
    "v": "master",
@@ -2328,7 +2519,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 1/1.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 1/1-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 1/1-1400.webp",
    "sub": "Renault Master — Noir",
    "n": 1,
    "v": "master",
@@ -2341,7 +2533,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 1/2.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 1/2-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 1/2-1400.webp",
    "sub": "Renault Master — Noir",
    "n": 2,
    "v": "master",
@@ -2354,7 +2547,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 1/3.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 1/3-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 1/3-1400.webp",
    "sub": "Renault Master — Noir",
    "n": 3,
    "v": "master",
@@ -2367,7 +2561,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 1/4.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 1/4-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 1/4-1400.webp",
    "sub": "Renault Master — Noir",
    "n": 4,
    "v": "master",
@@ -2380,7 +2575,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Renault Master/Renault Master - Model 1/5.png",
+   "src": "assets/opt/Renault Master/Renault Master - Model 1/5-600.webp",
+   "full": "assets/opt/Renault Master/Renault Master - Model 1/5-1400.webp",
    "sub": "Renault Master — Noir",
    "n": 5,
    "v": "master",
@@ -2393,7 +2589,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/1.png",
+   "src": "assets/opt/Minibus Iveco/1-600.webp",
+   "full": "assets/opt/Minibus Iveco/1-1400.webp",
    "sub": "Minibus Iveco",
    "n": 1,
    "v": "iveco",
@@ -2405,7 +2602,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/2.png",
+   "src": "assets/opt/Minibus Iveco/2-600.webp",
+   "full": "assets/opt/Minibus Iveco/2-1400.webp",
    "sub": "Minibus Iveco",
    "n": 2,
    "v": "iveco",
@@ -2417,7 +2615,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/3.png",
+   "src": "assets/opt/Minibus Iveco/3-600.webp",
+   "full": "assets/opt/Minibus Iveco/3-1400.webp",
    "sub": "Minibus Iveco",
    "n": 3,
    "v": "iveco",
@@ -2429,7 +2628,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/4.png",
+   "src": "assets/opt/Minibus Iveco/4-600.webp",
+   "full": "assets/opt/Minibus Iveco/4-1400.webp",
    "sub": "Minibus Iveco",
    "n": 4,
    "v": "iveco",
@@ -2441,7 +2641,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/5.png",
+   "src": "assets/opt/Minibus Iveco/5-600.webp",
+   "full": "assets/opt/Minibus Iveco/5-1400.webp",
    "sub": "Minibus Iveco",
    "n": 5,
    "v": "iveco",
@@ -2453,7 +2654,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/6.png",
+   "src": "assets/opt/Minibus Iveco/6-600.webp",
+   "full": "assets/opt/Minibus Iveco/6-1400.webp",
    "sub": "Minibus Iveco",
    "n": 6,
    "v": "iveco",
@@ -2465,7 +2667,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/7.png",
+   "src": "assets/opt/Minibus Iveco/7-600.webp",
+   "full": "assets/opt/Minibus Iveco/7-1400.webp",
    "sub": "Minibus Iveco",
    "n": 7,
    "v": "iveco",
@@ -2477,7 +2680,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/8.png",
+   "src": "assets/opt/Minibus Iveco/8-600.webp",
+   "full": "assets/opt/Minibus Iveco/8-1400.webp",
    "sub": "Minibus Iveco",
    "n": 8,
    "v": "iveco",
@@ -2489,7 +2693,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/9.png",
+   "src": "assets/opt/Minibus Iveco/9-600.webp",
+   "full": "assets/opt/Minibus Iveco/9-1400.webp",
    "sub": "Minibus Iveco",
    "n": 9,
    "v": "iveco",
@@ -2501,7 +2706,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Minibus Iveco/10.png",
+   "src": "assets/opt/Minibus Iveco/10-600.webp",
+   "full": "assets/opt/Minibus Iveco/10-1400.webp",
    "sub": "Minibus Iveco",
    "n": 10,
    "v": "iveco",
@@ -2513,7 +2719,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/1.png",
+   "src": "assets/opt/Jac - Marron/1-600.webp",
+   "full": "assets/opt/Jac - Marron/1-1400.webp",
    "sub": "JAC — Marron",
    "n": 1,
    "v": "jac",
@@ -2525,7 +2732,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/2.png",
+   "src": "assets/opt/Jac - Marron/2-600.webp",
+   "full": "assets/opt/Jac - Marron/2-1400.webp",
    "sub": "JAC — Marron",
    "n": 2,
    "v": "jac",
@@ -2537,7 +2745,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/3.png",
+   "src": "assets/opt/Jac - Marron/3-600.webp",
+   "full": "assets/opt/Jac - Marron/3-1400.webp",
    "sub": "JAC — Marron",
    "n": 3,
    "v": "jac",
@@ -2549,7 +2758,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/4.png",
+   "src": "assets/opt/Jac - Marron/4-600.webp",
+   "full": "assets/opt/Jac - Marron/4-1400.webp",
    "sub": "JAC — Marron",
    "n": 4,
    "v": "jac",
@@ -2561,7 +2771,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/5.png",
+   "src": "assets/opt/Jac - Marron/5-600.webp",
+   "full": "assets/opt/Jac - Marron/5-1400.webp",
    "sub": "JAC — Marron",
    "n": 5,
    "v": "jac",
@@ -2573,7 +2784,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/6.png",
+   "src": "assets/opt/Jac - Marron/6-600.webp",
+   "full": "assets/opt/Jac - Marron/6-1400.webp",
    "sub": "JAC — Marron",
    "n": 6,
    "v": "jac",
@@ -2585,7 +2797,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/7.png",
+   "src": "assets/opt/Jac - Marron/7-600.webp",
+   "full": "assets/opt/Jac - Marron/7-1400.webp",
    "sub": "JAC — Marron",
    "n": 7,
    "v": "jac",
@@ -2597,7 +2810,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Jac - Marron/8.png",
+   "src": "assets/opt/Jac - Marron/8-600.webp",
+   "full": "assets/opt/Jac - Marron/8-1400.webp",
    "sub": "JAC — Marron",
    "n": 8,
    "v": "jac",
@@ -2609,7 +2823,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Quality control/1.png",
+   "src": "assets/opt/Employees pictures/Quality control/1-600.webp",
+   "full": "assets/opt/Employees pictures/Quality control/1-1400.webp",
    "sub": "Contrôle qualité",
    "n": 1,
    "usage": [
@@ -2617,7 +2832,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Quality control/2.png",
+   "src": "assets/opt/Employees pictures/Quality control/2-600.webp",
+   "full": "assets/opt/Employees pictures/Quality control/2-1400.webp",
    "sub": "Contrôle qualité",
    "n": 2,
    "usage": [
@@ -2625,7 +2841,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Quality control/3.png",
+   "src": "assets/opt/Employees pictures/Quality control/3-600.webp",
+   "full": "assets/opt/Employees pictures/Quality control/3-1400.webp",
    "sub": "Contrôle qualité",
    "n": 3,
    "usage": [
@@ -2633,7 +2850,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Quality control/4.png",
+   "src": "assets/opt/Employees pictures/Quality control/4-600.webp",
+   "full": "assets/opt/Employees pictures/Quality control/4-1400.webp",
    "sub": "Contrôle qualité",
    "n": 4,
    "usage": [
@@ -2641,7 +2859,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Quality control/5.png",
+   "src": "assets/opt/Employees pictures/Quality control/5-600.webp",
+   "full": "assets/opt/Employees pictures/Quality control/5-1400.webp",
    "sub": "Contrôle qualité",
    "n": 5,
    "usage": [
@@ -2649,7 +2868,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Quality control/6.png",
+   "src": "assets/opt/Employees pictures/Quality control/6-600.webp",
+   "full": "assets/opt/Employees pictures/Quality control/6-1400.webp",
    "sub": "Contrôle qualité",
    "n": 6,
    "usage": [
@@ -2657,7 +2877,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/1.png",
+   "src": "assets/opt/Employees pictures/Electricity/1-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/1-1400.webp",
    "sub": "Électricité",
    "n": 1,
    "usage": [
@@ -2665,7 +2886,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/2.png",
+   "src": "assets/opt/Employees pictures/Electricity/2-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/2-1400.webp",
    "sub": "Électricité",
    "n": 2,
    "usage": [
@@ -2673,7 +2895,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/3.png",
+   "src": "assets/opt/Employees pictures/Electricity/3-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/3-1400.webp",
    "sub": "Électricité",
    "n": 3,
    "usage": [
@@ -2681,7 +2904,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/4.png",
+   "src": "assets/opt/Employees pictures/Electricity/4-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/4-1400.webp",
    "sub": "Électricité",
    "n": 4,
    "usage": [
@@ -2689,7 +2913,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/5.png",
+   "src": "assets/opt/Employees pictures/Electricity/5-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/5-1400.webp",
    "sub": "Électricité",
    "n": 5,
    "usage": [
@@ -2697,7 +2922,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/6.png",
+   "src": "assets/opt/Employees pictures/Electricity/6-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/6-1400.webp",
    "sub": "Électricité",
    "n": 6,
    "usage": [
@@ -2705,7 +2931,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/7.png",
+   "src": "assets/opt/Employees pictures/Electricity/7-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/7-1400.webp",
    "sub": "Électricité",
    "n": 7,
    "usage": [
@@ -2713,7 +2940,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Electricity/8.png",
+   "src": "assets/opt/Employees pictures/Electricity/8-600.webp",
+   "full": "assets/opt/Employees pictures/Electricity/8-1400.webp",
    "sub": "Électricité",
    "n": 8,
    "usage": [
@@ -2721,7 +2949,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/1.png",
+   "src": "assets/opt/Employees pictures/Finition/1-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/1-1400.webp",
    "sub": "Finition",
    "n": 1,
    "usage": [
@@ -2729,7 +2958,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/2.png",
+   "src": "assets/opt/Employees pictures/Finition/2-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/2-1400.webp",
    "sub": "Finition",
    "n": 2,
    "usage": [
@@ -2737,7 +2967,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/3.png",
+   "src": "assets/opt/Employees pictures/Finition/3-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/3-1400.webp",
    "sub": "Finition",
    "n": 3,
    "usage": [
@@ -2745,7 +2976,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/4.png",
+   "src": "assets/opt/Employees pictures/Finition/4-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/4-1400.webp",
    "sub": "Finition",
    "n": 4,
    "usage": [
@@ -2753,7 +2985,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/5.png",
+   "src": "assets/opt/Employees pictures/Finition/5-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/5-1400.webp",
    "sub": "Finition",
    "n": 5,
    "usage": [
@@ -2761,7 +2994,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/6.png",
+   "src": "assets/opt/Employees pictures/Finition/6-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/6-1400.webp",
    "sub": "Finition",
    "n": 6,
    "usage": [
@@ -2769,7 +3003,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/7.png",
+   "src": "assets/opt/Employees pictures/Finition/7-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/7-1400.webp",
    "sub": "Finition",
    "n": 7,
    "usage": [
@@ -2777,7 +3012,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/8.png",
+   "src": "assets/opt/Employees pictures/Finition/8-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/8-1400.webp",
    "sub": "Finition",
    "n": 8,
    "usage": [
@@ -2785,7 +3021,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/9.png",
+   "src": "assets/opt/Employees pictures/Finition/9-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/9-1400.webp",
    "sub": "Finition",
    "n": 9,
    "usage": [
@@ -2793,7 +3030,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/10.png",
+   "src": "assets/opt/Employees pictures/Finition/10-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/10-1400.webp",
    "sub": "Finition",
    "n": 10,
    "usage": [
@@ -2801,7 +3039,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/11.png",
+   "src": "assets/opt/Employees pictures/Finition/11-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/11-1400.webp",
    "sub": "Finition",
    "n": 11,
    "usage": [
@@ -2809,7 +3048,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/12.png",
+   "src": "assets/opt/Employees pictures/Finition/12-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/12-1400.webp",
    "sub": "Finition",
    "n": 12,
    "usage": [
@@ -2817,7 +3057,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/13.png",
+   "src": "assets/opt/Employees pictures/Finition/13-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/13-1400.webp",
    "sub": "Finition",
    "n": 13,
    "usage": [
@@ -2825,7 +3066,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/14.png",
+   "src": "assets/opt/Employees pictures/Finition/14-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/14-1400.webp",
    "sub": "Finition",
    "n": 14,
    "usage": [
@@ -2833,7 +3075,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/15.png",
+   "src": "assets/opt/Employees pictures/Finition/15-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/15-1400.webp",
    "sub": "Finition",
    "n": 15,
    "usage": [
@@ -2841,7 +3084,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/16.png",
+   "src": "assets/opt/Employees pictures/Finition/16-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/16-1400.webp",
    "sub": "Finition",
    "n": 16,
    "usage": [
@@ -2849,7 +3093,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/17.png",
+   "src": "assets/opt/Employees pictures/Finition/17-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/17-1400.webp",
    "sub": "Finition",
    "n": 17,
    "usage": [
@@ -2857,7 +3102,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/18.png",
+   "src": "assets/opt/Employees pictures/Finition/18-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/18-1400.webp",
    "sub": "Finition",
    "n": 18,
    "usage": [
@@ -2865,7 +3111,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/19.png",
+   "src": "assets/opt/Employees pictures/Finition/19-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/19-1400.webp",
    "sub": "Finition",
    "n": 19,
    "usage": [
@@ -2873,7 +3120,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/20.png",
+   "src": "assets/opt/Employees pictures/Finition/20-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/20-1400.webp",
    "sub": "Finition",
    "n": 20,
    "usage": [
@@ -2881,7 +3129,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/21.png",
+   "src": "assets/opt/Employees pictures/Finition/21-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/21-1400.webp",
    "sub": "Finition",
    "n": 21,
    "usage": [
@@ -2889,7 +3138,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/22.png",
+   "src": "assets/opt/Employees pictures/Finition/22-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/22-1400.webp",
    "sub": "Finition",
    "n": 22,
    "usage": [
@@ -2897,7 +3147,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/23.png",
+   "src": "assets/opt/Employees pictures/Finition/23-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/23-1400.webp",
    "sub": "Finition",
    "n": 23,
    "usage": [
@@ -2905,7 +3156,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Finition/24.png",
+   "src": "assets/opt/Employees pictures/Finition/24-600.webp",
+   "full": "assets/opt/Employees pictures/Finition/24-1400.webp",
    "sub": "Finition",
    "n": 24,
    "usage": [
@@ -2913,7 +3165,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Menuiserie/1.png",
+   "src": "assets/opt/Employees pictures/Menuiserie/1-600.webp",
+   "full": "assets/opt/Employees pictures/Menuiserie/1-1400.webp",
    "sub": "Menuiserie",
    "n": 1,
    "usage": [
@@ -2921,7 +3174,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Menuiserie/2.png",
+   "src": "assets/opt/Employees pictures/Menuiserie/2-600.webp",
+   "full": "assets/opt/Employees pictures/Menuiserie/2-1400.webp",
    "sub": "Menuiserie",
    "n": 2,
    "usage": [
@@ -2929,7 +3183,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Menuiserie/3.png",
+   "src": "assets/opt/Employees pictures/Menuiserie/3-600.webp",
+   "full": "assets/opt/Employees pictures/Menuiserie/3-1400.webp",
    "sub": "Menuiserie",
    "n": 3,
    "usage": [
@@ -2937,7 +3192,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/1.png",
+   "src": "assets/opt/Employees pictures/Cleaning/1-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/1-1400.webp",
    "sub": "Nettoyage",
    "n": 1,
    "usage": [
@@ -2945,7 +3201,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/2.png",
+   "src": "assets/opt/Employees pictures/Cleaning/2-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/2-1400.webp",
    "sub": "Nettoyage",
    "n": 2,
    "usage": [
@@ -2953,7 +3210,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/3.png",
+   "src": "assets/opt/Employees pictures/Cleaning/3-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/3-1400.webp",
    "sub": "Nettoyage",
    "n": 3,
    "usage": [
@@ -2961,7 +3219,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/4.png",
+   "src": "assets/opt/Employees pictures/Cleaning/4-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/4-1400.webp",
    "sub": "Nettoyage",
    "n": 4,
    "usage": [
@@ -2969,7 +3228,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/5.png",
+   "src": "assets/opt/Employees pictures/Cleaning/5-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/5-1400.webp",
    "sub": "Nettoyage",
    "n": 5,
    "usage": [
@@ -2977,7 +3237,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/6.png",
+   "src": "assets/opt/Employees pictures/Cleaning/6-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/6-1400.webp",
    "sub": "Nettoyage",
    "n": 6,
    "usage": [
@@ -2985,7 +3246,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Cleaning/7.png",
+   "src": "assets/opt/Employees pictures/Cleaning/7-600.webp",
+   "full": "assets/opt/Employees pictures/Cleaning/7-1400.webp",
    "sub": "Nettoyage",
    "n": 7,
    "usage": [
@@ -2993,7 +3255,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Peintre/1.png",
+   "src": "assets/opt/Employees pictures/Peintre/1-600.webp",
+   "full": "assets/opt/Employees pictures/Peintre/1-1400.webp",
    "sub": "Peinture",
    "n": 1,
    "usage": [
@@ -3001,7 +3264,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Peintre/2.png",
+   "src": "assets/opt/Employees pictures/Peintre/2-600.webp",
+   "full": "assets/opt/Employees pictures/Peintre/2-1400.webp",
    "sub": "Peinture",
    "n": 2,
    "usage": [
@@ -3009,7 +3273,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Peintre/3.png",
+   "src": "assets/opt/Employees pictures/Peintre/3-600.webp",
+   "full": "assets/opt/Employees pictures/Peintre/3-1400.webp",
    "sub": "Peinture",
    "n": 3,
    "usage": [
@@ -3017,7 +3282,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Peintre/4.png",
+   "src": "assets/opt/Employees pictures/Peintre/4-600.webp",
+   "full": "assets/opt/Employees pictures/Peintre/4-1400.webp",
    "sub": "Peinture",
    "n": 4,
    "usage": [
@@ -3025,7 +3291,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/1.png",
+   "src": "assets/opt/Employees pictures/Soudeur/1-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/1-1400.webp",
    "sub": "Soudure",
    "n": 1,
    "usage": [
@@ -3033,7 +3300,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/2.png",
+   "src": "assets/opt/Employees pictures/Soudeur/2-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/2-1400.webp",
    "sub": "Soudure",
    "n": 2,
    "usage": [
@@ -3041,7 +3309,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/3.png",
+   "src": "assets/opt/Employees pictures/Soudeur/3-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/3-1400.webp",
    "sub": "Soudure",
    "n": 3,
    "usage": [
@@ -3049,7 +3318,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/4.png",
+   "src": "assets/opt/Employees pictures/Soudeur/4-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/4-1400.webp",
    "sub": "Soudure",
    "n": 4,
    "usage": [
@@ -3057,7 +3327,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/5.png",
+   "src": "assets/opt/Employees pictures/Soudeur/5-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/5-1400.webp",
    "sub": "Soudure",
    "n": 5,
    "usage": [
@@ -3065,7 +3336,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/6.png",
+   "src": "assets/opt/Employees pictures/Soudeur/6-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/6-1400.webp",
    "sub": "Soudure",
    "n": 6,
    "usage": [
@@ -3073,7 +3345,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/7.png",
+   "src": "assets/opt/Employees pictures/Soudeur/7-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/7-1400.webp",
    "sub": "Soudure",
    "n": 7,
    "usage": [
@@ -3081,7 +3354,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/8.png",
+   "src": "assets/opt/Employees pictures/Soudeur/8-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/8-1400.webp",
    "sub": "Soudure",
    "n": 8,
    "usage": [
@@ -3089,7 +3363,8 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Employees pictures/Soudeur/9.png",
+   "src": "assets/opt/Employees pictures/Soudeur/9-600.webp",
+   "full": "assets/opt/Employees pictures/Soudeur/9-1400.webp",
    "sub": "Soudure",
    "n": 9,
    "usage": [
@@ -3097,67 +3372,80 @@ const GALLERY = {
    ]
   },
   {
-   "src": "assets/images/Intro and main Page pictures/1.png",
+   "src": "assets/opt/Intro and main Page pictures/1-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/1-1400.webp",
    "sub": "Sélection BDEA",
    "n": 1
   },
   {
-   "src": "assets/images/Intro and main Page pictures/2.png",
+   "src": "assets/opt/Intro and main Page pictures/2-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/2-1400.webp",
    "sub": "Sélection BDEA",
    "n": 2
   },
   {
-   "src": "assets/images/Intro and main Page pictures/3.png",
+   "src": "assets/opt/Intro and main Page pictures/3-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/3-1400.webp",
    "sub": "Sélection BDEA",
    "n": 3
   },
   {
-   "src": "assets/images/Intro and main Page pictures/4.png",
+   "src": "assets/opt/Intro and main Page pictures/4-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/4-1400.webp",
    "sub": "Sélection BDEA",
    "n": 4
   },
   {
-   "src": "assets/images/Intro and main Page pictures/5.png",
+   "src": "assets/opt/Intro and main Page pictures/5-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/5-1400.webp",
    "sub": "Sélection BDEA",
    "n": 5
   },
   {
-   "src": "assets/images/Intro and main Page pictures/6.png",
+   "src": "assets/opt/Intro and main Page pictures/6-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/6-1400.webp",
    "sub": "Sélection BDEA",
    "n": 6
   },
   {
-   "src": "assets/images/Intro and main Page pictures/7.png",
+   "src": "assets/opt/Intro and main Page pictures/7-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/7-1400.webp",
    "sub": "Sélection BDEA",
    "n": 7
   },
   {
-   "src": "assets/images/Intro and main Page pictures/8.png",
+   "src": "assets/opt/Intro and main Page pictures/8-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/8-1400.webp",
    "sub": "Sélection BDEA",
    "n": 8
   },
   {
-   "src": "assets/images/Intro and main Page pictures/9.png",
+   "src": "assets/opt/Intro and main Page pictures/9-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/9-1400.webp",
    "sub": "Sélection BDEA",
    "n": 9
   },
   {
-   "src": "assets/images/Intro and main Page pictures/10.png",
+   "src": "assets/opt/Intro and main Page pictures/10-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/10-1400.webp",
    "sub": "Sélection BDEA",
    "n": 10
   },
   {
-   "src": "assets/images/Intro and main Page pictures/11.png",
+   "src": "assets/opt/Intro and main Page pictures/11-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/11-1400.webp",
    "sub": "Sélection BDEA",
    "n": 11
   },
   {
-   "src": "assets/images/Intro and main Page pictures/12.png",
+   "src": "assets/opt/Intro and main Page pictures/12-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/12-1400.webp",
    "sub": "Sélection BDEA",
    "n": 12
   },
   {
-   "src": "assets/images/Intro and main Page pictures/13.png",
+   "src": "assets/opt/Intro and main Page pictures/13-600.webp",
+   "full": "assets/opt/Intro and main Page pictures/13-1400.webp",
    "sub": "Sélection BDEA",
    "n": 13
   }

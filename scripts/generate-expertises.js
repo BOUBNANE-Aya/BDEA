@@ -16,12 +16,12 @@ const sources = {
 async function run() {
   fs.mkdirSync(OUT, { recursive: true });
   for (const [name, rel] of Object.entries(sources)) {
-    const dest = path.join(OUT, `${name}.jpg`);
+    const dest = path.join(OUT, `${name}.webp`);
     await sharp(path.join(IMG, rel)).rotate()
       .resize({ width: 800, height: 600, fit: 'cover', position: 'centre' })
-      .jpeg({ quality: 80, mozjpeg: true })
+      .webp({ quality: 78, effort: 5 })
       .toFile(dest);
-    console.log(`${name}.jpg  ${(fs.statSync(dest).size / 1024).toFixed(0)}KB   <- ${rel}`);
+    console.log(`${name}.webp  ${(fs.statSync(dest).size / 1024).toFixed(0)}KB   <- ${rel}`);
   }
 }
 run().catch(e => { console.error(e); process.exit(1); });
