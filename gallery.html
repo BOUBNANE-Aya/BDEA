@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function paint() {
     var item = currentSet[lbIdx];
     if (!item) return;
-    bdLbImg.src = item.src;
+    bdLbImg.src = item.full || item.src;   /* 1400px copy for the full view */
     bdLbImg.alt = item.sub;
     bdLbCap.textContent = item.sub + (item.n ? ' · ' + item.n : '');
     bdLbCount.textContent = (lbIdx + 1) + ' / ' + currentSet.length;

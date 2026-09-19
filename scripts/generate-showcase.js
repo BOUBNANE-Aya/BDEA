@@ -38,17 +38,17 @@ async function run() {
     i += 1;
     const n = String(i).padStart(2, '0');
     const src = path.join(IMG_DIR, rel);
-    const stage = path.join(OUT_DIR, `${n}.jpg`);
-    const thumb = path.join(THUMB_DIR, `${n}.jpg`);
+    const stage = path.join(OUT_DIR, `${n}.webp`);
+    const thumb = path.join(THUMB_DIR, `${n}.webp`);
 
     await sharp(src).rotate()
       .resize({ width: 1400, withoutEnlargement: true })
-      .jpeg({ quality: 80, mozjpeg: true })
+      .webp({ quality: 78, effort: 5 })
       .toFile(stage);
 
     await sharp(src).rotate()
       .resize({ width: 200, height: 200, fit: 'cover', position: 'centre' })
-      .jpeg({ quality: 72, mozjpeg: true })
+      .webp({ quality: 70, effort: 5 })
       .toFile(thumb);
 
     console.log(
