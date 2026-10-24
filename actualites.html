@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Actualités — BDEA Carrosserie</title>
-  <meta name="description" content="Actualités, projets et nouveautés de BDEA Carrosserie — entreprise marocaine de transformation de véhicules certifiée ISO 9001:2015, basée à Mohammedia.">
+  <meta name="description" content="Les 11 événements de BDEA Carrosserie entre 2022 et 2026 : réunions professionnelles, salons et partenariats.">
 
   <link rel="canonical" href="https://www.bdeacarrosserie.com/actualites.html">
   <link rel="alternate" hreflang="fr" href="https://www.bdeacarrosserie.com/actualites.html">
   <link rel="alternate" hreflang="x-default" href="https://www.bdeacarrosserie.com/actualites.html">
 
   <meta property="og:title" content="Actualités — BDEA Carrosserie">
-  <meta property="og:description" content="Projets, nouveautés et actualités de BDEA Carrosserie.">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="Les 11 événements de BDEA Carrosserie entre 2022 et 2026 : réunions professionnelles, salons et partenariats.">
+  <meta property="og:type" content="article">
   <meta property="og:locale" content="fr_MA">
   <meta property="og:url" content="https://www.bdeacarrosserie.com/actualites.html">
-  <meta property="og:image" content="https://www.bdeacarrosserie.com/assets/images/optimized/og-default.jpg">
+  <meta property="og:image" content="https://www.bdeacarrosserie.com/assets/actus/cac-fntt-accord-2026/01-1600.webp">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23212677'/><text y='72' x='14' font-size='58' fill='white' font-weight='bold'>B</text></svg>">
 
@@ -29,11 +29,14 @@
   tailwind.config={theme:{extend:{colors:{brand:{blue:'#212677',ink:'#050062',purple:'#7660A8',lilac:'#9D8EBF',paper:'#FFFAFA',mist:'#6B6B86',line:'#ECEAF2'}},fontFamily:{display:['"Clash Display"','sans-serif'],sans:['Inter','sans-serif'],mono:['"Space Mono"','monospace']}}}}
   </script>
   <link rel="stylesheet" href="css/styles.css">
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/actus.css">
+  <script>
+  document.documentElement.classList.add('js');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
+  </script>
 </head>
 
 <body class="bg-brand-paper text-[#2C2C3A] font-sans antialiased">
-
 <!-- ===== Navbar ===== -->
 <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-4" role="banner">
   <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
@@ -67,7 +70,6 @@
           </a>
         </div>
       </div>
-      <a href="index.html#partenaires" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Partenaires</a>
       <a href="gallery.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">Galerie</a>
       <a href="faq.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors">FAQ</a>
       <a href="actualites.html" class="nav-link text-sm font-medium text-white/85 hover:text-white transition-colors border-b border-brand-purple pb-0.5">Actualités</a>
@@ -88,7 +90,6 @@
     <a href="services-amenagement.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Aménagement Intérieur</a>
     <a href="services-carrosserie.html" class="text-sm text-white/55 hover:text-white/80 transition-colors">Carrosserie & Transformation</a>
   </div>
-  <a href="index.html#partenaires" class="text-2xl font-display font-semibold text-white">Partenaires</a>
   <a href="gallery.html" class="text-2xl font-display font-semibold text-white">Galerie</a>
   <a href="faq.html" class="text-2xl font-display font-semibold text-white">FAQ</a>
   <a href="actualites.html" class="text-2xl font-display font-semibold text-white">Actualités</a>
@@ -98,53 +99,375 @@
 <main>
 
 <!-- ===== Hero ===== -->
-<section id="hero" class="pt-32 md:pt-40 pb-20 md:pb-24 relative overflow-hidden bg-brand-ink min-h-[40vh] flex items-end">
-  <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="assets/opt/Renault Master/Renault Master - Model 2/4-600.webp" alt="" aria-hidden="true">
-  <div class="absolute inset-0 bg-gradient-to-b from-brand-ink/80 via-brand-ink/70 to-brand-ink"></div>
-  <div class="max-w-4xl mx-auto px-5 relative z-10 w-full">
-    <p data-reveal class="font-mono text-xs font-semibold tracking-[0.25em] uppercase text-brand-lilac mb-4">Actualités</p>
-    <h1 data-reveal data-delay="1" class="font-display font-bold text-white text-[clamp(2.2rem,4.5vw+0.5rem,4rem)] leading-[1.08] tracking-tight">
-      Nos actualités & projets.
+<section id="hero" class="pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden bg-brand-ink">
+  <div class="absolute inset-0 opacity-25 pointer-events-none" style="background:radial-gradient(ellipse 70% 60% at 50% 0%,#7660A8,transparent)"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-5">
+    <p data-reveal class="font-mono text-[11px] font-semibold tracking-[0.3em] uppercase text-brand-lilac mb-5">Actualités</p>
+    <h1 data-reveal data-delay="1" class="font-display font-bold text-white leading-[1.05] tracking-tight" style="font-size:clamp(2.4rem,6vw,4.5rem)">
+      Nos rencontres,<br>salons et partenariats.
     </h1>
-    <p data-reveal data-delay="2" class="mt-5 text-white/60 text-lg max-w-2xl leading-relaxed">
-      Retrouvez ici nos prochaines réalisations, nouveautés et actualités d'entreprise.
+    <p data-reveal data-delay="2" class="mt-6 text-white/60 text-lg max-w-2xl leading-relaxed">
+      Réunions professionnelles, salons internationaux et accords signés — le parcours de BDEA Carrosserie, raconté événement par événement.
     </p>
+    <div data-reveal data-delay="3" class="mt-10 flex flex-wrap gap-x-10 gap-y-4 pt-8 border-t border-white/15">
+      <div><p class="font-display font-bold text-white text-2xl md:text-3xl leading-none">11</p>
+        <p class="mt-1.5 text-white/45 text-xs font-mono tracking-widest uppercase">Événements</p></div>
+      <div><p class="font-display font-bold text-white text-2xl md:text-3xl leading-none">2022–2026</p>
+        <p class="mt-1.5 text-white/45 text-xs font-mono tracking-widest uppercase">Années couvertes</p></div>
+      <div><p class="font-display font-bold text-white text-2xl md:text-3xl leading-none">43</p>
+        <p class="mt-1.5 text-white/45 text-xs font-mono tracking-widest uppercase">Photos</p></div>
+    </div>
   </div>
 </section>
 
-<!-- ===== Empty state ===== -->
-<section class="py-24 md:py-36">
-  <div class="max-w-2xl mx-auto px-5 text-center">
-    <div data-reveal class="w-16 h-16 mx-auto rounded-full bg-brand-blue/10 flex items-center justify-center mb-6">
-      <svg class="w-8 h-8 text-brand-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+<!-- ===== Timeline ===== -->
+<section class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="tl" id="tl">
+      <div class="tl-rail" aria-hidden="true"><span class="tl-rail-fill" id="tl-fill"></span></div>
+      <div class="tl-year" data-year="2026"><span>2026</span></div>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-cac-fntt-accord-2026.html" aria-label="BDEA Carrosserie participe à une rencontre entre CAC et la FNTT marquée par la signature d’un accord de collaboration"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-fntt-accord-2026/01-240.avif 240w, assets/actus/cac-fntt-accord-2026/01-480.avif 480w, assets/actus/cac-fntt-accord-2026/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/cac-fntt-accord-2026/01-240.webp 240w, assets/actus/cac-fntt-accord-2026/01-480.webp 480w, assets/actus/cac-fntt-accord-2026/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/cac-fntt-accord-2026/01-800.webp" alt="BDEA Carrosserie participe à une rencontre entre CAC et la FNTT marquée par la signature d’un accord de collaboration" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-fntt-accord-2026/02-240.avif 240w, assets/actus/cac-fntt-accord-2026/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/cac-fntt-accord-2026/02-240.webp 240w, assets/actus/cac-fntt-accord-2026/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/cac-fntt-accord-2026/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-fntt-accord-2026/03-240.avif 240w, assets/actus/cac-fntt-accord-2026/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/cac-fntt-accord-2026/03-240.webp 240w, assets/actus/cac-fntt-accord-2026/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/cac-fntt-accord-2026/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2026-09-28">28 septembre 2026</time> · <span>Siège de CAC, Aïn Sebaâ, Casablanca</span></p>
+          <h2 class="tl-title">BDEA Carrosserie participe à une rencontre entre CAC et la FNTT marquée par la signature d’un accord de collaboration</h2>
+          <p class="tl-excerpt">Le 28 septembre 2026, BDEA Carrosserie a participé à une réunion professionnelle organisée au siège de CAC, à Aïn Sebaâ, Casablanca, réunissant les représentants de CAC, de la…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-cac-volkswagen-crafter-fes-2026.html" aria-label="BDEA Carrosserie présente son Volkswagen Crafter aménagé lors d’un événement organisé par CAC à Fès"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-volkswagen-crafter-fes-2026/01-240.avif 240w, assets/actus/cac-volkswagen-crafter-fes-2026/01-480.avif 480w, assets/actus/cac-volkswagen-crafter-fes-2026/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/cac-volkswagen-crafter-fes-2026/01-240.webp 240w, assets/actus/cac-volkswagen-crafter-fes-2026/01-480.webp 480w, assets/actus/cac-volkswagen-crafter-fes-2026/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/cac-volkswagen-crafter-fes-2026/01-800.webp" alt="BDEA Carrosserie présente son Volkswagen Crafter aménagé lors d’un événement organisé par CAC à Fès" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-volkswagen-crafter-fes-2026/02-240.avif 240w, assets/actus/cac-volkswagen-crafter-fes-2026/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/cac-volkswagen-crafter-fes-2026/02-240.webp 240w, assets/actus/cac-volkswagen-crafter-fes-2026/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/cac-volkswagen-crafter-fes-2026/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-volkswagen-crafter-fes-2026/03-240.avif 240w, assets/actus/cac-volkswagen-crafter-fes-2026/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/cac-volkswagen-crafter-fes-2026/03-240.webp 240w, assets/actus/cac-volkswagen-crafter-fes-2026/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/cac-volkswagen-crafter-fes-2026/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2026-03-30">30 mars 2026</time> · <span>CAC Fès</span></p>
+          <h2 class="tl-title">BDEA Carrosserie présente son Volkswagen Crafter aménagé lors d’un événement organisé par CAC à Fès</h2>
+          <p class="tl-excerpt">Le 30 mars 2026, BDEA Carrosserie a participé à un événement professionnel organisé par CAC à Fès, consacré à la présentation des dernières réalisations d’aménagement de véhicules…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-cac-volkswagen-crafter-casablanca-2026.html" aria-label="BDEA Carrosserie dévoile son dernier aménagement Volkswagen Crafter lors d’un événement organisé par CAC à Casablanca"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-volkswagen-crafter-casablanca-2026/01-240.avif 240w, assets/actus/cac-volkswagen-crafter-casablanca-2026/01-480.avif 480w, assets/actus/cac-volkswagen-crafter-casablanca-2026/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/cac-volkswagen-crafter-casablanca-2026/01-240.webp 240w, assets/actus/cac-volkswagen-crafter-casablanca-2026/01-480.webp 480w, assets/actus/cac-volkswagen-crafter-casablanca-2026/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/cac-volkswagen-crafter-casablanca-2026/01-800.webp" alt="BDEA Carrosserie dévoile son dernier aménagement Volkswagen Crafter lors d’un événement organisé par CAC à Casablanca" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-volkswagen-crafter-casablanca-2026/02-240.avif 240w, assets/actus/cac-volkswagen-crafter-casablanca-2026/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/cac-volkswagen-crafter-casablanca-2026/02-240.webp 240w, assets/actus/cac-volkswagen-crafter-casablanca-2026/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/cac-volkswagen-crafter-casablanca-2026/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/cac-volkswagen-crafter-casablanca-2026/03-240.avif 240w, assets/actus/cac-volkswagen-crafter-casablanca-2026/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/cac-volkswagen-crafter-casablanca-2026/03-240.webp 240w, assets/actus/cac-volkswagen-crafter-casablanca-2026/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/cac-volkswagen-crafter-casablanca-2026/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2026-03-26">26 mars 2026</time> · <span>Hôtel Royal Hideaway, Casablanca</span></p>
+          <h2 class="tl-title">BDEA Carrosserie dévoile son dernier aménagement Volkswagen Crafter lors d’un événement organisé par CAC à Casablanca</h2>
+          <p class="tl-excerpt">Le 26 mars 2026, BDEA Carrosserie a participé à un événement professionnel organisé par CAC à l’Hôtel Royal Hideaway de Casablanca, consacré à la présentation des dernières…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <div class="tl-year" data-year="2025"><span>2025</span></div>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-jac-collaboration-2025.html" aria-label="BDEA Carrosserie et JAC échangent sur de nouvelles perspectives de collaboration"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/jac-collaboration-2025/01-240.avif 240w, assets/actus/jac-collaboration-2025/01-480.avif 480w, assets/actus/jac-collaboration-2025/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/jac-collaboration-2025/01-240.webp 240w, assets/actus/jac-collaboration-2025/01-480.webp 480w, assets/actus/jac-collaboration-2025/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/jac-collaboration-2025/01-800.webp" alt="BDEA Carrosserie et JAC échangent sur de nouvelles perspectives de collaboration" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/jac-collaboration-2025/02-240.avif 240w, assets/actus/jac-collaboration-2025/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/jac-collaboration-2025/02-240.webp 240w, assets/actus/jac-collaboration-2025/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/jac-collaboration-2025/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/jac-collaboration-2025/03-240.avif 240w, assets/actus/jac-collaboration-2025/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/jac-collaboration-2025/03-240.webp 240w, assets/actus/jac-collaboration-2025/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/jac-collaboration-2025/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2025-09-23">23 septembre 2025</time> · <span>Locaux de JAC</span></p>
+          <h2 class="tl-title">BDEA Carrosserie et JAC échangent sur de nouvelles perspectives de collaboration</h2>
+          <p class="tl-excerpt">Le 23 septembre 2025, BDEA Carrosserie a participé à une réunion professionnelle avec les responsables commerciaux du constructeur automobile chinois JAC. Cette rencontre, organisée…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <div class="tl-year" data-year="2024"><span>2024</span></div>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-forum-transport-touristique-marrakech-2024.html" aria-label="BDEA Carrosserie participe à la 3ᵉ édition du Forum du Transport Touristique à Marrakech"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/forum-transport-touristique-marrakech-2024/01-240.avif 240w, assets/actus/forum-transport-touristique-marrakech-2024/01-480.avif 480w, assets/actus/forum-transport-touristique-marrakech-2024/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/forum-transport-touristique-marrakech-2024/01-240.webp 240w, assets/actus/forum-transport-touristique-marrakech-2024/01-480.webp 480w, assets/actus/forum-transport-touristique-marrakech-2024/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/forum-transport-touristique-marrakech-2024/01-800.webp" alt="BDEA Carrosserie participe à la 3ᵉ édition du Forum du Transport Touristique à Marrakech" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/forum-transport-touristique-marrakech-2024/02-240.avif 240w, assets/actus/forum-transport-touristique-marrakech-2024/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/forum-transport-touristique-marrakech-2024/02-240.webp 240w, assets/actus/forum-transport-touristique-marrakech-2024/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/forum-transport-touristique-marrakech-2024/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/forum-transport-touristique-marrakech-2024/03-240.avif 240w, assets/actus/forum-transport-touristique-marrakech-2024/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/forum-transport-touristique-marrakech-2024/03-240.webp 240w, assets/actus/forum-transport-touristique-marrakech-2024/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/forum-transport-touristique-marrakech-2024/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2024-11-27">27 novembre 2024</time> · <span>Musée de l’Eau, Marrakech</span></p>
+          <h2 class="tl-title">BDEA Carrosserie participe à la 3ᵉ édition du Forum du Transport Touristique à Marrakech</h2>
+          <p class="tl-excerpt">Les 27 et 28 novembre 2024, BDEA Carrosserie a participé à la troisième édition du Forum du Transport Touristique, organisée par la Fédération Nationale du Transport Touristique (FNTT…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-apci-assemblee-generale-2024.html" aria-label="BDEA Carrosserie participe à l’Assemblée générale de l’APCI consacrée aux perspectives de la CAN 2025 et de la Coupe du Monde 2030"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/apci-assemblee-generale-2024/01-240.avif 240w, assets/actus/apci-assemblee-generale-2024/01-480.avif 480w, assets/actus/apci-assemblee-generale-2024/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/apci-assemblee-generale-2024/01-240.webp 240w, assets/actus/apci-assemblee-generale-2024/01-480.webp 480w, assets/actus/apci-assemblee-generale-2024/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/apci-assemblee-generale-2024/01-800.webp" alt="BDEA Carrosserie participe à l’Assemblée générale de l’APCI consacrée aux perspectives de la CAN 2025 et de la Coupe du Monde 2030" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/apci-assemblee-generale-2024/02-240.avif 240w, assets/actus/apci-assemblee-generale-2024/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/apci-assemblee-generale-2024/02-240.webp 240w, assets/actus/apci-assemblee-generale-2024/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/apci-assemblee-generale-2024/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/apci-assemblee-generale-2024/03-240.avif 240w, assets/actus/apci-assemblee-generale-2024/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/apci-assemblee-generale-2024/03-240.webp 240w, assets/actus/apci-assemblee-generale-2024/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/apci-assemblee-generale-2024/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2024-09-11">11 septembre 2024</time> · <span>Mohammedia, Maroc</span></p>
+          <h2 class="tl-title">BDEA Carrosserie participe à l’Assemblée générale de l’APCI consacrée aux perspectives de la CAN 2025 et de la Coupe du Monde 2030</h2>
+          <p class="tl-excerpt">Le 11 septembre 2024, BDEA Carrosserie a participé à une réunion générale de l’Association Professionnelle de la Carrosserie Industrielle (APCI), organisée à la Chambre de Commerce,…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-certification-iso-9001-2024.html" aria-label="BDEA Carrosserie célèbre sa certification ISO 9001:2015 aux côtés de ses partenaires"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/certification-iso-9001-2024/01-240.avif 240w, assets/actus/certification-iso-9001-2024/01-480.avif 480w, assets/actus/certification-iso-9001-2024/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/certification-iso-9001-2024/01-240.webp 240w, assets/actus/certification-iso-9001-2024/01-480.webp 480w, assets/actus/certification-iso-9001-2024/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/certification-iso-9001-2024/01-800.webp" alt="BDEA Carrosserie célèbre sa certification ISO 9001:2015 aux côtés de ses partenaires" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/certification-iso-9001-2024/02-240.avif 240w, assets/actus/certification-iso-9001-2024/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/certification-iso-9001-2024/02-240.webp 240w, assets/actus/certification-iso-9001-2024/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/certification-iso-9001-2024/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/certification-iso-9001-2024/03-240.avif 240w, assets/actus/certification-iso-9001-2024/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/certification-iso-9001-2024/03-240.webp 240w, assets/actus/certification-iso-9001-2024/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/certification-iso-9001-2024/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2024-07-18">18 juillet 2024</time> · <span>BDEA Carrosserie, Mohammedia</span></p>
+          <h2 class="tl-title">BDEA Carrosserie célèbre sa certification ISO 9001:2015 aux côtés de ses partenaires</h2>
+          <p class="tl-excerpt">Le 18 juillet 2024, BDEA Carrosserie a organisé dans ses locaux une rencontre réunissant ses collaborateurs, ses fournisseurs et ses clients afin de célébrer l’obtention de sa…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <div class="tl-year" data-year="2023"><span>2023</span></div>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-iveco-reunion-2023.html" aria-label="BDEA Carrosserie accueille IVECO pour discuter de futurs projets d’aménagement de véhicules"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/iveco-reunion-2023/01-240.avif 240w, assets/actus/iveco-reunion-2023/01-480.avif 480w, assets/actus/iveco-reunion-2023/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/iveco-reunion-2023/01-240.webp 240w, assets/actus/iveco-reunion-2023/01-480.webp 480w, assets/actus/iveco-reunion-2023/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/iveco-reunion-2023/01-800.webp" alt="BDEA Carrosserie accueille IVECO pour discuter de futurs projets d’aménagement de véhicules" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/iveco-reunion-2023/02-240.avif 240w, assets/actus/iveco-reunion-2023/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/iveco-reunion-2023/02-240.webp 240w, assets/actus/iveco-reunion-2023/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/iveco-reunion-2023/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/iveco-reunion-2023/03-240.avif 240w, assets/actus/iveco-reunion-2023/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/iveco-reunion-2023/03-240.webp 240w, assets/actus/iveco-reunion-2023/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/iveco-reunion-2023/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">3 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2023-09-14">14 septembre 2023</time> · <span>BDEA Carrosserie, Mohammedia</span></p>
+          <h2 class="tl-title">BDEA Carrosserie accueille IVECO pour discuter de futurs projets d’aménagement de véhicules</h2>
+          <p class="tl-excerpt">Le 14 septembre 2023, BDEA Carrosserie a accueilli des représentants d’IVECO dans ses locaux pour une réunion de travail consacrée aux perspectives de collaboration entre les deux…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-auto-nejma-sprinter-2023.html" aria-label="BDEA Carrosserie et AUTO NEJMA renforcent leur collaboration autour de l’aménagement des Mercedes-Benz Sprinter"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/auto-nejma-sprinter-2023/01-240.avif 240w, assets/actus/auto-nejma-sprinter-2023/01-480.avif 480w, assets/actus/auto-nejma-sprinter-2023/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/auto-nejma-sprinter-2023/01-240.webp 240w, assets/actus/auto-nejma-sprinter-2023/01-480.webp 480w, assets/actus/auto-nejma-sprinter-2023/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/auto-nejma-sprinter-2023/01-800.webp" alt="BDEA Carrosserie et AUTO NEJMA renforcent leur collaboration autour de l’aménagement des Mercedes-Benz Sprinter" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/auto-nejma-sprinter-2023/02-240.avif 240w, assets/actus/auto-nejma-sprinter-2023/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/auto-nejma-sprinter-2023/02-240.webp 240w, assets/actus/auto-nejma-sprinter-2023/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/auto-nejma-sprinter-2023/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/auto-nejma-sprinter-2023/03-240.avif 240w, assets/actus/auto-nejma-sprinter-2023/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/auto-nejma-sprinter-2023/03-240.webp 240w, assets/actus/auto-nejma-sprinter-2023/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/auto-nejma-sprinter-2023/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2023-02-27">27 février 2023</time> · <span>Réunion de coordination BDEA – AUTO NEJMA</span></p>
+          <h2 class="tl-title">BDEA Carrosserie et AUTO NEJMA renforcent leur collaboration autour de l’aménagement des Mercedes-Benz Sprinter</h2>
+          <p class="tl-excerpt">Le 27 février 2023, BDEA Carrosserie et AUTO NEJMA ont tenu une réunion de travail consacrée au développement de leur collaboration dans le cadre d’un projet d’aménagement touristique…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <div class="tl-year" data-year="2022"><span>2022</span></div>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-busworld-istanbul-2022.html" aria-label="BDEA Carrosserie à Busworld Istanbul 2022 : une ouverture sur les innovations internationales du transport"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/busworld-istanbul-2022/01-240.avif 240w, assets/actus/busworld-istanbul-2022/01-480.avif 480w, assets/actus/busworld-istanbul-2022/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/busworld-istanbul-2022/01-240.webp 240w, assets/actus/busworld-istanbul-2022/01-480.webp 480w, assets/actus/busworld-istanbul-2022/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/busworld-istanbul-2022/01-800.webp" alt="BDEA Carrosserie à Busworld Istanbul 2022 : une ouverture sur les innovations internationales du transport" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/busworld-istanbul-2022/02-240.avif 240w, assets/actus/busworld-istanbul-2022/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/busworld-istanbul-2022/02-240.webp 240w, assets/actus/busworld-istanbul-2022/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/busworld-istanbul-2022/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/busworld-istanbul-2022/03-240.avif 240w, assets/actus/busworld-istanbul-2022/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/busworld-istanbul-2022/03-240.webp 240w, assets/actus/busworld-istanbul-2022/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/busworld-istanbul-2022/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2022-05-26">26 mai 2022</time> · <span>Istanbul, Turquie</span></p>
+          <h2 class="tl-title">BDEA Carrosserie à Busworld Istanbul 2022 : une ouverture sur les innovations internationales du transport</h2>
+          <p class="tl-excerpt">Le 26 mai 2022, BDEA Carrosserie a effectué une visite au salon international Busworld à Istanbul, en compagnie de ses partenaires ASTROBUS, MAKAM et SOMECAP. Ce rendez-vous…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="tl-item" data-reveal>
+        <a class="tl-link" href="actualite-apci-premiere-reunion-2022.html" aria-label="BDEA Carrosserie participe à la première réunion de l’Association Professionnelle de la Carrosserie Industrielle"></a>
+        <div class="tl-media">
+          <picture>
+            <source type="image/avif" srcset="assets/actus/apci-premiere-reunion-2022/01-240.avif 240w, assets/actus/apci-premiere-reunion-2022/01-480.avif 480w, assets/actus/apci-premiere-reunion-2022/01-800.avif 800w" sizes="(min-width:768px) 196px, 60vw">
+            <source type="image/webp" srcset="assets/actus/apci-premiere-reunion-2022/01-240.webp 240w, assets/actus/apci-premiere-reunion-2022/01-480.webp 480w, assets/actus/apci-premiere-reunion-2022/01-800.webp 800w" sizes="(min-width:768px) 196px, 60vw">
+            <img class="tl-hero" src="assets/actus/apci-premiere-reunion-2022/01-800.webp" alt="BDEA Carrosserie participe à la première réunion de l’Association Professionnelle de la Carrosserie Industrielle" loading="lazy" width="800" height="600">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/apci-premiere-reunion-2022/02-240.avif 240w, assets/actus/apci-premiere-reunion-2022/02-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/apci-premiere-reunion-2022/02-240.webp 240w, assets/actus/apci-premiere-reunion-2022/02-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/apci-premiere-reunion-2022/02-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="assets/actus/apci-premiere-reunion-2022/03-240.avif 240w, assets/actus/apci-premiere-reunion-2022/03-480.avif 480w" sizes="(min-width:768px) 98px, 30vw">
+            <source type="image/webp" srcset="assets/actus/apci-premiere-reunion-2022/03-240.webp 240w, assets/actus/apci-premiere-reunion-2022/03-480.webp 480w" sizes="(min-width:768px) 98px, 30vw">
+            <img class="tl-thumb" src="assets/actus/apci-premiere-reunion-2022/03-480.webp" alt="" loading="lazy" width="480" height="360">
+          </picture>
+          <span class="tl-count">4 photos</span>
+        </div>
+        <div class="tl-body">
+          <p class="tl-date"><time datetime="2022-03-10">10 mars 2022</time> · <span>Mohammedia, Maroc</span></p>
+          <h2 class="tl-title">BDEA Carrosserie participe à la première réunion de l’Association Professionnelle de la Carrosserie Industrielle</h2>
+          <p class="tl-excerpt">Le 10 mars 2022, BDEA Carrosserie a pris part à la première réunion de l’Association Professionnelle de la Carrosserie Industrielle, organisée à la Chambre de Commerce, d’Industrie et…</p>
+          <span class="tl-more">Lire l'article
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </article>
     </div>
-    <h2 data-reveal data-delay="1" class="font-display font-semibold text-brand-ink text-2xl md:text-3xl leading-tight">
-      Nos actualités arrivent bientôt.
-    </h2>
-    <p data-reveal data-delay="2" class="mt-4 text-brand-mist leading-relaxed">
-      Cette page accueillera prochainement nos derniers projets, nouveautés et actualités d'entreprise. En attendant, découvrez nos <a href="index.html#realisations" class="text-brand-blue underline underline-offset-2">réalisations</a> ou <a href="contact.html" class="text-brand-blue underline underline-offset-2">contactez-nous</a> directement pour en savoir plus.
-    </p>
   </div>
+</section>
 
-  <!--
-    CARD TEMPLATE — duplicate this block for each new post, inside a
-    "grid sm:grid-cols-2 lg:grid-cols-3 gap-6" container replacing the empty state above.
-
-  <article class="rounded-2xl overflow-hidden border border-brand-line bg-white">
-    <div class="aspect-[4/3] overflow-hidden">
-      <img src="assets/opt/optimized/PHOTO-600.webp" alt="" loading="lazy" width="800" height="600" class="w-full h-full object-cover">
+<!-- ===== CTA ===== -->
+<section class="py-20 md:py-28 relative overflow-hidden" style="background:linear-gradient(160deg,#05006a 0%,#050062 45%,#12003a 100%)">
+  <div class="absolute inset-0 pointer-events-none opacity-30" style="background:radial-gradient(ellipse 70% 50% at 50% 60%,#7660A8,transparent)"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-5 text-center">
+    <h2 data-reveal class="font-display font-bold text-white leading-tight" style="font-size:clamp(1.8rem,4.5vw,3rem)">Un projet en tête&nbsp;?</h2>
+    <p data-reveal data-delay="1" class="mt-4 text-white/55 text-lg">Parlons de votre prochain aménagement.</p>
+    <div data-reveal data-delay="2" class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="contact.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple text-white font-semibold text-sm">Demander un devis
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14M9 2l6 6-6 6"/></svg></a>
+      <a href="gallery.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white/80 font-medium text-sm hover:border-white/50 hover:text-white transition-colors">Voir la galerie</a>
     </div>
-    <div class="p-5">
-      <p class="font-mono text-xs text-brand-purple tracking-wider">JJ Mois AAAA</p>
-      <h3 class="font-display font-semibold text-brand-ink text-lg mt-1">Titre du projet ou de l'actualité</h3>
-      <p class="mt-2 text-brand-mist text-sm leading-relaxed">Court résumé de l'actualité ou du projet.</p>
-    </div>
-  </article>
-  -->
+  </div>
 </section>
 
 </main>
-
 <!-- ===== Footer ===== -->
 <footer class="bg-brand-ink text-white/70 pt-16 pb-6" role="contentinfo">
   <div class="max-w-7xl mx-auto px-5">
@@ -169,7 +492,6 @@
             <a href="services-amenagement.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Aménagement Intérieur</a>
             <a href="services-carrosserie.html" class="text-white/45 hover:text-white/75 transition-colors text-xs">Carrosserie & Transformation</a>
           </div>
-          <a href="index.html#partenaires" class="hover:text-white transition-colors">Partenaires</a>
           <a href="gallery.html" class="hover:text-white transition-colors">Galerie</a>
           <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
           <a href="actualites.html" class="hover:text-white transition-colors">Actualités</a>
@@ -234,5 +556,11 @@
 </a>
 
 <script src="js/main.js" defer></script>
+<script src="js/actus.js" defer></script>
+<script src="js/actus.js" defer></script>
+<script src="js/actus.js" defer></script>
+<script src="js/actus.js" defer></script>
+<script src="js/actus.js" defer></script>
+<script src="js/actus.js" defer></script>
 </body>
 </html>

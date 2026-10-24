@@ -6,7 +6,7 @@ const pages = [
   'index.html','about.html','services-vehicule.html',
   'services-amenagement.html','services-carrosserie.html','contact.html',
   'faq.html','actualites.html','politique-confidentialite.html','gallery.html',
-  'partenaires/auto-nejma.html','partenaires/volkswagen.html'
+  'actualite-cac-fntt-accord-2026.html','actualite-cac-volkswagen-crafter-fes-2026.html','actualite-cac-volkswagen-crafter-casablanca-2026.html','actualite-jac-collaboration-2025.html','actualite-forum-transport-touristique-marrakech-2024.html','actualite-apci-assemblee-generale-2024.html','actualite-certification-iso-9001-2024.html','actualite-iveco-reunion-2023.html','actualite-auto-nejma-sprinter-2023.html','actualite-busworld-istanbul-2022.html','actualite-apci-premiere-reunion-2022.html'
 ];
 
 let problems = 0;
