@@ -26,7 +26,7 @@ const SIZES = [
   { w: 1400, q: 78, suffix: '-1400' },
 ];
 
-const isImage = f => /\.(png|jpe?g)$/i.test(f);
+const isImage = f => /\.(png|jpe?g|webp)$/i.test(f);
 
 let made = 0, skipped = 0, srcBytes = 0, outBytes = 0;
 
@@ -63,7 +63,7 @@ async function walk(dir, rel) {
       if (!rel && SKIP_TOP.has(name)) continue;
       await walk(abs, relPath);
     } else if (isImage(name)) {
-      await convert(abs, relPath.replace(/\.(png|jpe?g)$/i, ''));
+      await convert(abs, relPath.replace(/\.(png|jpe?g|webp)$/i, ''));
     }
   }
 }

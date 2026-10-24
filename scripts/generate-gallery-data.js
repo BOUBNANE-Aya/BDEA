@@ -98,7 +98,7 @@ function crafterFolder(name) {
   };
 }
 
-const isImage = f => /\.(png|jpe?g)$/i.test(f);
+const isImage = f => /\.(png|jpe?g|webp)$/i.test(f);
 const entries = [];
 
 function walk(dir, inherited) {
@@ -112,7 +112,7 @@ function walk(dir, inherited) {
       const rel = path.relative(ROOT, path.join(dir, f)).split(path.sep).join('/');
       /* Serve the WebP derivatives built by scripts/optimize-media.js: a 600px tile
          for the grid and a 1400px copy for the lightbox, instead of a ~1.5MB master. */
-      const stem = 'assets/opt/' + rel.slice('assets/images/'.length).replace(/\.(png|jpe?g)$/i, '');
+      const stem = 'assets/opt/' + rel.slice('assets/images/'.length).replace(/\.(png|jpe?g|webp)$/i, '');
       const item = { src: stem + '-600.webp', full: stem + '-1400.webp', sub: inherited.sub, n: i + 1 };
       if (inherited.v) { item.v = inherited.v; item.vLabel = VEHICLES[inherited.v]; }
       if (inherited.color) { item.color = inherited.color; item.colorLabel = COLORS[inherited.color].label; }
